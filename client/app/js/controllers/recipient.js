@@ -274,7 +274,12 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
       var httpsCount = 0;
 
       // UnansweredTips variables
-      $scope.unansweredTipsCount = 0;
+      // $scope.unansweredTipsCount = 0;
+
+      // averageClosureTime variables
+      var closureTimes = [];
+      var totalClosureTime = 0;
+      var averageClosureTime = 0;
       // ================================================================
       // TipArray loop
       // ================================================================
@@ -331,9 +336,18 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
         }
 
         //For UnansweredTips Count
-        if (tip.submissionstatusestr === 'new') {
-          $scope.unansweredTipsCount++;
-        }
+        // if (tip.submissionstatusestr === 'new') {
+        //   $scope.unansweredTipsCount++;
+        // }
+
+        //  For The average time of closure of the submission 
+        var report = tip;
+        var reportCreationDate = new Date(report.creation_date);
+        var reportUpdateDate = new Date(report.update_date);
+        var closureTime = reportUpdateDate.getTime() - reportCreationDate.getTime();
+        closureTimes.push(closureTime);
+        totalClosureTime += closureTime;
+
 
       })
 
@@ -460,7 +474,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
       });
 
       // ======================= Statuses LineGraph ===============================
-      $scope.statuses =function(){}
+      $scope.statuses = function () { }
       var statusLabels = $scope.statusPercentages.map(function (item) {
         return item.status + "  |  " + item.percentage + " %";
       });
@@ -502,7 +516,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
             }
           }
         },
-       
+
       });
       // ================================== Statuses Doughnut ===============================
       // var chartConfig = {
@@ -675,6 +689,26 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
       var whistleblowerCount = 0;
       var recipientTotalTime = 0;
       var recipientCount = 0;
+      $scope.whistleblowerAverageTime = 0;
+      $scope.recipientAverageTime = 0;
+      var whistleblowerResponses = [];
+      // var whistleblowerCount = 0;
+      $scope.receiverCount = 0;
+      // $scope.receiverResponses = [];
+
+
+      var whistleblowerIds = new Set();
+      var unansweredTips = [];
+      var unansweredCount = 0;
+
+
+
+      var responseTimes = [];
+      var receiverCreationDate = [];
+      var whisleblowerCreationDate = [];
+      var responseSum = 0;
+
+      $scope.unanswered = {};
 
       angular.forEach($scope.resources.rtips.rtips, function (tip) {
         $scope.tip = new RTip({ id: tip.id }, function (tip) {
@@ -686,37 +720,115 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
             $scope.reportingChannel.push(valueToAdd);
             // alert(valueToAdd);
           }
+          // ==============================
 
-          angular.forEach($scope.tip.comments, function (comment) {
-            var responseTime = new Date() - new Date(comment.creation_date);
-            if (comment.type === 'whistleblower') {
-              whistleblowerTotalTime += responseTime;
-              whistleblowerCount++;
-            } else if (comment.type === 'receiver') {
-              recipientTotalTime += responseTime;
-              recipientCount++;
-            }
-          });
+          console.log($scope.tip.comments, "$scope.tip.comments");
+          // ==========unanswered tips fucntion ========
+          $scope.calculateUnansweredTips = function () {
+
+
+            // Iterate through the data array
+
+            // Iterate through the data array
+            angular.forEach($scope.tip.comments, function (item) {
+              if (item.type === "receiver") {
+                $scope.receiverCount++
+              }
+              if (item.type === 'whistleblower') {
+                whistleblowerIds.add(item.id);
+              }
+
+              if (item.type === "receiver") {
+                var creationDateReceiver = new Date(item.creation_date);
+                receiverCreationDate.push(creationDateReceiver)
+              }
+              if (item.type === 'whistleblower') {
+                var creationDateWhistleblower = new Date(item.creation_date);
+                whisleblowerCreationDate.push(creationDateWhistleblower)
+              }
+            });
+
+            angular.forEach(receiverCreationDate, function (r_date) {
+              angular.forEach(whisleblowerCreationDate, function (w_date) {
+                var responseTime = r_date - w_date;
+                responseTimes.push(responseTime);
+                responseSum += responseTime;
+              })
+      
+            });
+            $scope.averageResponseTime = responseSum / responseTimes.length / (1000 * 60 * 60);
+            console.log($scope.averageResponseTime, "averageResponseTime");
+            console.log("responseSum", responseSum);
+
+
+            // Find unanswered tips and calculate the total
+          
+            // $scope.unanswered[tip.progressive] = true
+            // angular.forEach($scope.tip.comments, function (item) {
+            //   if(tip.progressive!=7 || !$scope.unanswered[tip.progressive]){
+            //     return
+            //   }
+            //   alert("starting: " + tip.progressive)
+
+            //   if (item.type === 'whistleblower') {
+
+            //     angular.forEach($scope.tip.comments, function (receiver) {
+            //       alert("starting1: " + receiver.type)
+            //       if (receiver.type === 'receiver') {
+            //         $scope.unanswered[tip.progressive] = false
+            //         alert("starting2: " + $scope.unanswered[tip.progressive])
+            //         return;
+            //       }
+            //     });
+
+            //     if ($scope.unanswered[tip.progressive]) {
+            //       alert("starting3: " + $scope.unanswered[tip.progressive])
+            //       unansweredTips.push(item);
+            //       unansweredCount++;
+            //     }
+            //     return
+            //   }
+            // });
+          
+            // Return the unanswered tips and count as an object
+            // return {
+            //   unansweredTips: unansweredTips,
+            //   unansweredCount: unansweredCount
+            // };
+          };
+
+          // Call the function to get unanswered tips and count
+          // var unansweredData = $scope.calculateUnansweredTips();
+
+          // Access the unanswered tips and count
+          // $scope.unansweredTips = unansweredData.unansweredTips;
+          // $scope.unansweredCount = unansweredData.unansweredCount;
+          // =============================================================================
+
+          // =============================== Number of interection with whisleblower ===================
+          // angular.forEach($scope.tip.comments, function (comment) {
+
+
+          // });
+          $scope.unansweredTips = 0;
+
         });
       });
-      var whistleblowerAverageTime = whistleblowerTotalTime / whistleblowerCount;
-      var recipientAverageTime = recipientTotalTime / recipientCount;
-      console.log(whistleblowerAverageTime, recipientAverageTime);
 
-      console.log('Average response time for whistleblower comments: ' + whistleblowerAverageTime + ' milliseconds');
-      console.log('Average response time for recipient comments: ' + recipientAverageTime + ' milliseconds');
+      // =========================================== Average Closure Time Stat ======================================
+      if ($scope.totalReports > 0) {
+        averageClosureTime = totalClosureTime / $scope.totalReports / (1000 * 60 * 60 * 24);
+      }
+      $scope.averageClosureTime = averageClosureTime.toFixed(2);
 
-      // =========================================== UnansweredTips Stat ======================================
-      console.log($scope.unansweredTipsCount, "unansweredTipsCount");
-
-      // =========================================== Chart plugin register ======================================
+      // =========================================  chart plugin register ==========================================
       //   chart plugin register
       //   Chart.register(ChartDataLabels);
       $scope.filteredData = $scope.tipArray
       $scope.filterData = function () {
         var startDate = new Date($scope.startDate);
         var endDate = new Date($scope.endDate);
-        console.log(endDate, "endDate", startDate, "startDate");
+        // console.log(endDate, "endDate", startDate, "startDate");
 
         $scope.filteredData = $scope.tipArray.filter(function (obj) {
           var creationDate = new Date(obj.creation_date);
@@ -727,4 +839,57 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
       $scope.$watchGroup(['startDate', 'endDate'], function () {
         $scope.filterData();
       });
+      // var responseTimes = [];
+      // var receiverCreationDate = [];
+      // var whisleblowerCreationDate = [];
+      // var responseSum = 0;
+      // $scope.data = [
+      //   {
+      //     "id": "036d9bc1-f070-4966-8f05-82f3bb4e064a",
+      //     "type": "whistleblower",
+      //     "creation_date": "2023-05-17T16:46:05.855386Z",
+      //     "content": "s",
+      //     "author": null
+      //   },
+      //   {
+      //     "id": "50cac61a-6a4a-469b-92c8-9736693f59af",
+      //     "type": "receiver",
+      //     "creation_date": "2023-05-17T18:02:20.939920Z",
+      //     "content": "cnncb",
+      //     "author": "6818f059-375b-47d7-aa11-338ffc406c87"
+      //   },
+      //   {
+      //     "id": "66f871cf-d325-4d3d-82a1-382d0f202646",
+      //     "type": "receiver",
+      //     "creation_date": "2023-05-17T18:02:39.372985Z",
+      //     "content": "ncvb",
+      //     "author": "6818f059-375b-47d7-aa11-338ffc406c87"
+      //   }
+      // ];
+
+      // angular.forEach($scope.data, function (item) {
+
+      //   if (item.type === "receiver") {
+      //     var creationDateReceiver = new Date(item.creation_date);
+      //     receiverCreationDate.push(creationDateReceiver)
+      //   }
+      //   if (item.type === 'whistleblower') {
+      //     var creationDateWhistleblower = new Date(item.creation_date);
+      //     whisleblowerCreationDate.push(creationDateWhistleblower)
+      //   }
+
+      // });
+      // console.log(whisleblowerCreationDate,receiverCreationDate);
+      // angular.forEach(receiverCreationDate, function (r_date) {
+      //   angular.forEach(whisleblowerCreationDate, function (w_date) {
+      //     var responseTime = r_date - w_date;
+      //     responseTimes.push(responseTime);
+      //     responseSum += responseTime;
+      //   })
+
+      // });
+      // var averageResponseTime = responseSum / responseTimes.length / (1000 * 60 * 60);
+      // console.log(averageResponseTime, "averageResponseTime");
+      // console.log("responseSum", responseSum);
+    
     }]);

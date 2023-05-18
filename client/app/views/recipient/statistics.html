@@ -65,8 +65,13 @@
       </tr>
     </tbody>
   </table>
-
   
+  <!-- <div> Number of interection with whislteblower :{{receiverCount}}</div>
+  <div> The average time of closure of the submission : {{averageClosureTime}} days</div>
+  <div> Total Unanswered Tips: {{ unansweredCount }}</div>
+  <div>Average Response Time :{{averageResponseTime.toFixed(2)}}hours</div> -->
+  <!-- <div>{{whistleblowerAverageTime,
+    recipientAverageTime}}</div> -->
   <!--  <div class="row">-->
   <!--    <div class="col">-->
   <!--  <h3>Total Reports: {{totalReports}}</h3>-->
@@ -84,15 +89,17 @@
       <canvas width="1200" class="lineGraph" id="statusBarChart"></canvas>
     </div>
   </div>
-
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-  <!-- <div class="row">
+  <h3>Interection Report</h3><br>
+  <div class="row">
     <div class="col">
-      <h2>Submission Statuses Doughnut</h2>
-      <canvas class="doughnut" id="doughnut"></canvas>
+      <!-- <h3>Report Count Per Month LineGraph</h3> -->
+      <canvas class="lineGraph" id="perMonthLineGraph"></canvas>
     </div>
-  </div> -->
-  <hr>
+  </div>
+
+  <div> The average time of closure of the submission : {{averageClosureTime}} days</div>
+  <div> Total Unanswered Tips: {{ unansweredCount }}</div>
+  <div> Number of interection with whislteblower :{{receiverCount}}</div>
   <div class="row">
     <div class="col">
       <h3>Submission Labels</h3>
@@ -106,6 +113,19 @@
       </ul>
     </div>
   </div>
+  <!-- <div>Average Response Time :{{averageResponseTime.toFixed(2)}}hours</div> -->
+  <hr>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- <div class="row">
+    <div class="col">
+      <h2>Submission Statuses Doughnut</h2>
+      <canvas class="doughnut" id="doughnut"></canvas>
+    </div>
+  </div> -->
+  <hr>
+
+ 
+  
   <div class="row">
     <div class="col">
       <h3>Submission Labels LineGraph</h3>
@@ -139,22 +159,5 @@
       </ul>
     </div>
   </div>
-  <hr>
-  <div class="row">
-    <div class="col">
-      <h3>UnansweredTips</h3>
-      <ul>
-        <li>
-          UnansweredTipsCount : {{unansweredTipsCount}}
-        </li>
-      </ul>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col">
-      <h3>Report Count Per Month LineGraph</h3>
-      <canvas class="lineGraph" id="perMonthLineGraph"></canvas>
-    </div>
-  </div>
+  
 </div>
