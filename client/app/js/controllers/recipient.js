@@ -385,7 +385,8 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
           datasets: [{
             label: 'Label Counts',
             data: [totalReports, ...labelCountsData, unlabeledCountData],
-            backgroundColor: generateRandomColors(Object.keys($scope.labelCounts).length + 2)
+            // backgroundColor: generateRandomColors(Object.keys($scope.labelCounts).length + 2)
+            backgroundColor: 'rgba(55, 122, 188, 0.6)',
           }]
         },
         options: {
@@ -671,7 +672,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
 
       // ========================================================================
 
-      totalReports
+      // totalReports
 
 
       // var startDate = new Date('2023-05-01');
@@ -709,21 +710,114 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
       var responseSum = 0;
 
       $scope.unanswered = {};
+      $scope.channelsArray = []
 
       angular.forEach($scope.resources.rtips.rtips, function (tip) {
         $scope.tip = new RTip({ id: tip.id }, function (tip) {
           $scope.tip = tip;
           $scope.tip.context = $scope.contexts_by_id[$scope.tip.context_id];
 
-          var valueToAdd = $scope.tip.context.name;
-          if ($scope.reportingChannel.indexOf(valueToAdd) === -1) {
-            $scope.reportingChannel.push(valueToAdd);
+          $scope.channels = $scope.tip.context.name;
+          if ($scope.reportingChannel.indexOf($scope.channels) === -1) {
+            $scope.reportingChannel.push($scope.channels);
             // alert(valueToAdd);
           }
+          console.log($scope.channels, "valueToAdd");
           // ==============================
 
           console.log($scope.tip.comments, "$scope.tip.comments");
           // ==========unanswered tips fucntion ========
+          angular.forEach($scope.tip.comments, function (item) {
+            if (item.type === "receiver") {
+              $scope.receiverCount++
+            }
+          })
+          $scope.channelsArray.push({ Channel: $scope.tip.context.name })
+          console.log($scope.channelsArray, "$channelsArray.channelssssssssssssssssss");
+
+          // angular.forEach($scope.channelsArray, function (channel) {
+          //   console.log(channel, "innerloopchannel");
+
+          // }
+          // )
+
+          // var chanelData = $scope.channelsArray; // Set the data for the channels
+          // var totalReports = $scope.channelsArray.length; // Set the total reports count
+          // var chanelLabels = $scope.statusPercentages.map(function (item) {
+          //   return item.Channel;
+          // });
+          // console.log(chanelLabels,"chanelLabels");
+          // // var chanelData = $scope.statusPercentages.map(function (item) {
+          // //   return item.count;
+          // // });
+          var reportingChancelCtx = document.getElementById('reportingChancelChart').getContext('2d');
+          var labels = ["Default"];
+          var data = $scope.channelsArray.length;
+          console.log(data,"data");
+          new Chart(reportingChancelCtx, {
+            type: 'bar',
+            data: {
+              labels: labels,
+              datasets: [{
+                label: 'Channel Counts',
+                data: data,
+                backgroundColor: 'rgba(55, 122, 188, 0.6)'
+              }]
+            },
+            options: {
+              indexAxis: 'y',
+              responsive: true,
+              scales: {
+                x: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: 'Number of Reports'
+                  }
+                },
+                y: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: 'Label'
+                  }
+                }
+              }
+            }
+          });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           $scope.calculateUnansweredTips = function () {
 
 
@@ -754,7 +848,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
                 responseTimes.push(responseTime);
                 responseSum += responseTime;
               })
-      
+
             });
             $scope.averageResponseTime = responseSum / responseTimes.length / (1000 * 60 * 60);
             console.log($scope.averageResponseTime, "averageResponseTime");
@@ -762,7 +856,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
 
 
             // Find unanswered tips and calculate the total
-          
+
             // $scope.unanswered[tip.progressive] = true
             // angular.forEach($scope.tip.comments, function (item) {
             //   if(tip.progressive!=7 || !$scope.unanswered[tip.progressive]){
@@ -789,7 +883,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
             //     return
             //   }
             // });
-          
+
             // Return the unanswered tips and count as an object
             // return {
             //   unansweredTips: unansweredTips,
@@ -810,7 +904,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
 
 
           // });
-          $scope.unansweredTips = 0;
+          $scope.unansweredCount = 0;
 
         });
       });
@@ -891,5 +985,64 @@ GL.controller("ReceiverTipsCtrl", ["$scope", "$filter", "$http", "$location", "$
       // var averageResponseTime = responseSum / responseTimes.length / (1000 * 60 * 60);
       // console.log(averageResponseTime, "averageResponseTime");
       // console.log("responseSum", responseSum);
-    
+      // =====================================================================================
+
+      // var totalItemCount = $scope.totalReports;
+
+      // angular.forEach($scope.labelCounts, function (count, label) {
+      //   var percentage = (count / totalItemCount) * 100;
+      //   $scope.labelCounts[label] = {
+      //     count: count,
+      //     percentage: percentage.toFixed(2) + "%"
+      //   };
+      // });
+
+      // var unlabeledPercentage = ($scope.unlabeledCount / totalItemCount) * 100;
+      // $scope.unlabeledCount = {
+      //   count: $scope.unlabeledCount,
+      //   percentage: unlabeledPercentage.toFixed(2) + "%"
+      // };
+
+
+      // var labelCountsData = Object.values($scope.labelCounts).map(function (label) {
+      //   return label.count;
+      // });
+
+      // var unlabeledCountData = $scope.unlabeledCount.count;
+      // var totalReports = $scope.totalReports
+      // console.log(unlabeledCountData, totalReports);
+      // var labelCountsCtx = document.getElementById('labelCountsChart').getContext('2d');
+      // new Chart(labelCountsCtx, {
+      //   type: 'bar',
+      //   data: {
+      //     labels: ['Total Reports', ...Object.keys($scope.labelCounts), 'Unlabeled'],
+      //     datasets: [{
+      //       label: 'Label Counts',
+      //       data: [totalReports, ...labelCountsData, unlabeledCountData],
+      //       // backgroundColor: generateRandomColors(Object.keys($scope.labelCounts).length + 2)
+      //       backgroundColor: 'rgba(55, 122, 188, 0.6)',
+      //     }]
+      //   },
+      //   options: {
+      //     indexAxis: 'y',
+      //     responsive: true,
+      //     scales: {
+      //       x: {
+      //         beginAtZero: true,
+      //         title: {
+      //           display: true,
+      //           text: 'Number of Reports'
+      //         }
+      //       },
+      //       y: {
+      //         beginAtZero: true,
+      //         title: {
+      //           display: true,
+      //           text: 'Label'
+      //         }
+      //       }
+      //     }
+      //   }
+      // });
+
     }]);
