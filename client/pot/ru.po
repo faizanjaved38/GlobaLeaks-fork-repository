@@ -47,6 +47,9 @@ msgstr ""
 msgid "Log in"
 msgstr "Войти"
 
+msgid "Theme customization"
+msgstr "Настройка темы"
+
 msgid "Languages"
 msgstr "Языки"
 
@@ -106,6 +109,9 @@ msgstr "Файлы"
 
 msgid "Comments"
 msgstr "Комментарии"
+
+msgid "Messages"
+msgstr "Сообщения"
 
 msgid "Details"
 msgstr "Подробности"
@@ -471,14 +477,14 @@ msgstr "Скопировать в буфер обмена"
 msgid "Logout"
 msgstr "Выход"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr "Предоставить этому получателю возможность выдавать пользователям доступ к отчетам"
+
 msgid "Grant access"
 msgstr "Предоставить доступ"
 
 msgid "Revoke access"
 msgstr "Отозвать доступ"
-
-msgid "Transfer"
-msgstr "Передача"
 
 msgid "Assigned to"
 msgstr ""
@@ -486,61 +492,7 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr ""
-
-msgid "Hide"
-msgstr "Скрыть"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr "Редактировать"
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr "Выберите язык"
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr "Открытый"
-
-msgid "Internal"
-msgstr "Внутреннее хранилище"
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr "Политика конфиденциальности"
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -584,9 +536,6 @@ msgstr "Дата создания"
 
 msgid "Last access"
 msgstr "Последний доступ"
-
-msgid "Messages"
-msgstr "Сообщения"
 
 msgid "Whistleblower's last access"
 msgstr "Последний доступ информатора"
@@ -663,6 +612,12 @@ msgstr "Включить комментарии"
 msgid "Allow the whistleblower to write comments"
 msgstr "Разрешить информатору добавлять комментарии"
 
+msgid "Enable private messages"
+msgstr "Задействовать личные сообщения"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "Разрешить информатору отправлять комментарии"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "Разрешить информатору добавлять приложения к поданным документам"
 
@@ -734,6 +689,9 @@ msgstr "Секретный ключ"
 
 msgid "Certificate Signing Request"
 msgstr "Запрос подписания сертификата"
+
+msgid "Download"
+msgstr "Скачивание"
 
 msgid "Certificate"
 msgstr "Сертификат"
@@ -895,12 +853,6 @@ msgstr "Принимать несколько ответов"
 msgid "Template override"
 msgstr "Переопределение шаблона"
 
-msgid "Min"
-msgstr "Мин."
-
-msgid "Max"
-msgstr "Макс."
-
 msgid "Phone number"
 msgstr "Номер телефона"
 
@@ -984,9 +936,6 @@ msgstr "Нижний колонтитул"
 
 msgid "Upload"
 msgstr "Загрузка"
-
-msgid "Download"
-msgstr "Скачивание"
 
 msgid "Language:"
 msgstr "Язык:"
@@ -1108,17 +1057,14 @@ msgstr "Сеть"
 msgid "Sites"
 msgstr "Сайты"
 
-msgid "Profile"
-msgstr "Профиль"
+msgid "Mode:"
+msgstr "Режим:"
 
 msgid "Configure"
 msgstr "Настроить"
 
 msgid "Subdomain"
 msgstr "Субдомен"
-
-msgid "Mode:"
-msgstr "Режим:"
 
 msgid "Creation date:"
 msgstr "Дата создания:"
@@ -1188,9 +1134,6 @@ msgstr "Разрешить получателю удалять отчеты"
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Разрешить получателю откладывать истечение срока действия отчета"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Предоставить этому получателю возможность выдавать пользователям доступ к отчетам"
 
 msgid "Give the user administrative access to the following features:"
 msgstr "Предоставьте пользователю административный доступ к следующим функциям:"
@@ -1295,7 +1238,7 @@ msgstr "Отправить"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "В случае подтверждения вы увеличите срок истечения сведения до:"
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1378,6 +1321,15 @@ msgstr "Выберите файл или перетащите его сюда."
 msgid "Size:"
 msgstr "Размер:"
 
+msgid "Uploading files…"
+msgstr "Загрузка файлов…"
+
+msgid "Upload completed successfully!"
+msgstr "Загрузка завершена удачно!"
+
+msgid "Estimated upload time:"
+msgstr "Расчетное время загрузки:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Получатели попросили вас заполнить дополнительный опросник."
 
@@ -1392,9 +1344,6 @@ msgstr "Кому:"
 
 msgid "Filename"
 msgstr "Имя файла"
-
-msgid "View"
-msgstr "Просмотр"
 
 msgid "Upload date"
 msgstr "Дата загрузки"
@@ -1448,9 +1397,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "Мы рекомендуем вам войти в раздел \"Настройки”, чтобы получить “ключ для восстановления учетной записи” и сохранить его в безопасном месте. Этот ключ понадобится для восстановления доступа к платформе и вашим данным в том случае, если вы забудете свой пароль."
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "Предоставленный ключ восстановления недействителен."
@@ -1563,17 +1509,17 @@ msgstr "Используйте 16-значную квитанцию для вх�
 msgid "View your report"
 msgstr "Просмотрите свой отчет"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "Выбор получателя"
+
+msgid "Select the recipients of your report:"
+msgstr "Выберите получателей вашего отчета:"
 
 msgid "Recipients selected:"
 msgstr "Выбранные получатели:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Вы достигли максимального числа возможных получателей."
-
-msgid "You must select at least one recipient."
-msgstr "Вам необходимо выбрать по меньшей мере одного получателя."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1585,11 +1531,17 @@ msgid ""
 "invalid:"
 msgstr "Отсутствующие или недостоверные ответы на следующие вопросы:"
 
-msgid "Recipient selection"
-msgstr "Выбор получателя"
+msgid "You must select at least one recipient."
+msgstr "Вам необходимо выбрать по меньшей мере одного получателя."
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Происходит загрузка файлов."
+
+msgid "The following steps have errors:"
+msgstr "Допущены ошибки в следующих действиях:"
+
+msgid "Hide"
+msgstr "Скрыть"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1757,9 +1709,6 @@ msgstr "Проверьте, в чем дело, чтобы установить,
 
 msgid "The activities with unusual stats are:"
 msgstr "Активность с нетипичной статистикой:"
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1989,9 +1938,6 @@ msgstr "Этим электронным письмом уведомляем ва
 msgid "New report"
 msgstr "Новый отчет"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Первый срок действия {EarliestExpirationDate}."
 
@@ -2001,16 +1947,18 @@ msgstr "Пожалуйста, не забудьте проверить их пе
 msgid "Some reports will expire soon"
 msgstr "Срок действия некоторых отчетов скоро истечет"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "Этим сообщением мы уведомляем вас, что информатор выбрал вас в качестве важного получателя его отчета."
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "Вам необходимо обратить особое внимание на информацию и материалы, содержащиеся в нем. Имейте в виду, что информаторы зачастую подвергают себя серьезному риску в интересах общественности. Поэтому представленные в этом отчете материалы следует считать крайне важными."
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Это письмо, чтобы уведомить о том, что существующий отчет был обновлен."

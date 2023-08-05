@@ -263,7 +263,7 @@ var GL = angular.module("GL", [
       when("/admin/notifications", {
         templateUrl: "views/admin/notifications.html",
         controller: "AdminCtrl",
-        header_title: "Notifications",
+        header_title: "Notification settings",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -273,7 +273,7 @@ var GL = angular.module("GL", [
       when("/admin/network", {
         templateUrl: "views/admin/network.html",
         controller: "AdminCtrl",
-        header_title: "Network",
+        header_title: "Network settings",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -293,7 +293,7 @@ var GL = angular.module("GL", [
       when("/admin/sites", {
         templateUrl: "views/admin/sites.html",
         controller: "AdminCtrl",
-        header_title: "Sites",
+        header_title: "Sites management",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -332,7 +332,7 @@ var GL = angular.module("GL", [
       when("/custodian/settings", {
         templateUrl: "views/custodian/settings.html",
         controller: "AdminCtrl",
-        header_title: "Sites",
+        header_title: "Site settings",
         sidebar: "views/custodian/sidebar.html",
         resolve: {
           access: requireAuth("custodian"),

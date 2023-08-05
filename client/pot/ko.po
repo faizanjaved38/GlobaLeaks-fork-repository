@@ -18,6 +18,9 @@ msgstr ""
 msgid "Log in"
 msgstr "로그인"
 
+msgid "Theme customization"
+msgstr "테마 사용자 정의"
+
 msgid "Languages"
 msgstr "언어"
 
@@ -77,6 +80,9 @@ msgstr "파일"
 
 msgid "Comments"
 msgstr "댓글"
+
+msgid "Messages"
+msgstr "메시지"
 
 msgid "Details"
 msgstr "세부 정보"
@@ -442,14 +448,14 @@ msgstr "클립보드로 복사"
 msgid "Logout"
 msgstr "로그아웃"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr ""
+
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
 msgstr "권한 무효화"
-
-msgid "Transfer"
-msgstr "전송"
 
 msgid "Assigned to"
 msgstr ""
@@ -457,61 +463,7 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr "권한"
-
-msgid "Hide"
-msgstr "숨기기"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr ""
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr ""
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr ""
-
-msgid "Internal"
-msgstr "내부"
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr "개인 정보 보호 정책"
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -555,9 +507,6 @@ msgstr "생성 날짜"
 
 msgid "Last access"
 msgstr "마지막 액세스"
-
-msgid "Messages"
-msgstr "메시지"
 
 msgid "Whistleblower's last access"
 msgstr "마지막 내부 고발자 액세스"
@@ -634,6 +583,12 @@ msgstr "댓글 허용"
 msgid "Allow the whistleblower to write comments"
 msgstr "내부 고발자가 댓글을 작성하도록 허용"
 
+msgid "Enable private messages"
+msgstr "비공개 메시지 허용"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "내부 고발자가 메시지를 전송할 수 있도록 허용"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "내부 고발자가 보고서에 첨부 파일을 추가하도록 허용"
 
@@ -705,6 +660,9 @@ msgstr "개인 키"
 
 msgid "Certificate Signing Request"
 msgstr "인증서 서명 요청"
+
+msgid "Download"
+msgstr "다운로드"
 
 msgid "Certificate"
 msgstr "인증서"
@@ -866,12 +824,6 @@ msgstr "다중 답변 허용"
 msgid "Template override"
 msgstr "템플릿 오버라이드"
 
-msgid "Min"
-msgstr "최소"
-
-msgid "Max"
-msgstr "최대"
-
 msgid "Phone number"
 msgstr "전화번호"
 
@@ -955,9 +907,6 @@ msgstr "각주"
 
 msgid "Upload"
 msgstr "업로드"
-
-msgid "Download"
-msgstr "다운로드"
 
 msgid "Language:"
 msgstr "언어:"
@@ -1079,17 +1028,14 @@ msgstr "네트워크"
 msgid "Sites"
 msgstr "사이트"
 
-msgid "Profile"
-msgstr "프로필"
+msgid "Mode:"
+msgstr "모드:"
 
 msgid "Configure"
 msgstr "구성"
 
 msgid "Subdomain"
 msgstr "하위 도메인"
-
-msgid "Mode:"
-msgstr "모드:"
 
 msgid "Creation date:"
 msgstr "생성 날짜:"
@@ -1159,9 +1105,6 @@ msgstr "수신자가 보고서를 삭제할 수 있도록 허용"
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "수신자가 보고서 만료 날짜를 연기할 수 있도록 허용"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
 
 msgid "Give the user administrative access to the following features:"
 msgstr "관리자가 다음 기능을 액세스하도록 허용:"
@@ -1266,7 +1209,7 @@ msgstr "전송"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "확인 시 연기되는 만료 날짜:"
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1349,6 +1292,15 @@ msgstr "파일을 선택하거나 여기에 드래그하십시오."
 msgid "Size:"
 msgstr "크기:"
 
+msgid "Uploading files…"
+msgstr "파일 업로드 중..."
+
+msgid "Upload completed successfully!"
+msgstr "업로드를 성공적으로 완료했습니다!"
+
+msgid "Estimated upload time:"
+msgstr "예상 업로드 시간:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "수신자가 추가 설문 조사를 작성할 것을 요청했습니다."
 
@@ -1363,9 +1315,6 @@ msgstr "수신자:"
 
 msgid "Filename"
 msgstr "파일 이름"
-
-msgid "View"
-msgstr "보기"
 
 msgid "Upload date"
 msgstr "업로드 날짜"
@@ -1419,9 +1368,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "'기본 설정' 섹션에 액세스하여 '계정 복구 키'를 검색하고 이를 안전하게 저장할 것을 권장합니다. 해당 키는 비밀번호를 잊어버린 경우 플랫폼 및 데이터 액세스를 복구하는 데 필요합니다."
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "제공된 복구 키가 유효하지 않습니다."
@@ -1534,17 +1480,17 @@ msgstr "16자리의 수신 코드로 로그인하십시오. 이를 통해 당사
 msgid "View your report"
 msgstr "보고서 보기"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "수신자 선택"
+
+msgid "Select the recipients of your report:"
+msgstr "보고서 수신자 선택:"
 
 msgid "Recipients selected:"
 msgstr "선택한 수신자:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "선택할 수 있는 최대 수신자 수에 도달했습니다."
-
-msgid "You must select at least one recipient."
-msgstr "수신자를 한 명 이상 선택해야 합니다."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1556,11 +1502,17 @@ msgid ""
 "invalid:"
 msgstr "본 단계에서 다음 질문에 대한 답변이 누락되었거나 유효하지 않습니다."
 
-msgid "Recipient selection"
-msgstr "수신자 선택"
+msgid "You must select at least one recipient."
+msgstr "수신자를 한 명 이상 선택해야 합니다."
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "파일 업로드가 완료되기를 기다리고 있습니다."
+
+msgid "The following steps have errors:"
+msgstr "다음 단계에 오류가 있습니다."
+
+msgid "Hide"
+msgstr "숨기기"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1728,9 +1680,6 @@ msgstr "문제를 조사하여 합법적인지 확인하십시오."
 
 msgid "The activities with unusual stats are:"
 msgstr "특이한 통계와 활동은 다음과 같습니다."
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1960,9 +1909,6 @@ msgstr ""
 msgid "New report"
 msgstr "새 보고서"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "가장 빠른 만료 날짜는 {EarliestExpirationDate}입니다."
 
@@ -1972,16 +1918,18 @@ msgstr "삭제하기 전에 확인하시기 바랍니다."
 msgid "Some reports will expire soon"
 msgstr "일부 보고서가 곧 만료됩니다."
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "내부 고발자가 자신의 보고서에 대한 소중한 수신자로 사용자를 선택했음을 알리는 이메일입니다."
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "여기에 포함된 정보와 자료에 특별한 주의를 기울여야 합니다. 대부분의 내부 고발자는 대중의 이익을 위해 높은 개인적 위험에 노출된다는 점에 명심하십시오. 따라서 해당 보고서에 제공된 자료는 매우 중요한 것으로 간주해야 합니다."
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "기존 보고서가 업데이트되었음을 알리는 이메일입니다."

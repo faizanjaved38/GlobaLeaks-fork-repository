@@ -1,0 +1,135 @@
+2023-08-05 23:16:31+0500 [-] twistd 22.1.0 (/home/morgan-freeman/GlobaLeaks-fork-repository/backend/env/bin/python 3.9.12) starting up.
+2023-08-05 23:16:31+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2023-08-05 23:16:31+0500 [-] Starting factory <Site object at 0x7f5f72bf1a60>
+2023-08-05 23:16:31+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /var/run/tor/control; waiting for Tor to become available
+2023-08-05 23:16:31+0500 [-] GlobaLeaks is now running and accessible at the following urls:
+2023-08-05 23:16:31+0500 [-] - [HTTP]	--> http://127.0.0.1:8082
+2023-08-05 23:16:31+0500 [-] - [Tor]:	--> http://naqee3mfh3l6cigw6uimqrao7kjeppzo3xulsh7fsilk4j24a327ueqd.onion
+2023-08-05 23:16:31+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f72ab7e50>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f72a82490>)
+2023-08-05 23:16:32+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f72ab7e50>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f72a82490>)
+2023-08-05 23:20:11+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bcb7e20>
+2023-08-05 23:20:15+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bcb7e20>
+2023-08-05 23:20:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bad67c0>
+2023-08-05 23:20:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bad67c0>
+2023-08-05 23:25:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba347f0>
+2023-08-05 23:25:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba347f0>
+2023-08-05 23:25:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b9dd520>
+2023-08-05 23:25:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b9dd520>
+2023-08-05 23:25:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b9dd0a0>
+2023-08-05 23:25:54+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b9dd0a0>
+2023-08-05 23:35:01+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7e2a30>
+2023-08-05 23:35:05+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7e2a30>
+2023-08-05 23:35:06+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b896b20>
+2023-08-05 23:35:09+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b896b20>
+2023-08-05 23:35:10+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b896c70>
+2023-08-05 23:35:14+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b896c70>
+2023-08-05 23:41:11+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d5c40>
+2023-08-05 23:41:15+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d5c40>
+2023-08-05 23:41:16+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d58b0>
+2023-08-05 23:41:20+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d58b0>
+2023-08-05 23:41:20+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7fe6d0>
+2023-08-05 23:41:24+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7fe6d0>
+2023-08-05 23:42:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7f8670>
+2023-08-05 23:42:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7f8670>
+2023-08-05 23:42:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8b0d00>
+2023-08-05 23:42:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8b0d00>
+2023-08-05 23:42:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d5430>
+2023-08-05 23:42:54+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d5430>
+2023-08-05 23:45:01+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b80dd30>
+2023-08-05 23:45:05+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b80dd30>
+2023-08-05 23:45:06+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b80d310>
+2023-08-05 23:45:09+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b80d310>
+2023-08-05 23:45:10+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8491f0>
+2023-08-05 23:45:14+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8491f0>
+2023-08-05 23:46:31+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b8b3ca0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5ba3e880>)
+2023-08-05 23:46:32+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b8b3ca0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5ba3e880>)
+2023-08-05 23:47:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b83f610>
+2023-08-05 23:47:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b83f610>
+2023-08-05 23:47:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b808340>
+2023-08-05 23:47:50+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b808340>
+2023-08-05 23:47:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b86baf0>
+2023-08-05 23:47:55+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b86baf0>
+2023-08-05 23:53:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba91fa0>
+2023-08-05 23:53:46+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba91fa0>
+2023-08-05 23:53:47+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8d75b0>
+2023-08-05 23:53:50+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8d75b0>
+2023-08-05 23:53:51+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bbbdf40>
+2023-08-05 23:53:55+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bbbdf40>
+2023-08-05 23:56:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bb1e6a0>
+2023-08-05 23:56:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bb1e6a0>
+2023-08-05 23:56:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bb8c640>
+2023-08-05 23:56:51+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bb8c640>
+2023-08-05 23:56:51+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bca1670>
+2023-08-05 23:56:55+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bca1670>
+2023-08-05 23:58:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba97eb0>
+2023-08-05 23:58:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba97eb0>
+2023-08-05 23:58:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba6d0d0>
+2023-08-05 23:58:50+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5ba6d0d0>
+2023-08-05 23:58:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b831e20>
+2023-08-05 23:58:54+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b831e20>
+2023-08-06 00:00:00+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b862d30>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5bb21bb0>)
+2023-08-06 00:00:01+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b862d30>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5bb21bb0>)
+2023-08-06 00:00:31+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b813970>
+2023-08-06 00:00:35+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b813970>
+2023-08-06 00:00:36+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b831b20>
+2023-08-06 00:00:39+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b831b20>
+2023-08-06 00:00:40+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bacad60>
+2023-08-06 00:00:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5bacad60>
+2023-08-06 00:16:31+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b8b34c0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5b8f8fa0>)
+2023-08-06 00:16:32+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b8b34c0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5b8f8fa0>)
+2023-08-06 00:25:21+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8d93d0>
+2023-08-06 00:25:25+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8d93d0>
+2023-08-06 00:25:26+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8257f0>
+2023-08-06 00:25:29+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8257f0>
+2023-08-06 00:25:30+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d3910>
+2023-08-06 00:25:34+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d3910>
+2023-08-06 00:26:31+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8b56d0>
+2023-08-06 00:26:36+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8b56d0>
+2023-08-06 00:26:36+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b84bf70>
+2023-08-06 00:26:40+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b84bf70>
+2023-08-06 00:26:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b88f820>
+2023-08-06 00:26:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b88f820>
+2023-08-06 00:30:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b816a60>
+2023-08-06 00:30:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b816a60>
+2023-08-06 00:30:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d5b80>
+2023-08-06 00:30:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d5b80>
+2023-08-06 00:30:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b83fe50>
+2023-08-06 00:30:54+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b83fe50>
+2023-08-06 00:35:21+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8d6fa0>
+2023-08-06 00:35:25+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8d6fa0>
+2023-08-06 00:35:26+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b850070>
+2023-08-06 00:35:30+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b850070>
+2023-08-06 00:35:30+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b80d910>
+2023-08-06 00:35:35+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b80d910>
+2023-08-06 00:36:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d57f0>
+2023-08-06 00:36:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7d57f0>
+2023-08-06 00:36:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b849130>
+2023-08-06 00:36:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b849130>
+2023-08-06 00:36:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b874190>
+2023-08-06 00:36:54+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b874190>
+2023-08-06 00:38:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b808ca0>
+2023-08-06 00:38:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b808ca0>
+2023-08-06 00:38:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7c7520>
+2023-08-06 00:38:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7c7520>
+2023-08-06 00:38:50+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b808d00>
+2023-08-06 00:38:54+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b808d00>
+2023-08-06 00:39:31+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b85a070>
+2023-08-06 00:39:35+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b85a070>
+2023-08-06 00:39:36+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b85a460>
+2023-08-06 00:39:39+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b85a460>
+2023-08-06 00:39:40+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b85a040>
+2023-08-06 00:39:44+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b85a040>
+2023-08-06 00:42:31+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b76f850>
+2023-08-06 00:42:35+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b76f850>
+2023-08-06 00:42:36+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b745f70>
+2023-08-06 00:42:39+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b745f70>
+2023-08-06 00:42:40+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b76e3a0>
+2023-08-06 00:42:43+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b76e3a0>
+2023-08-06 00:44:01+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8080a0>
+2023-08-06 00:44:05+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b8080a0>
+2023-08-06 00:44:06+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7589a0>
+2023-08-06 00:44:10+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b7589a0>
+2023-08-06 00:44:10+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b77bd30>
+2023-08-06 00:44:15+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f5f5b77bd30>
+2023-08-06 00:46:31+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b777b80>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5b75a310>)
+2023-08-06 00:46:32+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5f5b777b80>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5f5b75a310>)

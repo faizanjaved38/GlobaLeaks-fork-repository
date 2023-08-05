@@ -19,11 +19,14 @@ msgstr ""
 msgid "Log in"
 msgstr "உள் நுழை"
 
+msgid "Theme customization"
+msgstr "தீம் தனிப்பட்ட"
+
 msgid "Languages"
 msgstr "மொழிகள்"
 
 msgid "Text customization"
-msgstr ""
+msgstr "உரை தனிப்பயனாக்கம்"
 
 msgid "Advanced"
 msgstr "மேம்பட்டது"
@@ -78,6 +81,9 @@ msgstr "கோப்புக்கள்"
 
 msgid "Comments"
 msgstr "பின்னூட்டங்கள்"
+
+msgid "Messages"
+msgstr "செய்திகள்"
 
 msgid "Details"
 msgstr "விபரங்கள்"
@@ -443,13 +449,13 @@ msgstr ""
 msgid "Logout"
 msgstr "வெளியேறு"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr ""
+
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
-msgstr ""
-
-msgid "Transfer"
 msgstr ""
 
 msgid "Assigned to"
@@ -458,61 +464,7 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr "சிறப்புரிமைகளும்"
-
-msgid "Hide"
-msgstr "மறை"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr ""
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr ""
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr ""
-
-msgid "Internal"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr "தனியுரிமை கொள்கை"
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -556,9 +508,6 @@ msgstr "உருவாக்கிய தேதி"
 
 msgid "Last access"
 msgstr "கடைசியாக அணுகியது"
-
-msgid "Messages"
-msgstr "செய்திகள்"
 
 msgid "Whistleblower's last access"
 msgstr ""
@@ -635,6 +584,12 @@ msgstr "கருத்துகளை இயக்கு"
 msgid "Allow the whistleblower to write comments"
 msgstr "தகவல் தெரிவிப்பவர் கருத்துக்கள் எழுத அனுமதி"
 
+msgid "Enable private messages"
+msgstr "தனியார் செய்திகளை இயக்கு"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "தகவல் தெரிவிப்பவர் செய்திகளை அனுப்ப அனுமதிக்க"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "தகவல் தெரிவிப்பவர் சமர்ப்பிப்பு இணைப்புகளை சேர்க்க அனுமதி"
 
@@ -706,6 +661,9 @@ msgstr "தனிப்பட்ட விசை"
 
 msgid "Certificate Signing Request"
 msgstr "சான்றிதழ் கையொப்பமிடு கோரிக்கை"
+
+msgid "Download"
+msgstr "பதிவிறக்க"
 
 msgid "Certificate"
 msgstr "சான்றிதழ்"
@@ -867,12 +825,6 @@ msgstr "பல பதில்களை ஏற்கவும்"
 msgid "Template override"
 msgstr "டெம்ப்ளேட் மேலெழுதும்"
 
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
 msgid "Phone number"
 msgstr "தொலைபேசி எண்"
 
@@ -956,9 +908,6 @@ msgstr "அடிக்குறிப்பு"
 
 msgid "Upload"
 msgstr "பதிவேற்று"
-
-msgid "Download"
-msgstr "பதிவிறக்க"
 
 msgid "Language:"
 msgstr "மொழி:"
@@ -1080,17 +1029,14 @@ msgstr ""
 msgid "Sites"
 msgstr "தளங்கள்"
 
-msgid "Profile"
-msgstr ""
+msgid "Mode:"
+msgstr "முறை:"
 
 msgid "Configure"
 msgstr "கட்டமைக்க"
 
 msgid "Subdomain"
 msgstr ""
-
-msgid "Mode:"
-msgstr "முறை:"
 
 msgid "Creation date:"
 msgstr ""
@@ -1160,9 +1106,6 @@ msgstr "பெற்றவர்கள் சமர்ப்பிப்பு�
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "பெறுநர் சமர்ப்பிப்பு காலாவதி தேதி ஒத்தி அனுமதி"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
 
 msgid "Give the user administrative access to the following features:"
 msgstr ""
@@ -1267,7 +1210,7 @@ msgstr "அனுப்பு"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "உறுதிப்படுத்துவதன் மூலம், நீங்கள் காலாவதி தேதி தள்ளிப்போட:"
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1350,6 +1293,15 @@ msgstr ""
 msgid "Size:"
 msgstr "அளவு:"
 
+msgid "Uploading files…"
+msgstr "கோப்புகளை பதிவேற்றுகிறது ..."
+
+msgid "Upload completed successfully!"
+msgstr "பதிவேற்றம் வெற்றிகரமாக நிறைவு!"
+
+msgid "Estimated upload time:"
+msgstr "கணக்கிடப்பட்ட பதிவேற்ற நேரம்:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "கூடுதல் கேள்வித்தாள் நிரப்ப நிர்பந்திக்கப்பட்டவர்கள் உங்களிடம் கேட்டுள்ளனர்."
 
@@ -1364,9 +1316,6 @@ msgstr ""
 
 msgid "Filename"
 msgstr "கோப்பின் பெயர்"
-
-msgid "View"
-msgstr "காட்சி"
 
 msgid "Upload date"
 msgstr "பதிவேற்ற தேதி"
@@ -1419,9 +1368,6 @@ msgid ""
 "your “Account Recovery Key” and store it safely. This key will be necessary "
 "to recover your access to the platform and to your data in case you forget "
 "your password."
-msgstr ""
-
-msgid "Access date"
 msgstr ""
 
 msgid "The provided recovery key is invalid."
@@ -1535,7 +1481,10 @@ msgstr "உள்நுழைவதற்கு 16 இலக்க ரசீத�
 msgid "View your report"
 msgstr "உங்கள் சமர்ப்பிப்பு காண்க"
 
-msgid "Select the recipients of your report"
+msgid "Recipient selection"
+msgstr "பெறுநரின் தேர்வை"
+
+msgid "Select the recipients of your report:"
 msgstr ""
 
 msgid "Recipients selected:"
@@ -1543,9 +1492,6 @@ msgstr "பெற்றவர்கள் தேர்வு:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr ""
-
-msgid "You must select at least one recipient."
-msgstr "நீங்கள் குறைந்தது ஒரு பெறுநரை தேர்ந்தெடுக்க வேண்டும்."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1557,11 +1503,17 @@ msgid ""
 "invalid:"
 msgstr "இந்த படிப்பில் பின்வரும் கேள்விகளுக்கான பதில்கள் காணாமலோ அல்லது செல்லுபடியாகவோ இல்லை:"
 
-msgid "Recipient selection"
-msgstr "பெறுநரின் தேர்வை"
+msgid "You must select at least one recipient."
+msgstr "நீங்கள் குறைந்தது ஒரு பெறுநரை தேர்ந்தெடுக்க வேண்டும்."
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "பதிவேற்ற முடிக்க கோப்பு (கள்) காத்திருக்கிறது."
+
+msgid "The following steps have errors:"
+msgstr "பின்வரும் வழிமுறைகளில் பிழைகள் உள்ளன:"
+
+msgid "Hide"
+msgstr "மறை"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1729,9 +1681,6 @@ msgstr "அது சட்டபூர்வமானதா இல்லைய�
 
 msgid "The activities with unusual stats are:"
 msgstr "அசாதாரண புள்ளிவிவரங்கள் நடவடிக்கைகள் உள்ளன:"
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1961,9 +1910,6 @@ msgstr ""
 msgid "New report"
 msgstr ""
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "ஆரம்ப காலாவதி தேதி {EarliestExpirationDate}."
 
@@ -1973,16 +1919,18 @@ msgstr "தயவுசெய்து அவற்றை நீக்க மு
 msgid "Some reports will expire soon"
 msgstr "சில சமர்ப்பிப்புகள் விரைவில் காலாவதியாகும்"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "ஒரு விசில்ப்ளவர் உங்களைத் அம்பலப்படுத்தியவர் மதிப்புமிக்க பெறுநராக உங்களை தேர்ந்தெடுத்திருப்பதாக உங்களுக்கு அறிவிக்கும் மின்னஞ்சலாகும்."
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "இதில் உள்ள தகவல்கள் மற்றும் உள்ளடக்கத்திற்கு சிறப்பு கவனம் செலுத்தும்படி நீங்கள் கேட்கப்படுகிறீர்கள். பொதுமக்களின் வட்டிக்கு விசில்ப்ளேவர்கள் பெரும்பாலும் அதிகமான தனிப்பட்ட அபாயங்களை அம்பலப்படுத்துகிறார்கள் என்பதை நினைவில் கொள்ளுங்கள். எனவே இந்த சமர்ப்பிப்பு உள்ள வழங்கப்படும் பொருள் உயர் முக்கியத்துவம் கருதப்படுகிறது."
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr ""

@@ -32,7 +32,7 @@ This section is furtherly divided in:
 
    1. Settings
 
-   2. Files
+   2. Theme customization
 
    3. Languages
 
@@ -46,11 +46,11 @@ In this section is configurable the logo and all the texts of the main user inte
 
 .. image:: ../../images/admin/site_settings_main_configuration.png
 
-Files
-.....
-In this section could be loaded CSS and Javascript and other files necessary to customize the interface.
+Theme Customization
+...................
+In this section could be loaded CSS and Javascript files necessary to customize the interface.
 
-.. image:: ../../images/admin/site_settings_files.png
+.. image:: ../../images/admin/site_settings_theme_customization.png
 
 Languages
 .........
@@ -131,9 +131,7 @@ The software enables you to create questions of the following types:
 
    9. Date range
 
-   10. Voice
-
-   11. Question group
+   10. Question group
 
 Common Question Properties
 ...........................

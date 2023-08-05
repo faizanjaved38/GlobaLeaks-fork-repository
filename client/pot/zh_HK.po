@@ -19,6 +19,9 @@ msgstr ""
 msgid "Log in"
 msgstr "登入"
 
+msgid "Theme customization"
+msgstr "自訂外觀"
+
 msgid "Languages"
 msgstr "語言"
 
@@ -78,6 +81,9 @@ msgstr "檔案"
 
 msgid "Comments"
 msgstr "註釋"
+
+msgid "Messages"
+msgstr "訊息"
 
 msgid "Details"
 msgstr "詳情"
@@ -443,14 +449,14 @@ msgstr "複製到剪貼簿"
 msgid "Logout"
 msgstr "登出"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr ""
+
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
 msgstr "撤銷存取"
-
-msgid "Transfer"
-msgstr "傳送"
 
 msgid "Assigned to"
 msgstr ""
@@ -458,62 +464,8 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
+msgid "Set a reminder date"
 msgstr ""
-
-msgid "Privileges"
-msgstr "特權"
-
-msgid "Hide"
-msgstr "隱藏"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr "标记"
-
-msgid "Select an option"
-msgstr "选择一个选项"
-
-msgid "Select your language"
-msgstr "选择您的语言"
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr "公共"
-
-msgid "Internal"
-msgstr "內置"
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr "隱私政策"
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
-msgstr "聲音"
 
 msgid "File a report"
 msgstr "提交報告"
@@ -556,9 +508,6 @@ msgstr "建立日期"
 
 msgid "Last access"
 msgstr "最近一次存取"
-
-msgid "Messages"
-msgstr "訊息"
 
 msgid "Whistleblower's last access"
 msgstr "吹哨者最近一次存取"
@@ -635,6 +584,12 @@ msgstr "啟用註釋"
 msgid "Allow the whistleblower to write comments"
 msgstr "允許此吹哨者撰寫註釋"
 
+msgid "Enable private messages"
+msgstr "啟用私人訊息"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "允許此吹哨者傳送訊息"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "吹哨者可在提交報告時新增附件"
 
@@ -706,6 +661,9 @@ msgstr "私鑰"
 
 msgid "Certificate Signing Request"
 msgstr "憑證簽署要求"
+
+msgid "Download"
+msgstr "下載"
 
 msgid "Certificate"
 msgstr "憑證"
@@ -867,12 +825,6 @@ msgstr "接受多個答案"
 msgid "Template override"
 msgstr "以此範本取替"
 
-msgid "Min"
-msgstr "最小"
-
-msgid "Max"
-msgstr "最大"
-
 msgid "Phone number"
 msgstr "電話號碼"
 
@@ -956,9 +908,6 @@ msgstr "頁尾文字"
 
 msgid "Upload"
 msgstr "上傳"
-
-msgid "Download"
-msgstr "下載"
 
 msgid "Language:"
 msgstr "語言："
@@ -1080,17 +1029,14 @@ msgstr "网络"
 msgid "Sites"
 msgstr "網站"
 
-msgid "Profile"
-msgstr "配置"
+msgid "Mode:"
+msgstr "狀態："
 
 msgid "Configure"
 msgstr "配置"
 
 msgid "Subdomain"
 msgstr "子網域"
-
-msgid "Mode:"
-msgstr "狀態："
 
 msgid "Creation date:"
 msgstr "建立日期："
@@ -1160,9 +1106,6 @@ msgstr "允許此接收者刪除報告"
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "允許此接收者延遲報告到期日"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
 
 msgid "Give the user administrative access to the following features:"
 msgstr "允許此使用者使用以下功能："
@@ -1267,7 +1210,7 @@ msgstr "傳送"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "您會將到期日延遲至："
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1350,6 +1293,15 @@ msgstr "選取檔案或將其拖曳到此處。"
 msgid "Size:"
 msgstr "大小：   "
 
+msgid "Uploading files…"
+msgstr "檔案上傳中……"
+
+msgid "Upload completed successfully!"
+msgstr "檔案已成功上傳！"
+
+msgid "Estimated upload time:"
+msgstr "預計上傳時間："
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "接收者想請您填寫一份附加問卷。"
 
@@ -1364,9 +1316,6 @@ msgstr "收件人："
 
 msgid "Filename"
 msgstr "檔案名稱"
-
-msgid "View"
-msgstr "觀看"
 
 msgid "Upload date"
 msgstr "上傳日期"
@@ -1420,9 +1369,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "請到「帳號設定」以取得您的「帳號修復金鑰」並妥善保存。萬一您忘記了密碼，只有此金鑰才可修復帳號資料。"
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "所提供的修復金鑰無效。"
@@ -1535,17 +1481,17 @@ msgstr "您可使用此 16 位數字的收據號碼登入至報告頁面，以�
 msgid "View your report"
 msgstr "查看您的報告"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "選擇接收者"
+
+msgid "Select the recipients of your report:"
+msgstr "請爲您的報告選擇接收者："
 
 msgid "Recipients selected:"
 msgstr "已選接收者："
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "您所選擇的接收者人數已達上限。"
-
-msgid "You must select at least one recipient."
-msgstr "請選擇至少一個接收者。"
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1557,11 +1503,17 @@ msgid ""
 "invalid:"
 msgstr "以下問題的答案或有錯漏："
 
-msgid "Recipient selection"
-msgstr "選擇接收者"
+msgid "You must select at least one recipient."
+msgstr "請選擇至少一個接收者。"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "檔案上傳中"
+
+msgid "The following steps have errors:"
+msgstr "以下步驟存在錯誤："
+
+msgid "Hide"
+msgstr "隱藏"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1729,9 +1681,6 @@ msgstr "查驗此事故，以確定其性質。"
 
 msgid "The activities with unusual stats are:"
 msgstr "數據不尋常的活動如下："
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1961,9 +1910,6 @@ msgstr ""
 msgid "New report"
 msgstr "新報告"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "最早的到期日是 {EarliestExpirationDate}。"
 
@@ -1973,16 +1919,18 @@ msgstr "請在報告刪除之前檢查一下。"
 msgid "Some reports will expire soon"
 msgstr "有些報告即將到期"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "謹以此電郵通知您，某吹哨者剛選擇您作爲其報告的接收者。"
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "敬請留心關注此報告內的所有資料。請謹記，吹哨者爲了公衆權益而提交此報告，而極可能因此面臨高度的人身風險。所以，報告內的資料應被好好重視。"
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "謹以此電郵通知您，一份現有報告剛被更新。"

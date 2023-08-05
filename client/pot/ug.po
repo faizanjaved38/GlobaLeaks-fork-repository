@@ -19,6 +19,9 @@ msgstr ""
 msgid "Log in"
 msgstr "تىزىمغا كىر"
 
+msgid "Theme customization"
+msgstr "تېما ئىختىيارى"
+
 msgid "Languages"
 msgstr "تىللار"
 
@@ -78,6 +81,9 @@ msgstr "ھۆججەتلەر"
 
 msgid "Comments"
 msgstr "ئىنكاسلار"
+
+msgid "Messages"
+msgstr "ئۇچۇرلار"
 
 msgid "Details"
 msgstr "تەپسىلاتلار"
@@ -443,14 +449,14 @@ msgstr "چاپلاق تاختىسىغا چاپلا"
 msgid "Logout"
 msgstr "تىزىمدىن چىق"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr "بۇ تاپشۇرىۋالغۇچىغا ئىشلەتكۈچىلەرگە مەلۇماتنى زىيارەت قىلىش ھوقۇقى بېرىش ئىقتىدارى بەر"
+
 msgid "Grant access"
 msgstr "ھوقۇق بەر"
 
 msgid "Revoke access"
 msgstr "ھوقۇقنى قايتۇرىۋال"
-
-msgid "Transfer"
-msgstr ""
 
 msgid "Assigned to"
 msgstr ""
@@ -458,61 +464,7 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr ""
-
-msgid "Hide"
-msgstr "يوشۇر"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr ""
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr ""
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr ""
-
-msgid "Internal"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr "مەخپىيەتلىك سىياسىتىمىز"
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -556,9 +508,6 @@ msgstr "قۇرۇلغان چېسلا"
 
 msgid "Last access"
 msgstr "ئاخىرقى زىيارەت"
-
-msgid "Messages"
-msgstr "ئۇچۇرلار"
 
 msgid "Whistleblower's last access"
 msgstr "پاش قىلغۇچىنىڭ ئاخىرقى زىيارىتى"
@@ -635,6 +584,12 @@ msgstr "باھالاشنى قوزغات"
 msgid "Allow the whistleblower to write comments"
 msgstr "پاش قىلغۇچىنىڭ باھا يېزىشىگە رۇخسەت قىل"
 
+msgid "Enable private messages"
+msgstr "شەخسىي ئۇچۇرلارنى قوزغات"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "پاش قىلغۇچىنىڭ ئۇچۇر ئەۋەتىشىگە رۇخسەت قىل"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr ""
 
@@ -706,6 +661,9 @@ msgstr "شەخسىي ئاچقۇچ"
 
 msgid "Certificate Signing Request"
 msgstr "گۇۋاھنامە ئىمزالاش تەلىپى"
+
+msgid "Download"
+msgstr "چۈشۈرۈش"
 
 msgid "Certificate"
 msgstr "گۇۋاھنامە"
@@ -867,12 +825,6 @@ msgstr "كۆپ جاۋاپنى قوبۇل قىل"
 msgid "Template override"
 msgstr "قېلىىپنىڭ ئۈستىگە ياز"
 
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
 msgid "Phone number"
 msgstr "تېلېفون نومۇرى"
 
@@ -956,9 +908,6 @@ msgstr "بەت ئاستى"
 
 msgid "Upload"
 msgstr "يۈكلەش"
-
-msgid "Download"
-msgstr "چۈشۈرۈش"
 
 msgid "Language:"
 msgstr "تىل:"
@@ -1080,17 +1029,14 @@ msgstr ""
 msgid "Sites"
 msgstr "بېكەتلەر"
 
-msgid "Profile"
-msgstr ""
+msgid "Mode:"
+msgstr "ھالىتى:"
 
 msgid "Configure"
 msgstr "سەپلە"
 
 msgid "Subdomain"
 msgstr "قىسمى دائىرە"
-
-msgid "Mode:"
-msgstr "ھالىتى:"
 
 msgid "Creation date:"
 msgstr "قۇرۇلغان چېسلا:"
@@ -1160,9 +1106,6 @@ msgstr "تاپشۇرىۋالغۇچىلارنىڭ مەلۇماتلارنى ئۆچ
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "تاپشۇرىۋالغۇچىنىڭ مەلۇمات سۈرۈكىنى كەينىگە سۈرىشىگە رۇخسەت قىل"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "بۇ تاپشۇرىۋالغۇچىغا ئىشلەتكۈچىلەرگە مەلۇماتنى زىيارەت قىلىش ھوقۇقى بېرىش ئىقتىدارى بەر"
 
 msgid "Give the user administrative access to the following features:"
 msgstr "تۆۋەندىكى ئىقتىدارلار ئۈچۈن ئىشلەتكۈچىلەرگە باشقۇرغۇچى زىيارەت ھوقۇقى بەر:"
@@ -1267,7 +1210,7 @@ msgstr "ئەۋەت"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "جەزىملىسىڭىز، سۈرۈك چېسلاسىنى بۇ كۈنگە كەينىگە سۈرگەن بولىسىز:"
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1350,6 +1293,15 @@ msgstr "بىر ھۆججەت تاللاڭ ياكى بۇ يەرگە سۆرەپ ت�
 msgid "Size:"
 msgstr "چوڭلۇقى:"
 
+msgid "Uploading files…"
+msgstr "يۈكلىنىۋاتقان ھۆججەتلەر…"
+
+msgid "Upload completed successfully!"
+msgstr "يۈكلەش مۇۋەپپىقىيەتلىك تاماملاندى!"
+
+msgid "Estimated upload time:"
+msgstr "تەخمىنەن يۈكلەش ۋاقتى:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "تاپشۇرىۋالغۇچىلار سىزنىڭ بىر قوشۇمچە راي سىناشنى توشقۇزىشىڭىزنى تەلەپ قىلدى."
 
@@ -1364,9 +1316,6 @@ msgstr "تاپشۇرىۋالغۇچى:"
 
 msgid "Filename"
 msgstr "ھۆججەت نامى"
-
-msgid "View"
-msgstr ""
 
 msgid "Upload date"
 msgstr "يۈكلەنگەن چېسلا"
@@ -1420,9 +1369,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "«ھېساباتنى ئەسلىگە كەلتۈرۈش ئاچقۇچى» نى يىغىپ بىخەتەر ساقلاپ قويۇش ئۈچۈن، «مايىللىق» بۆلىكىنى زىيارەت قىلىشىڭىزنى تەۋسىيە قىلىمىز. بۇ ئاچقۇچ پارولنى ئۇنتۇپ قالغان ۋاقتىڭىزدا، سۇپا ۋە سانلىق مەلۇماتلىرىڭىزنى زىيارەت قىلىشنى ئەسلىگە كەلتۈرۈش ئۈچۈن لازىم بولىدۇ."
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "تەمىنلەنگەن ئەسلىگە كەلتۈرۈش ئاچقۇچى ئىناۋەتسىز."
@@ -1535,17 +1481,17 @@ msgstr "تىزىمغا كىرىش ئۈچۈن 16 خانىلىق تالون كود
 msgid "View your report"
 msgstr "مەلۇماتىڭىزنى كۆرۈڭ"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "تاپشۇرىۋالغۇچى تاللاش"
+
+msgid "Select the recipients of your report:"
+msgstr "مەلۇماتىڭىزنى تاپشۇرىۋالغۇچىلارنى تاللاڭ"
 
 msgid "Recipients selected:"
 msgstr "تاللانغان تاپشۇرىۋالغۇچىلار:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "تاللاشقا بولىدىغان تاپشۇرىۋالغۇچىلار سان چېكىگە يەتتىڭىز."
-
-msgid "You must select at least one recipient."
-msgstr "ئاز دېگەندە بىر تاپشۇرىۋالغۇچى تاللىشىڭىز كېرەك."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1557,11 +1503,17 @@ msgid ""
 "invalid:"
 msgstr "بۇ قەدەمدە تۆۋەندىكى سۇئاللارغا بېرىلگەن جاۋاپلار خاتا ياكى ئىناۋەتسىز."
 
-msgid "Recipient selection"
-msgstr "تاپشۇرىۋالغۇچى تاللاش"
+msgid "You must select at least one recipient."
+msgstr "ئاز دېگەندە بىر تاپشۇرىۋالغۇچى تاللىشىڭىز كېرەك."
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "ھۆججەت(لەر)نىڭ يۈكلىنىپ بولىشىنى ساقلاۋاتىدۇ."
+
+msgid "The following steps have errors:"
+msgstr "تۆۋەندىكى قەدەملەردە خاتالىق بار:"
+
+msgid "Hide"
+msgstr "يوشۇر"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1729,9 +1681,6 @@ msgstr "بۇنىڭ بىر نورمال ئىشمۇ ئەمەسلىگىنى ئاي�
 
 msgid "The activities with unusual stats are:"
 msgstr "بىنورمال پائالىيەتلەرنىڭ ئىستاتىستىكىسى بۇلار:"
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1961,9 +1910,6 @@ msgstr "بۇ ئېلخەت سىزگە تاپشۇرىۋالغۇچىنىڭ بىر �
 msgid "New report"
 msgstr "يېڭى مەلۇمات"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "ئەڭ بۇرۇنقى سۈرۈك ۋاقتى: {EarliestExpirationDate}."
 
@@ -1973,16 +1919,18 @@ msgstr "ئۆچۈرۈلۈشتىن بۇرۇن ئۇلارنى تەكشۈرۈشنى 
 msgid "Some reports will expire soon"
 msgstr "بەزى مەلۇماتلارنىڭ يېقىندا سۈرىكى توشىدۇ"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "بۇ ئېلخەت، بىر پاش قىلغۇچىنىڭ سىزنى ئۆز مەلۇماتىدا قىممەتلىك تاپشۇرىۋالغۇچى، دەپ تاللىغانلىقىنى ئۇقتۇرۇش ئۈچۈندۇر."
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "بۇ يەردىكى ئۇچۇرلار ۋە ماتېرىياللارغا ئالاھىدە ئەھمىيەت بېرىشىڭىز تەلەپ قىلىنىدۇ. ئېسىڭىزدە بولسۇنكى ، پاش قىلغۇچىلار كۆپىنچە ئومۇمنىڭ مەنپەئەتى ئۈچۈن چوڭ خەتەرگە تەۋەككۈل قىلىدۇ. سۇڭا بۇ مەلۇماتتا تەمىنلەنگەن ماتېرىياللار ئىنتايىن مۇھىم، دەپ قارىلىشى كېرەك."
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "بۇ ئېلخەت سىزگە بىر مەۋجۇت مەلۇماتنىڭ يېڭىلانغانلىقىنى ئۇقتۇرۇش ئۈچۈندۇر."

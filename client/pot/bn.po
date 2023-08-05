@@ -24,6 +24,9 @@ msgstr ""
 msgid "Log in"
 msgstr "লগইন"
 
+msgid "Theme customization"
+msgstr "থিম কাস্টমাইজেশন"
+
 msgid "Languages"
 msgstr "ভাষাসমূহ"
 
@@ -83,6 +86,9 @@ msgstr "ফাইলসমূহ"
 
 msgid "Comments"
 msgstr "মন্তব্যসমূহ"
+
+msgid "Messages"
+msgstr "বার্তাসমূহ"
 
 msgid "Details"
 msgstr "বিস্তারিত"
@@ -448,14 +454,14 @@ msgstr "ক্লিপবোর্ডে অনুলিপি করুন"
 msgid "Logout"
 msgstr "প্রস্থান"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr ""
+
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
 msgstr ""
-
-msgid "Transfer"
-msgstr "হস্তান্তর "
 
 msgid "Assigned to"
 msgstr ""
@@ -463,61 +469,7 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr ""
-
-msgid "Hide"
-msgstr "লুকাও"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr ""
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr ""
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr "প্রকাশ্য"
-
-msgid "Internal"
-msgstr "অভ্যন্তরীণ"
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr "গোপনীয়তা নীতি"
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -561,9 +513,6 @@ msgstr "তৈরির তারিখ"
 
 msgid "Last access"
 msgstr "শেষবার প্রবেশ"
-
-msgid "Messages"
-msgstr "বার্তাসমূহ"
 
 msgid "Whistleblower's last access"
 msgstr "হুইসেল ব্লোয়ারের শেষবার প্রবেশ"
@@ -640,6 +589,12 @@ msgstr "মন্তব্য সক্ষম করুন"
 msgid "Allow the whistleblower to write comments"
 msgstr "হুইসেল ব্লোয়ারকে মন্তব্য লেখার অনুমতি দিন"
 
+msgid "Enable private messages"
+msgstr "ব্যক্তিগত বার্তা সক্ষম করুন"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "হুইসেল ব্লোয়ারকে বার্তা প্রেরণের অনুমতি দিন"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "হুইসেল ব্লোয়ারকে প্রতিবেদনে সংযুক্তি যুক্ত করতে দিন"
 
@@ -711,6 +666,9 @@ msgstr "ব্যক্তিগত কী"
 
 msgid "Certificate Signing Request"
 msgstr "সার্টিফিকেট স্বাক্ষর করার অনুরোধ"
+
+msgid "Download"
+msgstr "ডাউনলোড"
 
 msgid "Certificate"
 msgstr "সার্টিফিকেট"
@@ -872,12 +830,6 @@ msgstr "একাধিক জবাব গ্রহণ করুন"
 msgid "Template override"
 msgstr "টেমপ্লেট অগ্রাহ্য করা"
 
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
 msgid "Phone number"
 msgstr "ফোন নাম্বার"
 
@@ -961,9 +913,6 @@ msgstr "ফুটার"
 
 msgid "Upload"
 msgstr "আপলোড"
-
-msgid "Download"
-msgstr "ডাউনলোড"
 
 msgid "Language:"
 msgstr "ভাষাঃ"
@@ -1085,17 +1034,14 @@ msgstr "নেটওয়ার্ক"
 msgid "Sites"
 msgstr "সাইটসমূহ"
 
-msgid "Profile"
-msgstr ""
+msgid "Mode:"
+msgstr "ধরন:"
 
 msgid "Configure"
 msgstr "কনফিগার করুন"
 
 msgid "Subdomain"
 msgstr "সাব-ডোমেইন"
-
-msgid "Mode:"
-msgstr "ধরন:"
 
 msgid "Creation date:"
 msgstr "তৈরির তারিখ:"
@@ -1165,9 +1111,6 @@ msgstr "প্রাপককে প্রতিবেদনগুলি মু�
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "প্রাপককে রিপোর্টের মেয়াদ শেষ হওয়ার তারিখ স্থগিত করার অনুমতি দিন"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
 
 msgid "Give the user administrative access to the following features:"
 msgstr "ব্যবহারকারীকে নিম্নলিখিত বৈশিষ্ট্যগুলিতে প্রশাসনিক অ্যাক্সেস দিন:"
@@ -1272,7 +1215,7 @@ msgstr "পাঠান"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "নিশ্চিত করলে, আপনি মেয়াদ শেষ হওয়ার তারিখটি এখানে স্থগিত করবেন:"
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1355,6 +1298,15 @@ msgstr "একটি ফাইল নির্বাচন করুন বা �
 msgid "Size:"
 msgstr "আকার:"
 
+msgid "Uploading files…"
+msgstr "ফাইলগুলি আপলোড হচ্ছে ..."
+
+msgid "Upload completed successfully!"
+msgstr "আপলোড সফলভাবে শেষ হয়েছে!"
+
+msgid "Estimated upload time:"
+msgstr "আনুমানিক আপলোড সময়:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "প্রাপকরা আপনাকে একটি অতিরিক্ত প্রশ্নপত্র পূরণ করার জন্য অনুরোধ করেছেন।"
 
@@ -1369,9 +1321,6 @@ msgstr "প্রতি:"
 
 msgid "Filename"
 msgstr "ফাইলের নাম"
-
-msgid "View"
-msgstr "দৃশ্য"
 
 msgid "Upload date"
 msgstr "আপলোডের তারিখ"
@@ -1425,9 +1374,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "আপনার \"অ্যাকাউন্ট পুনরুদ্ধার কী\" খুঁজে পেতে এবং এটি নিরাপদে সংরক্ষণ করার জন্য আপনাকে \"পছন্দগুলি\" বিভাগটি অ্যাক্সেস করার পরামর্শ দিচ্ছি। আপনার পাসওয়ার্ড ভুলে গেলে এই প্ল্যাটফর্ম এবং আপনার তথ্যে আপনার অ্যাক্সেস পুনরুদ্ধার করার জন্য এই কী টি প্রয়োজনীয় হবে।"
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "প্রদত্ত পুনরুদ্ধার কী টি অবৈধ।"
@@ -1540,17 +1486,17 @@ msgstr "লগ ইন করতে ১৬ অক্ষরের রশিদট�
 msgid "View your report"
 msgstr "আপনার রিপোর্ট দেখুন"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "প্রাপক নির্বাচন"
+
+msgid "Select the recipients of your report:"
+msgstr "আপনার রিপোর্টের প্রাপকদের নির্বাচন করুনঃ"
 
 msgid "Recipients selected:"
 msgstr "নির্বাচিত প্রাপক:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "আপনি ইতিমধ্যে নির্বাচনযোগ্য প্রাপকদের সর্বাধিক সংখ্যা যোগ করেছেন।"
-
-msgid "You must select at least one recipient."
-msgstr "আপনাকে অবশ্যই কমপক্ষে একজন প্রাপক নির্বাচন করতে হবে।"
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1562,11 +1508,17 @@ msgid ""
 "invalid:"
 msgstr "এই পদক্ষেপে নিম্নলিখিত প্রশ্নের উত্তরগুলি পাওয়া যায়নি বা অবৈধ:"
 
-msgid "Recipient selection"
-msgstr "প্রাপক নির্বাচন"
+msgid "You must select at least one recipient."
+msgstr "আপনাকে অবশ্যই কমপক্ষে একজন প্রাপক নির্বাচন করতে হবে।"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "ফাইল (গুলি) আপলোড শেষ হবার অপেক্ষায়।"
+
+msgid "The following steps have errors:"
+msgstr "নিম্নলিখিত পদক্ষেপগুলিতে ত্রুটি রয়েছে:"
+
+msgid "Hide"
+msgstr "লুকাও"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1734,9 +1686,6 @@ msgstr "বিষয়টি সঠিক কিনা তা নিশ্চ�
 
 msgid "The activities with unusual stats are:"
 msgstr "অস্বাভাবিক পরিসংখ্যান সহ ক্রিয়াকলাপগুলি হ'লঃ"
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1966,9 +1915,6 @@ msgstr ""
 msgid "New report"
 msgstr "নতুন রিপোর্ট"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "নিকটবর্তী মেয়াদ শেষ হওয়ার তারিখ {EarliestExpirationDate}। "
 
@@ -1978,16 +1924,18 @@ msgstr "মুছে ফেলার আগে দয়া করে সেগ�
 msgid "Some reports will expire soon"
 msgstr "কিছু রিপোর্টের মেয়াদ শীঘ্রই শেষ হবে"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "এটি আপনাকে জানাতে একটি ইমেইল যে, হুইসেল ব্লোয়ার আপনাকে তাদের রিপোর্টের মূল্যবান প্রাপক হিসাবে বেছে নিয়েছে।"
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "আপনাকে এতে থাকা তথ্য এবং উপাদানগুলিতে বিশেষ মনোযোগ দিতে অনুরোধ করা হচ্ছে। দয়া করে মনে রাখবেন যে, হুইসেল ব্লোয়ার প্রায়শই জনসাধারণের স্বার্থে উচ্চ ব্যক্তিগত ঝুঁকিতে নিজেকে প্রকাশ করে। সুতরাং এই রিপোর্টের মধ্যে সরবরাহিত উপাদানগুলিকে উচ্চ গুরুত্ব হিসাবে বিবেচনা করা উচিত।"
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "এটি বিদ্যমান রিপোর্টটি আপডেট করা হয়েছে তা জানাতে একটি ইমেইল।"

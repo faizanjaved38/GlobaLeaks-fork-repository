@@ -1,0 +1,12 @@
+{
+  "all": true,
+  "reporter": ["text"],
+  "exclude": ["cypress/**/*","tests/**/*", "node_modules/**/*", "app/lib/**/*"],
+  "check-coverage": true,
+  "per-file": true,
+  "branches": 100,
+  "lines": 100,
+  "functions": 100,
+  "statements": 100,
+  "sourceMap": false
+}

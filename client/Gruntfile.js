@@ -372,7 +372,7 @@ module.exports = function(grunt) {
         options: {
           // Static text.
           question: "WARNING:\n"+
-                    "this task may cause translations loss and should be executed only on main branch.\n\n" +
+                    "this task may cause translations loss and should be executed only on master branch.\n\n" +
                     "Are you sure you want to proceed (Y/N)?",
           input: "_key:y"
         }
@@ -491,7 +491,7 @@ module.exports = function(grunt) {
         "relationships": {
           "resource": {
             "data": {
-              "id": "o:otf:p:globaleaks:r:main",
+              "id": "o:otf:p:globaleaks:r:master",
               "type": "resources"
             }
           }
@@ -556,7 +556,7 @@ module.exports = function(grunt) {
                     },
                     "resource": {
                       "data": {
-                        "id": "o:otf:p:globaleaks:r:main",
+                        "id": "o:otf:p:globaleaks:r:master",
                         "type": "resources"
                       }
                     }
@@ -603,7 +603,7 @@ module.exports = function(grunt) {
   }
 
   function fetchTxTranslationsForLanguage(langCode, cb) {
-    var url = baseurl + "/resource_language_stats/o:otf:p:globaleaks:r:main:l:" + langCode;
+    var url = baseurl + "/resource_language_stats/o:otf:p:globaleaks:r:master:l:" + langCode;
 
     agent.get(url)
       .set({"Authorization": "Bearer " + transifexApiKey})
@@ -745,7 +745,7 @@ module.exports = function(grunt) {
 
       for (var i=0; i<lines.length; i++){
         // we skip adding empty strings and variable only strings
-        if (lines[i] !== "" && !lines[i].match(/^{[a-zA-Z0-9]+}$/g)) {
+        if (lines[i] !== "" && !lines[i].match(/^{[a-zA-Z0-9]+}/g)) {
           addString(lines[i]);
         }
       }

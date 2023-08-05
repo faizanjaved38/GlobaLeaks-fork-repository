@@ -23,6 +23,9 @@ setupClientDependencies() {
   cd $TRAVIS_BUILD_DIR/client  # to install frontend dependencies
   npm install
   grunt copy:sources
+  if [ "$1" = 1 ]; then
+    grunt build
+  fi
 }
 
 setupBackendDependencies() {
@@ -38,6 +41,7 @@ setupDependencies() {
 sudo apt-get update
 sudo apt-get install -y tor
 sudo usermod -aG debian-tor $USER
+sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 9000 -j REDIRECT --to-port 8082
 npm install -g grunt grunt-cli
 
 if [ "$GLTEST" = "test" ]; then
@@ -52,7 +56,7 @@ if [ "$GLTEST" = "test" ]; then
   cd $TRAVIS_BUILD_DIR/client && ./node_modules/nyc/bin/nyc.js  instrument --complete-copy app build --source-map=false
 
   $TRAVIS_BUILD_DIR/backend/bin/globaleaks -z -d
-  sleep 5
+  sleep 3
 
   ./node_modules/protractor/bin/webdriver-manager update
 
@@ -75,10 +79,10 @@ elif [ "$GLTEST" = "build_and_install" ]; then
   export LC_ALL=en_US.utf8
   export DEBIAN_FRONTEND=noninteractive
 
-  if [ $DISTRIBUTION = "bookworm" ]; then
-    sudo -E debootstrap --arch=amd64 bookworm "$chroot" http://deb.debian.org/debian/
-    sudo -E su -c 'echo "deb http://deb.debian.org/debian bookworm main contrib" > /tmp/globaleaks_chroot/etc/apt/sources.list'
-    sudo -E su -c 'echo "deb http://deb.debian.org/debian bookworm main contrib" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
+  if [ $DISTRIBUTION = "bullseye" ]; then
+    sudo -E debootstrap --arch=amd64 bullseye "$chroot" http://deb.debian.org/debian/
+    sudo -E su -c 'echo "deb http://deb.debian.org/debian bullseye main contrib" > /tmp/globaleaks_chroot/etc/apt/sources.list'
+    sudo -E su -c 'echo "deb http://deb.debian.org/debian bullseye main contrib" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
   elif [ $DISTRIBUTION = "jammy" ]; then
     sudo -E debootstrap --arch=amd64 jammy "$chroot" http://archive.ubuntu.com/ubuntu/
     sudo -E su -c 'echo "deb http://archive.ubuntu.com/ubuntu jammy main universe" > /tmp/globaleaks_chroot/etc/apt/sources.list'

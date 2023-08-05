@@ -22,6 +22,9 @@ msgstr ""
 msgid "Log in"
 msgstr "Ienākt"
 
+msgid "Theme customization"
+msgstr "Tēmu pielāgošana"
+
 msgid "Languages"
 msgstr "Valodas"
 
@@ -81,6 +84,9 @@ msgstr "Faili"
 
 msgid "Comments"
 msgstr "Komentāri"
+
+msgid "Messages"
+msgstr "Ziņas"
 
 msgid "Details"
 msgstr "Detaļas"
@@ -446,14 +452,14 @@ msgstr "Kopēt starpliktuvē"
 msgid "Logout"
 msgstr "Iziet"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr "Dot šim adresātam iespēju piešķirt lietotājam piekļuvi pārskatiem"
+
 msgid "Grant access"
 msgstr "Piešķirt piekļuvi"
 
 msgid "Revoke access"
 msgstr "Atsaukt piekļuvi"
-
-msgid "Transfer"
-msgstr ""
 
 msgid "Assigned to"
 msgstr "Piešķirts"
@@ -461,61 +467,7 @@ msgstr "Piešķirts"
 msgid "Not provided."
 msgstr "Nav paredzēts."
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr ""
-
-msgid "Hide"
-msgstr "Slēpt"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr ""
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr "Izvēlieties savu valoda"
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr ""
-
-msgid "Internal"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr ""
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -559,9 +511,6 @@ msgstr "Izveidošanas datums"
 
 msgid "Last access"
 msgstr "Pēdējā piekļuve"
-
-msgid "Messages"
-msgstr "Ziņas"
 
 msgid "Whistleblower's last access"
 msgstr "Trauksmes cēlēja pēdēja piekļuve"
@@ -638,6 +587,12 @@ msgstr "Iespējot komentārus"
 msgid "Allow the whistleblower to write comments"
 msgstr "Atļaut trauksmes cēlējam rakstīt komentārus"
 
+msgid "Enable private messages"
+msgstr "Iespējot privātās ziņas"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "Atļaut trauksmes cēlējam sūtīt ziņas"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "Atļaut trauksmes cēlējam pievienot pielikumus"
 
@@ -709,6 +664,9 @@ msgstr "Privātā atslēga"
 
 msgid "Certificate Signing Request"
 msgstr "Sertifikāta parakstīšanas pieprasījums"
+
+msgid "Download"
+msgstr "Lejupielādēt"
 
 msgid "Certificate"
 msgstr "Sertifikāts"
@@ -870,12 +828,6 @@ msgstr "Pieņemt vairākas atbildes"
 msgid "Template override"
 msgstr "Veidnes ignorēšana"
 
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
 msgid "Phone number"
 msgstr "Tālruņa numurs"
 
@@ -959,9 +911,6 @@ msgstr "Kājene"
 
 msgid "Upload"
 msgstr "Augšupielādēt"
-
-msgid "Download"
-msgstr "Lejupielādēt"
 
 msgid "Language:"
 msgstr "Valoda:"
@@ -1083,17 +1032,14 @@ msgstr "Tīkls"
 msgid "Sites"
 msgstr "Vietnes"
 
-msgid "Profile"
-msgstr ""
+msgid "Mode:"
+msgstr "Mods:"
 
 msgid "Configure"
 msgstr "Konfigurēt"
 
 msgid "Subdomain"
 msgstr "Apakšdomēns"
-
-msgid "Mode:"
-msgstr "Mods:"
 
 msgid "Creation date:"
 msgstr "Izveidošanas datums:"
@@ -1163,9 +1109,6 @@ msgstr "Atļaut adresātam dzēst ziņojumus"
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Atļaut adresātam atlikt ziņojuma termiņu"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Dot šim adresātam iespēju piešķirt lietotājam piekļuvi pārskatiem"
 
 msgid "Give the user administrative access to the following features:"
 msgstr "Piešķirt lietotājam administratīvo piekļuvi šādām funkcijām:"
@@ -1270,7 +1213,7 @@ msgstr "Nosūtīt"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Apstiprinot, jūs pārcelsiet derīguma termiņu uz:"
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1353,6 +1296,15 @@ msgstr "Atlasiet failu vai ievelciet to šeit."
 msgid "Size:"
 msgstr "Izmērs:"
 
+msgid "Uploading files…"
+msgstr "Augšupielādē failus..."
+
+msgid "Upload completed successfully!"
+msgstr "Augšupielāde pabeigta veiksmīgi!"
+
+msgid "Estimated upload time:"
+msgstr "Aptuvenais augšupielādes laiks:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Saņēmēji ir lūguši jūs aizpildīt papildu aptauju."
 
@@ -1367,9 +1319,6 @@ msgstr "Kam:"
 
 msgid "Filename"
 msgstr "Faila nosaukums"
-
-msgid "View"
-msgstr "Skatīt"
 
 msgid "Upload date"
 msgstr "Augšupielādes datums"
@@ -1423,9 +1372,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "Mēs iesakām piekļūt sadaļai “Iestatījumi”, lai iegūtu savu “Konta atkopšanas atslēgu” un to droši uzglabātu. Šī atslēga būs nepieciešama, lai atgūtu piekļuvi platformai un datiem, ja aizmirstat paroli."
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "Norādītā atkopšanas atslēga nav derīga."
@@ -1538,17 +1484,17 @@ msgstr "Izmantojiet 16 ciparu ziņojuma identifikācijas numuru, lai ienāktu \"
 msgid "View your report"
 msgstr "Apskatīt savu ziņojumu"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "Saņēmēju izvēle"
+
+msgid "Select the recipients of your report:"
+msgstr "Izvēlieties sava ziņojuma saņēmēju: "
 
 msgid "Recipients selected:"
 msgstr "Izvēlētie saņēmēji:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Jūs esat sasniedzis maksimālo atlasāmo saņēmēju skaitu."
-
-msgid "You must select at least one recipient."
-msgstr "Jums jāizvēlas vismaz viens saņēmējs."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1560,11 +1506,17 @@ msgid ""
 "invalid:"
 msgstr "Šajā darbībā trūkst atbilžu uz tālāk norādītajiem jautājumiem, vai tās ir nederīgas:"
 
-msgid "Recipient selection"
-msgstr "Saņēmēju izvēle"
+msgid "You must select at least one recipient."
+msgstr "Jums jāizvēlas vismaz viens saņēmējs."
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Gaida līdz fails(-i) tiks augšupielādēts(-i)."
+
+msgid "The following steps have errors:"
+msgstr "Šajos soļos ir kļūdas:"
+
+msgid "Hide"
+msgstr "Slēpt"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1732,9 +1684,6 @@ msgstr "Izpētiet problēmu, lai noteiktu, vai tā ir likumīga."
 
 msgid "The activities with unusual stats are:"
 msgstr "Darbības ar neparastu statistiku ir:"
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1964,9 +1913,6 @@ msgstr "Šis ir e-pasta ziņojums, lai informētu, ka saņēmējs ir piešķīri
 msgid "New report"
 msgstr "Jauns ziņojums"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Agrākais derīguma termiņš ir {EarliestExpirationDate}."
 
@@ -1976,16 +1922,18 @@ msgstr "Lūdzu, atcerieties tos pārbaudīt pirms to dzēšanas."
 msgid "Some reports will expire soon"
 msgstr "Dažu pārskatu derīguma termiņš drīz beigsies"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "Šis ir e-pasta ziņojums, lai informētu, ka trauksmes cēlējs ir izvēlējies jūs kā vērtīgu sava ziņojuma saņēmēju."
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "Īpašu uzmanību lūdzam pievērst tajā ietvertajai informācijai un materiāliem. Lūdzu, ņemiet vērā, ka trauksmes cēlēji bieži pakļauj sevi lielam personiskam riskam sabiedrības interesēs. Tāpēc šajā ziņojumā sniegtais materiāls ir jāuzskata par ļoti svarīgu."
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Šis ir e-pasta ziņojums, lai informētu, ka esošs ziņojums ir atjaunināts."

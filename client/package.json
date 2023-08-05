@@ -1,9 +1,12 @@
 {
   "name": "GlobaLeaks",
   "description": "GlobaLeaks - Free and Open-Source Whistleblowing Software",
-  "version": "4.12.9",
+  "version": "4.12.7",
   "license": "AGPL-3.0",
   "author": "GlobaLeaks",
+  "scripts": {
+    "test": "nyc --report-dir=cypress/coverage cypress run"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:globaleaks/GlobaLeaks.git"
@@ -54,7 +57,10 @@
     "ui-select": "0.19.8"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.11.0",
     "@lodder/grunt-postcss": "3.1.1",
+    "babel-plugin-istanbul": "^6.1.1",
+    "cypress": "^8.7.0",
     "eslint": "8.45.0",
     "gettext-parser": "7.0.1",
     "grunt": "1.6.1",
@@ -70,9 +76,11 @@
     "grunt-terser": "2.0.0",
     "grunt-usemin": "3.1.1",
     "gruntify-eslint": "5.0.0",
+    "istanbul-lib-coverage": "^3.2.0",
+    "jasmine": "^5.1.0",
     "node-gettext": "3.0.0",
     "npm-check-updates": "16.10.16",
-    "nyc": "15.1.0",
+    "nyc": "^15.1.0",
     "postcss-rtl": "2.0.0",
     "protractor": "7.0.0",
     "protractor-console-plugin": "0.1.1",

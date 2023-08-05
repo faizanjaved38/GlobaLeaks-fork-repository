@@ -17,6 +17,9 @@ msgstr ""
 msgid "Log in"
 msgstr "دننه کېدل"
 
+msgid "Theme customization"
+msgstr "د تیم سفارشي کول"
+
 msgid "Languages"
 msgstr "ژبې"
 
@@ -76,6 +79,9 @@ msgstr "فایلونه"
 
 msgid "Comments"
 msgstr "تبصرې"
+
+msgid "Messages"
+msgstr "پیغامونه"
 
 msgid "Details"
 msgstr "جزئیات"
@@ -441,14 +447,14 @@ msgstr "کلیپ بورډ ته یې کاپي کړئ"
 msgid "Logout"
 msgstr "وتل"
 
+msgid "Give this recipient ability to grant user access to reports"
+msgstr "دغه تر لاسه کوونکي ته دا وړتیا ورکړئ تر څو کارن لپاره رپوټونو ته لاسرسی ورکړي"
+
 msgid "Grant access"
 msgstr "د لاسرسي ورکول"
 
 msgid "Revoke access"
 msgstr "د لاسرسي لغوه کول"
-
-msgid "Transfer"
-msgstr ""
 
 msgid "Assigned to"
 msgstr ""
@@ -456,61 +462,7 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder"
-msgstr ""
-
-msgid "Privileges"
-msgstr ""
-
-msgid "Hide"
-msgstr "پټول"
-
-msgid "Unhide"
-msgstr ""
-
-msgid "Redact"
-msgstr ""
-
-msgid "Select an option"
-msgstr ""
-
-msgid "Select your language"
-msgstr ""
-
-msgid "Grant this recipient ability to transfer reports to other users"
-msgstr ""
-
-msgid "Grant this user the privilege to mask information"
-msgstr ""
-
-msgid "Grant this user the privilege to permanently redact masked information"
-msgstr ""
-
-msgid "Public"
-msgstr ""
-
-msgid "Internal"
-msgstr ""
-
-msgid "Personal"
-msgstr ""
-
-msgid "Privacy Policy"
-msgstr ""
-
-msgid "I've read and accept the Privacy Policy"
-msgstr ""
-
-msgid "Download copy of the Privacy Policy"
-msgstr ""
-
-msgid "Whistleblowing Policy"
-msgstr ""
-
-msgid "Accessibility Declaration"
-msgstr ""
-
-msgid "Voice"
+msgid "Set a reminder date"
 msgstr ""
 
 msgid "File a report"
@@ -554,9 +506,6 @@ msgstr "د جوړولو نېټه"
 
 msgid "Last access"
 msgstr "وروستی لاسرسی"
-
-msgid "Messages"
-msgstr "پیغامونه"
 
 msgid "Whistleblower's last access"
 msgstr "د افشاګر وروستی لاسرسی"
@@ -633,6 +582,12 @@ msgstr "تبصرې فعالې کړئ"
 msgid "Allow the whistleblower to write comments"
 msgstr "افشاګر ته اجازه ورکړئ تر څو تبصرې ولیکي"
 
+msgid "Enable private messages"
+msgstr "خصوصي پیغامونه فعال کړئ"
+
+msgid "Allow the whistleblower to send messages"
+msgstr "افشاګر ته اجازه ورکړئ تر څو پیغامونه ولیږي"
+
 msgid "Allow the whistleblower to add attachments"
 msgstr "افشاګر ته اجازه ورکړئ چې له دې رپوټ سره ضمیمې اضافه کړي"
 
@@ -704,6 +659,9 @@ msgstr "خصوصي رمز"
 
 msgid "Certificate Signing Request"
 msgstr "د تصدیق لیک د لاسلیک کولو غوښتنه"
+
+msgid "Download"
+msgstr "ښکته کول"
 
 msgid "Certificate"
 msgstr "تصدیق لیک"
@@ -865,12 +823,6 @@ msgstr "د ګڼو ځوابونو منل"
 msgid "Template override"
 msgstr "د ټیمپلیټ لغوه کول"
 
-msgid "Min"
-msgstr ""
-
-msgid "Max"
-msgstr ""
-
 msgid "Phone number"
 msgstr "د ټلیفون شمېره"
 
@@ -954,9 +906,6 @@ msgstr "فوټر"
 
 msgid "Upload"
 msgstr "پورته کول"
-
-msgid "Download"
-msgstr "ښکته کول"
 
 msgid "Language:"
 msgstr "ژبه:"
@@ -1078,17 +1027,14 @@ msgstr ""
 msgid "Sites"
 msgstr "سایټونه"
 
-msgid "Profile"
-msgstr ""
+msgid "Mode:"
+msgstr "موډ:"
 
 msgid "Configure"
 msgstr "کانفیګور"
 
 msgid "Subdomain"
 msgstr "فرعي ډومین"
-
-msgid "Mode:"
-msgstr "موډ:"
 
 msgid "Creation date:"
 msgstr "د جوړولو نېټه:"
@@ -1158,9 +1104,6 @@ msgstr "تر لاسه کوونکي ته اجازه ورکړئ تر څو رپوټ
 
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "تر لاسه کوونکي ته اجازه ورکړئ تر څو د رپوټ د انقضاء نېټه وځنډوي"
-
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "دغه تر لاسه کوونکي ته دا وړتیا ورکړئ تر څو کارن لپاره رپوټونو ته لاسرسی ورکړي"
 
 msgid "Give the user administrative access to the following features:"
 msgstr "کارن ته د لاندې فیچرونو په اړه  اداري لاسرسی ورکړئ:"
@@ -1265,7 +1208,7 @@ msgstr "لیږل"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "په تصدیق کېدو سره به تاسې د انقضاء نېټه وځنډوئ تر: "
 
-msgid "By confirming, you will set a reminder on date:"
+msgid "By confirming, you will set a remainder on date:"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1348,6 +1291,15 @@ msgstr "یو فایل وټاکئ یا دلته یې را کش کړئ."
 msgid "Size:"
 msgstr "اندازه:"
 
+msgid "Uploading files…"
+msgstr "د فایلونو پورته کول..."
+
+msgid "Upload completed successfully!"
+msgstr "پورته کول په بریا سره بشپړ شو!"
+
+msgid "Estimated upload time:"
+msgstr "د پورته کولو اټکلیز وخت:"
+
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "تر لاسه کوونکو له تاسې غوښتي تر څو یو اضافي پوښتنلیک ډک کړي."
 
@@ -1362,9 +1314,6 @@ msgstr "لپاره:"
 
 msgid "Filename"
 msgstr "د فایل نوم"
-
-msgid "View"
-msgstr ""
 
 msgid "Upload date"
 msgstr "د نېټې پورته کول"
@@ -1418,9 +1367,6 @@ msgid ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 msgstr "زموږ سپارښتنه دا ده چې د \"ترجیحاتو\" برخې ته لاسرسی ولری تر څو خپل \"د اکاونټ د تر لاسه کولو رمز\" تر لاسه او په خوندي ځای کې یې وساتئ. دغه رمز به پلټفارم ته ستاسې د لاسرسي د لرلو  او که مو چیرته خپل پټ نوم هیر شوی وي نو خپلو اطلاعاتو ته د لاسرسي لرلو لپاره اړین وي."
-
-msgid "Access date"
-msgstr ""
 
 msgid "The provided recovery key is invalid."
 msgstr "وړاندې شوی د تر لاسه کولو رمز ناسم دی."
@@ -1533,17 +1479,17 @@ msgstr "حساب ته د ننوتو لپاره له 16 رقمي رسید څخه 
 msgid "View your report"
 msgstr "خپل رپوټ ووینئ"
 
-msgid "Select the recipients of your report"
-msgstr ""
+msgid "Recipient selection"
+msgstr "د تر لاسه کوونکي ټاکنه"
+
+msgid "Select the recipients of your report:"
+msgstr "د خپل رپوت تر لاسه کوونکي وټاکئ:"
 
 msgid "Recipients selected:"
 msgstr "ټاکل شوي تر لاسه کوونکي:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "تاسې د ټاکل کېدونکو تر لاسه کوونکو حداکثر شمېر ته رسیدلي یاست."
-
-msgid "You must select at least one recipient."
-msgstr "تاسې باید یو تر لاسه کوونکی وټاکئ."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1555,11 +1501,17 @@ msgid ""
 "invalid:"
 msgstr "په دغه ګام کې لاندنیو پوښتنو ته ځوابونه یا نشته یا ناسم دي:"
 
-msgid "Recipient selection"
-msgstr "د تر لاسه کوونکي ټاکنه"
+msgid "You must select at least one recipient."
+msgstr "تاسې باید یو تر لاسه کوونکی وټاکئ."
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "فایل (ونو) ته منتظر یاست تر څو اپلوډینګ بشپړ شي."
+
+msgid "The following steps have errors:"
+msgstr "لاندني ګامونه تیروتنې لري:"
+
+msgid "Hide"
+msgstr "پټول"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1727,9 +1679,6 @@ msgstr "دا موضوع وازمویئ تر څو په ډاګه شي چې ایا 
 
 msgid "The activities with unusual stats are:"
 msgstr "له غیرمعمول وضعیت سره مل فعالیتونه عبارت دې له:"
-
-msgid "Available disk space: {FreeMemory}/{TotalMemory}"
-msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1959,9 +1908,6 @@ msgstr "دا هغه برېښنالیک دی چې تاسې خبروي چې یوه
 msgid "New report"
 msgstr "نوی رپوټ"
 
-msgid "One or more reports are expiring and will be soon deleted."
-msgstr ""
-
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "د پای ته رسیدو لومړۍ نېټه {EarliestExpirationDate}."
 
@@ -1971,16 +1917,18 @@ msgstr "د مهرباني له مخې په یاد ولرئ چې د هغو له �
 msgid "Some reports will expire soon"
 msgstr "ځینې رپوټونه به ډېر ژر انقضاء شي"
 
-msgid "This is an email to notify you the reception of a new report."
-msgstr ""
+msgid ""
+"This is an email to notify you that a whistleblower has selected you as a "
+"valuable recipient of their report."
+msgstr "دا هغه برېښنالیک دی کوم چې تاسې ته خبر درکوي چې افشاګر تاسې د خپل رپوټ لپاره د ارزښتناکه تر لاسه کوونکي په توګه ټاکلي یاست."
 
 msgid ""
-"This is an email to notify you that the reminder date for one or more "
-"reports has been met."
-msgstr ""
-
-msgid "Reminder"
-msgstr ""
+"You are asked to pay special attention to the information and material "
+"contained therein. Please keep in mind that whistleblowers often expose "
+"themselves to high personal risks in the interest of the public. Therefore "
+"the material provided within this report should be considered to be of high "
+"importance."
+msgstr "له تاسې څخه غوښتنه کېږي چې دلته راغلو معلوماتو او موادو ته ځانګړی پام وکړئ. د مهرباني له مخې دا درسره په یاد ولرئ چې افشاګران زیاتره د عامه ګټو په خاطر خپل ځان له جدي خطرونو سره مخامخ کوي. له همدې کبله په دغه رپوت کې وړاندې شوي مواد باید د خورا لوړو اهمیت لرونکو موادو په توګه په پام کې ونیول شي."
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "دا هغه برېښنالیک دی چې تاسې ته خبر درکوي چې یو شته رپوټ اپډیټ شوی دی."
