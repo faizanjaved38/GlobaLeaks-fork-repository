@@ -1,7 +1,7 @@
 {
+  "all": true,
   "reporter": ["lcov"],
-  "include": ["app/js"],
-  "exclude": ["cypress/**/*","tests/**/*", "node_modules/**/*", "app/lib/**/*", "build/**/*", "build/lib/js/locale/**/*"],
+  "exclude": ["cypress/**/*","tests/**/*", "node_modules/**/*", "app/lib/**/*"],
   "check-coverage": true,
   "per-file": true,
   "branches": 100,
@@ -9,5 +9,5 @@
   "functions": 100,
   "statements": 100,
   "report-dir": "cypress/coverage",
-  "sourceMap": true
+  "sourceMap": false
 }
