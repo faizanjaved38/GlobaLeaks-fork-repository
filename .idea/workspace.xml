@@ -6,75 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="6990acc1-2092-4111-8859-095bde59c706" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/log/access.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/059c4eda-25f9-4710-bdfd-fa4de78a2a08.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/89b8db4b-4ac6-4b33-a90b-cbcf6274f0d4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/92874602-953d-47a2-b636-d85e3eae9793.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/processinfo/059c4eda-25f9-4710-bdfd-fa4de78a2a08.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/processinfo/89b8db4b-4ac6-4b33-a90b-cbcf6274f0d4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/processinfo/92874602-953d-47a2-b636-d85e3eae9793.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nyc_output/processinfo/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nycrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/block-navigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/Gruntfile.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/app.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/constants.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/actions/forcedpasswordchange.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/actions/forcedtwofactor.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/actions/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/auditlog.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/casemanagement.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/contexts.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/fields.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/home.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/network.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/notifications.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/questionnaires.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/settings.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/steps.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/tenant.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/admin/users.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/custodian.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/empty.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/fileupload.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/login.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/modal.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/passwordreset.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/preferences.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/receipt.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/recipient.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/sidebar.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/signup.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/submission.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/tip.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/controllers/wizard.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/crypto.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/directives.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/filters.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/mocks.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/services.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/js/templates.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/viewer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/viewer/pdf.min.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/app/viewer/pdf.worker.min.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/client/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/sort-arrow-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/coverage/sorter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/.nycrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/videos/21-test-signup.js.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/videos/21-test-signup.js.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.nycrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/e2e/spec.cy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/plugins/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/1.png (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/2.png (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/2.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/3.png (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/3.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/5.png (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/5.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/6.png (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/6.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/test-init.js/init -- should load the app (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/test-init.js/should load the app -- after each hook (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/21-test-signup.js.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_form.png.png" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_form.png.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,16 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scripts/build/src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
