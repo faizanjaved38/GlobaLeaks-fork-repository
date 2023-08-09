@@ -1,14 +1,9 @@
 {
   "projectId": "c7x98u",
   "baseUrl": "https://127.0.0.1:8443/#/",
-  "chromeWebSecurity": false,
   "screenshotsFolder": "../documentation/images",
-  "pluginsFile": "cypress/plugins/index.js",
-  "supportFile": "cypress/support/commands.js",
-  "integrationFolder": "cypress/integration",
   "experimentalCodeCoverage": true,
   "env": {
-    "coverage": true,
     "pgp": false,
     "init_password": "Password12345#",
     "user_password": "ACollectionOfDiplomaticHistorySince_1966_ToThe_Pr esentDay#",
