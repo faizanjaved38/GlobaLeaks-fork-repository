@@ -424,6 +424,11 @@ module.exports = function(grunt) {
           "build/js/scripts.min.js": ["build/js/scripts.js"]
         }
       }
+    },
+    shell: {
+      babel: {
+        command: "npx babel app/js --out-dir build/js"
+      }
     }
   });
 
@@ -439,6 +444,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-terser");
   grunt.loadNpmTasks("grunt-usemin");
   grunt.loadNpmTasks("gruntify-eslint");
+  grunt.loadNpmTasks("grunt-shell");
 
   var readNoTranslateStrings = function() {
     return JSON.parse(grunt.file.read("app/data_src/notranslate_strings.json"));
@@ -1046,10 +1052,15 @@ module.exports = function(grunt) {
   grunt.registerTask("build",
     ["clean", "copy:sources", "copy:build", "ngtemplates", "postcss", "useminPrepare", "concat", "usemin", "string-replace", "copy:package", "cssmin", "terser", "clean:tmp"]);
 
+  // Load Grunt plugins
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-copy");
+
   grunt.registerTask("instrument-client", [
     "clean",
     "copy:sources",
     "copy:coverage",
-    "instrument"
+    "shell:babel"
   ]);
+
 };
