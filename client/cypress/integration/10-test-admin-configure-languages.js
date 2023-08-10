@@ -43,6 +43,8 @@ describe("admin configure languages", () => {
 
     cy.visit("/admin");
     cy.visit("/admin/settings");
+    cy.wait(1000)
+    cy.contains("a", "Languages").click();
     cy.contains("a", "Languages").click();
 
     cy.get(".non-default-language").eq(0).click();

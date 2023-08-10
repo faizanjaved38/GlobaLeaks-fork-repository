@@ -6,23 +6,65 @@
   <component name="ChangeListManager">
     <list default="true" id="6990acc1-2092-4111-8859-095bde59c706" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/e2e/spec.cy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/plugins/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/1.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/2.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/2.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/3.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/3.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/5.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/5.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/6.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/6.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/test-init.js/init -- should load the app (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/test-init.js/should load the app -- after each hook (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/videos/21-test-signup.js.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_configuration.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_form.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements/requirements-bionic.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements/requirements-bookworm.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements/requirements-bullseye.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements/requirements-buster.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements/requirements-focal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements/requirements-jammy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Gruntfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/2e29177a-91b4-4218-b862-61c4890de303.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/41d0d2a0-1e9c-4699-a03e-d07d5caaa569.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/b4986923-6b0e-4a53-b22b-c3c21623f515.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/processinfo/2e29177a-91b4-4218-b862-61c4890de303.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/processinfo/41d0d2a0-1e9c-4699-a03e-d07d5caaa569.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/processinfo/b4986923-6b0e-4a53-b22b-c3c21623f515.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.nycrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/02-test-admin-perform-wizard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/03-test-authentication-redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/04-test-user-password-reset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/05-test-admin-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/06-test-admin-configure-advanced.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/07-test-admin-configure-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/08-test-users-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/09-test-admin-assign-escrow-key.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/10-test-admin-configure-languages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/11-test-admin-configure-files.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/12-test-internationalization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/13-test-admin-configure-custom-texts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/14-test-admin-configure-notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/16-test-admin-contexts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/17-test-admin-questionnaires.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/19-test-acquire-documentation-screenshots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/20-test-admin-sites.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/21-test-signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/01-test-init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/02-test-admin-perform-wizard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/03-test-authentication-redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/04-test-user-password-reset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/05-test-admin-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/06-test-admin-configure-advanced.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/07-test-admin-configure-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/08-test-users-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/09-test-admin-assign-escrow-key.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/10-test-admin-configure-languages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/11-test-admin-configure-files.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/12-test-internationalization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/13-test-admin-configure-custom-texts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/14-test-admin-configure-notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/16-test-admin-contexts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/17-test-admin-questionnaires.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/19-test-acquire-documentation-screenshots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/20-test-admin-sites.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/21-test-signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/01-test-init.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/02-test-admin-perform-wizard.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/1.png.png" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/1.png.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +92,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client" />
-      <recent name="$PROJECT_DIR$/scripts/build/src" />
+      <recent name="$PROJECT_DIR$/client/cypress/integration" />
+      <recent name="$PROJECT_DIR$/client/cypress" />
+      <recent name="$PROJECT_DIR$/client/build/js" />
+      <recent name="$PROJECT_DIR$/client/cypress/test" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

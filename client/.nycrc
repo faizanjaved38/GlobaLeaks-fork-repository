@@ -1,0 +1,8 @@
+{
+  "all": true,
+  "reporter": ["lcov", "text-summary"],
+  "exclude": ["cypress/**/*", "node_modules/**/*", "app/lib/**/*"],
+  "check-coverage": true,
+  "report-dir": "cypress/coverage",
+  "sourceMap": false
+}
