@@ -5,24 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6990acc1-2092-4111-8859-095bde59c706" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/.nycrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/e2e/spec.cy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/plugins/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/plugins/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/1.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/1.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/2.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/2.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/3.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/3.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/5.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/5.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/6.png (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/02-test-admin-perform-wizard.js/wizard/6.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/test-init.js/init -- should load the app (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/screenshots/test-init.js/should load the app -- after each hook (failed).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/videos/21-test-signup.js.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_configuration.png.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_form.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/2e29177a-91b4-4218-b862-61c4890de303.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/41d0d2a0-1e9c-4699-a03e-d07d5caaa569.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/b4986923-6b0e-4a53-b22b-c3c21623f515.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/processinfo/2e29177a-91b4-4218-b862-61c4890de303.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/processinfo/41d0d2a0-1e9c-4699-a03e-d07d5caaa569.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/.nyc_output/processinfo/b4986923-6b0e-4a53-b22b-c3c21623f515.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +35,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client" />

@@ -5,7 +5,8 @@
   "license": "AGPL-3.0",
   "author": "GlobaLeaks",
   "scripts": {
-    "test": "nyc --report-dir=cypress/coverage --temp-dir=cypress/.nyc_output --nycrc-path=cypress/.nycrc cypress run"
+    "instrument": "grunt build && npx babel build --out-dir build",
+    "test": "npm run instrument && nyc --report-dir=./cypress/coverage --temp-dir=./cypress/.nyc_output --nycrc-path=./cypress/.nycrc cypress run && npx nyc report"
   },
   "repository": {
     "type": "git",
