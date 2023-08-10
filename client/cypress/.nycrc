@@ -1,7 +1,7 @@
 {
   "all": true,
   "reporter": ["lcov"],
-  "exclude": ["cypress/**/*","tests/**/*", "node_modules/**/*", "app/lib/**/*"],
+  "exclude": ["cypress/**/*", "node_modules/**/*", "app/lib/**/*"],
   "check-coverage": true,
   "per-file": true,
   "branches": 100,
