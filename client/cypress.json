@@ -7,6 +7,7 @@
   "pluginsFile": "cypress/plugins/index.js",
   "supportFile": "cypress/support/commands.js",
   "integrationFolder": "cypress/integration",
+  "chromeWebSecurity": false,
   "experimentalCodeCoverage": true,
   "env": {
     "coverage": true,
