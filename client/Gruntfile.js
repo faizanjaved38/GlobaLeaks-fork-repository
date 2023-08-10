@@ -115,10 +115,8 @@ module.exports = function(grunt) {
           cwd: "app/",
           src: [
             "**",
-            "!js/**/*.js", // Don't copy scripts that will be instrumented,
             "lib/js/*.js", // and copy scripts that should not be instrumented.
-            "lib/js/locale/*.js"
-          ],
+            "lib/js/locale/*.js"          ],
           expand: true
         }]
       }
@@ -427,7 +425,7 @@ module.exports = function(grunt) {
     },
     shell: {
       babel: {
-        command: "npx babel app/js --out-dir build/js"
+        command: "npx babel build/js --out-dir build/js"
       }
     }
   });

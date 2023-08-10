@@ -10,10 +10,10 @@
       <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.babelrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/.nyc_output/out.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.nycrc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/.nycrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/base.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/block-navigation.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/Gruntfile.js.html" beforeDir="false" />
@@ -57,13 +57,59 @@
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/mocks.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/services.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/templates.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/pdf.min.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/pdf.worker.min.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/script.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/app.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/constants.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/actions/forcedpasswordchange.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/actions/forcedtwofactor.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/actions/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/auditlog.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/casemanagement.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/contexts.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/fields.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/home.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/network.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/notifications.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/questionnaires.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/settings.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/steps.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/tenant.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/admin/users.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/custodian.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/empty.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/fileupload.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/login.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/modal.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/passwordreset.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/preferences.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/receipt.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/recipient.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/sidebar.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/signup.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/submission.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/tip.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/controllers/wizard.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/crypto.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/directives.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/filters.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/scripts.js.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/scripts.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/mocks.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/services.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/js/templates.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-aria.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-filter.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-idle.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-qrcode.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-resource.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-route.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-sanitize.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-translate-loader-static-files.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular-translate.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angular.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/angularjs-dropdown-multiselect.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/flow.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/locale/angular-locale_aa-dj.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/locale/angular-locale_aa-er.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/locale/angular-locale_aa-et.js.html" beforeDir="false" />
@@ -866,6 +912,32 @@
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/locale/angular-locale_zu-za.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/locale/angular-locale_zu.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/locale/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/ng-csv.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/ng-flow.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/ng-showdown.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/qrcode.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/select.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/sha256.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/showdown.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/tmhDynamicLocale.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/js/ui-bootstrap-tpls.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/attribution.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/all.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/all.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/brands.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/brands.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/conflict-detection.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/conflict-detection.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/fontawesome.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/fontawesome.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/regular.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/regular.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/solid.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/solid.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/v4-shims.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/lib/webfonts/@fortawesome/fontawesome-free/js/v4-shims.min.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/viewer/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/viewer/pdf.min.js.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/build/viewer/pdf.worker.min.js.html" beforeDir="false" />
@@ -878,11 +950,126 @@
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/sort-arrow-sprite.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/sorter.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/videos/01-test-init.js.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/videos/01-test-init.js.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/videos/02-test-admin-perform-wizard.js.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/videos/02-test-admin-perform-wizard.js.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/npm-shrinkwrap.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/npm-shrinkwrap.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/fixtures/files/evidence-1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/fixtures/files/evidence-1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/fixtures/files/evidence-2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/fixtures/files/evidence-2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/02-test-admin-perform-wizard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/03-test-authentication-redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/04-test-user-password-reset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/05-test-admin-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/06-test-admin-configure-advanced.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/07-test-admin-configure-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/08-test-users-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/09-test-admin-assign-escrow-key.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/10-test-admin-configure-languages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/11-test-admin-configure-files.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/12-test-internationalization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/13-test-admin-configure-custom-texts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/14-test-admin-configure-notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/16-test-admin-contexts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/17-test-admin-questionnaires.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/19-test-acquire-documentation-screenshots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/20-test-admin-sites.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/21-test-signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/support/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/support/commands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/support/e2e.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/support/e2e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/support/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/support/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/01-test-init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/02-test-admin-perform-wizard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/03-test-authentication-redirects.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/04-test-user-password-reset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/05-test-admin-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/06-test-admin-configure-advanced.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/07-test-admin-configure-users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/08-test-users-first-login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/09-test-admin-assign-escrow-key.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/10-test-admin-configure-languages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/11-test-admin-configure-files.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/12-test-internationalization.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/13-test-admin-configure-custom-texts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/14-test-admin-configure-notifications.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/16-test-admin-contexts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/17-test-admin-questionnaires.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/19-test-acquire-documentation-screenshots.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/20-test-admin-sites.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/test/21-test-signup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/01-test-init.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/02-test-admin-perform-wizard.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/03-test-authentication-redirects.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/04-test-user-password-reset.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/05-test-admin-first-login.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/06-test-admin-configure-advanced.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/07-test-admin-configure-users.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/08-test-users-first-login.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/09-test-admin-assign-escrow-key.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/10-test-admin-configure-languages.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/11-test-admin-configure-files.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/12-test-internationalization.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/13-test-admin-configure-custom-texts.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/14-test-admin-configure-notifications.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/16-test-admin-contexts.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/17-test-admin-questionnaires.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/19-test-acquire-documentation-screenshots.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/20-test-admin-sites.js.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/videos/21-test-signup.js.mp4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/1.png.png" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/1.png.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/2.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/3.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/5.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/02-test-admin-perform-wizard.js/wizard/6.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/04-test-user-password-reset.js/user/login.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/04-test-user-password-reset.js/user/password_reset_1.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/04-test-user-password-reset.js/user/password_reset_2.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/06-test-admin-configure-advanced.js/Validating custom support url -- Enter custom support url and browser (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/08-test-users-first-login.js/user/2fa.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/08-test-users-first-login.js/user/password.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/08-test-users-first-login.js/user/preferences.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/08-test-users-first-login.js/user/recoverykey.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/10-test-admin-configure-languages.js/admin configure languages -- should configure default language (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/11-test-admin-configure-files.js/Admin configure custom CSS -- should be able show a modal on toggle button clicked (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/11-test-admin-configure-files.js/Admin configure custom CSS -- should be able to disable the file upload (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/11-test-admin-configure-files.js/Admin configure custom CSS -- should be able to enable the file upload (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/11-test-admin-configure-files.js/Admin configure custom CSS -- should close the modal if the password is correct (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/11-test-admin-configure-files.js/Admin configure custom CSS -- should show the modal again if wrong password is entered (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/11-test-admin-configure-files.js/Admin configure custom CSS -- should upload a file and the file should be available for download and deletion (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/13-test-admin-configure-custom-texts.js/admin configure custom texts -- should perform custom texts configuration (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/14-test-admin-configure-notifications.js/admin configure mail -- should configure mail (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/16-test-admin-contexts.js/admin configure, add, and delete contexts -- should configure an existing context (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/16-test-admin-contexts.js/admin/contextstest-admin-contexts.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/17-test-admin-questionnaires.js/admin add, configure and delete questionnaires -- should add new questionnaires (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/17-test-admin-questionnaires.js/admin add, configure and delete questionnaires -- should configure steps and questions (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/17-test-admin-questionnaires.js/admin add, configure and delete questionnaires -- should delete existing questionnaires (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/access_control.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/advanced_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/audit_log.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/audit_log_reports.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/audit_log_scheduled_jobs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/audit_log_users.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/changelog.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/home.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/https.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/license.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/notification_settings.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/notification_settings_detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/notification_templates.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/question_templates.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/questionnaires.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/report_statuses.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/site_settings_files.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/site_settings_languages.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/site_settings_languages_detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/site_settings_logo_detail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/site_settings_main_configuration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/site_settings_text_customization.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/tor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/url_redirects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/19-test-acquire-documentation-screenshots.js/admin/users.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/20-test-admin-sites.js/admin/sites_management_options.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/20-test-admin-sites.js/admin/sites_management_sites.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/Admin Disable Signup -- should disable signup (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/Admin Enable Signup -- should enable signup (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/User Perform Signup -- should perform signup (failed).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/images/21-test-signup.js/admin/signup_form.png.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -900,15 +1087,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/cypress/test"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/cypress/test" />
+      <recent name="$PROJECT_DIR$/client/cypress/integration" />
       <recent name="$PROJECT_DIR$/client" />
       <recent name="$PROJECT_DIR$/scripts/build/src" />
     </key>
