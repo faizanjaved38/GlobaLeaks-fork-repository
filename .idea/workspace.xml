@@ -5,16 +5,77 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6990acc1-2092-4111-8859-095bde59c706" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/cypress/integration/15-test-admin-configure-network.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/cypress/support/key.pem" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/log/access.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/log/access.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/log/access.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" beforeDir="false" afterPath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/cypress/support/commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/support/commands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/files/39b55014-72a8-4245-a9c3-3220b3f3d7c9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/globaleaks.pid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/access.log.5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/log/globaleaks.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/tmp/50b1c94d-a955-402b-89ab-8d6a8fe5207b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/workingdir/tmp/8eec5998-6331-4b7b-aca5-038c92f67578" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.nyc_output/out.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/.nycrc" beforeDir="false" afterPath="$PROJECT_DIR$/client/.nycrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/block-navigation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/Gruntfile.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/app.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/constants.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/actions/forcedpasswordchange.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/actions/forcedtwofactor.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/actions/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/auditlog.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/casemanagement.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/contexts.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/fields.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/home.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/network.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/notifications.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/questionnaires.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/settings.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/steps.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/tenant.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/admin/users.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/custodian.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/empty.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/fileupload.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/login.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/modal.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/passwordreset.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/preferences.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/receipt.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/recipient.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/sidebar.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/signup.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/submission.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/tip.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/controllers/wizard.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/crypto.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/directives.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/filters.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/mocks.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/services.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/js/templates.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/pdf.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/pdf.worker.min.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/app/viewer/script.js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/client/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/prettify.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/prettify.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/sort-arrow-sprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov-report/sorter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/coverage/lcov.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/cypress/integration/06-test-admin-configure-advanced.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/cypress/integration/06-test-admin-configure-advanced.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -13,6 +13,7 @@ describe("admin configure advanced settings", () => {
 
     cy.get("[data-ng-model='resources.node.viewer']").click();
     cy.get("[data-ng-click='updateNode()']").last().click();
+    cy.waitForLoader();
 
   });
 });
@@ -86,13 +87,13 @@ describe("Should browser opens a pop while clicking the support icon", () => {
 
     cy.get("[data-ng-model='resources.node.custom_support_url']").clear();
     cy.get("[data-ng-click='updateNode()']").last().click();
+    cy.waitForLoader();
 
     cy.get("[data-ng-model='resources.node.custom_support_url']")
       .invoke("val")
       .should("equal", "");
 
     cy.get("#SupportLink").click();
-    cy.wait(500)
     cy.get(".modal").should("be.visible");
 
     cy.get("[data-ng-model='arg.text']").type("test message");

@@ -1,71 +1,33 @@
-2023-08-11 15:11:23+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python3 3.9.12) starting up.
-2023-08-11 15:11:23+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
-2023-08-11 15:11:23+0500 [-] Starting factory <Site object at 0x7f26336d4a00>
-2023-08-11 15:11:23+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /var/run/tor/control; waiting for Tor to become available
-2023-08-11 15:11:23+0500 [-] GlobaLeaks is now running and accessible at the following urls:
-2023-08-11 15:11:23+0500 [-] - [HTTP]	--> http://127.0.0.1:8082
-2023-08-11 15:11:23+0500 [-] - [Tor]:	--> http://hz764ak6375jxr5ktsyo4zujn6zd5snyekyrlqhlzkzlsbmfwljvjrqd.onion
-2023-08-11 15:11:24+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f2633330310>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f2633302400>)
-2023-08-11 15:11:27+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f2633330310>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f2633302400>)
-2023-08-11 15:13:13+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f2630735910>
-2023-08-11 15:13:17+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f2630735910>
-2023-08-11 15:20:13+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f2630373f10>
-2023-08-11 15:20:17+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f2630373f10>
-2023-08-11 15:20:18+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26306f0160>
-2023-08-11 15:20:22+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26306f0160>
-2023-08-11 15:20:22+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f263071ad90>
-2023-08-11 15:20:26+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f263071ad90>
-2023-08-11 15:22:43+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f2630433b20>
-2023-08-11 15:22:47+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f2630433b20>
-2023-08-11 15:22:48+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f263012a6d0>
-2023-08-11 15:22:51+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f263012a6d0>
-2023-08-11 15:24:23+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26300e6a60>
-2023-08-11 15:24:27+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26300e6a60>
-2023-08-11 15:24:28+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26300c80a0>
-2023-08-11 15:24:32+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26300c80a0>
-2023-08-11 15:28:13+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26300f1f40>
-2023-08-11 15:28:17+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26300f1f40>
-2023-08-11 15:28:18+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26304a30a0>
-2023-08-11 15:28:22+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f26304a30a0>
-2023-08-11 15:37:21+0500 [-] Stopping factory <Site object at 0x7f26336d4a00>
-2023-08-11 15:37:21+0500 [-] Server Shut Down.
-2023-08-11 15:37:22+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python3 3.9.12) starting up.
-2023-08-11 15:37:22+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
-2023-08-11 15:37:23+0500 [-] [E] Found an already initialized database version: 65
-2023-08-11 15:37:23+0500 [-] Starting factory <Site object at 0x7f2fc0c3d040>
-2023-08-11 15:37:23+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /var/run/tor/control; waiting for Tor to become available
-2023-08-11 15:37:23+0500 [-] GlobaLeaks is now running and accessible at the following urls:
-2023-08-11 15:37:23+0500 [-] - [HTTP]	--> http://127.0.0.1:8082
-2023-08-11 15:37:23+0500 [-] - [Tor]:	--> http://hz764ak6375jxr5ktsyo4zujn6zd5snyekyrlqhlzkzlsbmfwljvjrqd.onion
-2023-08-11 15:37:24+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f2fbee69ca0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f2fbee70c10>)
-2023-08-11 15:37:25+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f2fbee69ca0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f2fbee70c10>)
-2023-08-11 15:37:37+0500 [-] Stopping factory <Site object at 0x7f2fc0c3d040>
-2023-08-11 15:37:37+0500 [-] Server Shut Down.
-2023-08-11 15:37:38+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python3 3.9.12) starting up.
-2023-08-11 15:37:38+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
-2023-08-11 15:37:39+0500 [-] [E] Found an already initialized database version: 65
-2023-08-11 15:37:39+0500 [-] Starting factory <Site object at 0x7f64619c9e20>
-2023-08-11 15:37:39+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /var/run/tor/control; waiting for Tor to become available
-2023-08-11 15:37:39+0500 [-] GlobaLeaks is now running and accessible at the following urls:
-2023-08-11 15:37:39+0500 [-] - [HTTP]	--> http://127.0.0.1:8082
-2023-08-11 15:37:39+0500 [-] - [Tor]:	--> http://hz764ak6375jxr5ktsyo4zujn6zd5snyekyrlqhlzkzlsbmfwljvjrqd.onion
-2023-08-11 15:37:39+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f645fcf3ee0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f64619c9490>)
-2023-08-11 15:37:40+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f645fcf3ee0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f64619c9490>)
-2023-08-11 15:38:22+0500 [-] Stopping factory <Site object at 0x7f64619c9e20>
-2023-08-11 15:38:22+0500 [-] Server Shut Down.
-2023-08-11 15:38:24+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python3 3.9.12) starting up.
-2023-08-11 15:38:24+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
-2023-08-11 15:38:25+0500 [-] [E] Found an already initialized database version: 65
-2023-08-11 15:38:25+0500 [-] Starting factory <Site object at 0x7f590dd49700>
-2023-08-11 15:38:25+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /var/run/tor/control; waiting for Tor to become available
-2023-08-11 15:38:25+0500 [-] GlobaLeaks is now running and accessible at the following urls:
-2023-08-11 15:38:25+0500 [-] - [HTTP]	--> http://127.0.0.1:8082
-2023-08-11 15:38:25+0500 [-] - [Tor]:	--> http://hz764ak6375jxr5ktsyo4zujn6zd5snyekyrlqhlzkzlsbmfwljvjrqd.onion
-2023-08-11 15:38:25+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f590c07aee0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f590c06e2e0>)
-2023-08-11 15:38:27+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f590c07aee0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f590c06e2e0>)
-2023-08-11 16:00:05+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f590c0b2940>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f590913cc40>)
-2023-08-11 16:00:07+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f590c0b2940>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f590913cc40>)
-2023-08-11 16:08:25+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5909133040>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5909369190>)
-2023-08-11 16:08:26+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5909133040>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5909369190>)
-2023-08-11 16:38:25+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5908f2cf70>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5908fb9760>)
-2023-08-11 16:38:26+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f5908f2cf70>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f5908fb9760>)
+2023-08-11 17:27:51+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python3 3.9.12) starting up.
+2023-08-11 17:27:51+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2023-08-11 17:27:51+0500 [-] Starting factory <Site object at 0x7f7a45c0e100>
+2023-08-11 17:27:51+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /var/run/tor/control; waiting for Tor to become available
+2023-08-11 17:27:51+0500 [-] GlobaLeaks is now running and accessible at the following urls:
+2023-08-11 17:27:51+0500 [-] - [HTTP]	--> http://127.0.0.1:8082
+2023-08-11 17:27:51+0500 [-] - [Tor]:	--> http://h7kcze5lfddelct4ikazh4wmdomampcgeefon3lv76z5e7sz32h52pad.onion
+2023-08-11 17:27:57+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f7a45870310>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f7a45843340>)
+2023-08-11 17:27:58+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f7a45870310>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f7a45843340>)
+2023-08-11 17:29:01+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a444f4a00>
+2023-08-11 17:29:08+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a444f4a00>
+2023-08-11 17:36:11+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a444ca310>
+2023-08-11 17:36:16+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a444ca310>
+2023-08-11 17:36:17+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a4436d3a0>
+2023-08-11 17:36:21+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a4436d3a0>
+2023-08-11 17:36:21+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a4421ce80>
+2023-08-11 17:36:25+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a4421ce80>
+2023-08-11 17:43:11+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3debbeb0>
+2023-08-11 17:43:16+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3debbeb0>
+2023-08-11 17:43:17+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a440de670>
+2023-08-11 17:43:20+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a440de670>
+2023-08-11 17:49:51+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3ded7ac0>
+2023-08-11 17:49:56+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3ded7ac0>
+2023-08-11 17:49:57+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a44077c40>
+2023-08-11 17:50:02+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a44077c40>
+2023-08-11 17:51:41+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a44465430>
+2023-08-11 17:51:45+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a44465430>
+2023-08-11 17:51:46+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a44465640>
+2023-08-11 17:51:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a44465640>
+2023-08-11 17:52:21+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3dde65b0>
+2023-08-11 17:52:25+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3dde65b0>
+2023-08-11 17:52:26+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3dd928b0>
+2023-08-11 17:52:30+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7f7a3dd928b0>
