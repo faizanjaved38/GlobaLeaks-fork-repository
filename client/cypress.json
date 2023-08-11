@@ -6,6 +6,7 @@
   "pluginsFile": "cypress/plugins/index.js",
   "supportFile": "cypress/support/commands.js",
   "integrationFolder": "cypress/integration",
+  "videosFolder": "../documentation/videos",
   "experimentalCodeCoverage": true,
   "env": {
     "coverage": true,

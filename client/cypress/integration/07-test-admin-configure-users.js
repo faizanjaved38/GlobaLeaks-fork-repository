@@ -43,7 +43,7 @@ describe("admin add, configure, and delete users", () => {
           cy.get("[data-ng-model='new_user.email']").clear().type(user.address);
           cy.get("[data-ng-model='new_user.username']").clear().type(user.name);
           cy.get("#add-btn").click();
-          cy.wait(3000)
+          cy.waitForLoader();
         }else{
           cy.get(".show-add-user-btn").click();
         }

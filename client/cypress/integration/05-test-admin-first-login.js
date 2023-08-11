@@ -3,8 +3,6 @@ describe("admin login", () => {
     cy.login_admin();
 
     cy.visit("/admin/preferences");
-    cy.waitForUrl("/admin/preferences");
-
     cy.contains("button", "Account recovery key").click();
     cy.get("[data-ng-model='secret']").type(Cypress.env("user_password"));
     cy.contains("button", "Confirm").click();

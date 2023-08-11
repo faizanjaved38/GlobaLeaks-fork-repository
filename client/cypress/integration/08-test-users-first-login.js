@@ -19,7 +19,6 @@ describe("Recipient first login", () => {
       cy.login_receiver("Recipient", Cypress.env("user_password"), "/login", true);
       cy.waitForUrl("/recipient");
       cy.visit("/recipient/preferences");
-      cy.waitForUrl("/recipient/preferences");
       cy.takeScreenshot("user/preferences.png");
       cy.contains("button", "Account recovery key").click();
       cy.get("[data-ng-model='secret']").type(Cypress.env("user_password"));

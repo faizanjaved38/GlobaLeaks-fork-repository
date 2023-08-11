@@ -16,11 +16,7 @@ describe("key escrow assignment and revocation", () => {
       cy.get("[data-ng-model='user.escrow']").click();
       cy.get("[data-ng-model='secret']").type(Cypress.env("user_password"));
       cy.contains("button", "Confirm").click();
-
-      // Add a guard to wait for the "Edit" button to become available again
-      cy.wait(1500); // Adjust the delay time as needed
-
-      // Go back to the user list page for the next iteration
+      cy.waitForLoader();
       cy.go("back");
     }
 

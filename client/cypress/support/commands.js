@@ -44,32 +44,23 @@ Cypress.Commands.add("login_admin", (username, password, url, firstlogin) => {
   password = password === undefined ? Cypress.env("user_password") : password;
   url = url === undefined ? "login" : url;
 
-  let finalURL = ""; // Define a variable to hold the final URL
+  let finalURL = "";
 
   cy.visit(url);
   cy.waitForUrl(url);
 
-  // Wait for the login form elements to be visible
   cy.get('[name="username"]').type(username);
   cy.get('[name="password"]').type(password);
   cy.get("#login-button").click();
 
   if (firstlogin) {
     finalURL = "/actions/forcedpasswordchange";
-    // Wait for the URL to change before proceeding
     cy.waitForUrl(finalURL);
   } else {
-    // Get the current URL using cy.url()
     cy.url().should("include", "/login").then(() => {
-      // Get the final URL after the login process
       cy.url().should("not.include", "/login").then((currentURL) => {
-        // Extract the part after the hash (#)
         const hashPart = currentURL.split("#")[1];
-
-        // Now, check if the extracted part matches "/login" and set the value of "finalURL" accordingly
         finalURL = hashPart === "login" ? "/admin/home" : hashPart;
-
-        // Wait for the URL to change before proceeding
         cy.waitForUrl(finalURL);
       });
     });
@@ -114,13 +105,14 @@ Cypress.Commands.add("login_custodian", (username, password, url, firstlogin) =>
   }
 });
 
-Cypress.Commands.add("waitForXHRs", () => {
-  cy.server();
-  cy.route("GET", "**/*").as("getAllXhrs");
-  cy.wait(["@getAllXhrs"], { xhr: true });
+Cypress.Commands.add("waitForLoader", () => {
+  cy.get('#PageOverlay').should('not.have.class', 'ng-hide');
+  cy.get('#PageOverlay.ng-hide');
 });
 
-
+Cypress.Commands.add("logout", () => {
+  cy.waitUntilClickable("#LogoutLink");
+});
 
 
 
@@ -217,44 +209,9 @@ Cypress.Commands.add("waitForPageOverlayToHide", () => {
   cy.get("#PageOverlay", { timeout: 10000 }).should("not.be.visible", { timeout: 10000 });
 });
 
-Cypress.Commands.add("takeScreenshot", (filename, locator) => {
-  if (!Cypress.env('takeScreenshots')) {
-    return;
-  }
-
-  if (!locator) {
-    locator = cy;
-  }
-
-  cy.viewport(1280, 800);
-  cy.wait(0);
-
-  cy.document().then((doc) => {
-    const height = doc.body.scrollHeight;
-    cy.viewport(1280, height);
-  });
-
-  cy.wait(0);
-  cy.screenshot(filename,{
-    // Provide a custom file path where the screenshot will be saved.
-    // The path should be relative to the project's root folder.
-    path: "documentation/images/sss/",
-
-    // Set this option to true if you want to overwrite an existing screenshot
-    // with the same filename. If false, Cypress will automatically generate
-    // a unique filename to avoid overwriting.
-    overwrite: true
-  });
-
-});
-
 Cypress.Commands.add("makeTestFilePath", (name) => {
   const testDir = Cypress.config("testDir");
   return Cypress._.join([testDir, "files", name], "/");
-});
-
-Cypress.Commands.add("logout", () => {
-  cy.waitUntilClickable("#LogoutLink");
 });
 
 Cypress.Commands.add("login_whistleblower", (receipt) => {
@@ -265,15 +222,6 @@ Cypress.Commands.add("login_whistleblower", (receipt) => {
   cy.waitUntilPresent("#TipInfoBox");
 });
 
-Cypress.Commands.add("takeScreenshotAndSave", (filename) => {
-  cy.screenshot(filename);
-});
-
-Cypress.Commands.add('getByNgModel', (ngModelValue) => {
-  return cy.get(`[ng-model="${ngModelValue}"]`);
-});
-
-// Example usage of custom commands:
 Cypress.Commands.add("clickFirstDisplayed", (selector) => {
   cy.get(selector).filter(":visible").first().click();
 });

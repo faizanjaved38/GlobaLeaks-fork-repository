@@ -19,20 +19,16 @@ describe("admin configure advanced settings", () => {
 
 describe("admin disable submissions", () => {
   it("should disable submission", () => {
-    cy.visit("/admin/");
-    cy.visit("/admin/settings");
+
     cy.contains("a", "Advanced").click();
 
     cy.get("[data-ng-model='resources.node.disable_submissions']").click();
     cy.get("[data-ng-click='updateNode()']").last().click();
 
-    cy.get("[data-ng-model='resources.node.disable_submissions']").should(
-      "be.checked"
-    );
+    cy.get("[data-ng-model='resources.node.disable_submissions']").should("be.visible").should("be.checked");
 
     cy.logout();
 
-    cy.visit("/");
     cy.visit("/");
     cy.contains("span", "Submissions disabled").should("be.visible");
 
@@ -49,7 +45,7 @@ describe("admin disable submissions", () => {
 
     cy.logout();
 
-    cy.visit("/");
+    cy.waitForUrl('/login');
     cy.visit("/");
     cy.contains("button", "File a report").should("be.visible");
   });
@@ -57,9 +53,9 @@ describe("admin disable submissions", () => {
 
 describe("Validating custom support url", () => {
   it("Enter custom support url and browser", () => {
+
     cy.login_admin();
-      cy.visit("/admin/");
-      cy.visit("/admin/settings");
+    cy.visit("/admin/settings");
     cy.contains("a", "Advanced").click();
 
     cy.get("[data-ng-model='resources.node.custom_support_url']").clear();
@@ -68,7 +64,6 @@ describe("Validating custom support url", () => {
     );
 
     cy.get("[data-ng-click='updateNode()']").last().click();
-    cy.contains("a", "Advanced").click();
     cy.contains("a", "Advanced").click();
 
     cy.get("[data-ng-model='resources.node.custom_support_url']")
@@ -87,9 +82,6 @@ describe("Validating custom support url", () => {
 describe("Should browser opens a pop while clicking the support icon", () => {
   it("should open a pop-up modal", () => {
 
-    cy.visit("/admin");
-    cy.waitForUrl("/admin");
-    cy.visit("/admin/settings");
     cy.contains("a", "Advanced").click();
 
     cy.get("[data-ng-model='resources.node.custom_support_url']").clear();
@@ -99,8 +91,8 @@ describe("Should browser opens a pop while clicking the support icon", () => {
       .invoke("val")
       .should("equal", "");
 
-    cy.wait(1000)
     cy.get("#SupportLink").click();
+    cy.wait(500)
     cy.get(".modal").should("be.visible");
 
     cy.get("[data-ng-model='arg.text']").type("test message");

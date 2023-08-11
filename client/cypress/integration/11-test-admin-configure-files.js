@@ -56,19 +56,17 @@ describe("Admin configure custom CSS", () => {
         dataTransfer.items.add(testFile);
         input[0].files = dataTransfer.files;
         cy.wrap(input).trigger("change", { force: true });
+        cy.waitForLoader();
+        cy.contains("a", "Files").click();
+        cy.get("#fileList").contains("Delete").click();
+        cy.waitForLoader();
       });
     });
-
-    cy.wait(1000); // In milliseconds
-    cy.contains("a", "Files").click();
-    cy.get("#fileList").contains("Delete").click();
   });
 
   it("should be able to disable the file upload", () => {
 
-    cy.wait(1000); // In milliseconds
     cy.contains("a", "Files").click();
-
     cy.get(".custom-switch").click();
     cy.get(".custom-switch input").should("not.be.checked");
 

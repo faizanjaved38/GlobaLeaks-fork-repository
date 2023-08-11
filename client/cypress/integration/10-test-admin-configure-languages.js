@@ -31,36 +31,32 @@ describe("admin configure languages", () => {
 
 
     cy.get('button.btn.btn-primary').eq(2).contains('Save').click();
+    cy.waitForLoader();
   });
 
   it("should configure default language", () => {
-    cy.visit("/admin/settings");
-    cy.visit("/admin/settings");
     cy.contains("a", "Languages").click();
 
     cy.get(".non-default-language").eq(0).click();
     cy.get('button.btn.btn-primary').eq(2).contains('Save').click();
 
-    cy.visit("/admin");
-    cy.visit("/admin/settings");
-    cy.wait(1000)
-    cy.contains("a", "Languages").click();
+    cy.waitForLoader();
     cy.contains("a", "Languages").click();
 
     cy.get(".non-default-language").eq(0).click();
     cy.get(".remove-lang-btn").eq(0).click();
     cy.get('button.btn.btn-primary').eq(2).contains('Save').click();
+    cy.waitForLoader();
 
-    cy.visit("/admin");
-    cy.visit("/admin/settings");
     cy.contains("a", "Languages").click();
     cy.get('button.btn.btn-primary').eq(2).contains('Save').click();
+    cy.waitForLoader();
   });
 
   it("should configure italian texts", () => {
     cy.get('#LanguagePickerBox select').select('Italiano');
 
-    cy.wait(1000);
+    cy.waitForLoader();
     cy.get('[data-ng-model="resources.node.header_title_homepage"]').clear().type("TEXT1_IT");
     cy.get('[data-ng-model="resources.node.presentation"]').clear().type("TEXT2_IT");
     cy.get('button.btn.btn-primary').eq(0).contains('Salva').click();
