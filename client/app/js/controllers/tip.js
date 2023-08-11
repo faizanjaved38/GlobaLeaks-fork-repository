@@ -90,7 +90,7 @@ GL.controller("TipCtrl",
       return entry[$scope.field.id];
     };
 
-   
+
 
     var filterNotTriggeredField = function(parent, field, answers) {
       var i;
@@ -262,7 +262,7 @@ GL.controller("TipCtrl",
         $scope.showEditLabelInput = $scope.tip.label === "";
         $scope.tip.submissionStatusStr = $scope.Utils.getSubmissionStatusText($scope.tip.status, $scope.tip.substatus, $scope.submission_statuses);
         $scope.supportedViewTypes = ["application/pdf", "audio/mpeg", "image/gif", "image/jpeg", "image/png", "text/csv", "text/plain", "video/mp4"];
-     
+
       });
     }
 
@@ -276,6 +276,7 @@ GL.controller("TipCtrl",
       return current_date > report_date;
     };
     $scope.permanentMaskingObjects = []
+    $scope.maskingObjects = []
     function permanentRefineContent(content, permanentMaskingObjects) {
       var refinedContent = content;
       permanentMaskingObjects.forEach(function (obj) {
@@ -286,6 +287,16 @@ GL.controller("TipCtrl",
         refinedContent = refinedContent.substring(0, insertPosition) + stars + refinedContent.substring(insertPosition);
       });
       return refinedContent;
+    }
+    $scope.edited = function (id) {
+      $scope.maskingObjects = $scope.tip.masking.filter(function (masking) {
+       return masking.content_id === id;
+      });
+     if ($scope.maskingObjects.length !== 0 && $scope.maskingObjects[0].permanent_masking !== "") {
+        return true
+      } else {
+        return false
+      }
     }
     $scope.maskingContent = function (content, id) {
       $scope.permanentMaskingObjects = $scope.tip.masking.filter(function (masking) {
@@ -644,17 +655,6 @@ function ($scope, $uibModalInstance, args, Authentication, $routeParams, $http) 
     }
   };
   $scope.unMask = function () {
-    // var elem = document.getElementById(id);
-    // var text = elem.value;
-    // var start = elem.selectionStart;
-    // var finish = elem.selectionEnd;
-    // var sel = text.substring(start, finish);
-    // var length = finish - start;
-    // if (length) {
-    //   elem.value = text.substring(0, start) + $scope.content.substring(start, finish) + text.substring(finish, text.length);
-    // } else {
-    //   elem.value = $scope.content
-    // }
     if ($scope.maskingObjects.length !== 0) {
       if ($scope.maskingObjects[0].permanent_masking !== "") {
         let maskingdata = {
@@ -676,7 +676,6 @@ function ($scope, $uibModalInstance, args, Authentication, $routeParams, $http) 
   function mergeRanges(ranges) {
     var mergedRanges = [];
     var keys = Object.keys(ranges);
-    // Sort the ranges based on the start value
     keys.sort(function (a, b) {
       return ranges[a].start - ranges[b].start;
     });
@@ -684,15 +683,12 @@ function ($scope, $uibModalInstance, args, Authentication, $routeParams, $http) 
     for (var i = 1; i < keys.length; i++) {
       var nextRange = ranges[keys[i]];
       if (nextRange.start <= currentRange.end + 1) {
-        // Overlapping or adjacent ranges, update the end value of the current range
         currentRange.end = Math.max(currentRange.end, nextRange.end);
       } else {
-        // Non-overlapping or non-adjacent range, add the current range to the merged ranges array
         mergedRanges.push(currentRange);
         currentRange = nextRange;
       }
     }
-    // Add the last range to the merged ranges array
     mergedRanges.push(currentRange);
     return mergedRanges;
   }
@@ -738,100 +734,15 @@ function ($scope, $uibModalInstance, args, Authentication, $routeParams, $http) 
       }
     }
   };
-  function refineContent(content, maskingObjects) {
-    var permanentMaskingArray = Object.values(maskingObjects);
-    permanentMaskingArray.sort(function (a, b) {
-      return b.start - a.start;
-    });
-    var refinedContent = content;
-    for (var key of Object.keys(permanentMaskingArray)) {
-      var start = permanentMaskingArray[key].start;
-      var end = permanentMaskingArray[key].end;
-      refinedContent = refinedContent.substring(0, start) + refinedContent.substring(end + 1);
-    }
-    return refinedContent;
-  }
+ 
   $scope.permanentMask = function () {
     if ($scope.maskingObjects[0].temporary_masking !== "") {
-      if ($scope.maskingObjects[0].permanent_masking !== "") {
-        var permanentMasking = $scope.maskingObjects[0].permanent_masking
-        var index = Object.keys(permanentMasking).length;
-        for (var key in $scope.maskingObjects[0].temporary_masking) {
-          if ($scope.maskingObjects[0].temporary_masking.hasOwnProperty(key)) {
-            var range = $scope.maskingObjects[0].temporary_masking[key];
-            var isRangeRepeated = Object.values(permanentMasking).some(function (obj) {
-              return obj.start === range.start && obj.end === range.end;
-            });
-            if (!isRangeRepeated) {
-              var isRangeRepeatedInNew = Object.values(permanentMasking).some(function (obj) {
-                return obj.start === range.start && obj.end === range.end;
-              });
-              if (!isRangeRepeatedInNew) {
-                permanentMasking[index] = range;
-                index++;
-              }
-            }
-          }
-        }
-        var refine_Content = refineContent($scope.content, permanentMasking)
-        $scope.finalPermanentMasking = mergeRanges(permanentMasking);
-        if ($scope.contentType === "answer") {
-          var answers = $scope.args.tip.questionnaires[0].answers
-          if (answers.hasOwnProperty($scope.contentId)) {
-            answers[$scope.contentId][0].value = refine_Content;
-          }
-          var updatedAnswers = answers
-          let maskingdata = {
-            content_id: $scope.contentId,
-            internaltip_id: $scope.args.tip.internaltip_id,
-            answers: updatedAnswers,
-            permanent_masking: $scope.finalPermanentMasking,
-            temporary_masking: "",
-            content_type: $scope.contentType
-          };
-          $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-          $uibModalInstance.close();
-        } else {
-          let maskingdata = {
-            content_id: $scope.contentId,
-            permanent_masking: $scope.finalPermanentMasking,
-            temporary_masking: "",
-            content: refine_Content,
-            content_type: $scope.contentType
-          };
-          $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-          $uibModalInstance.close();
-        }
-      } else {
-        var refine_Content = refineContent($scope.content, $scope.maskingObjects[0].temporary_masking)
-        if ($scope.contentType === "answer") {
-          var answers = $scope.args.tip.questionnaires[0].answers
-          if (answers.hasOwnProperty($scope.contentId)) {
-            answers[$scope.contentId][0].value = refine_Content;
-          }
-          var updatedAnswers = answers
-          let maskingdata = {
-            content_id: $scope.contentId,
-            internaltip_id: $scope.args.tip.internaltip_id,
-            answers: updatedAnswers,
-            permanent_masking: $scope.maskingObjects[0].temporary_masking,
-            temporary_masking: "",
-            content_type: $scope.contentType
-          };
-          $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-          $uibModalInstance.close();
-        } else {
-          let maskingdata = {
-            content_id: $scope.contentId,
-            permanent_masking: $scope.maskingObjects[0].temporary_masking,
-            temporary_masking: "",
-            content: refine_Content,
-            content_type: $scope.contentType
-          };
-          $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-          $uibModalInstance.close();
-        }
-      }
+      let maskingdata = {
+        content_id: $scope.contentId,
+        content_type: $scope.contentType
+      };
+      $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
+      $uibModalInstance.close();
     }
   }
 }]);

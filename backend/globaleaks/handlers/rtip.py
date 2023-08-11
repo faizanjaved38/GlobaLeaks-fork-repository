@@ -215,10 +215,8 @@ def db_update_masking(session, tid, user_id, itip_id,id, masking_data):
             'temporary_masking': masking_data['temporary_masking'],
             'permanent_masking': masking_data['permanent_masking']
         }
-
         db_log(session, tid=tid, type='update_masking', user_id=user_id, object_id=id, data=log_data)
     else:
-        # Handle the case when the Tip instance with the provided ID doesn't exist
         raise ValueError(f"Tip with ID '{itip_id}' not found.")
 
 def db_update_message(session, tid, user_id, itip_id, masking_data):
@@ -245,36 +243,162 @@ def db_update_message(session, tid, user_id, itip_id, masking_data):
 
         db_log(session, tid=tid, type='update_message', user_id=user_id, object_id=masking_data['content_id'], data=log_data)
     else:
-        # Handle the case when the Tip instance with the provided ID doesn't exist
         raise ValueError(f"Tip with ID '{itip_id}' not found.")
+# def refine_content(content, masking_objects):
+#     permanent_masking_array = list(masking_objects.values())
+#     permanent_masking_array.sort(key=lambda x: x['start'], reverse=True)
     
-def db_update_comment(session, tid, user_id, itip_id, masking_data):
-    """
-    Update the masking data of a tip
+#     refined_content = content
+#     for obj in permanent_masking_array:
+#         start = obj['start']
+#         end = obj['end']
+#         if isinstance(start, int) and isinstance(end, int) and 0 <= start < len(refined_content) and 0 <= end < len(refined_content):
+#             refined_content = refined_content[:start] + refined_content[end + 1:]
+    
+#     return refined_content
 
-    :param session: An ORM session
-    :param tid: A tenant ID of the user performing the operation
-    :param user_id: A user ID of the user changing the state
-    :param itip_id: The ID of the Tip instance to be updated
-    :param id: The object_id
-    :param masking_data: The updated masking data
-    """
-    _content = masking_data['content']
-    if itip_id.crypto_tip_pub_key:
-        _content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, masking_data['content'])).decode()
 
+def refine_content_data(content, ranges):
+    if isinstance(ranges, list):
+        ranges.sort(key=lambda x: x['start'], reverse=True)
+    elif isinstance(ranges, dict):
+        ranges = list(ranges.values())
+        ranges.sort(key=lambda x: x['start'], reverse=True)
+    else:
+        print("Invalid format for temporary_masking")
+    for obj in ranges:
+        start = obj['start']
+        end = obj['end']
+        if isinstance(start, int) and isinstance(end, int) and 0 <= start < len(content) and 0 <= end < len(content):
+            content = content[:start] + content[end + 1:]
+    return content
+
+def remake_content(content, ranges):
+    if isinstance(ranges, list):
+        ranges.sort(key=lambda x: x['start'],reverse=True)
+    elif isinstance(ranges, dict):
+        ranges = list(ranges.values())
+        ranges.sort(key=lambda x: x['start'],reverse=True)
+    else:
+        print("Invalid format for temporary_masking")
+    for obj in ranges:
+        start = obj['start']
+        end = obj['end']
+        stars = chr(0x2588) * (end - start + 1)
+        insert_position = start
+        content = content[:insert_position] + stars + content[insert_position:]
+    return content
+
+def db_update_comment(session, tid, user_id, itip_id, id, masking_data, tip_data):
+    comments = tip_data.get('comments', [])
+    matching_comment = next((comment for comment in comments if comment['id'] == masking_data['content_id']), None)
+    
+    if matching_comment:
+        masking_content = matching_comment.get('content')
+    else:
+        print("Matching comment not found")
+        return
+    
+    itipmasking = session.query(models.Masking).get(id)
     itip = session.query(models.Comment).get(masking_data['content_id'])
-    if itip:
-        itip.content = _content
-        log_data = {
-            'content': _content,
-        }
+    permanentMasking = {}
+
+    if itipmasking:
+        temporary_masking = itipmasking.temporary_masking
+        if itipmasking.permanent_masking:
+            permanentMasking = itipmasking.permanent_masking
+            print("Before permanentMasking :",permanentMasking)
+
+            if isinstance(permanentMasking, list):
+                permanentMasking.sort(key=lambda x: x['start'])
+            elif isinstance(permanentMasking, dict):
+                permanentMasking = list(permanentMasking.values())
+                permanentMasking.sort(key=lambda x: x['start'])
+            else:
+                print("Invalid format for temporary_masking")
+            index = len(permanentMasking)
+
+            remake_content_data = remake_content(masking_content,permanentMasking)
+
+            if isinstance(temporary_masking, list):
+                temporary_masking_dict = {str(i): temp_range for i, temp_range in enumerate(temporary_masking)}
+            elif isinstance(temporary_masking, dict):
+                temporary_masking_dict = temporary_masking
+            else:
+                temporary_masking_dict = {}
+
+            for key, range in temporary_masking_dict.items():
+                if key in temporary_masking_dict:
+                    range = temporary_masking_dict[key]
+                    isRangeRepeated = any(
+                        obj['start'] == range['start'] and obj['end'] == range['end'] for obj in permanentMasking)
+                    if not isRangeRepeated:
+                        isRangeRepeatedInNew = any(
+                            obj['start'] == range['start'] and obj['end'] == range['end'] for obj in permanentMasking)
+                        if not isRangeRepeatedInNew:
+                            permanentMasking.append(range)
+
+            # if isinstance(permanentMasking, list):
+            #     permanentMasking.sort(key=lambda x: x['start'], reverse=True)
+            # elif isinstance(permanentMasking, dict):
+            #     permanentMasking = list(permanentMasking.values())
+            #     permanentMasking.sort(key=lambda x: x['start'], reverse=True)
+            # else:
+            #     print("Invalid format for temporary_masking")
+            print("If permanentMasking :",permanentMasking)
+            print("If remake_content_data :",remake_content_data)
+            refined_content = refine_content_data(remake_content_data,permanentMasking)
+            print("If refined_content :",refined_content)
+                   
+        else:
+            permanentMasking = itipmasking.temporary_masking
+            if isinstance(temporary_masking, list):
+                temporary_masking.sort(key=lambda x: x['start'], reverse=True)
+            elif isinstance(temporary_masking, dict):
+                temporary_masking = list(temporary_masking.values())
+                temporary_masking.sort(key=lambda x: x['start'], reverse=True)
+            else:
+                print("Invalid format for temporary_masking")
+
+            refined_content = refine_content_data(masking_content,temporary_masking)
+            print("Else refined_content :",refined_content)
+
+        
+
+        print("Final refined_content :",refined_content)
+        print("After permanentMasking :",permanentMasking)
+        print("itipmasking.permanent_masking :",itipmasking.permanent_masking)
+        print("itipmasking.temporary_masking :",itipmasking.temporary_masking)
+
+        refined_content_encoded = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, refined_content)).decode()
+        
+        itip.content = refined_content_encoded
+        itipmasking.content_id = masking_data['content_id']
+        itipmasking.temporary_masking = ""
+        itipmasking.permanent_masking = permanentMasking
+        itipmasking.mask_date = datetime.now()
+        session.commit()
+
+        log_data = {'content': refined_content_encoded}
+
+        masking_log_data = {
+        'content_id': masking_data['content_id'],
+        'mask_date': itipmasking.mask_date.isoformat(),
+        'temporary_masking': "",
+        'permanent_masking': permanentMasking
+         }
+
+        print("log_data",log_data)
+        print("masking_log_data",masking_log_data)
 
         db_log(session, tid=tid, type='update_comment', user_id=user_id, object_id=masking_data['content_id'], data=log_data)
+        db_log(session, tid=tid, type='update_masking', user_id=user_id, object_id=id, data=masking_log_data)
+
     else:
-        # Handle the case when the Tip instance with the provided ID doesn't exist
-        raise ValueError(f"Tip with ID '{itip_id}' not found.")
-    
+        print("itipmasking not found")
+
+  
+
 def db_update_answer(session, tid, user_id, itip_id, masking_data):
     """
     Update the masking data of a tip
@@ -294,16 +418,10 @@ def db_update_answer(session, tid, user_id, itip_id, masking_data):
 
     if itip:
         itip.content = _content
-        # log_data = {
-        #     'answers': _content,
-        # }
-
-        # Update the existing itip instance instead of creating a new one
         itip.answers = _content
 
-        session.commit()  # Commit the changes to the database
+        session.commit()
     else:
-        # Handle the case when the Tip instance with the provided ID doesn't exist
         raise ValueError(f"Tip with content ID '{content_id}' not found.")
 
 
@@ -787,7 +905,7 @@ def create_masking(session, tid, user_id, rtip_id, content):
     return ret
 
 @transact
-def update_tip_masking(session, tid, user_id, rtip_id, id, data):
+def update_tip_masking(session, tid, user_id, rtip_id, id, data,tip_data):
     """
     Transaction for updating tip masking
 
@@ -802,16 +920,21 @@ def update_tip_masking(session, tid, user_id, rtip_id, id, data):
     
     masking_data = data.get('data', {})
 
-    if 'content_type' in masking_data and masking_data['content_type'] ==  "comment":
-        db_update_comment(session, tid, user_id, itip, masking_data)
+    if 'content_type' in masking_data:
+        content_type = masking_data['content_type']
+    
+        if content_type == "comment":
+           db_update_comment(session, tid, user_id, itip, id, masking_data, tip_data)
+        elif content_type == "message":
+           db_update_message(session, tid, user_id, itip, id, masking_data)
+        elif content_type == "answer":
+           db_update_answer(session, tid, user_id, itip, id, masking_data)
+        else:
+            print("No valid content type found")
+    else:
+        print("Content type not provided")
+        db_update_masking(session, tid, user_id, itip, id, masking_data)
 
-    if 'content_type' in masking_data and masking_data['content_type'] == "message":
-        db_update_message(session, tid, user_id, itip, masking_data)
-
-    if 'content_type' in masking_data and masking_data['content_type'] ==  "answer":
-        db_update_answer(session, tid, user_id, itip, masking_data)
-
-    db_update_masking(session, tid, user_id, itip, id, masking_data)
 
 class RTipInstance(OperationHandler):
     """
@@ -901,19 +1024,22 @@ class RTipMaskingCollection(BaseHandler):
         }
     def post(self, rtip_id):
         self.request.content.seek(0)
-        payload = self.request.content.read().decode('utf-8')  # Get the request payload
-        data = json.loads(payload)  # Parse the JSON payload
+        payload = self.request.content.read().decode('utf-8')
+        data = json.loads(payload)
         return create_masking(self.request.tid, self.session.user_id, rtip_id, data)
     
     def put(self, rtip_id, id):
         self.request.content.seek(0)
-        payload = self.request.content.read().decode('utf-8')  # Get the request payload
-        data = json.loads(payload)  # Parse the JSON payload
-        return self.update_masking(rtip_id, id, data)
+        payload = self.request.content.read().decode('utf-8')
+        data = json.loads(payload)
+        return self.update_masking(rtip_id, id, data,self.session.cc)
     
     def update_masking(self, rtip_id, id, data, *args, **kwargs):
-        return update_tip_masking(self.request.tid, self.session.user_id, rtip_id, id, data)
-    
+        tip_data_deferred = self.get(rtip_id)
+        def handle_tip_data(tip_data):
+                return update_tip_masking(self.request.tid, self.session.user_id, rtip_id, id, data, tip_data)
+        tip_data_deferred.addCallback(handle_tip_data)
+
     def delete(self, rtip_id, id):
         return delete_masking(self.request.tid, self.session.user_id,rtip_id,id)
 
