@@ -1,0 +1,362 @@
+{
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/Gruntfile.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/Gruntfile.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/app.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/app.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/constants.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/constants.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/crypto.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/crypto.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/directives.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/directives.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/filters.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/filters.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/mocks.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/mocks.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/services.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/services.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/templates.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/templates.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/viewer/pdf.min.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/viewer/pdf.min.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/viewer/pdf.worker.min.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/viewer/pdf.worker.min.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/viewer/script.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/viewer/script.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/custodian.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/custodian.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/empty.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/empty.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/fileupload.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/fileupload.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/login.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/login.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/modal.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/modal.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/passwordreset.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/passwordreset.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/preferences.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/preferences.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/receipt.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/receipt.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/recipient.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/recipient.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/sidebar.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/sidebar.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/signup.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/signup.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/submission.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/submission.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/tip.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/tip.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/wizard.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/wizard.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/actions/forcedpasswordchange.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/actions/forcedpasswordchange.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/actions/forcedtwofactor.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/actions/forcedtwofactor.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/auditlog.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/auditlog.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/casemanagement.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/casemanagement.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/contexts.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/contexts.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/fields.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/fields.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/home.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/home.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/network.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/network.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/notifications.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/notifications.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/questionnaires.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/questionnaires.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/settings.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/settings.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/steps.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/steps.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/tenant.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/tenant.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  },
+  "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/users.js": {
+    "path": "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/client/app/js/controllers/admin/users.js",
+    "statementMap": {},
+    "fnMap": {},
+    "branchMap": {},
+    "s": {},
+    "f": {},
+    "b": {}
+  }
+}

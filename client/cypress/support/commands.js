@@ -1,4 +1,5 @@
 import '@cypress/code-coverage/support';
+import 'cypress-file-upload';
 
 Cypress.Commands.add("vars", () => {
   return {
@@ -47,7 +48,6 @@ Cypress.Commands.add("login_admin", (username, password, url, firstlogin) => {
   let finalURL = "";
 
   cy.visit(url);
-  cy.waitForUrl(url);
 
   cy.get('[name="username"]').type(username);
   cy.get('[name="password"]').type(password);
@@ -114,7 +114,13 @@ Cypress.Commands.add("logout", () => {
   cy.waitUntilClickable("#LogoutLink");
 });
 
+Cypress.Commands.add("makeTestFilePath", (name) => {
+  return cy.wrap(Cypress.config("testFiles") + "/files/" + name);
+});
 
+Cypress.Commands.add("readExternalFile", (filePath) => {
+  return cy.readFile(filePath, "binary");
+});
 
 
 
