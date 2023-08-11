@@ -1,6 +1,5 @@
 import '@cypress/code-coverage/support';
 import 'cypress-file-upload';
-
 Cypress.Commands.add("vars", () => {
   return {
     init_password: "Password12345#",
@@ -122,117 +121,21 @@ Cypress.Commands.add("readExternalFile", (filePath) => {
   return cy.readFile(filePath, "binary");
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Cypress.Commands.add("browserTimeout", () => {
-  return 30000;
-});
-
-Cypress.Commands.add("waitUntilPresent", (locator, timeout) => {
-  const t = timeout === undefined ? Cypress.config().defaultCommandTimeout : timeout;
-  return cy.get(locator).should("be.visible", { timeout: t });
-});
-
-Cypress.Commands.add("waitUntilAbsent", (locator, timeout) => {
-  const t = timeout === undefined ? Cypress.config().defaultCommandTimeout : timeout;
-  return cy.get(locator).should("not.be.visible", { timeout: t });
-});
-
 Cypress.Commands.add("waitUntilClickable", (locator, timeout) => {
   const t = timeout === undefined ? Cypress.config().defaultCommandTimeout : timeout;
   return cy.get(locator).click({ timeout: t });
 });
 
-Cypress.Commands.add("waitForUrl", (url, timeout) => {
-  const t = timeout === undefined ? Cypress.config().defaultCommandTimeout : timeout;
-  return cy.url().should("include", url, { timeout: t });
-});
-
-Cypress.Commands.add("performSubmission", () => {
-  cy.visit("/");
-  cy.get("[data-cy=whistleblowing-button]").click();
-  cy.get("[data-cy=submission-form]").should("be.visible");
-  cy.get("[data-cy=summary]").type("summary");
-  cy.get("[data-cy=detail]").type("detail");
-  cy.get("[data-cy=step-0-field-2-0-input-0]").type("...");
-  cy.get("[data-cy=step-0-field-2-1-input-0]").type("...");
-  cy.contains("[data-cy=i-witnessed-facts]").click();
-  cy.contains("[data-cy=yes]").click();
-  cy.get("[data-cy=step-0-field-6-0-input-0]").type("...");
-
-  cy.fixture("files/evidence-1.pdf").then((fileContent1) => {
-    cy.get("[data-cy=step-0-field-5-0-input-0]").attachFile({
-      fileContent: fileContent1,
-      fileName: "evidence-1.pdf",
-      mimeType: "application/pdf",
-    });
-  });
-  cy.fixture("files/evidence-2.zip").then((fileContent2) => {
-    cy.get("[data-cy=step-0-field-5-0-input-0]").attachFile({
-      fileContent: fileContent2,
-      fileName: "evidence-2.zip",
-      mimeType: "application/zip",
-    });
-  });
-
-  cy.contains("[data-cy=no]").click();
-  cy.get("[data-cy=step-0-field-10-0-input-0]").type("...");
-
-  cy.get("[data-cy=submit-button]").should("be.visible").click();
-
-  cy.get("[data-cy=receipt-code]").should("be.visible").then(($receiptCode) => {
-    const receiptCode = $receiptCode.attr("value");
-    cy.screenshot("whistleblower/receipt.png");
-    return receiptCode;
-  });
-});
-
-Cypress.Commands.add("submitFile", (fname) => {
-  cy.fixture(`fixtures/files/${fname}`).then((fileContent) => {
-    cy.get("[data-cy=file-input]").attachFile({
-      fileContent: fileContent,
-      fileName: fname,
-    });
-  });
-});
-
-Cypress.Commands.add("waitForPageOverlayToHide", () => {
-  cy.get("#PageOverlay", { timeout: 10000 }).should("not.be.visible", { timeout: 10000 });
-});
-
-Cypress.Commands.add("makeTestFilePath", (name) => {
-  const testDir = Cypress.config("testDir");
-  return Cypress._.join([testDir, "files", name], "/");
-});
-
 Cypress.Commands.add("login_whistleblower", (receipt) => {
-  cy.visit("/#/");
-  cy.get('[data-model="formatted_receipt"]').type(receipt);
+  cy.visit("/");
+
+  cy.get('[data-ng-model="formatted_receipt"]').type(receipt);
   cy.screenshot("whistleblower/access.png");
   cy.get("#ReceiptButton").click();
   cy.waitUntilPresent("#TipInfoBox");
 });
 
-Cypress.Commands.add("clickFirstDisplayed", (selector) => {
-  cy.get(selector).filter(":visible").first().click();
-});
-
-Cypress.Commands.add("makeTestFilePath", (name) => {
-  const testDir = Cypress.config("testDir");
-  return Cypress._.join([testDir, "files", name], "/");
+Cypress.Commands.add("waitUntilPresent", (locator, timeout) => {
+  const t = timeout === undefined ? Cypress.config().defaultCommandTimeout : timeout;
+  return cy.get(locator).should("be.visible", { timeout: t });
 });
