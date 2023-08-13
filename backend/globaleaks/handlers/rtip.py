@@ -280,26 +280,26 @@ def merge_dicts(list1, list2):
       i += 1
   return merged_list
 
-def db_update_comment(session, tid, user_id, itip_id, id, masking_data, tip_data):
-  comments = tip_data.get('comments', [])
-  matching_comment = next((comment for comment in comments if comment['id'] == masking_data['content_id']), None)
+def db_update_masked_data(session, tid, user_id, itip_id, id, masking_data, tip_data, content_type, itip):
 
-  if matching_comment:
-    masking_content = matching_comment.get('content')
+  masked_data = tip_data.get(content_type, [])
+  matching_content = next((masked_content for masked_content in masked_data if masked_content['id'] == masking_data['content_id']), None)
+
+  if matching_content:
+    masking_content = matching_content.get('content')
     itipmasking = session.query(models.Masking).get(id)
-    itip = session.query(models.Comment).get(masking_data['content_id'])
 
     if itipmasking:
 
       tempMasking = itipmasking.temporary_masking
       content = redact_content(masking_content, itipmasking.permanent_masking, tempMasking)
+
       if itipmasking.permanent_masking:
         permanentMasking = itipmasking.permanent_masking
         permanentMasking = merge_dicts(permanentMasking, tempMasking)
       else:
         permanentMasking = tempMasking
       encryptedContent = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, content)).decode()
-
       itip.content = encryptedContent
       itipmasking.content_id = masking_data['content_id']
       itipmasking.temporary_masking = []
@@ -316,7 +316,7 @@ def db_update_comment(session, tid, user_id, itip_id, id, masking_data, tip_data
         'permanent_masking': permanentMasking
       }
 
-      db_log(session, tid=tid, type='update_comment', user_id=user_id, object_id=masking_data['content_id'], data=log_data)
+      db_log(session, tid=tid, type='update_'+content_type, user_id=user_id, object_id=masking_data['content_id'], data=log_data)
       db_log(session, tid=tid, type='update_masking', user_id=user_id, object_id=id, data=masking_log_data)
 
 def db_update_answer(session, tid, user_id, itip_id, masking_data):
@@ -857,11 +857,13 @@ def update_tip_masking(session, tid, user_id, rtip_id, id, data, tip_data):
     content_type = masking_data['content_type']
 
     if content_type == "comment":
-      db_update_comment(session, tid, user_id, itip, id, masking_data, tip_data)
+      model = session.query(models.Comment).get(masking_data['content_id'])
+      db_update_masked_data(session, tid, user_id, itip, id, masking_data, tip_data,"comments", model)
     elif content_type == "message":
-      db_update_message(session, tid, user_id, itip, id, masking_data)
+      model = session.query(models.Message).get(masking_data['content_id'])
+      db_update_masked_data(session, tid, user_id, itip, id, masking_data, tip_data, "messages", model)
     elif content_type == "answer":
-      db_update_answer(session, tid, user_id, itip, id, masking_data)
+      db_update_masked_data(session, tid, user_id, itip, id, masking_data)
     else:
       print("No valid content type found")
   else:
