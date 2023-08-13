@@ -15,7 +15,7 @@
     <span data-translate>Mask</span>
   </button>
   <button
-    data-ng-show="(resources.preferences.can_privilege_delete_mask_information) && (maskingObjects.length !==0 ) && (maskingObjects[0].temporary_masking !=='')"
+    data-ng-show="(resources.preferences.can_privilege_delete_mask_information) && (maskingObjects.length !==0 ) && (maskingObjects[0].temporary_masking.length !==0)"
     class="btn btn-outline-secondary" data-ng-click="unMask()">
     <span data-translate>Unmask</span>
   </button>
@@ -23,7 +23,7 @@
     class="btn btn-primary" data-ng-click="temporaryMask()">
     <span data-translate>Redact</span>
   </button>
-  <button data-ng-show="(resources.preferences.can_privilege_delete_mask_information) && (maskingObjects.length !==0) && (maskingObjects[0].temporary_masking !=='')"
+  <button data-ng-show="(resources.preferences.can_privilege_delete_mask_information) && (maskingObjects.length !==0) && (maskingObjects[0].temporary_masking.length !==0)"
     class="btn btn-primary" data-ng-click="permanentMask()">
     <span data-translate>Permanent Redact</span>
   </button>

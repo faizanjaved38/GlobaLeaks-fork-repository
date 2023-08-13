@@ -659,8 +659,8 @@ function ($scope, $uibModalInstance, args, Authentication, $routeParams, $http) 
       if ($scope.maskingObjects[0].permanent_masking !== "") {
         let maskingdata = {
           content_id: $scope.contentId,
-          permanent_masking: $scope.maskingObjects[0].permanent_masking ? $scope.maskingObjects[0].permanent_masking : "",
-          temporary_masking: ""
+          permanent_masking: $scope.maskingObjects[0].permanent_masking ? $scope.maskingObjects[0].permanent_masking : [],
+          temporary_masking: []
         };
         $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
         $uibModalInstance.close();
