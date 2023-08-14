@@ -808,7 +808,6 @@ def create_masking(session, tid, user_id, rtip_id, content):
   _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
 
   itip.update_date = rtip.last_access = datetime_now()
-
   masking_content = {}
   if itip.crypto_tip_pub_key:
     if isinstance(content, dict):
@@ -817,9 +816,8 @@ def create_masking(session, tid, user_id, rtip_id, content):
       content_str = content.get('content', str(content))
       content_bytes = content_str.encode()
       masking_content = base64.b64encode(GCE.asymmetric_encrypt(itip.crypto_tip_pub_key, content_bytes)).decode()
-
-  tempMasking = [{'key': key, **value} for key, value in masking_content.get('temporary_masking', None).items()]
   permanentMasking = masking_content.get('permanent_masking', None)
+  tempMasking = masking_content.get('temporary_masking', None)
   if not permanentMasking:
     permanentMasking = []
 
