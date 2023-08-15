@@ -314,8 +314,9 @@ def db_mask_data(session, masked_marker, temporary_ranges, permanent_ranges, mas
 
   masked_marker.content_id = masking_data['content_id']
   masked_marker.temporary_masking = []
-  masked_marker.permanent_masking = permanentMasking
   masked_marker.mask_date = datetime.now()
+  session.commit()
+  masked_marker.permanent_masking = permanentMasking
   session.commit()
 
   log_data = {'content': content}
