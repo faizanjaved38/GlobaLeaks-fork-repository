@@ -229,15 +229,12 @@ GL.controller("TipCtrl",
           let maskingObjects = $scope.tip.masking.filter(function (masking) {
             return masking.content_id === f.id;
           });
-          RTipWBFileResource.remove({ "id": f.id })
-            .$promise.then(function () {
-              if (maskingObjects.length !== 0) {
-                return $http({
-                  method: "DELETE",
-                  url: "api/rtips/" + tip.id + "/masking/" + maskingObjects[0].id
-                }).then(reloadUI);
-              }
-            })
+          if (maskingObjects.length !== 0) {
+            return $http({
+              method: "DELETE",
+              url: "api/rtips/" + tip.id + "/delete/maskingfile/" + maskingObjects[0].id
+            }).then(reloadUI);
+          }
         };
         $scope.unmaskFile = function (f) {
           let maskingObjects = $scope.tip.masking.filter(function (masking) {

@@ -812,6 +812,30 @@ def delete_masking(session, tid, user_id, rtip_id, id):
   if masking:
     session.delete(masking)
 
+@transact
+def delete_File_masking(session, tid, user_id, rtip_id, id):
+  """
+    Transaction for deleting a wbfile
+    :param session: An ORM session
+    :param tid: A tenant ID
+    :param user_id: The user ID of the user performing the operation
+    :param rtip_id: The rtip_id performing the operation
+    :param id: The ID of the masking to be deleted
+    """
+  itips_ids = [x[0] for x in session.query(models.InternalTip.id)
+  .filter(models.InternalTip.id == models.ReceiverTip.internaltip_id,
+          models.ReceiverTip.receiver_id == user_id,
+          models.InternalTip.tid == tid)]
+
+  masking = (
+    session.query(models.Masking)
+    .filter(models.Masking.id == id, models.ReceiverTip.internaltip_id.in_(itips_ids), models.InternalTip.tid == tid)
+    .first()
+  )
+
+  if masking:
+    delete_wbfile(tid, user_id, masking.content_id)
+    session.delete(masking)
 
 @transact
 def create_masking(session, tid, user_id, rtip_id, content):
@@ -1003,6 +1027,23 @@ class RTipMaskingCollection(BaseHandler):
   def delete(self, rtip_id, id):
     return delete_masking(self.request.tid, self.session.user_id, rtip_id, id)
 
+class RTipFileMaskingCollection(BaseHandler):
+  """
+    Interface used to handle rtip masking
+    """
+  check_roles = 'receiver'
+
+  @inlineCallbacks
+  def get(self, tip_id):
+    tip, crypto_tip_prv_key = yield get_rtip(self.request.tid, self.session.user_id, tip_id, self.request.language)
+
+    if State.tenants[self.request.tid].cache.encryption and crypto_tip_prv_key:
+      tip = yield deferToThread(decrypt_tip, self.session.cc, crypto_tip_prv_key, tip)
+
+    returnValue(tip)
+
+  def delete(self, rtip_id, id):
+    return delete_File_masking(self.request.tid, self.session.user_id, rtip_id, id)
 
 class ReceiverMsgCollection(BaseHandler):
   """
