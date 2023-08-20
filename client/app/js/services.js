@@ -735,6 +735,12 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       return filteredTips;
     },
 
+    writeUTFBytes: function(view, offset, string) {
+      for (let i = 0; i < string.length; i++) {
+        view.setUint8(offset + i, string.charCodeAt(i));
+      }
+    },
+
     getStaticFilter: function(data, model, key) {
       if (model.length === 0) {
         return data;
@@ -1314,6 +1320,48 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       }
 
       return $http.post("api/exception", scrub(exception));
+    }
+  };
+}]).
+factory("mediaProcessor", ["Utils", function (Utils) {
+  return {
+    enableNoiseSuppression: async function (stream) {
+      const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
+      if ("noiseSuppression" in supportedConstraints) {
+        try {
+          const settings = { noiseSuppression: true };
+          stream.getAudioTracks().forEach(track => {
+            track.applyConstraints(settings);
+          });
+        } catch (error) {
+          console.error("Error applying noise suppression:", error);
+        }
+      }
+    },
+
+    createHighPassFilter:function (audioContext) {
+      const filter = audioContext.createBiquadFilter();
+      filter.type = "highpass";
+      filter.frequency.value = 300;
+      return filter;
+    },
+
+    createLowPassFilter:function (audioContext) {
+      const filter = audioContext.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = 3000;
+      return filter;
+    },
+
+    createDynamicCompressor: function(audioContext) {
+      var compressor = audioContext.createDynamicsCompressor();
+      compressor.threshold.value = -50;
+      compressor.knee.value = 40;
+      compressor.ratio.value = 12;
+      compressor.reduction.value = -20;
+      compressor.attack.value = 0;
+      compressor.release.value = 0.25;
+      return compressor;
     }
   };
 }]).
