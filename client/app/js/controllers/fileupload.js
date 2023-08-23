@@ -21,6 +21,15 @@ controller("RFileUploadCtrl", ["$scope", function($scope) {
 
     $scope.$emit("GL::uploadsUpdated");
   });
+  $scope.generateAcceptAttribute = function(uploadTypes) {
+    var typesArray = uploadTypes.split(' ');
+
+    var extensions = typesArray.map(function(type) {
+      return '.' + type.toLowerCase();
+    }).join(',');
+
+    return extensions;
+  };
 }]).
 controller("WBFileUploadCtrl", ["$scope", function($scope) {
   $scope.file_upload_description = "";

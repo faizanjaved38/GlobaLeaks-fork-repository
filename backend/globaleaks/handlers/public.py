@@ -369,6 +369,8 @@ def serialize_field_attr(attr, language):
         ret['value'] = '4096'
     elif ret['name'] == 'min_time' and ret['value'] <= '-1':
         ret['value'] = '10'
+    elif ret['name'] == 'upload_type' and ret['value'] == '':
+        ret['value'] = 'TXT PDF HTM and HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX'
     elif ret['name'] == 'max_time' and ret['value'] <= '-1':
         ret['value'] = '60'
 
