@@ -676,6 +676,11 @@ factory("Files", ["GLResource", function(GLResource) {
 factory("DefaultL10NResource", ["GLResource", function(GLResource) {
   return new GLResource("/data/l10n/:lang.json", {lang: "@lang"});
 }]).
+factory("RTipViewRFile", ["Utils", function(Utils) {
+  return function(file) {
+    Utils.openViewModalDialog("views/modals/file_view.html", file);
+  };
+}]).
 factory("RTipViewWBFile", ["Utils", function(Utils) {
   return function(file) {
     Utils.openViewModalDialog("views/modals/file_view.html", file);

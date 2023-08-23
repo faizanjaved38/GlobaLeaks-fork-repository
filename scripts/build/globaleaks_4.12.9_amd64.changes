@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Fri, 04 Aug 2023 10:40:22 +0200
+Source: globaleaks
+Binary: globaleaks
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 4.12.9
+Distribution: stable
+Urgency: medium
+Maintainer: Giovanni Pellerano <giovanni.pellerano@globaleaks.org>
+Changed-By: GlobaLeaks software signing key <info@globaleaks.org>
+Description:
+ globaleaks - Free and open-source whistleblowing software
+Changes:
+ globaleaks (4.12.9) stable; urgency=medium
+ .
+   * New stable release
+Checksums-Sha1:
+ 557028b5a51149937134ed014bc5af65e9b4a989 100030626 globaleaks_4.12.9_all.deb
+ e914ec1bfb78acdb690c596bb711846bad30a03f 13457 globaleaks_4.12.9_amd64.buildinfo
+Checksums-Sha256:
+ 5d7f62b54e13419c096694919e5422bb3647b4fe70f6fe978d147c3bd961dc43 100030626 globaleaks_4.12.9_all.deb
+ 76425edb9571b347a89eb9640344acaee1ff6ea9ae04bbcc7326e329581a0938 13457 globaleaks_4.12.9_amd64.buildinfo
+Files:
+ 0ec99e1a275c38233ca47ef48df5a23d 100030626 web optional globaleaks_4.12.9_all.deb
+ 93b9a1b668ddbb606aef26e8a5b42b57 13457 web optional globaleaks_4.12.9_amd64.buildinfo

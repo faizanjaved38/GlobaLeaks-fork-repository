@@ -1,0 +1,55 @@
+2023-08-23 10:42:45+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python 3.9.12) starting up.
+2023-08-23 10:42:45+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2023-08-23 10:42:46+0500 [-] Starting factory <Site object at 0x7fb6357fde50>
+2023-08-23 10:42:46+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/backend/workingdir/tmp/tor_control; waiting for Tor to become available
+2023-08-23 10:42:46+0500 [-] GlobaLeaks is now running and accessible at the following urls:
+2023-08-23 10:42:46+0500 [-] - [HTTPS]: https://127.0.0.1:8443
+2023-08-23 10:42:46+0500 [-] - [Tor]:  http://te3adaz3zk67yvcpniu5flsubxjbbd2e3evn34txno5e2kmlze6qunad.onion
+2023-08-23 10:42:46+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7fb6354cb3a0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7fb63536dc10>)
+2023-08-23 10:42:47+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7fb6354cb3a0>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7fb63536dc10>)
+2023-08-23 10:45:42+0500 [-] Stopping factory <Site object at 0x7fb6357fde50>
+2023-08-23 10:45:42+0500 [-] Server Shut Down.
+2023-08-23 10:45:43+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python 3.9.12) starting up.
+2023-08-23 10:45:43+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2023-08-23 10:45:44+0500 [-] [E] Found an already initialized database version: 66
+2023-08-23 10:45:44+0500 [-] Starting factory <Site object at 0x7f942afcdcd0>
+2023-08-23 10:45:44+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/backend/workingdir/tmp/tor_control; waiting for Tor to become available
+2023-08-23 10:45:44+0500 [-] GlobaLeaks is now running and accessible at the following urls:
+2023-08-23 10:45:44+0500 [-] - [HTTPS]: https://127.0.0.1:8443
+2023-08-23 10:45:44+0500 [-] - [Tor]:  http://te3adaz3zk67yvcpniu5flsubxjbbd2e3evn34txno5e2kmlze6qunad.onion
+2023-08-23 10:45:44+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f94291d9d30>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f94291c5e50>)
+2023-08-23 10:45:47+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f94291d9d30>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f94291c5e50>)
+2023-08-23 11:00:01+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f94219e4310>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f942197c280>)
+2023-08-23 11:00:02+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f94219e4310>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f942197c280>)
+2023-08-23 11:15:45+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f94219cfa60>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f94219ab640>)
+2023-08-23 11:15:47+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7f94219cfa60>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7f94219ab640>)
+2023-08-23 11:18:32+0500 [-] Stopping factory <Site object at 0x7f942afcdcd0>
+2023-08-23 11:18:32+0500 [-] Server Shut Down.
+2023-08-23 11:18:34+0500 [-] twistd 22.1.0 (/home/morgan-freeman/anaconda3/bin/python 3.9.12) starting up.
+2023-08-23 11:18:34+0500 [-] reactor class: twisted.internet.epollreactor.EPollReactor.
+2023-08-23 11:18:35+0500 [-] [E] Found an already initialized database version: 66
+2023-08-23 11:18:35+0500 [-] Starting factory <Site object at 0x7faf81f937c0>
+2023-08-23 11:18:35+0500 [-] [E] Failed to initialize Tor connection; error: Tor control port not open on /home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/backend/workingdir/tmp/tor_control; waiting for Tor to become available
+2023-08-23 11:18:35+0500 [-] GlobaLeaks is now running and accessible at the following urls:
+2023-08-23 11:18:35+0500 [-] - [HTTPS]: https://127.0.0.1:8443
+2023-08-23 11:18:35+0500 [-] - [Tor]:  http://te3adaz3zk67yvcpniu5flsubxjbbd2e3evn34txno5e2kmlze6qunad.onion
+2023-08-23 11:18:35+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf80195280>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf80185d00>)
+2023-08-23 11:18:36+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf80195280>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf80185d00>)
+2023-08-23 11:23:45+0500 [-] Starting factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7faf7c0da460>
+2023-08-23 11:23:49+0500 [-] Stopping factory <twisted.mail.smtp.ESMTPSenderFactory object at 0x7faf7c0da460>
+2023-08-23 11:48:36+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf7c06b700>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf5ffc05b0>)
+2023-08-23 11:48:37+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf7c06b700>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf5ffc05b0>)
+2023-08-23 12:00:00+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf5ffc3f70>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf7d5748b0>)
+2023-08-23 12:00:01+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf5ffc3f70>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf7d5748b0>)
+2023-08-23 12:18:36+0500 [-] Starting factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf5fed9e50>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf5ff022e0>)
+2023-08-23 12:18:36+0500 [-] Stopping factory _HTTP11ClientFactory(<function HTTPConnectionPool._newConnection.<locals>.quiescentCallback at 0x7faf5fed9e50>, <twisted.internet.endpoints._WrapperEndpoint object at 0x7faf5ff022e0>)
+2023-08-23 13:25:28+0500 [-] [E] Job ExitNodesRefresh died with runtime 1146.0100 [low: 820.0000, high: 1471.0000]
+2023-08-23 13:25:28+0500 [-] Traceback (most recent call last):
+2023-08-23 13:25:28+0500 [-]   File "/home/morgan-freeman/Workspace/Globaleaks Fraudline/GlobaLeaks-fork-repository/backend/globaleaks/jobs/job.py", line 49, in run
+2023-08-23 13:25:28+0500 [-]     yield self.operation()
+2023-08-23 13:25:28+0500 [-]   File "/home/morgan-freeman/anaconda3/lib/python3.9/site-packages/twisted/internet/defer.py", line 857, in _runCallbacks
+2023-08-23 13:25:28+0500 [-]     current.result = callback(  # type: ignore[misc]
+2023-08-23 13:25:28+0500 [-]   File "/home/morgan-freeman/anaconda3/lib/python3.9/site-packages/twisted/internet/endpoints.py", line 1020, in startConnectionAttempts
+2023-08-23 13:25:28+0500 [-]     raise error.DNSLookupError(
+2023-08-23 13:25:28+0500 [-] twisted.internet.error.DNSLookupError: DNS lookup failed: no results for hostname lookup: deb.globaleaks.org.
+2023-08-23 13:25:28+0500 [-] [E] exception mail suppressed for exception (<class 'twisted.internet.error.DNSLookupError'>) [reason: special exception]
