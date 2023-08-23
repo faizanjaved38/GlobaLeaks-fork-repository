@@ -18,10 +18,9 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
   $scope.dropdownScoreData = [];
 
   var unique_keys = [];
-  angular.forEach($scope.resources.rtips.rtips, function(tip) {
+  angular.forEach($scope.resources.rtips, function(tip) {
      tip.context = $scope.contexts_by_id[tip.context_id];
      tip.context_name = tip.context.name;
-     tip.questionnaire = $scope.resources.rtips.questionnaires[tip.questionnaire];
      tip.submissionStatusStr = $scope.Utils.getSubmissionStatusText(tip.status, tip.substatus, $scope.submission_statuses);
 
      if (unique_keys.includes(tip.submissionStatusStr) === false) {
@@ -42,7 +41,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
      }
   });
 
-  $scope.filteredTips = $filter("orderBy")($scope.resources.rtips.rtips, "update_date");
+  $scope.filteredTips = $filter("orderBy")($scope.resources.rtips, "update_date");
 
   $scope.dropdownDefaultText = {
     buttonDefaultText: "",
@@ -51,7 +50,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
 
   function applyFilter()
   {
-     $scope.filteredTips = $scope.Utils.getStaticFilter($scope.resources.rtips.rtips, $scope.dropdownStatusModel, "submissionStatusStr");
+     $scope.filteredTips = $scope.Utils.getStaticFilter($scope.resources.rtips, $scope.dropdownStatusModel, "submissionStatusStr");
      $scope.filteredTips = $scope.Utils.getStaticFilter($scope.filteredTips, $scope.dropdownContextModel, "context_name");
      $scope.filteredTips = $scope.Utils.getStaticFilter($scope.filteredTips, $scope.dropdownScoreModel, "score");
      $scope.filteredTips = $scope.Utils.getDateFilter($scope.filteredTips, $scope.reportDateFilter, $scope.updateDateFilter, $scope.expiryDateFilter);
@@ -85,12 +84,15 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
   $scope.$watch("search", function (value) {
     if (typeof value !== "undefined") {
       $scope.currentPage = 1;
-      $scope.filteredTips = $filter("orderBy")($filter("filter")($scope.resources.rtips.rtips, value), "update_date");
+      $scope.filteredTips = $filter("orderBy")($filter("filter")($scope.resources.rtips, value), "update_date");
     }
   });
 
   $scope.open_grant_access_modal = function () {
     return $scope.Utils.runUserOperation("get_users_names").then(function(response) {
+      // Prevent listing current user
+      delete response.data[$scope.Authentication.session.user_id];
+
       $uibModal.open({
       templateUrl: "views/modals/grant_access.html",
         controller: "ConfirmableModalCtrl",
@@ -115,7 +117,10 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
   };
 
   $scope.open_revoke_access_modal = function () {
-    return $scope.Utils.runUserOperation("get_user_names").then(function(response) {
+    return $scope.Utils.runUserOperation("get_users_names").then(function(response) {
+      // Prevent listing current user
+      delete response.data[$scope.Authentication.session.user_id];
+
       $uibModal.open({
       templateUrl: "views/modals/revoke_access.html",
         controller: "ConfirmableModalCtrl",
@@ -153,7 +158,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
   $scope.toggle_star = function(tip) {
     return $http({
       method: "PUT",
-      url: "api/rtips/" + tip.id,
+      url: "api/recipient/rtips/" + tip.id,
       data: {
         "operation": "set",
         "args": {
@@ -189,47 +194,13 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
     return current_date > report_date;
   };
 
-  $scope.tip_delete_selected = function () {
-    $uibModal.open({
-      templateUrl: "views/modals/delete_confirmation.html",
-      controller: "TipBulkOperationsCtrl",
-      resolve: {
-        selected_tips: function () {
-          return $scope.selected_tips;
-        },
-        operation: function() {
-          return "delete";
-        }
-      }
-    });
-  };
-
   $scope.tips_export = function () {
     for(var i=0; i<$scope.selected_tips.length; i++) {
       (function(i) {
         new TokenResource().$get().then(function(token) {
-          return $window.open("api/rtips/" + $scope.selected_tips[i] + "/export?token=" + token.id + ":" + token.answer);
+          return $window.open("api/recipient/rtips/" + $scope.selected_tips[i] + "/export?token=" + token.id + ":" + token.answer);
         });
       })(i);
     }
-  };
-}])
-.controller("TipBulkOperationsCtrl", ["$scope", "$http", "$location", "$uibModalInstance", "selected_tips", "operation",
-  function ($scope, $http, $location, $uibModalInstance, selected_tips, operation) {
-  $scope.selected_tips = selected_tips;
-  $scope.operation = operation;
-
-  $scope.cancel = function () {
-    $uibModalInstance.close();
-  };
-
-  $scope.confirm = function () {
-    $uibModalInstance.close();
-
-    if (["delete"].indexOf(operation) === -1) {
-      return;
-    }
-
-    return $scope.Utils.runRecipientOperation($scope.operation, {"rtips": $scope.selected_tips}, true);
   };
 }]);

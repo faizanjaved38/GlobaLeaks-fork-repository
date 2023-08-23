@@ -32,7 +32,7 @@ This section is furtherly divided in:
 
    1. Settings
 
-   2. Theme customization
+   2. Files
 
    3. Languages
 
@@ -46,11 +46,11 @@ In this section is configurable the logo and all the texts of the main user inte
 
 .. image:: ../../images/admin/site_settings_main_configuration.png
 
-Theme Customization
-...................
-In this section could be loaded CSS and Javascript files necessary to customize the interface.
+Files
+.....
+In this section could be loaded CSS and Javascript and other files necessary to customize the interface.
 
-.. image:: ../../images/admin/site_settings_theme_customization.png
+.. image:: ../../images/admin/site_settings_files.png
 
 Languages
 .........
@@ -81,6 +81,8 @@ The system with the basic configuration completed with the initial Platform wiza
 Depending on your project needs here you could create users with different roles and manage their respective privileges.
 
 .. image:: ../../images/admin/users.png
+
+.. image:: ../../images/admin/users_options.png
 
 User Roles
 ..........
@@ -131,7 +133,9 @@ The software enables you to create questions of the following types:
 
    9. Date range
 
-   10. Question group
+   10. Voice
+
+   11. Question group
 
 Common Question Properties
 ...........................

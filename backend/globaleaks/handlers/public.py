@@ -7,7 +7,6 @@ import os
 from sqlalchemy import or_
 
 from globaleaks import models, LANGUAGES_SUPPORTED, LANGUAGES_SUPPORTED_CODES
-from globaleaks.handlers.admin.file import special_files
 from globaleaks.handlers.base import BaseHandler
 from globaleaks.models import get_localized_values
 from globaleaks.models.config import ConfigFactory, ConfigL10NFactory
@@ -17,6 +16,7 @@ from globaleaks.state import State
 default_questionnaires = ['default']
 default_questions = ['whistleblower_identity']
 
+special_files = ['css', 'favicon', 'logo', 'script']
 
 trigger_map = {
     'field': models.FieldOptionTriggerField,
@@ -311,10 +311,7 @@ def serialize_context(session, context, language, data=None):
         'maximum_selectable_receivers': context.maximum_selectable_receivers,
         'show_recipients_details': context.show_recipients_details,
         'allow_recipients_selection': context.allow_recipients_selection,
-        'enable_comments': context.enable_comments,
-        'enable_messages': context.enable_messages,
         'enable_two_way_comments': context.enable_two_way_comments,
-        'enable_two_way_messages': context.enable_two_way_messages,
         'enable_attachments': context.enable_attachments,
         'score_threshold_medium': context.score_threshold_medium,
         'score_threshold_high': context.score_threshold_high,
@@ -414,6 +411,10 @@ def serialize_field(session, tid, field, language, data=None, serialize_template
         children = [serialize_field(session, tid, f, language, data, serialize_templates=serialize_templates) for f in data['fields'].get(f_to_serialize.id, [])]
         children.sort(key=lambda f: (f['y'], f['x']))
 
+    # Enable voice features if questions of type voice are enabled
+    if tid in State.tenants and field.type == 'voice':
+        State.tenants[tid].microphone = True
+
     ret = {
         'id': field.id,
         'instance': field.instance,
@@ -425,7 +426,6 @@ def serialize_field(session, tid, field, language, data=None, serialize_template
         'fieldgroup_id': field.fieldgroup_id if field.fieldgroup_id else '',
         'multi_entry': field.multi_entry,
         'required': field.required,
-        'preview': field.preview,
         'attrs': attrs,
         'x': field.x,
         'y': field.y,
@@ -528,6 +528,9 @@ def db_get_questionnaires(session, tid, language, serialize_templates=False):
     :param serialize_templates: A boolean to require template serialization
     :return: A list of contexts descriptors
     """
+    if tid in State.tenants:
+        State.tenants[tid].microphone = False
+
     questionnaires = session.query(models.Questionnaire) \
                             .filter(models.Questionnaire.tid.in_({1, tid}),
                                     or_(models.Context.questionnaire_id == models.Questionnaire.id,
@@ -580,6 +583,7 @@ def get_public_resources(session, tid, language):
     :param language: The language to be used for serialization
     :return: The public API descriptor
     """
+
     return {
         'node': db_serialize_node(session, tid, language),
         'questionnaires': db_get_questionnaires(session, tid, language, True),

@@ -10,7 +10,7 @@ GL.controller("AdminSettingsCtrl", ["$scope", "$filter", "$http", "Files", "Admi
   if ($scope.Authentication.session.role === "admin") {
     $scope.tabs = $scope.tabs.concat([
       {
-        title: "Theme customization",
+        title: "Files",
         template: "views/admin/settings/tab2.html"
       },
       {
@@ -33,13 +33,19 @@ GL.controller("AdminSettingsCtrl", ["$scope", "$filter", "$http", "Files", "Admi
         "title": "Favicon",
         "varname": "favicon",
         "filename": "custom_favicon.ico",
-        "size": "131072"
+        "size": "200000"
       },
       {
         "title": "CSS",
         "varname": "css",
         "filename": "custom_stylesheet.css",
-        "size": "1048576"
+        "size": "10000000"
+      },
+      {
+        "title": "JavaScript",
+        "varname": "script",
+        "filename": "custom_script.js",
+        "size": "10000000"
       }
   ];
 
@@ -141,6 +147,26 @@ GL.controller("AdminSettingsCtrl", ["$scope", "$filter", "$http", "Files", "Admi
       },
       function() {}
     );
+  };
+
+  $scope.togglePermissionUploadFiles = function() {
+    $scope.Authentication.session.permissions.can_upload_files = !$scope.Authentication.session.permissions.can_upload_files;
+
+    if (!$scope.Authentication.session.permissions.can_upload_files) {
+      $scope.Utils.runAdminOperation("enable_user_permission_file_upload", {}).then(
+        function() {
+          $scope.Authentication.session.permissions.can_upload_files = true;
+        },
+        function() { $scope.Authentication.session.permissions.can_upload_files = false;}
+      );
+    } else {
+      $scope.Utils.runAdminOperation("disable_user_permission_file_upload", {}).then(
+        function() {
+          $scope.Authentication.session.permissions.can_upload_files = false;
+        },
+        function() {}
+      );
+    }
   };
 
   $scope.update_files();

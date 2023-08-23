@@ -42,15 +42,14 @@ controller("AdminHTTPSConfigCtrl", ["$q", "$http", "$window", "$scope", "$uibMod
   $scope.state = 0;
   $scope.menuState = "setup";
 
-  $scope.setMenu = function(state) {
-    $scope.menuState = state;
+  $scope.setup = function() {
+    $scope.menuState = "files";
   };
 
   $scope.parseTLSConfig = function(tlsConfig) {
     $scope.tls_config = tlsConfig;
 
     var t = 0;
-    var choice = "setup";
 
     if (!tlsConfig.acme) {
       if (tlsConfig.files.key.set) {
@@ -71,14 +70,13 @@ controller("AdminHTTPSConfigCtrl", ["$q", "$http", "$window", "$scope", "$uibMod
     }
 
     if (tlsConfig.enabled) {
-      choice = "status";
       t = -1;
+      $scope.menuState = "status";
     } else if (t > 0) {
-      choice = "files";
+      $scope.menuState = "files";
     }
 
     $scope.state = t;
-    $scope.menuState = choice;
   };
 
   tlsConfigResource.get({}).$promise.then($scope.parseTLSConfig);
@@ -118,24 +116,6 @@ controller("AdminHTTPSConfigCtrl", ["$q", "$http", "$window", "$scope", "$uibMod
     }).then($scope.refreshConfig);
   };
 
-  $scope.setupAcme = function() {
-    var aRes = new adminAcmeResource();
-    $scope.file_resources.key.$update()
-    .then(function() {
-      return aRes.$save();
-    }).then($scope.refreshConfig);
-  };
-
-  $scope.downloadCSR = function() {
-    $http({
-       method: "GET",
-       url: "api/admin/config/tls/files/csr",
-       responseType: "blob",
-    }).then(function (response) {
-       Utils.saveAs(response.data, "csr.pem");
-    });
-  };
-
   $scope.deleteFile = function(resource) {
     $uibModal.open({
       templateUrl: "views/modals/confirmation.html",
@@ -148,8 +128,12 @@ controller("AdminHTTPSConfigCtrl", ["$q", "$http", "$window", "$scope", "$uibMod
     });
   };
 
-  $scope.setup = function() {
-    $scope.setMenu("files");
+  $scope.setupAcme = function() {
+    var aRes = new adminAcmeResource();
+    $scope.file_resources.key.$update()
+    .then(function() {
+      return aRes.$save();
+    }).then($scope.refreshConfig);
   };
 
   $scope.toggleCfg = function() {
@@ -162,12 +146,9 @@ controller("AdminHTTPSConfigCtrl", ["$q", "$http", "$window", "$scope", "$uibMod
     }
   };
 
-  $scope.submitCSR = function() {
-    $scope.file_resources.content = $scope.csr_cfg;
-    $scope.file_resources.csr.content = $scope.csr_cfg;
-    $scope.file_resources.csr.$save().then(function() {
-      $scope.csr_state.open = false;
-      return $scope.refreshConfig();
+  $scope.generateCSR = function() {
+    $http.post("api/admin/config/csr/gen", $scope.csr_cfg).then(function (response) {
+       Utils.saveAs(new Blob([response.data], {type: "text/plain;charset=utf-8"}), "csr.pem");
     });
   };
 

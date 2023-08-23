@@ -25,9 +25,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Ворид шудан "
 
-msgid "Theme customization"
-msgstr "Ҷӯрсозии мавзуъ"
-
 msgid "Languages"
 msgstr "Забонҳо"
 
@@ -87,9 +84,6 @@ msgstr "Файлҳо"
 
 msgid "Comments"
 msgstr "Шарҳҳо"
-
-msgid "Messages"
-msgstr "Паёмҳо"
 
 msgid "Details"
 msgstr "Тафсилот"
@@ -455,14 +449,14 @@ msgstr "Нусхабардорӣ ба буфер"
 msgid "Logout"
 msgstr "Хориҷ шудан"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Ба ин гиранда имкони ба корбарон ба гузоришҳо дастрасӣ додан"
-
 msgid "Grant access"
 msgstr "Дастрасӣ додан"
 
 msgid "Revoke access"
 msgstr "Дастрасиро бекор кардан"
+
+msgid "Transfer"
+msgstr ""
 
 msgid "Assigned to"
 msgstr ""
@@ -470,7 +464,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr ""
+
+msgid "Hide"
+msgstr "Пинҳон кардан"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Internal"
+msgstr "Дохилӣ"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "Сиёсати махфият"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -514,6 +559,9 @@ msgstr "Санаи эҷод"
 
 msgid "Last access"
 msgstr "Дастрасии охирин"
+
+msgid "Messages"
+msgstr "Паёмҳо"
 
 msgid "Whistleblower's last access"
 msgstr "Дастрасии охирини хабардиҳанда"
@@ -590,12 +638,6 @@ msgstr "Шарҳҳоро фаъол кардан"
 msgid "Allow the whistleblower to write comments"
 msgstr "Ба хабардиҳанда иҷозаи навиштани шарҳҳоро додан"
 
-msgid "Enable private messages"
-msgstr "Паёмҳои махфиро фаъол кардан"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Ба хабардиҳанда иҷозаи ирсоли паём додан"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Ба хабардиҳанда иҷозаи илова кардани замима ба гузориш додан"
 
@@ -667,9 +709,6 @@ msgstr "Калиди махфӣ"
 
 msgid "Certificate Signing Request"
 msgstr "Дархости имзои гувоҳнома"
-
-msgid "Download"
-msgstr "Боргирӣ "
 
 msgid "Certificate"
 msgstr "Гувоҳнома"
@@ -831,6 +870,12 @@ msgstr "Якчанд ҷавобҳоро қабул кардан"
 msgid "Template override"
 msgstr "Лағв кардани намуна"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "Рақами телефон"
 
@@ -914,6 +959,9 @@ msgstr "Поварақ"
 
 msgid "Upload"
 msgstr "Боркунӣ"
+
+msgid "Download"
+msgstr "Боргирӣ "
 
 msgid "Language:"
 msgstr "Забон:"
@@ -1035,14 +1083,17 @@ msgstr ""
 msgid "Sites"
 msgstr "Торнамоҳо"
 
-msgid "Mode:"
-msgstr "Режим"
+msgid "Profile"
+msgstr "Профил"
 
 msgid "Configure"
 msgstr "Танзим кардан"
 
 msgid "Subdomain"
 msgstr "Зердомен"
+
+msgid "Mode:"
+msgstr "Режим"
 
 msgid "Creation date:"
 msgstr "Санаи эҷод"
@@ -1113,6 +1164,12 @@ msgstr "Ба гиранда иҷозаи пок кардани гузоришр�
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Ба гиранда иҷозаи ба таъхир гузоштани мӯҳлати анҷоми эътибори гузоришро додан"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Ба функсияҳои зерин дастрасии маъмурии корбар додан:"
 
@@ -1152,11 +1209,11 @@ msgstr "Лутфан аккаунти худро интихоб кунед:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Акнун гузарвожаи худро навишта, баъд \"Ворид шудан\"-ро пахш кунед:"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Матне, ки баъди аз ҷониби корбар интихоб шудани ин функсия нишон дода мешавад."
-
 msgid "Confirm"
 msgstr "Тасдиқ кардан"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Матне, ки баъди аз ҷониби корбар интихоб шудани ин функсия нишон дода мешавад."
 
 msgid "Assign score points"
 msgstr "Холҳоро муқаррар кардан"
@@ -1216,7 +1273,10 @@ msgstr "Фиристодан"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Бо тасдиқи ин шумо мӯҳлати анҷоми эътиборро то ба ин сана ба таъхир мегузоред:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1293,20 +1353,14 @@ msgstr "Оё шумо аллакай гузориш пешниҳод карда�
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Расид беэътибор аст ё мӯҳлати эътибори гузориш гузаштааст. "
 
-msgid "Select a file or drag it here."
-msgstr "Файлро интихоб кунед ё ба ин ҷо кашед."
+msgid "Filename"
+msgstr "Номи файл"
 
 msgid "Size:"
 msgstr "Андоза:"
 
-msgid "Uploading files…"
-msgstr "Боркунии файлҳо..."
-
-msgid "Upload completed successfully!"
-msgstr "Боркунӣ бомуваффақият анҷом ёфт!"
-
-msgid "Estimated upload time:"
-msgstr "Вақти тахминии боркунӣ:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Гирандагон аз шумо дархост кардаанд саволномаи иловагиро пур намоед."
@@ -1320,8 +1374,8 @@ msgstr "Аз:"
 msgid "To:"
 msgstr "Ба:"
 
-msgid "Filename"
-msgstr "Номи файл"
+msgid "View"
+msgstr "Намоиш додан"
 
 msgid "Upload date"
 msgstr "Санаи боркунӣ"
@@ -1376,6 +1430,9 @@ msgid ""
 "your password."
 msgstr "Мо тавсия медиҳем, ки шумо ба қисмати \"Афзалиятҳо\" ворид шавед, то \"Калиди барқарорсозии аккаунт\" -и худро дарёфт кунед ва онро бехатар нигоҳ доред. Ин калид барои барқарор кардани дастрасии шумо ба барнома ва маълумоти шумо дар ҳолати фаромӯш кардани гузарвожа лозим мешавад."
 
+msgid "Select a file or drag it here."
+msgstr "Файлро интихоб кунед ё ба ин ҷо кашед."
+
 msgid "The provided recovery key is invalid."
 msgstr "Калиди барқароркунии пешниҳодшуда беэътибор аст."
 
@@ -1403,6 +1460,9 @@ msgstr "Дастрасӣ ба шахсияти хабардиҳанда аз м�
 
 msgid "Date of the request"
 msgstr "Санаи дархост"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Нишон додан"
@@ -1487,17 +1547,17 @@ msgstr "Барои ворид шудан расиди 16 рақамаро ист
 msgid "View your report"
 msgstr "Гузориши худро бинед"
 
-msgid "Recipient selection"
-msgstr "Интихоби гиранда"
-
-msgid "Select the recipients of your report:"
-msgstr "Гирандагони гузориши худро интихоб кунед:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "Гирандагон интихоб шуданд:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Шумо ба ҳадди ниҳоии гирандагони интихобшаванда расидед."
+
+msgid "You must select at least one recipient."
+msgstr "Шумо бояд ҳадди аққал як гирандаро интихоб кунед."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1509,17 +1569,11 @@ msgid ""
 "invalid:"
 msgstr "Дар ин марҳила ҷавобҳо ба саволҳои зерин ё нопадид шуданд ё беэътиборанд:"
 
-msgid "You must select at least one recipient."
-msgstr "Шумо бояд ҳадди аққал як гирандаро интихоб кунед."
+msgid "Recipient selection"
+msgstr "Интихоби гиранда"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Интизори файл(ҳо) то ба анҷом расидани боркунӣ."
-
-msgid "The following steps have errors:"
-msgstr "Марҳилаҳои зерин иштибоҳ доранд:"
-
-msgid "Hide"
-msgstr "Пинҳон кардан"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1687,6 +1741,9 @@ msgstr "Масъаларо омӯзед, то муайян кунед, ки он
 
 msgid "The activities with unusual stats are:"
 msgstr "Фаъолиятҳо бо омори ғайриоддӣ инҳоянд:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1916,6 +1973,9 @@ msgstr "Ин паёми электронӣ шуморо огоҳ мекунад,
 msgid "New report"
 msgstr "Гузориши нав"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Мӯҳлати барвақттарини ба охир расидани он {EarliestExpirationDate} аст."
 
@@ -1925,18 +1985,16 @@ msgstr "Лутфан фаромӯш накунед, ки пеш аз пок шу
 msgid "Some reports will expire soon"
 msgstr "Мӯҳлати баъзе гузоришҳо ба наздикӣ ба охир мерасад "
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Ин мактуби электронӣ ба шумо хабар медиҳад, ки хабардиҳанда шуморо ҳамчун гирандаи арзандаи гузориши худ интихоб кардааст."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Аз шумо хоҳиш карда мешавад, ки ба маълумот ва маводи мавҷудбуда диққати махсус диҳед. Лутфан дар хотир доред, ки хабардиҳандагон аксар вақт ба хотири манфияти ҷомеа ба хатарҳои баланди шахсӣ дучор меоянд. Аз ин рӯ, маводи дар ин гузориш пешниҳодшуда бояд аҳамияти баланд дошта бошанд."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Ин паёми электронӣ хабар медиҳад, ки гузориши мавҷуд буда нав карда шуд."

@@ -11,7 +11,7 @@ GL.factory("uploadUtils", ["$filter", function($filter) {
     },
   };
 }]).
-controller("RFileUploadCtrl", ["$scope", function($scope) {
+controller("WBFileUploadCtrl", ["$scope", function($scope) {
   $scope.disabled = false;
 
   $scope.$on("flow::fileAdded", function (event, $flow, flowFile) {
@@ -21,105 +21,167 @@ controller("RFileUploadCtrl", ["$scope", function($scope) {
 
     $scope.$emit("GL::uploadsUpdated");
   });
-  $scope.generateAcceptAttribute = function(uploadTypes) {
-    var typesArray = uploadTypes.split(' ');
-
-    var extensions = typesArray.map(function(type) {
-      return '.' + type.toLowerCase();
-    }).join(',');
-
-    return extensions;
-  };
 }]).
-controller("WBFileUploadCtrl", ["$scope", function($scope) {
+controller("RFileUploadCtrl", ["$scope", function($scope) {
   $scope.file_upload_description = "";
 
-  $scope.beginUpload = function($files, $event, $flow) {
+  $scope.beginUpload = function ($files, $event, $flow, visibility) {
     $scope.file_error_msgs = [];
-
-    $flow.opts.query = {"description": $scope.file_upload_description};
+    $flow.opts.query = { "description": $scope.file_upload_description, "visibility": visibility };
     $flow.upload();
   };
-}])
-.controller("AudioUploadCtrl", ["$scope", "flowFactory", function($scope, flowFactory) {
-  var mediaRecorder;
-  var flow;
-  var startTime;
+}]).
+controller("AudioUploadCtrl", ["$scope", "flowFactory", "Utils", "mediaProcessor", function ($scope, flowFactory, Utils, mediaProcessor) {
+  let recordingLength = 0;
+  let mediaRecorder = null;
+  let flow = null;
+  let secondsTracker = null;
 
+  $scope.seconds = 0;
+  $scope.activeButton = null;
   $scope.isRecording = false;
+  $scope.audioPlayer = null;
 
-  function onDataAvailable(event) {
-    chunks.push(event.data);
-  }
+  $scope.context = new AudioContext();
 
-  function onStart() {
-    startTime = Date.now();
-  }
+  $scope.mediaStreamDestination = new MediaStreamAudioDestinationNode($scope.context);
+  $scope.recorder = new MediaRecorder($scope.mediaStreamDestination.stream);
 
-  function onStop() {
-    var blob = new Blob(chunks, { type: 'audio/webm' });
-    chunks = [];
-    $scope.audioPlayer = URL.createObjectURL(blob);
-    $scope.$apply(function() {
-      var durationInSeconds = (Date.now() - startTime) / 1000;
-      $scope.isRecordingTooShort = durationInSeconds < parseInt($scope.field.attrs.min_time.value);
-      $scope.isRecordingTooLong = ($scope.field.attrs.max_time.value>0 && durationInSeconds > parseInt($scope.field.attrs.max_time.value)) || durationInSeconds > 180;
-      $scope.audioFile = blob;
-      if (!$scope.isRecordingTooShort && !$scope.isRecordingTooLong) {
-        var file = new Flow.FlowFile(flow, {
-          name: 'audio.webm',
-          size: blob.size,
-          relativePath: 'audio.webm'
-        });
-        file.file = blob;
-        flow.files.push(file);
-        if ($scope.uploads.hasOwnProperty($scope.fileinput)) {
-          delete $scope.uploads[$scope.fileinput];
-        }
-        $scope.uploads[$scope.fileinput] = flow;
-      } else {
-        $scope.audioPlayer = null;
-      }
+  $scope.recording_blob = null;
+  $scope.recorder.ondataavailable = function(e) {
+    $scope.recording_blob = e.data;
+  };
+
+  $scope.recorder.onstop = function(e) {
+    const file = new Flow.FlowFile(flow, {
+      name: "audio.webm",
+      size: $scope.recording_blob.size,
+      relativePath: "audio.webm",
     });
+
+    file.file = $scope.recording_blob;
+    flow.files = [];
+
+    if ($scope.uploads.hasOwnProperty($scope.fileinput)) {
+      delete $scope.uploads[$scope.fileinput];
+    }
+
+    if ($scope.seconds >= parseInt($scope.field.attrs.min_len.value) && $scope.seconds <= parseInt($scope.field.attrs.max_len.value)) {
+      flow.files.push(file);
+      $scope.audioPlayer = URL.createObjectURL($scope.recording_blob);
+      $scope.uploads[$scope.fileinput] = flow;
+    }
+
+    $scope.$apply();
+  };
+
+
+  async function initAudioContext(stream) {
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    await mediaProcessor.enableNoiseSuppression(stream);
+
+    const source = $scope.context.createMediaStreamSource(stream);
+    const filter1 = mediaProcessor.createHighPassFilter($scope.context);
+    const filter2 = mediaProcessor.createLowPassFilter($scope.context);
+    const filter3 = mediaProcessor.createDynamicCompressor($scope.context);
+
+    source.connect(filter1);
+    filter1.connect(filter2);
+    filter2.connect(filter3);
+    filter3.connect($scope.mediaStreamDestination);
   }
 
-  $scope.startRecording = function(fileId) {
+  $scope.triggerRecording = function (fileId) {
+    $scope.activeButton = "record";
+
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then(function (stream) {
+          startRecording(fileId, stream);
+        })
+        .catch(function (error) {
+          $scope.activeButton = null;
+          $scope.$apply();
+        });
+    }
+  };
+
+  async function startRecording(fileId, stream) {
+    recordingLength = 0;
+    $scope.isRecording = true;
+    $scope.audioPlayer = "";
+    $scope.activeButton = "record";
+    $scope.startTime = Date.now();
+
     flow = flowFactory.create({
       target: $scope.fileupload_url,
       query: {
-        type: 'audio.webm',
-        reference: fileId
-      }
+        type: "audio.webm",
+        reference: fileId,
+      },
     });
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(function(stream) {
-        chunks = [];
-        mediaRecorder = new MediaRecorder(stream);
 
-        mediaRecorder.addEventListener('dataavailable', onDataAvailable);
-        mediaRecorder.addEventListener('start', onStart);
-        mediaRecorder.addEventListener('stop', onStop);
+    secondsTracker = setInterval(() => {
+      $scope.seconds += 1;
+      if ($scope.seconds > 9) { //$scope.field.attrs.max_len.value) {
+        $scope.isRecording = false;
+        clearInterval(secondsTracker);
+        secondsTracker = null;
+        $scope.stopRecording();
+      }
+      $scope.$apply();
+    }, 1000);
 
-        mediaRecorder.start();
-      })
-      .catch(function(err) {
-        console.error('Error accessing microphone', err);
-      });
+    mediaRecorder = new MediaRecorder(stream);
+
+    await initAudioContext(stream);
+
+    $scope.recorder.start();
+    mediaRecorder.start();
+
+    $scope.$apply();
   };
 
-  $scope.stopRecording = function() {
-    if (mediaRecorder && (mediaRecorder.state === 'recording' || mediaRecorder.state === 'paused')) {
-      mediaRecorder.stop();
-      $scope.isRecording = false;
+  $scope.stopRecording = async function () {
+    $scope.vars["recording"] = false;
 
-      var tracks = mediaRecorder.stream.getTracks();
-      tracks.forEach(function(track) {
-        track.stop();
-      });
+    $scope.recorder.stop();
+
+    const tracks = mediaRecorder.stream.getTracks();
+    tracks.forEach((track) => {
+      track.stop();
+    });
+
+    $scope.isRecording = false;
+    $scope.recordButton = false;
+    $scope.stopButton = true;
+    $scope.activeButton = null;
+    clearInterval(secondsTracker);
+    secondsTracker = null;
+
+    if ($scope.seconds < $scope.field.attrs.min_len.value) {
+      $scope.deleteRecording();
+      return;
+    }
+
+    if (mediaRecorder && (mediaRecorder.state === "recording" || mediaRecorder.state === "paused")) {
+      mediaRecorder.stop();
     }
   };
-}])
-.controller("ImageUploadCtrl", ["$http", "$scope", "$rootScope", "uploadUtils", "Utils", function($http, $scope, $rootScope, uploadUtils, Utils) {
+
+  $scope.deleteRecording = function () {
+    if (flow) {
+      flow.cancel();
+    }
+
+    $scope.chunks = [];
+    mediaRecorder = null;
+    $scope.seconds = 0;
+    $scope.audioPlayer = null;
+    delete $scope.uploads[$scope.fileinput];
+  };
+}]).
+controller("ImageUploadCtrl", ["$http", "$scope", "$rootScope", "uploadUtils", "Utils", function($http, $scope, $rootScope, uploadUtils, Utils) {
   $scope.Utils = Utils;
   $scope.imageUploadObj = {};
 

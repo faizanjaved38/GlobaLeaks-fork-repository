@@ -18,9 +18,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Инеү"
 
-msgid "Theme customization"
-msgstr "Теманы көйләү"
-
 msgid "Languages"
 msgstr "Телдәр"
 
@@ -80,9 +77,6 @@ msgstr "Файлдар"
 
 msgid "Comments"
 msgstr "Комментарийҙар"
-
-msgid "Messages"
-msgstr "Хәбәрҙәр"
 
 msgid "Details"
 msgstr "Аныҡлауҙар"
@@ -448,14 +442,14 @@ msgstr "Алмаштырыу буферына күсермәһен ҡуйыу"
 msgid "Logout"
 msgstr "Сығыу"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Был ҡабул итеүсегә ҡулланыусылар отчетына инеү мөмкинлегенә рөхсәт  бирегеҙ"
-
 msgid "Grant access"
 msgstr "Инеү мөмкинлеге биреү"
 
 msgid "Revoke access"
 msgstr "Инеү мөмкинлеген кире алырға"
+
+msgid "Transfer"
+msgstr ""
 
 msgid "Assigned to"
 msgstr ""
@@ -463,7 +457,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr ""
+
+msgid "Hide"
+msgstr "Йәшерергә"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Internal"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -507,6 +552,9 @@ msgstr "Булдырыу датаһы"
 
 msgid "Last access"
 msgstr "Һуңғы тапҡыр ингән"
+
+msgid "Messages"
+msgstr "Хәбәрҙәр"
 
 msgid "Whistleblower's last access"
 msgstr "Информаторҙың һуңғы инеүе"
@@ -583,12 +631,6 @@ msgstr "Комментарийҙарҙы ҡабыҙыу"
 msgid "Allow the whistleblower to write comments"
 msgstr "Информаторға комментарийҙар өҫтәргә рөхсәт итергә"
 
-msgid "Enable private messages"
-msgstr "Шәхси хәбәрҙәрҙе файҙаланыу"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Информаторға комментарийҙар ебәрергә рөхсәт итергә"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Информаторға ебәрелгән документарға ҡушымта өҫтәргә рөхсәт итергә"
 
@@ -660,9 +702,6 @@ msgstr "Йәшерен асҡыс"
 
 msgid "Certificate Signing Request"
 msgstr "Сертификат яҙҙыртыуға үтенес"
-
-msgid "Download"
-msgstr "Күсереп алыу"
 
 msgid "Certificate"
 msgstr "Сертификат"
@@ -824,6 +863,12 @@ msgstr "Бер нисә яуапты ҡабул итеү"
 msgid "Template override"
 msgstr "Шаблонды яңынан билдәләү"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "Телефон номеры"
 
@@ -907,6 +952,9 @@ msgstr "Аҫҡы колонтитул"
 
 msgid "Upload"
 msgstr "Йөкмәү"
+
+msgid "Download"
+msgstr "Күсереп алыу"
 
 msgid "Language:"
 msgstr "Тел:"
@@ -1028,14 +1076,17 @@ msgstr ""
 msgid "Sites"
 msgstr "Сайттар"
 
-msgid "Mode:"
-msgstr "Режим"
+msgid "Profile"
+msgstr ""
 
 msgid "Configure"
 msgstr "Көйләргә"
 
 msgid "Subdomain"
 msgstr "Субдомен"
+
+msgid "Mode:"
+msgstr "Режим"
 
 msgid "Creation date:"
 msgstr "Булдырыу датаһы"
@@ -1106,6 +1157,12 @@ msgstr "Ҡабул итеүсегә отчеттарҙы юйыу рөхсәте
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Ҡабул итеүсегә отчеттарҙың мөҙҙәт ғәмәле сығыуын кисектереүгә рөхсәт бирергә"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Ҡулланыусыға түбәндәге файлдарға инеү мөмкинлеге бирегеҙ"
 
@@ -1145,11 +1202,11 @@ msgstr "Иҫәп яҙмағыҙҙы күрһәтегеҙ"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Хәҙер паролегеҙҙе яҙығыҙ, артабан \"Инеү\"гә баҫығыҙ"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Ҡулланыусының опция һайлағандан һуң күрһәтеләсәк тексы"
-
 msgid "Confirm"
 msgstr "Раҫларға"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Ҡулланыусының опция һайлағандан һуң күрһәтеләсәк тексы"
 
 msgid "Assign score points"
 msgstr "Баһаларға"
@@ -1209,7 +1266,10 @@ msgstr "Ебәрергә"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Раҫланһа, мәғлүмәттәрҙең мөҙҙәте сығыуын түбәндәге ваҡытҡа арттыраһығыҙ:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1286,20 +1346,14 @@ msgstr "Һеҙ отчет ебәрҙегеҙме? Үҙегеҙҙең квита�
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Квитанция дөрөҫ түгел йәки отчеттың ғәмәл мөҙҙәте үткән"
 
-msgid "Select a file or drag it here."
-msgstr "Файл һайлағыҙ йәки уны бында күсерегеҙ "
+msgid "Filename"
+msgstr "Файл исеме"
 
 msgid "Size:"
 msgstr "Дәүмәл:"
 
-msgid "Uploading files…"
-msgstr "Файлдарҙы тейәргә"
-
-msgid "Upload completed successfully!"
-msgstr "Тейәү уңышлы тамамланды"
-
-msgid "Estimated upload time:"
-msgstr "Тейәүгә бирелгән ваҡыт:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Ҡабул итеүселәр һеҙҙән өҫтәлмә һораулама тултырыуҙы үтенделәр"
@@ -1313,8 +1367,8 @@ msgstr "Ошонан"
 msgid "To:"
 msgstr "Быға"
 
-msgid "Filename"
-msgstr "Файл исеме"
+msgid "View"
+msgstr ""
 
 msgid "Upload date"
 msgstr "Тейәү датаһы"
@@ -1369,6 +1423,9 @@ msgid ""
 "your password."
 msgstr "\"Иҫәп яҙмаһын тергеҙеү өсөн асҡыс\" алыу һәм уны хәүефһеҙ урында һаҡлау өсөн, \"Көйләүҙәр\" бүлексәһенә инергә тәҡдим итәбеҙ. Был асҡыс, паролегеҙҙе онотҡан осраҡта, платформаға һәм мәғлүмәтегеҙгә рөхсәтте тергеҙеү өсөн кәрәк буласаҡ"
 
+msgid "Select a file or drag it here."
+msgstr "Файл һайлағыҙ йәки уны бында күсерегеҙ "
+
 msgid "The provided recovery key is invalid."
 msgstr "Күрһәтелгән тергеҙеү асҡысы дөрөҫ түгел"
 
@@ -1396,6 +1453,9 @@ msgstr "Һаҡлаусыға информатор шәхситенә рөхсә�
 
 msgid "Date of the request"
 msgstr "Үтенес датаһы"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Күрһәтергә"
@@ -1480,17 +1540,17 @@ msgstr "Системаға инеү өсөн 16 һандан торған кви
 msgid "View your report"
 msgstr "Отчетығыҙҙы ҡарағыҙ"
 
-msgid "Recipient selection"
-msgstr "Ҡабул итеүсене һайлау"
-
-msgid "Select the recipients of your report:"
-msgstr "Отчетығыҙҙы ҡабул итеүселәрҙе һайлағыҙ"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "Һайланҡан ҡабул итеүселәр"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Һеҙ ҡабул итеүселәәрҙең максималь һанына еттегеҙ"
+
+msgid "You must select at least one recipient."
+msgstr "Һеҙгә иң кәмендә бер ҡабул итеүсене һайлар кәрәк"
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1502,17 +1562,11 @@ msgid ""
 "invalid:"
 msgstr "Түбәндәге һорауҙарға яуаптар юҡ йәки уларҙың дөрөҫлөгө икеле"
 
-msgid "You must select at least one recipient."
-msgstr "Һеҙгә иң кәмендә бер ҡабул итеүсене һайлар кәрәк"
+msgid "Recipient selection"
+msgstr "Ҡабул итеүсене һайлау"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Файл(дар) тейәлә"
-
-msgid "The following steps have errors:"
-msgstr "Түбәндәге ғәмәлдәрҙә хаталар киткән:"
-
-msgid "Hide"
-msgstr "Йәшерергә"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1680,6 +1734,9 @@ msgstr "Эш нимәлә икәнен тикшерегеҙ: һүҙ ғәҙәти
 
 msgid "The activities with unusual stats are:"
 msgstr "Типик булмаған статистикалы әүҙемлек"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1909,6 +1966,9 @@ msgstr "Был электрон хат ҡабул итеүсенең бер йә
 msgid "New report"
 msgstr "Яңы отчет"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Беренсе ғәмәл мөҙҙөте {EarliestExpirationDate}."
 
@@ -1918,18 +1978,16 @@ msgstr "Зинһар, программа уларҙы юймаҫ элек, ти�
 msgid "Some reports will expire soon"
 msgstr "Ҡайһы бер отчеттарҙың ғәмәл мөҙҙәттәре тиҙҙән яраҡһыҙ буласаҡ"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Был хәбәр аша информатор һеҙҙе үҙенең отчетын  абруйлы ҡабул итеүсе булараҡ һайлаған икәнлеген еткерәбеҙ"
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Һеҙгә унда булған мәғлүмәттәргә һәм материалдарға иғтибар итер кәрәк. Информатор йәмғиәт мәнфәғәтендә үҙен етди хәүеф аҫтына ҡуя икәнен дә иҫтән сығармағыҙ. Шуға күрә был отчетта килтерелгән материалдарҙы бик мөһим тип иҫәпләргә."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Был хат һеҙҙе булған отчеттың яңыртылыуы хаҡында иҫкәртә"

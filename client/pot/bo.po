@@ -18,9 +18,6 @@ msgstr ""
 msgid "Log in"
 msgstr "ནང་འཛུལ།"
 
-msgid "Theme customization"
-msgstr "རང་བཟོས་དཔེ་སྒྲོམ།"
-
 msgid "Languages"
 msgstr "སྐད་རིགས།"
 
@@ -80,9 +77,6 @@ msgstr "ཡིག་ཆ།"
 
 msgid "Comments"
 msgstr "མཆན།"
-
-msgid "Messages"
-msgstr "འཕྲིན་ཐུང་།"
 
 msgid "Details"
 msgstr "ཞིབ་ཕྲ།"
@@ -448,13 +442,13 @@ msgstr ""
 msgid "Logout"
 msgstr "ཕྱིར་ཐོན།"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
-
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
+msgstr ""
+
+msgid "Transfer"
 msgstr ""
 
 msgid "Assigned to"
@@ -463,7 +457,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr ""
+
+msgid "Hide"
+msgstr "སྦས།"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Internal"
+msgstr "ནང་ཁུལ།"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "གསང་དོན་སྲིད་བྱུས།"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -507,6 +552,9 @@ msgstr "བཟོ་བསྐྲུན་ཚེས་གྲངས།"
 
 msgid "Last access"
 msgstr "ལྟ་སྤྱོད་མཐའ་མ།"
+
+msgid "Messages"
+msgstr "འཕྲིན་ཐུང་།"
 
 msgid "Whistleblower's last access"
 msgstr "གསང་སྒྲོག་པའི་ལྟ་སྤྱོད་མཐའ་མ།"
@@ -583,12 +631,6 @@ msgstr "མཆན་ནུས་ལྡན་བཟོ།"
 msgid "Allow the whistleblower to write comments"
 msgstr "གསང་སྒྲོག་པ་ལ་མཆན་འབྲི་རུ་འཇུག"
 
-msgid "Enable private messages"
-msgstr "སྒེར་གྱི་འཕྲིན་ཐུང་ནུས་ལྡན་བཟོ།"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "གསང་སྒྲོག་པ་ལ་འཕྲིན་ཐུང་གཏོང་དུ་འཇུག"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "གསང་སྒྲོག་པ་ལ་སྙན་ཐོའི་སྟེང་ཟུར་སྣོན་སྣོན་དུ་འཇུག"
 
@@ -660,9 +702,6 @@ msgstr "སྒེར་གྱི་མཐེབ།"
 
 msgid "Certificate Signing Request"
 msgstr "ལག་འཁྱེར་སྟེང་མིང་རྟགས་རྒྱག་པའི་རེ་ཞུ།"
-
-msgid "Download"
-msgstr "ཕབ་ལེན།"
 
 msgid "Certificate"
 msgstr "ལག་འཁྱེར།"
@@ -824,6 +863,12 @@ msgstr "ལན་འདེབས་སྣ་མང་ཁས་ལེན་བྱ
 msgid "Template override"
 msgstr "མ་དཔེ་ཟུར་འཇུག"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "ཁ་པར་ཨང་གྲངས།"
 
@@ -907,6 +952,9 @@ msgstr "ཞབས་མཆན།"
 
 msgid "Upload"
 msgstr "ཡར་འཇུག"
+
+msgid "Download"
+msgstr "ཕབ་ལེན།"
 
 msgid "Language:"
 msgstr "སྐད་ཡིག:"
@@ -1028,14 +1076,17 @@ msgstr ""
 msgid "Sites"
 msgstr "དྲ་ཚིགས།"
 
-msgid "Mode:"
-msgstr "རྣམ་པ།:"
+msgid "Profile"
+msgstr "ལོ་རྒྱུས།"
 
 msgid "Configure"
 msgstr "སྡེབ་སྒྲིག"
 
 msgid "Subdomain"
 msgstr "དྲྭ་རྒྱའི་ཁ་བྱང་ནང་གསེས།"
+
+msgid "Mode:"
+msgstr "རྣམ་པ།:"
 
 msgid "Creation date:"
 msgstr "བཟོ་བསྐྲུན་ཚེས་གྲངས།:"
@@ -1106,6 +1157,12 @@ msgstr "འབྱོར་ཡུལ་ལ་སྙན་ཐོ་བསུབ་
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "འབྱོར་ཡུལ་ལ་སྙན་ཐོའི་དུས་ཡོལ་ཚེས་གྲངས་ཕྱི་བཤོལ་བྱེད་དུ་འཇུག"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "སྤྱོད་པ་པོའི་འཛིན་སྐྱོང་ལ་གཤམ་གྱི་ཁྱད་ཆོས་དག་གི་ལྟ་སྤྱོད་སྤྲོད།:"
 
@@ -1145,11 +1202,11 @@ msgstr "ཁྱེད་ཀྱི་ཐོ་ཁོངས་འདེམས་ར
 msgid "Now type your password, then click 'Log in':"
 msgstr "ད་ལྟ་ཁྱེད་ཀྱི་གསང་ཡིག་འཇུག དེ་ནས་ 'ནང་འཛུལ་' སྟེང་སྣུན།"
 
-msgid "Text shown after the user has selected the option."
-msgstr "སྤྱོད་པ་པོ་ཡིས་གདམ་ག་འདེམས་པའི་རྗེས་སུ་ཡི་གེ་སྟོན་པ།"
-
 msgid "Confirm"
 msgstr "གཏན་འཁེལ།"
+
+msgid "Text shown after the user has selected the option."
+msgstr "སྤྱོད་པ་པོ་ཡིས་གདམ་ག་འདེམས་པའི་རྗེས་སུ་ཡི་གེ་སྟོན་པ།"
 
 msgid "Assign score points"
 msgstr "ཨང་ཐོབ་སྐར་གྲངས་ལག་བསྟར་བྱ།"
@@ -1209,7 +1266,10 @@ msgstr "གཏོང་།"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "གཏན་འཁེལ་བྱེད་པ་ཡིས། ཁྱེད་ཀྱིས་དུས་ཡུལ་ཚེས་གྲངས་དེ་འདིའི་སྟེང་ཕྱི་བཤོལ་བྱེད་པ་ཡིན།:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1286,20 +1346,14 @@ msgstr "ཁྱེད་ཀྱིས་ཞུ་གཏུག་ཅིག་སྔ
 msgid "The receipt is either invalid or the report has expired."
 msgstr "འབྱོར་འཛིན་དེ་འཐད་ལྡན་མིན་པའམ་ཞུ་གཏུག་དེ་དུས་ཡོལ་ཟིན་པ་གང་རུང་ཡིན་སྲིད། "
 
-msgid "Select a file or drag it here."
-msgstr "ཡིག་ཆ་ཞིག་འདེམས་པའམ་འདིར་འདྲེད།"
+msgid "Filename"
+msgstr "ཡིག་ཆའི་མིང་།"
 
 msgid "Size:"
 msgstr "ཆ་ཚད།:"
 
-msgid "Uploading files…"
-msgstr "ཡིག་ཆ་ཡར་འཇུག་བཞིན་པ།..."
-
-msgid "Upload completed successfully!"
-msgstr "ཡར་འཇུག་མཇུག་སྐྱེལ་ཟིན།"
-
-msgid "Estimated upload time:"
-msgstr "ཚོད་དཔག་བྱས་པའི་ཡར་འཇུག་དུས་ཚོད།:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "འབྱོར་ཡུལ་བ་ཡིས་ཁྱེད་ལ་དྲི་ཚན་འཕར་མ་ཞིག་འགེང་པའི་རེ་ཞུ་བྱས་འདུག"
@@ -1313,8 +1367,8 @@ msgstr "ནས།:"
 msgid "To:"
 msgstr "ལ།:"
 
-msgid "Filename"
-msgstr "ཡིག་ཆའི་མིང་།"
+msgid "View"
+msgstr "ལྟ་ཞིབ"
 
 msgid "Upload date"
 msgstr "ཡར་འཇུག་ཚེས་གྲངས།"
@@ -1369,6 +1423,9 @@ msgid ""
 "your password."
 msgstr "ཁྱེད་ཀྱི་ \"ཐོ་ཁོངས་བསྐྱར་གསོའི་མཐེབ་\" བསྐྱར་ལེན་བྱེད་པ་དང་དེ་བདེ་འཇགས་ངང་ཉར་གསོག་བྱེད་པར། ཁྱེད་ཀྱིས་ \"མོས་འདེམས་\" སྡེ་ཚན་ལྟ་སྤྱོད་བྱེད་རྒྱུར་འོས་སྦྱོར་ཞུ་ཡི་ཡོད། གལ་ཏེ་ཁྱེད་ཀྱིས་རང་ཉིད་ཀྱི་གསང་ཡིག་བརྗེད་པ་ཡིན་ན། གླེང་སྟེགས་དང་ཁྱེད་ཀྱི་གཞི་གྲངས་ལྟ་སྤྱོད་བསྐྱར་གསོ་བྱེད་པར་མཐེབ་འདི་དགོས་ངེས་ཡིན།"
 
+msgid "Select a file or drag it here."
+msgstr "ཡིག་ཆ་ཞིག་འདེམས་པའམ་འདིར་འདྲེད།"
+
 msgid "The provided recovery key is invalid."
 msgstr "མཁོ་སྤྲོད་བྱས་པའི་བསྐྱར་གསོའི་མཐེབ་དེ་མི་འཐད།"
 
@@ -1396,6 +1453,9 @@ msgstr "གསང་སྒྲོག་པའི་ངོ་བོའི་ལྟ
 
 msgid "Date of the request"
 msgstr "རེ་ཞུའི་ཚེས་གྲངས།"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "སྟོན།"
@@ -1480,17 +1540,17 @@ msgstr "ནང་འཛུལ་ཆེད་གནས་ ༡༦ ཅན་གྱ�
 msgid "View your report"
 msgstr "ཁྱེད་ཀྱི་སྙན་ཐོར་བལྟ།"
 
-msgid "Recipient selection"
-msgstr "འབྱོར་ཡུལ་འདེམས་སྒྲུག"
-
-msgid "Select the recipients of your report:"
-msgstr "ཁྱེད་ཀྱི་སྙན་ཐོའི་འབྱོར་ཡུལ་རྣམས་འདེམས།:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "འདེམས་ཟིན་པའི་འབྱོར་ཡུལ།:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "འདེམས་རུང་བའི་འབྱོར་ཡུལ་གྱི་མང་མཐའི་གྲངས་ཚད་དེ་སླེབས་འདུག"
+
+msgid "You must select at least one recipient."
+msgstr "ཁྱེད་ཀྱི་ཉུང་མཐར་འབྱོར་ཡུལ་ཞིག་ངེས་པར་དུ་འདེམས་དགོས།"
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1502,17 +1562,11 @@ msgid ""
 "invalid:"
 msgstr "རིམ་པ་འདིའི་ནང་། གཤམ་འཁོད་དྲི་བ་དག་ཀྱི་ལས་འདེབས་རྣམས་མ་ཚང་བའམ་མི་འཐད་པ་ཡིན།:"
 
-msgid "You must select at least one recipient."
-msgstr "ཁྱེད་ཀྱི་ཉུང་མཐར་འབྱོར་ཡུལ་ཞིག་ངེས་པར་དུ་འདེམས་དགོས།"
+msgid "Recipient selection"
+msgstr "འབྱོར་ཡུལ་འདེམས་སྒྲུག"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "ཡིག་ཆ་(རྣམས་) ཡར་འཇུག་ཟིན་པར་སྒུག་ནས་ཡོད། "
-
-msgid "The following steps have errors:"
-msgstr "གཤམ་འཁོད་རིམ་པ་དག་ལ་ནོར་སྐྱོན་འདུག:"
-
-msgid "Hide"
-msgstr "སྦས།"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1680,6 +1734,9 @@ msgstr "དེ་ནི་ཁྲིམས་མཐུན་ཡིན་མིན
 
 msgid "The activities with unusual stats are:"
 msgstr "རྒྱུན་གཏན་མིན་པའི་རྣམ་གྲངས་རིག་པའི་བྱེད་སྒོ་དག་ནི།:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1909,6 +1966,9 @@ msgstr ""
 msgid "New report"
 msgstr "སྙན་ཐོ་གསར་པ།"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "དུས་ཚོད་ཡོལ་བའི་ཚེས་གྲངས་སྔ་ཤོས་ནི། {EarliestExpirationDate}"
 
@@ -1918,18 +1978,16 @@ msgstr "དེ་དག་མ་བསུབ་གོང་དེ་ཚོ་ཞ
 msgid "Some reports will expire soon"
 msgstr "སྙན་ཐོ་འགའ་ཤས་མགྱོགས་མྱུར་དུས་ཚོད་ཡོལ་བ་ཡིན། "
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "འདི་ནི་གསང་སྒྲོག་པ་ཡིས་ཁྱེད་ཉིད་དེ་དག་གི་སྙན་ཐོའི་གལ་ཆེའི་འབྱོར་ཡུལ་ཞིག་ལ་འདེམས་ཟིན་པའི་གློག་འཕྲིན་བརྡ་ཐོ་ཡིན། "
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "ཁྱེད་ཀྱིས་དེར་གཏོགས་ཆ་འཕྲིན་དང་དངོས་རྫས་སྟེང་དོ་སྣང་དམིགས་བསལ་སྤྲད་དགོས་པ་རེ་ཞུ་བྱས་འདུག གསང་སྒྲོག་པ་ཡིས་མང་ཚོགས་ཀྱི་ཁེ་ཕན་ཆེད་དུ་རང་ཉིད་སོ་སོ་སྒེར་གྱི་ཉེན་ཚབས་ཆེན་པོའི་ནང་ཐེར་འདོན་ཡང་ཡང་བྱེད་ཀྱི་ཡོད་པ་ཐུགས་འཇགས་གནང་རོགས། དེ་འདྲ་སོང་ཙང་སྙན་ཐོ་འདི་ནང་འཚུད་དུ་མཁོ་སྤྲོད་བྱས་པའི་དངོས་རྫས་དེ་གལ་འགངས་ཆེན་པོ་འཛིན་དགོས་པ་ཡིན། "
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "འདི་ནི་ད་ཡོད་སྙན་ཐོ་ཞིག་གསར་སྒྱུར་ཟིན་ཡོད་པའི་གློག་འཕྲིན་བརྡ་ཐོ་ཞིག་ཡིན།"

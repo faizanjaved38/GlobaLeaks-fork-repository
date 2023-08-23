@@ -7,7 +7,7 @@
     </span>
   </div>
   <div class="card-body" data-ng-show="!collapsed">
-    <div data-ng-show="tip.rfiles.length" class="table-responsive">
+    <div class="table-responsive">
       <table class="table table-striped" id="fileList">
         <thead>
           <tr>
@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody id="fileListBody">
-          <tr id="file-{{$index}}" data-ng-repeat="file in tip.rfiles | orderBy:'creation_date'">
+          <tr id="file-{{$index}}" data-ng-repeat="file in tip.wbfiles | orderBy:'creation_date'" data-ng-if="!file.reference_id">
             <td>{{file.name}}</td>
             <td>{{file.creation_date | date:'dd-MM-yyyy HH:mm'}}</td>
             <td>{{file.type}}</td>
@@ -29,16 +29,13 @@
     </div>
     <br />
     <div data-ng-if="tip.status !== 'closed'">
-      <div data-ng-include="'views/partials/rfile_upload_button.html'"></div>
-      <div data-ng-include="'views/partials/rfile_upload_status.html'"></div>
+      <div data-ng-include="'views/partials/wbfile_upload_button.html'"></div>
+      <div data-ng-include="'views/partials/wbfile_upload_status.html'"></div>
       <div data-ng-show="Utils.hasPausedFileUploads(uploads)">
         <button id="files-action-confirm" class="btn btn-sm btn-outline-secondary" data-ng-click="Utils.resumeFileUploads(uploads)">
           <i class="fa-solid fa-upload"></i>
           <span data-translate>Confirm</span>
         </button>
-      </div>
-      <div data-ng-show="Utils.isUploading(uploads)">
-        <div data-ng-include="'views/partials/rfiles_upload_status.html'"></div>
       </div>
     </div>
   </div>

@@ -94,13 +94,13 @@ factory("Authentication",
 
         var promise;
         if (authtoken) {
-          promise = $http.post("api/tokenauth", {"authtoken": authtoken});
+          promise = $http.post("api/auth/tokenauth", {"authtoken": authtoken});
         } else {
           if (username === "whistleblower") {
             password = password.replace(/\D/g,"");
-            promise = $http.post("api/receiptauth", {"receipt": password});
+            promise = $http.post("api/auth/receiptauth", {"receipt": password});
           } else {
-            promise = $http.post("api/authentication", {"tid": tid, "username": username, "password": password, "authcode": authcode});
+            promise = $http.post("api/auth/authentication", {"tid": tid, "username": username, "password": password, "authcode": authcode});
           }
         }
 
@@ -129,7 +129,7 @@ factory("Authentication",
           };
         }
 
-        return $http.delete("api/session").then(cb, cb);
+        return $http.delete("api/auth/session").then(cb, cb);
       };
 
       self.loginRedirect = function(isLogout) {
@@ -196,13 +196,13 @@ factory("Access", ["$q", "Authentication", function ($q, Authentication) {
   return Access;
 }]).
 factory("SessionResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/session");
+  return new GLResource("api/auth/session");
 }]).
 factory("PublicResource", ["GLResource", function(GLResource) {
   return new GLResource("api/public");
 }]).
 factory("TokenResource", ["GLResource", "glbcProofOfWork", function(GLResource, glbcProofOfWork) {
-  return new GLResource("api/token/:id", {id: "@id"}, {
+  return new GLResource("api/auth/token/:id", {id: "@id"}, {
     get: {
       method: "POST",
       interceptor: {
@@ -218,7 +218,7 @@ factory("TokenResource", ["GLResource", "glbcProofOfWork", function(GLResource, 
   });
 }]).
 factory("SubmissionResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/submission");
+  return new GLResource("api/whistleblower/submission");
 }]).
 factory("Submission", ["$q", "$location", "$rootScope", "Authentication", "GLResource", "SubmissionResource",
     function($q, $location, $rootScope, Authentication, GLResource, SubmissionResource) {
@@ -325,47 +325,31 @@ factory("Submission", ["$q", "$location", "$rootScope", "Authentication", "GLRes
   };
 }]).
 factory("RTipResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/rtips/:id", {id: "@id"});
+  return new GLResource("api/recipient/rtips/:id", {id: "@id"});
 }]).
 factory("RTipCommentResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/rtips/:id/comments", {id: "@id"});
-}]).
-factory("RTipMaskingResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/rtips/:id/masking", {id: "@id"});
-}]).
-factory("RTipMessageResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/rtips/:id/messages", {id: "@id"});
+  return new GLResource("api/recipient/rtips/:id/comments", {id: "@id"});
 }]).
 factory("RTipDownloadRFile", ["Utils", function(Utils) {
   return function(file) {
-    Utils.download("api/rfile/" + file.id);
+    Utils.download("api/recipient/rfiles/" + file.id);
   };
 }]).
-factory("WBTipFileSourceGet", ["Utils", function(Utils) {
-  return function(id, key, scope) {
-    return Utils.getRawFile("api/rtip/answer/rfile/" + id, key, scope);
-  }
-}]).
-factory("RTipFileSourceGet", ["Utils", function(Utils) {
-  return function(id, key, scope) {
-    return Utils.getRawFile("api/rfile/" + id, key, scope);
-  }
-}]).
-factory("RTipWBFileResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/wbfile/:id", {id: "@id"});
+factory("RTipRFileResource", ["GLResource", function(GLResource) {
+  return new GLResource("api/recipient/rfiles/:id", {id: "@id"});
 }]).
 factory("RTipDownloadWBFile", ["Utils", function(Utils) {
   return function(file) {
-    Utils.download("api/wbfile/" + file.id);
+    Utils.download("api/recipient/wbfiles/" + file.id);
   };
 }]).
 factory("RTipExport", ["Utils", function(Utils) {
   return function(tip) {
-    Utils.download("api/rtips/" + tip.id + "/export");
+    Utils.download("api/recipient/rtips/" + tip.id + "/export");
   };
 }]).
-factory("RTip", ["$rootScope", "$http", "RTipResource", "RTipMessageResource", "RTipCommentResource","RTipMaskingResource",
-        function($rootScope, $http, RTipResource, RTipMessageResource, RTipCommentResource,RTipMaskingResource) {
+factory("RTip", ["$rootScope", "$http", "RTipResource", "RTipCommentResource",
+        function($rootScope, $http, RTipResource, RTipCommentResource) {
   return function(tipID, fn) {
     var self = this;
 
@@ -373,49 +357,24 @@ factory("RTip", ["$rootScope", "$http", "RTipResource", "RTipMessageResource", "
       tip.context = $rootScope.contexts_by_id[tip.context_id];
       tip.questionnaire = $rootScope.questionnaires_by_id[tip.context.questionnaire_id];
       tip.additional_questionnaire = $rootScope.questionnaires_by_id[tip.context.additional_questionnaire_id];
-      tip.newComment = function(content) {
+
+      tip.newComment = function(content,visibility) {
         var c = new RTipCommentResource(tipID);
         c.content = content;
+        c.visibility = visibility;
         c.$save(function(newComment) {
           tip.comments.unshift(newComment);
           tip.localChange();
         });
       };
 
-      tip.newMasking = function(content) {
-        var c = new RTipMaskingResource(tipID);
-        c.content_id = content.content_id;
-        c.permanent_masking = content.permanent_masking;
-        c.temporary_masking = content.temporary_masking;
-        c.$save(function(newMasking) {
-          tip.masking.unshift(newMasking);
-          tip.localChange();
-        }).then(function () {
-          $rootScope.reload();
-        });
-      };
-
-      tip.newMessage = function(content) {
-        var m = new RTipMessageResource(tipID);
-        m.content = content;
-        m.$save(function(newMessage) {
-          tip.messages.unshift(newMessage);
-          tip.localChange();
-        });
-      };
-      tip.updateMasking = function(id, data) {
-        var req = {data};
-        return $http({method: "PUT", url: "api/rtips/" + tip.id +"/masking/" + id, data: req}).then(function () {
-          $rootScope.reload();
-        });
-      };
       tip.operation = function(operation, args) {
         var req = {
           "operation": operation,
           "args": args
         };
 
-        return $http({method: "PUT", url: "api/rtips/" + tip.id, data: req});
+        return $http({method: "PUT", url: "api/recipient/rtips/" + tip.id, data: req});
       };
 
       tip.updateSubmissionStatus = function() {
@@ -435,24 +394,18 @@ factory("RTip", ["$rootScope", "$http", "RTipResource", "RTipMessageResource", "
   };
 }]).
 factory("WBTipResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/wbtip");
+  return new GLResource("api/whistleblower/wbtip");
 }]).
 factory("WBTipCommentResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/wbtip/comments");
-}]).
-factory("WBTipMaskingResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/rtips/:id/masking", {id: "@id"});
-}]).
-factory("WBTipMessageResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/wbtip/messages/:id", {id: "@id"});
+  return new GLResource("api/whistleblower/wbtip/comments");
 }]).
 factory("WBTipDownloadFile", ["Utils", function(Utils) {
   return function(file) {
-    Utils.download("api/wbtip/wbfile/" + file.id);
+    Utils.download("api/whistleblower/wbtip/rfiles/" + file.id);
   };
 }]).
-factory("WBTip", ["$rootScope", "WBTipResource", "WBTipCommentResource", "WBTipMessageResource","WBTipMaskingResource",
-    function($rootScope, WBTipResource, WBTipCommentResource, WBTipMessageResource,WBTipMaskingResource) {
+factory("WBTip", ["$rootScope", "WBTipResource", "WBTipCommentResource",
+    function($rootScope, WBTipResource, WBTipCommentResource,) {
   return function(fn) {
     var self = this;
 
@@ -474,29 +427,12 @@ factory("WBTip", ["$rootScope", "WBTipResource", "WBTipCommentResource", "WBTipM
         }
       });
 
-      tip.newComment = function(content) {
+      tip.newComment = function(content,visibility) {
         var c = new WBTipCommentResource();
         c.content = content;
+        c.visibility = visibility;
         c.$save(function(newComment) {
           tip.comments.unshift(newComment);
-          tip.localChange();
-        });
-      };
-
-      tip.newMasking = function(content) {
-        var c = new WBTipMaskingResource();
-        c.content = content;
-        c.$save(function(newMasking) {
-          tip.masking.unshift(newMasking);
-          tip.localChange();
-        });
-      };
-
-      tip.newMessage = function(content) {
-        var m = new WBTipMessageResource({id: tip.msg_receiver_selected});
-        m.content = content;
-        m.$save(function(newMessage) {
-          tip.messages.unshift(newMessage);
           tip.localChange();
         });
       };
@@ -512,7 +448,7 @@ factory("WBTip", ["$rootScope", "WBTipResource", "WBTipCommentResource", "WBTipM
   };
 }]).
 factory("ReceiverTips", ["GLResource", function(GLResource) {
-  return new GLResource("api/rtips");
+  return new GLResource("api/recipient/rtips");
 }]).
 factory("IdentityAccessRequests", ["GLResource", function(GLResource) {
   return new GLResource("api/custodian/iars");
@@ -545,10 +481,10 @@ factory("AdminUserResource", ["GLResource", function(GLResource) {
   return new GLResource("api/admin/users/:id", {id: "@id"});
 }]).
 factory("AdminSubmissionStatusResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/admin/submission_statuses/:id", {id: "@id"});
+  return new GLResource("api/admin/statuses/:id", {id: "@id"});
 }]).
 factory("AdminSubmissionSubStatusResource", ["GLResource", function(GLResource) {
-  return new GLResource("api/admin/submission_statuses/:submissionstatus_id/substatuses/:id", {id: "@id", submissionstatus_id: "@submissionstatus_id"});
+  return new GLResource("api/admin/statuses/:submissionstatus_id/substatuses/:id", {id: "@id", submissionstatus_id: "@submissionstatus_id"});
 }]).
 factory("AdminNodeResource", ["GLResource", function(GLResource) {
   return new GLResource("api/admin/node");
@@ -596,10 +532,7 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
       context.show_steps_navigation_interface = true;
       context.select_all_receivers = true;
       context.maximum_selectable_receivers = 0;
-      context.enable_comments = true;
-      context.enable_messages = false;
       context.enable_two_way_comments = true;
-      context.enable_two_way_messages = true;
       context.enable_attachments = true;
       context.questionnaire_id = "";
       context.additional_questionnaire_id = "";
@@ -707,13 +640,13 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
       user.notification = true;
       user.forcefully_selected = false;
       user.can_edit_general_settings = false;
-      user.can_mask_information = false;
-      user.can_delete_mask_information = false;
       user.can_grant_access_to_reports = false;
       user.can_delete_submission = false;
       user.can_postpone_expiration = true;
+      user.can_transfer_access_to_reports = false;
       return user;
     },
+
     new_redirect: function () {
       return new AdminRedirectResource();
     },
@@ -729,7 +662,7 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
   };
 }]).
 factory("UserPreferences", ["GLResource", function(GLResource) {
-  return new GLResource("api/preferences", {}, {"update": {method: "PUT"}});
+  return new GLResource("api/user/preferences", {}, {"update": {method: "PUT"}});
 }]).
 factory("TipsCollection", ["GLResource", function(GLResource) {
   return new GLResource("api/admin/auditlog/tips");
@@ -743,7 +676,7 @@ factory("Files", ["GLResource", function(GLResource) {
 factory("DefaultL10NResource", ["GLResource", function(GLResource) {
   return new GLResource("/data/l10n/:lang.json", {lang: "@lang"});
 }]).
-factory("RTipViewRFile", ["Utils", function(Utils) {
+factory("RTipViewWBFile", ["Utils", function(Utils) {
   return function(file) {
     Utils.openViewModalDialog("views/modals/file_view.html", file);
   };
@@ -800,6 +733,12 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       });
 
       return filteredTips;
+    },
+
+    writeUTFBytes: function(view, offset, string) {
+      for (let i = 0; i < string.length; i++) {
+        view.setUint8(offset + i, string.charCodeAt(i));
+      }
     },
 
     getStaticFilter: function(data, model, key) {
@@ -977,55 +916,6 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       }
     },
 
-    getUploadsNumber: function(uploads) {
-      var count = 0;
-
-      for (var key in uploads) {
-        if (uploads[key] && uploads[key].files) {
-          count += uploads[key].files.length;
-        }
-      }
-
-      return count;
-    },
-
-    getUploadStatus: function(uploads) {
-      for (var key in uploads) {
-        if (uploads[key] &&
-            uploads[key].progress &&
-            uploads[key].progress() !== 1) {
-          return "uploading";
-        }
-      }
-
-      return "finished";
-    },
-
-    getUploadStatusPercentage: function(uploads) {
-      var n = 0;
-      var percentage = 0;
-      for (var key in uploads) {
-        if (uploads[key] && uploads[key].progress) {
-          n += 1;
-          percentage += uploads[key].progress();
-        }
-      }
-
-      return (percentage / n) * 100;
-    },
-
-    getRemainingUploadTime: function(uploads) {
-      var count = 0;
-
-      for (var key in uploads) {
-        if (uploads[key] && uploads[key].timeRemaining) {
-          count += uploads[key].timeRemaining();
-        }
-      }
-
-      return count;
-    },
-
     isUploading: function(uploads) {
       for (var key in uploads) {
         if (uploads[key] &&
@@ -1056,6 +946,37 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
           uploads[key].resume();
         }
       }
+    },
+
+    acceptPrivacyPolicyDialog: function(template, arg, scope) {
+      var modal = $uibModal.open({
+        templateUrl: "views/modals/accept_agreement.html",
+        controller: "ConfirmableModalCtrl",
+        resolve: {
+          arg: function () {
+            return arg;
+          },
+          confirmFun: function () {
+            return function () {
+              $http({
+                method: "PUT",
+                url: "api/user/operations",
+                data: {
+                 "operation": "accepted_privacy_policy",
+                 "args": {}
+               }
+             }).then(function() {
+               console.log($rootScope.resources.preferences.accepted_privacy_policy);
+               $rootScope.resources.preferences.accepted_privacy_policy = '';
+             });
+            }
+          },
+
+          cancelFun: null
+        }
+      });
+
+      return modal.result;
     },
 
     openConfirmableModalDialog: function(template, arg, scope) {
@@ -1141,21 +1062,16 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       };
     },
 
-    getRawFile: function(url, key, scope) {
+    load: function(url) {
       return new TokenResource().$get().then(function(token) {
-        scope.audiolist[key]['value'] = url + "?token=" + token.id + ":" + token.answer;
+        return url + "?token=" + token.id + ":" + token.answer;
       });
     },
 
     download: function(url) {
-      
       return new TokenResource().$get().then(function(token) {
         $window.open(url + "?token=" + token.id + ":" + token.answer);
       });
-    },
-
-    getUrlLink: function() {
-      return new TokenResource().$get();
     },
 
     view: function(url, mimetype, callback) {
@@ -1210,10 +1126,16 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       $window.print();
     },
 
-    scrollToSteps: function() {
-      try {
-        $window.document.getElementsById("SubmissionForm")[0].scrollIntoView();
-      } catch(e) {return;}
+    scrollTo: function(querySelector) {
+      $timeout(function() {
+        try {
+          var elem = $window.document.querySelector(querySelector);
+          elem.scrollIntoView();
+          elem.focus();
+        } catch (error) {
+          return;
+        }
+      });
     },
 
     getConfirmation: function(confirmFun) {
@@ -1246,16 +1168,40 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
 
     copyToClipboard: function(data) {
       if ($window.navigator.clipboard && $window.isSecureContext) {
-        $window.navigator.clipboard.writeText(data);
+        return $window.navigator.clipboard.writeText(data);
       }
     },
 
-    saveAs: function(blob, filename) {
-      var fileLink = $window.document.createElement("a");
-      fileLink.href = URL.createObjectURL(blob);
-      fileLink.download = filename;
-      fileLink.click();
-      $timeout(function () { URL.revokeObjectURL(fileLink.href); }, 1000);
+    encodeString: function(string) {
+      // convert a Unicode string to a string in which
+      // each 16-bit unit occupies only one byte
+      const codeUnits = Uint16Array.from(
+        { length: string.length },
+          (element, index) => string.charCodeAt(index)
+      );
+
+      const charCodes = new Uint8Array(codeUnits.buffer);
+
+      let result = "";
+      charCodes.forEach((char) => {
+        result += String.fromCharCode(char);
+      });
+
+      return btoa(result);
+    },
+
+    saveAs: function(filename, url) {
+      return $http({
+        method: "GET",
+        url: url,
+        responseType: "blob",
+      }).then(function (response) {
+        var fileLink = $window.document.createElement("a");
+        fileLink.href = URL.createObjectURL(response.data);
+        fileLink.download = filename;
+        fileLink.click();
+        $timeout(function () { URL.revokeObjectURL(fileLink.href); }, 1000);
+      });
     },
 
     role_l10n: function(role) {
@@ -1279,6 +1225,7 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
         "get_recovery_key",
         "toggle_escrow",
         "toggle_user_escrow",
+        "enable_user_permission_file_upload",
         "reset_submissions"
       ];
 
@@ -1300,7 +1247,7 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
               "args": args
             },
             headers: {
-              "X-Confirmation": secret
+              "X-Confirmation": self.encodeString(secret)
             }
           }).then(
             function(response) {
@@ -1373,6 +1320,48 @@ factory("Utils", ["$rootScope", "$http", "$q", "$location", "$filter", "$timeout
       }
 
       return $http.post("api/exception", scrub(exception));
+    }
+  };
+}]).
+factory("mediaProcessor", ["Utils", function (Utils) {
+  return {
+    enableNoiseSuppression: async function (stream) {
+      const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
+      if ("noiseSuppression" in supportedConstraints) {
+        try {
+          const settings = { noiseSuppression: true };
+          stream.getAudioTracks().forEach(track => {
+            track.applyConstraints(settings);
+          });
+        } catch (error) {
+          console.error("Error applying noise suppression:", error);
+        }
+      }
+    },
+
+    createHighPassFilter:function (audioContext) {
+      const filter = audioContext.createBiquadFilter();
+      filter.type = "highpass";
+      filter.frequency.value = 300;
+      return filter;
+    },
+
+    createLowPassFilter:function (audioContext) {
+      const filter = audioContext.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.value = 3000;
+      return filter;
+    },
+
+    createDynamicCompressor: function(audioContext) {
+      var compressor = audioContext.createDynamicsCompressor();
+      compressor.threshold.value = -50;
+      compressor.knee.value = 40;
+      compressor.ratio.value = 12;
+      compressor.reduction.value = -20;
+      compressor.attack.value = 0;
+      compressor.release.value = 0.25;
+      return compressor;
     }
   };
 }]).
@@ -1470,13 +1459,13 @@ factory("fieldUtilities", ["$filter", "$http", "CONSTANTS", function($filter, $h
         return r;
       },
 
-      isFieldTriggered: function(parent, field, answers, score) {
+      isFieldTriggered: function(scope, parent, field, answers, score) {
         var count = 0;
         var i;
 
         field.enabled = false;
 
-        if (parent !== null && !parent.enabled) {
+	if (parent !== null && ((!parent.enabled) || (scope.page === "submissionpage" && parent.template_id === "whistleblower_identity" && !scope.submission._submission.identity_provided))) {
           return false;
         }
 
@@ -1564,10 +1553,11 @@ factory("fieldUtilities", ["$filter", "$http", "CONSTANTS", function($filter, $h
       updateAnswers: function(scope, parent, list, answers) {
         var self = this;
         var ret = false;
+        var ret_children = false;
         var entry, option, i, j;
 
         angular.forEach(list, function(field) {
-          if (self.isFieldTriggered(parent, field, scope.answers, scope.score)) {
+          if (self.isFieldTriggered(scope, parent, field, scope.answers, scope.score)) {
             if (!(field.id in answers)) {
               answers[field.id] = [{}];
             }
@@ -1579,15 +1569,17 @@ factory("fieldUtilities", ["$filter", "$http", "CONSTANTS", function($filter, $h
 
           if (field.id in answers) {
             for (i=0; i<answers[field.id].length; i++) {
-              ret |= self.updateAnswers(scope, field, field.children, answers[field.id][i]);
+              ret_children |= self.updateAnswers(scope, field, field.children, answers[field.id][i]);
             }
           } else {
-            ret |= self.updateAnswers(scope, field, field.children, {});
+            ret_children |= self.updateAnswers(scope, field, field.children, {});
           }
 
           if (!field.enabled) {
             return false;
           }
+
+          ret |= ret_children;
 
           if (scope.public.node.enable_scoring_system) {
             angular.forEach(scope.answers[field.id], function(entry) {
@@ -1613,7 +1605,7 @@ factory("fieldUtilities", ["$filter", "$http", "CONSTANTS", function($filter, $h
                   }
                 }
               }
-            } else if (field.type === "fileupload" || field.type === "audioUpload") {
+            } else if (["fileupload", "voice"].indexOf(field.type) > -1) {
               entry.required_status = field.required && (!scope.uploads[field.id] || !scope.uploads[field.id].files.length);
             } else {
               entry.required_status = field.required && !entry["value"];
@@ -1670,7 +1662,7 @@ factory("fieldUtilities", ["$filter", "$http", "CONSTANTS", function($filter, $h
         }
 
         angular.forEach(scope.questionnaire.steps, function(step) {
-          step.enabled = self.isFieldTriggered(null, step, scope.answers, scope.score);
+          step.enabled = self.isFieldTriggered(scope, null, step, scope.answers, scope.score);
 
           ret |= self.updateAnswers(scope, step, step.children, scope.answers);
         });
@@ -1680,7 +1672,7 @@ factory("fieldUtilities", ["$filter", "$http", "CONSTANTS", function($filter, $h
           scope.submission.blocked = scope.block_submission;
         }
 
-    	return ret;
+	return ret;
       },
 
       parseField: function(field, parsedFields) {

@@ -17,9 +17,6 @@ msgstr ""
 msgid "Log in"
 msgstr "შესვლა"
 
-msgid "Theme customization"
-msgstr "თემის მორგება"
-
 msgid "Languages"
 msgstr "ენები"
 
@@ -79,9 +76,6 @@ msgstr "ფაილები"
 
 msgid "Comments"
 msgstr "კომენტარები"
-
-msgid "Messages"
-msgstr "შეტყობინებები"
 
 msgid "Details"
 msgstr "დეტალები"
@@ -447,14 +441,14 @@ msgstr "შუალედურ დაფაში კოპირება"
 msgid "Logout"
 msgstr "გამოსვლა"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "ამ მიმღებს მიეცეს შესაძლებლობა მიანიჭოს მომხმარებელს ანგარიშებზე წვდომის უფლება"
-
 msgid "Grant access"
 msgstr "წვდომის დაშვება"
 
 msgid "Revoke access"
 msgstr "წვდომის გაუქმება"
+
+msgid "Transfer"
+msgstr ""
 
 msgid "Assigned to"
 msgstr ""
@@ -462,7 +456,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr "პრივილეგიები"
+
+msgid "Hide"
+msgstr "დამალვა"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Internal"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "პირადი მონაცემების დაცვის დებულება"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -506,6 +551,9 @@ msgstr "შექმნის თარიღი"
 
 msgid "Last access"
 msgstr "ბოლო შესვლა"
+
+msgid "Messages"
+msgstr "შეტყობინებები"
 
 msgid "Whistleblower's last access"
 msgstr "ინსტრუქტორის ბოლო წვდომა"
@@ -582,12 +630,6 @@ msgstr "კომენტარების ჩართვა"
 msgid "Allow the whistleblower to write comments"
 msgstr "დართეთ ნება ინტრუქტორმა დააკომენტაროს"
 
-msgid "Enable private messages"
-msgstr "პირადი შეტყობინებების ჩართვა"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "დართთ ნება ინსტრუქტორს გაგზავნოს შეტყობინებები"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "დართეთ ნება ინსტრუქტორს დაამატოს ანგარიშზე დანართები"
 
@@ -659,9 +701,6 @@ msgstr "პირადი კოდი"
 
 msgid "Certificate Signing Request"
 msgstr "სერტიფიკატის ხელმოწერის მოთხოვნა"
-
-msgid "Download"
-msgstr "ჩამოტვირთვა"
 
 msgid "Certificate"
 msgstr "სერტიფიკატი"
@@ -823,6 +862,12 @@ msgstr "მრავლობითი პასუხების მიღე�
 msgid "Template override"
 msgstr "შაბლონზე გადაწერა"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "ტელეფონის ნომერი"
 
@@ -906,6 +951,9 @@ msgstr "კოლონტიტული"
 
 msgid "Upload"
 msgstr "ატვირთვა"
+
+msgid "Download"
+msgstr "ჩამოტვირთვა"
 
 msgid "Language:"
 msgstr "ენა:"
@@ -1027,14 +1075,17 @@ msgstr "ქსელი"
 msgid "Sites"
 msgstr "საიტები"
 
-msgid "Mode:"
-msgstr "რეჟიმი:"
+msgid "Profile"
+msgstr ""
 
 msgid "Configure"
 msgstr "კონფიგურაცია"
 
 msgid "Subdomain"
 msgstr "ქვედომენი"
+
+msgid "Mode:"
+msgstr "რეჟიმი:"
 
 msgid "Creation date:"
 msgstr "შექმნის თარიღი:"
@@ -1105,6 +1156,12 @@ msgstr "დართეთ ნება მიმღებს წაშალო
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "დართეთ ნება მიმღებს გადაავადოს ანგარიშის ვადის გასვლა"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "მომხმარებლისთვის ადმინისტრაციული წვდომის მიცემა შემდეგი ფუნქციებისთვის"
 
@@ -1144,11 +1201,11 @@ msgstr "გთხოვთ, აირჩიოთ თქვენი ანგ�
 msgid "Now type your password, then click 'Log in':"
 msgstr "ახლა აკრიფეთ თქვენი პაროლი, შემდეგ დააჭირეთ \"შესვლა\"-ს:"
 
-msgid "Text shown after the user has selected the option."
-msgstr "ტექსტი გამოჩნდება მას შემდეგ, რაც მომხმარებელი აირჩევს ვარიანტს."
-
 msgid "Confirm"
 msgstr "დადასტურება"
+
+msgid "Text shown after the user has selected the option."
+msgstr "ტექსტი გამოჩნდება მას შემდეგ, რაც მომხმარებელი აირჩევს ვარიანტს."
 
 msgid "Assign score points"
 msgstr "ქულათა რაოდენობის მინიჭება"
@@ -1208,7 +1265,10 @@ msgstr "გაგზავნა"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "დადასტურებით, თქვენ გადაავადებთ ვადის გასვლის თარიღს:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1285,20 +1345,14 @@ msgstr "თქვენ უკვე შეავსეთ ანგარიშ
 msgid "The receipt is either invalid or the report has expired."
 msgstr "მიმღები არასწორია ან მოხსენება ვადაგასულია."
 
-msgid "Select a file or drag it here."
-msgstr "აირჩიეთ ფაილი ან გადმოიტანეთ აქ."
+msgid "Filename"
+msgstr "ფაილის სახელი"
 
 msgid "Size:"
 msgstr "ზომა:"
 
-msgid "Uploading files…"
-msgstr "ფაილები იტვირთება…"
-
-msgid "Upload completed successfully!"
-msgstr "ატვირთვა წარმატებით დასრულდა!"
-
-msgid "Estimated upload time:"
-msgstr "ატვირთვის სავარაუდო დრო:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "მიმღებებმა მოითხოვეს, რომ თქვენ შეავსოთ დამატებითი კითხვარი."
@@ -1312,8 +1366,8 @@ msgstr "ვისგან:"
 msgid "To:"
 msgstr "ვის:"
 
-msgid "Filename"
-msgstr "ფაილის სახელი"
+msgid "View"
+msgstr ""
 
 msgid "Upload date"
 msgstr "ატვირთვის თარიღი"
@@ -1368,6 +1422,9 @@ msgid ""
 "your password."
 msgstr "თქვენი პაროლის დავიწყების შემთხვევაში, \"ანგარიშის აღდგენის კოდის\" მისაღებად, გირჩევთ შეხვიდეთ “პარამეტრების” განყოფილებაში და შეინახოთ იგი უსაფრთხოდ. ეს კოდი საჭირო იქნება პლატფორმაზე და თქვენს მონაცემებზე წვდომის აღსადგენად."
 
+msgid "Select a file or drag it here."
+msgstr "აირჩიეთ ფაილი ან გადმოიტანეთ აქ."
+
 msgid "The provided recovery key is invalid."
 msgstr "წარდგენილი აღდგენის კოდი არასწორია."
 
@@ -1395,6 +1452,9 @@ msgstr "ინსტრუქტორის ინტენტობაზე �
 
 msgid "Date of the request"
 msgstr "მოთხოვნის თარიღი"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "ჩვენება"
@@ -1479,17 +1539,17 @@ msgstr "შესასვლელად გამოიყენეთ 16-ც�
 msgid "View your report"
 msgstr "ნახეთ თქვენი ანგარიში"
 
-msgid "Recipient selection"
-msgstr "მიმღების შერჩევა"
-
-msgid "Select the recipients of your report:"
-msgstr "აირჩიეთ  თქვენი ანგარიშის მიმღებები:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "მიმღებები არჩეულია:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "თქვენ მიაღწიეთ ასარჩევი მიმღებების მაქსიმალურ რიცხვს."
+
+msgid "You must select at least one recipient."
+msgstr "თქვენ უნდა აირჩიოთ მინიმუმ ერთი მიმღები."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1501,17 +1561,11 @@ msgid ""
 "invalid:"
 msgstr "ამ ეტაპზე პასუხები შემდეგ კითხვებზე არ არის ან არასწორია:"
 
-msgid "You must select at least one recipient."
-msgstr "თქვენ უნდა აირჩიოთ მინიმუმ ერთი მიმღები."
+msgid "Recipient selection"
+msgstr "მიმღების შერჩევა"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "ფაილ(ებ)ის ატვირთვის დასრულების ლოდინი."
-
-msgid "The following steps have errors:"
-msgstr "შემდეგი ეტაპები შეიცავენ შეცდომებს:"
-
-msgid "Hide"
-msgstr "დამალვა"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1679,6 +1733,9 @@ msgstr "შეისწავლეთ საკითხი მისი კა
 
 msgid "The activities with unusual stats are:"
 msgstr "უჩვეულო აქტივობები სტატისტიკურად შემდეგია:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1908,6 +1965,9 @@ msgstr "ეს არის ელწერილი შეტყობინე
 msgid "New report"
 msgstr "ახალი ანგარიში"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "ვადის ამოწურვის ყველაზე ადრეული თარიღია {EarliestExpirationDate}."
 
@@ -1917,18 +1977,16 @@ msgstr "არ დაგავიწყდეთ მათი შემოწმ
 msgid "Some reports will expire soon"
 msgstr "ზოგიერთი ანგარიშის ვადა მალე ამოიწურება"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "ეს არის ელწერილი, რომელიც გაცნობებთ, რომ ინსტუქტორმა მოგნიშნათ თქვენ, როგორც ამ ანგარიშის მიღებისთვის ღირებული მიმღები."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "თქვენ გთხოვენ განსაკუთრებული ყურადღბა გაამახვილოთ მასში შემცველ ინფორმაციასა და მასალებზე. გთხოვთ გაითვალისწინოთ, რომ ინსტრუქტორები ხშირად საზოგადოებრივი ყურადღების მაღალი რისკის ქვეშ არიან. ამიტომ მათ მიერ ამ ანგარიშში მოწოდებული ინფორმაცია მაღალი მნიშვნელობისაა."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "ეს არის ელწერილი შეტყობინებით არსებული ანგარიშის განახლების შესახებ."

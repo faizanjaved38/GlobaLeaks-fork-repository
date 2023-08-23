@@ -39,9 +39,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Accedi"
 
-msgid "Theme customization"
-msgstr "Personalizzazione del tema"
-
 msgid "Languages"
 msgstr "Lingue"
 
@@ -101,9 +98,6 @@ msgstr "Allegati"
 
 msgid "Comments"
 msgstr "Commenti"
-
-msgid "Messages"
-msgstr "Messaggi"
 
 msgid "Details"
 msgstr "Dettagli"
@@ -469,14 +463,14 @@ msgstr "Copia negli appunti"
 msgid "Logout"
 msgstr "Esci"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Permetti a questo ricevente di concedere l'accesso alle segnalazioni ad altri utenti"
-
 msgid "Grant access"
 msgstr "Consenti accesso"
 
 msgid "Revoke access"
 msgstr "Revoca accesso"
+
+msgid "Transfer"
+msgstr "Trasferisci"
 
 msgid "Assigned to"
 msgstr "Assegnato a"
@@ -484,8 +478,59 @@ msgstr "Assegnato a"
 msgid "Not provided."
 msgstr "Non fornita."
 
-msgid "Set a reminder date"
-msgstr "Imposta una data di promemoria"
+msgid "Set a reminder"
+msgstr "Imposta un promemoria"
+
+msgid "Privileges"
+msgstr "Privilegi"
+
+msgid "Hide"
+msgstr "Nascosto"
+
+msgid "Unhide"
+msgstr "Scopri"
+
+msgid "Redact"
+msgstr "Cancella"
+
+msgid "Select an option"
+msgstr "Seleziona un'opzione"
+
+msgid "Select your language"
+msgstr "Seleziona la tua lingua"
+
+msgid "Give this user ability to mask information"
+msgstr "Dai a questo utente il permesso di mascherare le informazioni"
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr "Dai a questo utente il permesso di cancellare permanentemente le informazioni mascherate"
+
+msgid "Public"
+msgstr "Pubblico"
+
+msgid "Internal"
+msgstr "Interno"
+
+msgid "Personal"
+msgstr "Personale"
+
+msgid "Privacy Policy"
+msgstr "Informativa Privacy"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr "Ho letto e accetto l'Informativa Privacy"
+
+msgid "Download copy of the Privacy Policy"
+msgstr "Scarica copia dell'Informativa Privacy"
+
+msgid "Whistleblowing Policy"
+msgstr "Whistleblowing Policy"
+
+msgid "Accessibility Declaration"
+msgstr "Dichiarazione di Accessibilità"
+
+msgid "Voice"
+msgstr "Voce"
 
 msgid "File a report"
 msgstr "Invia una segnalazione"
@@ -528,6 +573,9 @@ msgstr "Data di creazione"
 
 msgid "Last access"
 msgstr "Ultimo accesso"
+
+msgid "Messages"
+msgstr "Messaggi"
 
 msgid "Whistleblower's last access"
 msgstr "Ultimo accesso del segnalante"
@@ -604,12 +652,6 @@ msgstr "Abilita i commenti"
 msgid "Allow the whistleblower to write comments"
 msgstr "Permetti al segnalante di scrivere commenti"
 
-msgid "Enable private messages"
-msgstr "Abilita messaggi privati"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Permetti al segnalante di inviare messaggi"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Permetti al segnalante di aggiungere allegati alla segnalazione"
 
@@ -681,9 +723,6 @@ msgstr "Chiave privata"
 
 msgid "Certificate Signing Request"
 msgstr "Richiesta di firma certificato"
-
-msgid "Download"
-msgstr "Scarica"
 
 msgid "Certificate"
 msgstr "Certificato"
@@ -845,6 +884,12 @@ msgstr "Accetta più di una risposta"
 msgid "Template override"
 msgstr "Sostituisci template"
 
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Max"
+
 msgid "Phone number"
 msgstr "Numero di telefono"
 
@@ -928,6 +973,9 @@ msgstr "Piè di pagina"
 
 msgid "Upload"
 msgstr "Carica"
+
+msgid "Download"
+msgstr "Scarica"
 
 msgid "Language:"
 msgstr "Lingua:"
@@ -1049,14 +1097,17 @@ msgstr "Rete"
 msgid "Sites"
 msgstr "Siti"
 
-msgid "Mode:"
-msgstr "Modalità:"
+msgid "Profile"
+msgstr "Profilo"
 
 msgid "Configure"
 msgstr "Configura"
 
 msgid "Subdomain"
 msgstr "Sottodominio"
+
+msgid "Mode:"
+msgstr "Modalità:"
 
 msgid "Creation date:"
 msgstr "Data di creazione:"
@@ -1127,6 +1178,12 @@ msgstr "Permetti a questo ricevente di cancellare le segnalazioni."
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Permetti al ricevente di posticipare la data di scadenza"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr "Dai a questo utente il permesso di concedere l'accesso alle segnalazioni ad altri utenti"
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr "Dai a questo utente il permesso di trasferire l'accesso alle segnalazioni ad altri utenti"
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Dai all'utente accesso amministrativo alle seguenti funzionalità:"
 
@@ -1166,11 +1223,11 @@ msgstr "Come prima cosa seleziona il tuo utente:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Adesso digita la tua password e poi clicca 'Accedi':"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Testo mostrato dopo che l'utente ha selezionato l'opzione."
-
 msgid "Confirm"
 msgstr "Conferma"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Testo mostrato dopo che l'utente ha selezionato l'opzione."
 
 msgid "Assign score points"
 msgstr "Assegna punteggio"
@@ -1230,8 +1287,11 @@ msgstr "Invia"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Confermando postporrai la data di scadenza al:"
 
-msgid "By confirming, you will set a remainder on date:"
-msgstr "Confermando imposterai un reminder in data:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr "Confermando imposterai un promemoria in data:"
+
+msgid "Transfer access"
+msgstr "Trasferisci accesso"
 
 msgid "This is a demo platform, please do not use it for real submissions."
 msgstr "Questa è una piattaforma dimostrativa, si prega di non usarla per vere segnalazioni."
@@ -1307,20 +1367,14 @@ msgstr "Hai già effettuato una segnalazione? Inserisci la tua ricevuta."
 msgid "The receipt is either invalid or the report has expired."
 msgstr "La ricevuta inserita non è valida o la segnalazione è scaduta."
 
-msgid "Select a file or drag it here."
-msgstr "Seleziona un file o trascinalo quì"
+msgid "Filename"
+msgstr "Nome del file"
 
 msgid "Size:"
 msgstr "Dimensione:"
 
-msgid "Uploading files…"
-msgstr "Caricamento dei file…"
-
-msgid "Upload completed successfully!"
-msgstr "Caricamento completato con successo!"
-
-msgid "Estimated upload time:"
-msgstr "Tempo stimato per il caricamento"
+msgid "Access date"
+msgstr "Data di accesso"
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "I riceventi ti richiedono di riempire un ultreriore questionario."
@@ -1334,8 +1388,8 @@ msgstr "Da:"
 msgid "To:"
 msgstr "A:"
 
-msgid "Filename"
-msgstr "Nome del file"
+msgid "View"
+msgstr "Visualizza"
 
 msgid "Upload date"
 msgstr "Data di caricamento"
@@ -1390,6 +1444,9 @@ msgid ""
 "your password."
 msgstr "Consigliamo di accedere alla sezione \"Preferenze\" al fine di recuperare la tua \"Chiave di recupero account\" e farne una copia di sicurezza. Questa chiave sarà necessaria per ripristinare il tuo accesso alla piattaforma e ai tuoi dati nel caso tu dimenticassi la tua password."
 
+msgid "Select a file or drag it here."
+msgstr "Seleziona un file o trascinalo quì"
+
 msgid "The provided recovery key is invalid."
 msgstr "La chiave di recupero fornita non è corretta,"
 
@@ -1417,6 +1474,9 @@ msgstr "L'accesso all'identità del segnalante è stato richiesto al custode."
 
 msgid "Date of the request"
 msgstr "Data della richiesta"
+
+msgid "Subscription date"
+msgstr "Data di sottoscrizione"
 
 msgid "Show"
 msgstr "Mostra"
@@ -1501,10 +1561,7 @@ msgstr "Usa la ricevuta di 16 cifre per ritornare e vedere eventuali messaggi ch
 msgid "View your report"
 msgstr "Vedi la tua segnalazione"
 
-msgid "Recipient selection"
-msgstr "Selezione del ricevente"
-
-msgid "Select the recipients of your report:"
+msgid "Select the recipients of your report"
 msgstr "Seleziona i destinatari della tua segnalazione:"
 
 msgid "Recipients selected:"
@@ -1512,6 +1569,9 @@ msgstr "Riceventi selezionati"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Hai raggiunto il numero massimo di destinatari selezionabili."
+
+msgid "You must select at least one recipient."
+msgstr "Devi selezionare almeno un destinatario."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1523,17 +1583,11 @@ msgid ""
 "invalid:"
 msgstr "In questo passo le risposte alle seguenti domande sono mancanti o non valide:"
 
-msgid "You must select at least one recipient."
-msgstr "Devi selezionare almeno un destinatario."
+msgid "Recipient selection"
+msgstr "Selezione del ricevente"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "In attesa che i file finiscano di essere caricati."
-
-msgid "The following steps have errors:"
-msgstr "I seguenti passi presentano alcuni errori:"
-
-msgid "Hide"
-msgstr "Nascosto"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1701,6 +1755,9 @@ msgstr "Esamina la situazione per determinare se sia o meno legittima."
 
 msgid "The activities with unusual stats are:"
 msgstr "Le attività che presentano statistiche inusuali sono:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr "Spazio disco disponibile: {FreeMemory}/{TotalMemory}"
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1930,6 +1987,9 @@ msgstr "Questa email è per notificarti che un ricevente ti ha concesso accesso 
 msgid "New report"
 msgstr "Nuova segnalazione"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr "Una o più segnalazioni sono in scadenza e verranno presto cancellate."
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "La scadenza più vicina è {EarliestExpirationDate}."
 
@@ -1939,18 +1999,16 @@ msgstr "Ricordati di controllarle prima che vengano cancellate."
 msgid "Some reports will expire soon"
 msgstr "Alcune delle segnalazioni stanno per scadere"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Con la presente email ti notifichiamo che un segnalante ti ha selezionato come destinatario di interesse per la propria segnalazione."
+msgid "This is an email to notify you the reception of a new report."
+msgstr "Con la presente email ti notifichiamo la ricezione di una nuova segnalazione."
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Sei pregato di prestare particolare attenzione alle informazioni e al materiale contenuto. Si prega di tener presente che i whistleblower spesso si espongono ad alti rischi personali per finalità di pubblico interesse. Per questo motivo il materiale contenuto in questa segnalazione dovrebbe essere considerato di elevata importanza."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr "Questa email è per notificati che la data di promemoria di una o più segnalazioni è stata raggiunta."
+
+msgid "Reminder"
+msgstr "Promemoria"
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Questa email ti notifica che un una segnalazione è stata aggiornata."
