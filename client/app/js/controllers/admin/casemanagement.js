@@ -171,7 +171,7 @@ GL.controller("AdminCaseManagementCtrl", ["$scope", function($scope){
         "label": $scope.new_substatus.label,
         "order": $scope.order
       };
-
+      alert(JSON.stringify(new_submissions_substatuses))
       $http.post(
         "api/admin/submission_statuses/" + $scope.submissions_status.id + "/substatuses",
         new_submissions_substatuses
