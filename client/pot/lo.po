@@ -17,9 +17,6 @@ msgstr ""
 msgid "Log in"
 msgstr "ເຂົ້າ​ສູ່ລະບົບ"
 
-msgid "Theme customization"
-msgstr "ການປັບສີ​ພື້ນ​ໜ້າ​ຈໍ"
-
 msgid "Languages"
 msgstr "ພາສາ"
 
@@ -79,9 +76,6 @@ msgstr "ໄຟລ໌ຕ່າງໆ"
 
 msgid "Comments"
 msgstr "ຄຳ​ຄິດ​ເຫັນ"
-
-msgid "Messages"
-msgstr "ຂໍ້ຄວາມ"
 
 msgid "Details"
 msgstr "ລາຍລະອຽດຕ່າງໆ"
@@ -447,13 +441,13 @@ msgstr ""
 msgid "Logout"
 msgstr "ອອກຈາກລະບົບ"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
-
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
+msgstr ""
+
+msgid "Transfer"
 msgstr ""
 
 msgid "Assigned to"
@@ -462,7 +456,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr ""
+
+msgid "Hide"
+msgstr "ເຊື່ອງ"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Internal"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -506,6 +551,9 @@ msgstr "ວັນທີສ້າງ"
 
 msgid "Last access"
 msgstr "ການເຂົ້າຄັ້ງສຸດທ້າຍ"
+
+msgid "Messages"
+msgstr "ຂໍ້ຄວາມ"
 
 msgid "Whistleblower's last access"
 msgstr "ການເຂົ້າຄັ້ງສຸດທ້າຍຂອງຜູ້ແຈ້ງເບາະແສ"
@@ -582,12 +630,6 @@ msgstr "ເປີດນຳໃຊ້ຄຳຄິດເຫັນ"
 msgid "Allow the whistleblower to write comments"
 msgstr "ອະນຸຍາດໃຫ້ຜູ້ແຈ້ງເບາະແສຂຽນຄຳຄິດເຫັນໄດ້"
 
-msgid "Enable private messages"
-msgstr "ເປີດນຳໃຊ້ຂໍ້ຄວາມສ່ວນຕົວ"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "ອະນຸຍາດໃຫ້ຜູ້ແຈ້ງເບາະແສສາມາດສົ່ງຂໍ້ຄວາມໄດ້"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "ອະນຸຍາດໃຫ້ຜູ້ແຈ້ງເບາະແສເພີ່ມເອກະສານຄັດຕິດຕື່ມໃສ່ລາຍງານ"
 
@@ -659,9 +701,6 @@ msgstr "ລະຫັດສ່ວນຕົວ"
 
 msgid "Certificate Signing Request"
 msgstr "ຄຳຮ້ອງຂໍເຊັນໃບຢັ້ງຢືນ"
-
-msgid "Download"
-msgstr "ດາວໂຫຼດ"
 
 msgid "Certificate"
 msgstr "ໃບຢັ້ງຢືນ"
@@ -823,6 +862,12 @@ msgstr "ຍອມຮັບຫຼາຍໆຄຳຕອບ"
 msgid "Template override"
 msgstr "ການທັບຊ້ອນແບບແມ່ແບບ"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "ໝາຍເລກໂທລະສັບ"
 
@@ -906,6 +951,9 @@ msgstr "ຂໍ້ຄວາມທ້າຍໜ້າ"
 
 msgid "Upload"
 msgstr "ອັບໂຫຼດ"
+
+msgid "Download"
+msgstr "ດາວໂຫຼດ"
 
 msgid "Language:"
 msgstr "ພາສາ:"
@@ -1027,14 +1075,17 @@ msgstr ""
 msgid "Sites"
 msgstr "ເວັບໄຊ"
 
-msgid "Mode:"
-msgstr "ໂໝດ:"
+msgid "Profile"
+msgstr ""
 
 msgid "Configure"
 msgstr "ກຳນົດຄ່າ"
 
 msgid "Subdomain"
 msgstr "ໂດເມນຍ່ອຍ"
+
+msgid "Mode:"
+msgstr "ໂໝດ:"
 
 msgid "Creation date:"
 msgstr "ວັນທີສ້າງ:"
@@ -1105,6 +1156,12 @@ msgstr "ອະນຸຍາດໃຫ້ຜູ້ຮັບລຶບລາຍງາ
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "ອະນຸຍາດໃຫ້ຜູ້ຮັບເລື່ອນວັນທີໝົດອາຍຸໃນການລາຍງານ"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "ອະນຸຍາດໃຫ້ຜູ້ໃຊ້ທີ່ເປັນຜູ້ເບິ່ງແຍງລະບົບເຂົ້າເຖິງຄຸນສົມບັດຕ່າງໆຕໍ່ໄປນີ້:"
 
@@ -1144,11 +1201,11 @@ msgstr "ກະລຸນາເລືອກບັນຊີຂອງທ່ານ:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "ຕອນນີ້ໃຫ້ພິມລະຫັດຜ່ານຂອງທ່ານ, ຈາກນັ້ນ ຄລິກ 'ເຂົ້າສູ່ລະບົບ':"
 
-msgid "Text shown after the user has selected the option."
-msgstr "ຂໍ້ຄວາມທີ່ຈະສະແດງໃຫ້ເຫັນຫຼັງຈາກຜູ້ໃຊ້ໄດ້ເລືອກຕົວເລືອກແລ້ວ."
-
 msgid "Confirm"
 msgstr "ຢືນຢັນ"
+
+msgid "Text shown after the user has selected the option."
+msgstr "ຂໍ້ຄວາມທີ່ຈະສະແດງໃຫ້ເຫັນຫຼັງຈາກຜູ້ໃຊ້ໄດ້ເລືອກຕົວເລືອກແລ້ວ."
 
 msgid "Assign score points"
 msgstr "ກຳນົດຈຸດໃຫ້ຄະແນນ"
@@ -1208,7 +1265,10 @@ msgstr "ສົ່ງ"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "ການຢືນຢັນ, ໝາຍຄວາມວ່າທ່ານຈະເລື່ອນວັນທີໝົດອາຍຸໄປຍັງ:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1285,20 +1345,14 @@ msgstr "ທ່ານໄດ້ຍື່ນລາຍງານແລ້ວບໍ? �
 msgid "The receipt is either invalid or the report has expired."
 msgstr "ໃບບິນແມ່ນໃຊ້ບໍ່ໄດ້ ຫຼື ການລາຍງານໄດ້ໝົດອາຍຸແລ້ວ."
 
-msgid "Select a file or drag it here."
-msgstr "ເລືອກໄຟລ໌ ຫຼື ລາກມັນໃສ່ບ່ອນນີ້."
+msgid "Filename"
+msgstr "ຊື່ໄຟລ໌"
 
 msgid "Size:"
 msgstr "ຂະໜາດ:"
 
-msgid "Uploading files…"
-msgstr "ກຳລັງອັບໂຫຼດໄຟລ໌…"
-
-msgid "Upload completed successfully!"
-msgstr "ການອັບໂຫຼດສຳເລັດຮຽບຮ້ອຍແລ້ວ!"
-
-msgid "Estimated upload time:"
-msgstr "ເວລາອັບໂຫຼດໂດຍປະມານ:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "ຜູ້ຮັບໄດ້ຮ້ອງຂໍໃຫ້ທ່ານຕື່ມແບບສອບຖາມເພີ່ມຕື່ມ."
@@ -1312,8 +1366,8 @@ msgstr "ຈາກ:"
 msgid "To:"
 msgstr "ເຖິງ:"
 
-msgid "Filename"
-msgstr "ຊື່ໄຟລ໌"
+msgid "View"
+msgstr "ສະແດງເບິ່ງ"
 
 msgid "Upload date"
 msgstr "ວັນທີອັບໂຫຼດ"
@@ -1368,6 +1422,9 @@ msgid ""
 "your password."
 msgstr "ພວກເຮົາຂໍແນະນຳໃຫ້ທ່ານເຂົ້າໄປທີ່ສ່ວນ “ການກຳນົດຄ່າທີ່ມັກ” ເພື່ອກູ້ເອົາ “ລະຫັດກູ້ຄືນບັນຊີຂອງທ່ານ” ແລະ ເກັບມ້ຽນໄວ້ໃຫ້ມີຄວາມປອດໄພ. ລະຫັດນີ້ຈະມີຄວາມຈຳເປັນໃນການກູ້ຄືນການເຂົ້າເຖິງລະບົບ ແລະ ເຂົ້າເຖິງຂໍ້ມູນຂອງທ່ານໃນກໍລະນີທີ່ທ່ານລືມລະຫັດຜ່ານຂອງທ່ານ."
 
+msgid "Select a file or drag it here."
+msgstr "ເລືອກໄຟລ໌ ຫຼື ລາກມັນໃສ່ບ່ອນນີ້."
+
 msgid "The provided recovery key is invalid."
 msgstr "ລະຫັດກູ້ຄືນທີ່ໃຫ້ມາແມ່ນໃຊ້ບໍ່ໄດ້."
 
@@ -1395,6 +1452,9 @@ msgstr "ໄດ້ມີການຮ້ອງຂໍການເຂົ້າເຖ
 
 msgid "Date of the request"
 msgstr "ວັນທີຮ້ອງຂໍ"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "ສະແດງ"
@@ -1479,17 +1539,17 @@ msgstr "ໃຊ້ໃບບິນ 16 ຕົວເລກເພື່ອເຂົ�
 msgid "View your report"
 msgstr "ເບິ່ງລາຍງານຂອງທ່ານ"
 
-msgid "Recipient selection"
-msgstr "ການເລືອກຜູ້ຮັບ"
-
-msgid "Select the recipients of your report:"
-msgstr "ເລືອກຜູ້ຮັບລາຍງານຂອງທ່ານ:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "ຜູ້ຮັບທີ່ຖືກເລືອກ:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "ທ່ານໄດ້ເລືອກເຕັມຈຳນວນທີ່ສາມາດເລືອກໄດ້ສູງສຸດແລ້ວ."
+
+msgid "You must select at least one recipient."
+msgstr "ທ່ານຕ້ອງເລືອກຜູ້ຮັບຢ່າງໜ້ອຍໜຶ່ງຄົນ."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1501,17 +1561,11 @@ msgid ""
 "invalid:"
 msgstr "ໃນຂັ້ນຕອນນີ້ ຄຳຕອບຕໍ່ຄຳຖາມຕໍ່ໄປນີ້ແມ່ນຂາດຫາຍໄປ ຫຼື ໃຊ້ບໍ່ໄດ້:"
 
-msgid "You must select at least one recipient."
-msgstr "ທ່ານຕ້ອງເລືອກຜູ້ຮັບຢ່າງໜ້ອຍໜຶ່ງຄົນ."
+msgid "Recipient selection"
+msgstr "ການເລືອກຜູ້ຮັບ"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "ກຳລັງລໍຖ້າໃຫ້ອັບໂຫຼດໄຟລ໌ (ຕ່າງໆ) ໃຫ້ສຳເລັດ."
-
-msgid "The following steps have errors:"
-msgstr "ຂັ້ນຕອນຕໍ່ໄປນີ້ເກີດມີຂໍ້ຜິດພາດ:"
-
-msgid "Hide"
-msgstr "ເຊື່ອງ"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1679,6 +1733,9 @@ msgstr "ກວດກາເບິ່ງບັນຫາດັ່ງກ່າວເ
 
 msgid "The activities with unusual stats are:"
 msgstr "ການເຄື່ອນໄຫວຕ່າງໆທີ່ມີສະຖິຕິຜິດປົກກະຕິໄດ້ແກ່:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1908,6 +1965,9 @@ msgstr ""
 msgid "New report"
 msgstr "ບົດລາຍງານໃໝ່"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "ວັນທີໝົດອາຍຸທີ່ໄວທີ່ສຸດແມ່ນ {EarliestExpirationDate}."
 
@@ -1917,18 +1977,16 @@ msgstr "ກະລຸນາຢ່າລືມກວດເບິ່ງພວກມ
 msgid "Some reports will expire soon"
 msgstr "ມີລາຍງານຈຳນວນໜຶ່ງຈະໝົດອາຍຸໃນໄວໆນີ້"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "ນີ້ແມ່ນອີເມວເພື່ອແຈ້ງໃຫ້ທ່ານຊາບວ່າ ຜູ້ແຈ້ງເບາະແສໄດ້ເລືອກທ່ານເປັນຜູ້ຮັບລາຍງານທີ່ຊົງຄຸນຄ່າຂອງລາຍງານຂອງພວກເຂົາ."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "ຂໍໃຫ້ທ່ານເອົາໃຈໃສ່ເປັນພິເສດຕໍ່ຂໍ້ມູນ ແລະ ເອກະສານຕ່າງໆທີ່ມີຢູ່ໃນນັ້ນ. ກະລຸນາຈື່ໄວ້ວ່າ ຜູ້ແຈ້ງເບາະແສມັກຈະນຳຕົນເອງໄປສູ່ຄວາມສ່ຽງສ່ວນຕົວສູງ ເພື່ອຜົນປະໂຫຍດຂອງສາທາລະນະ. ເພາະສະນັ້ນ ເອກະສານທີ່ໃຫ້ໄວ້ໃນລາຍງານນີ້ ກໍຄວນຖືວ່າມີຄວາມສຳຄັນສູງເຊັ່ນກັນ."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "ນີ້ແມ່ນອີເມວເພື່ອແຈ້ງໃຫ້ຊາບວ່າ ໄດ້ມີການອັບເດດລາຍງານທີ່ມີຢູ່ແລ້ວ."

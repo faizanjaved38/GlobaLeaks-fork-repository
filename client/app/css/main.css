@@ -33,8 +33,7 @@ a:hover,
 }
 
 legend {
-  display: contents;
-  font-size: inherit;
+  font-size: revert;
 }
 
 .onionaddress {
@@ -63,11 +62,11 @@ legend {
   padding: 5px;
 }
 
-.uib-button-bar>.btn-group>.btn-info {
+.uib-button-bar > .btn-group > .btn-info {
   display: none;
 }
 
-.uib-button-bar>.btn-success {
+.uib-button-bar > .btn-success {
   display: none;
 }
 
@@ -105,15 +104,15 @@ legend {
 [dir] .full button,
 [dir] .btn-info:not(:disabled, .disabled):active,
 [dir] .btn-info:not(:disabled, .disabled).active,
-[dir] .show>.btn-info.dropdown-toggle {
+[dir] .show > .btn-info.dropdown-toggle {
   background: #dde3ed;
 }
 
-[dir] .full>button {
+[dir] .full > button {
   color: #2866a2;
 }
 
-[dir] .uib-datepicker td>.active {
+[dir] .uib-datepicker td > .active {
   color: #fff;
 }
 
@@ -152,7 +151,7 @@ legend {
   left: auto;
 }
 
-.dropdown-multiselect .dropdown-menu>li>a {
+.dropdown-multiselect .dropdown-menu > li > a {
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -164,7 +163,7 @@ legend {
   cursor: pointer;
 }
 
-.dropdown-multiselect .dropdown-menu>li>a:hover {
+.dropdown-multiselect .dropdown-menu > li > a:hover {
   background: #f5f7fa;
 }
 
@@ -405,7 +404,7 @@ legend {
 .selectedTip,
 [dir] .card-header,
 [dir] .table-striped tbody tr:nth-of-type(odd),
-[dir] .table-striped>tbody>tr.selectedTip:nth-child(odd)>td {
+[dir] .table-striped > tbody > tr.selectedTip:nth-child(odd) > td {
   background-color: #f5f7fa;
 }
 
@@ -448,7 +447,6 @@ legend {
 }
 
 @keyframes fadeinout {
-
   0%,
   100% {
     opacity: 0;
@@ -463,7 +461,7 @@ legend {
   margin-top: 1em;
 }
 
-.wbfile .top-row {
+.rfile .top-row {
   min-height: 30px;
 }
 
@@ -500,7 +498,7 @@ input[type="file"] {
   font-size: smaller;
 }
 
-@media screen and (width >=768px) {
+@media screen and (width >= 768px) {
   .modal-lg .modal-dialog {
     width: 600px;
   }
@@ -564,7 +562,6 @@ input[type="file"] {
 }
 
 .selectCard {
-  cursor: pointer;
   margin-bottom: 1em;
   padding: 1em;
   background-color: #fff;
@@ -673,6 +670,10 @@ input[type="file"] {
   margin-top: 1em;
 }
 
+.question legend {
+  display: contents;
+}
+
 .question-body {
   padding-bottom: 0.5em;
 }
@@ -683,12 +684,6 @@ input[type="file"] {
 
 [dir="rtl"] .question .question {
   padding-right: 1em;
-}
-
-.mapoutline {
-  fill: #f5f7fa;
-  stroke: #121f24;
-  stroke-width: 1.5px;
 }
 
 .fileButtons {
@@ -761,13 +756,11 @@ input[type="file"] {
   clear: both;
 }
 
-[dir="ltr"] #HeaderBox #WhistleblowerLoginBox form,
-[dir="ltr"] #HeaderBox #WhistleblowerLoginBox label {
+[dir="ltr"] #HeaderBox #WhistleblowerLoginBox form {
   float: right;
 }
 
-[dir="rtl"] #HeaderBox #WhistleblowerLoginBox form,
-[dir="rtl"] #HeaderBox #WhistleblowerLoginBox label {
+[dir="rtl"] #HeaderBox #WhistleblowerLoginBox form {
   float: left;
 }
 
@@ -798,6 +791,11 @@ input[type="file"] {
 #ContextAdvancedSettingsBox,
 #SubstateEditBox {
   margin-top: 0.5em;
+}
+
+#SubmissionStepContext {
+  padding: revert;
+  margin: revert;
 }
 
 .addField,
@@ -831,8 +829,7 @@ text.axis-worktime {
   fill: #1d1f24;
 }
 
-.disclaimer-text,
-.tos-text {
+.disclaimer-text, .tos-text {
   display: block;
   padding: 1em;
   font-family: monospace;
@@ -921,141 +918,95 @@ html[dir="ltr"] #Receipt {
 
 [dir] .collapse,
 [dir] .navbar-collapse {
-  height: auto !important;
+ height: auto !important;
 }
 
 [dir] .navbar {
   padding: 0;
 }
 
+#Skip a {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+#Skip a:focus
+{
+  position:static;
+  width:auto;
+  height:auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.container-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+  user-select: none;
+}
+
+.https-files {
+  margin: 1em 0;
+}
+
+
 .audio-box {
-  margin-top: 10px;
-  border: 1px solid #ddd;
-  background-color: #f8f9fa;
-  border-radius: 4px;
-  padding: 7px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 12px;
+  position: relative;
+  border: 1px solid #f5f7fa;
+  background-color: #f5f7fa;
+  border-radius: 5px;
+  padding: 0.5em;
   display: flex;
-  background: #f2f2f2;
   flex-direction: column;
-  align-items: left;
-  width: 350px;
-}
-
-.audio-box-danger {
-  background-color: #ffe6e6;
-}
-
-hr {
-  height: 2px;
-  background-color: black;
-  border: none;
-  margin: 10px 0;
-}
-
-.edit {
-  color: #b4bccb !important
-}
-
-.edited {
-  opacity: 0.25;
-  font-size: 12px;
-}
-
-.svg-btn:hover svg g {
-  fill: white;
-}
-
-.mode-svg {
-  padding: 0px !important;
-  margin: 0px !important;
-  width: 20px;
+  width: 30%;
 }
 
 .audio-player {
-  background: #262626;
-  padding: 2px;
-  height: 42px;
+  background: #f5f7fa;
   border-radius: 50px;
-  margin-left: 2px;
-  width: 100%;
-  margin-top: 10px;
-  max-width: 350px;
+  width: 80%;
+  margin: 1em;
+  border: 1px solid #1d1f24;
 }
 
-@media screen and (max-width:370px) {
-  .audio-player {
-    max-width: 300px;
+.audio-player-wrapper[disabled] .audio-player{
+  opacity: 0.5;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
 }
 
-.audio-btn-group {
-  display: flex;
-  position: relative;
-  width: 100%;
-  justify-content: flex-start;
+.blink {
+  animation: blinker 1.5s linear infinite;
 }
 
-.audio-btn-group .btn {
-  margin: 0 3px;
-  padding: 6px 15px;
-  font-size: 14px;
-  line-height: 1.5;
-  transition: all 0.3s;
+#Policies * {
+ display: inline;
 }
 
-.audio-btn-group .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+.nested-tabset .tab-content {
+  padding: 1em;
+  border: 1px solid #dee2e6;
+  border-top: 0;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
-.audio-btn-group .btn-primary:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
-}
-
-.btn-audio {
-  color: #ccc;
-  cursor: pointer;
-}
-
-.btn-audio:hover {
-  color: #2866a2;
-}
-
-.btn.btn-audio[disabled]:hover {
-  color: #ccc;
-}
-
-.btn-audio.active {
-  color: #2866a2;
-}
-
-.btn-audio-enabled {
-  color: #333;
-}
-
-.audio-player-wrapper[disabled] {
-  cursor: not-allowed;
-}
-
-.audio-recorder {
-  position: absolute;
-  top: 5px;
-  right: 3px;
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-}
-
-.audio-recorder-active {
-  background-color: red;
-}
-
-.audio-player-wrapper[disabled] .audio-player {
-  opacity: 0.5;
-  pointer-events: none;
+.underline {
+  text-decoration: underline;
 }

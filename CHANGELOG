@@ -1,3 +1,89 @@
+Changes in version 4.13.2
+    Ensure to register the same time for every action performed during a submission
+    Log admin operation: send_password_reset_email
+    Optimize Tor loading storing consensus data permanently
+    Change tor socket port to 9999
+
+Changes in version 4.13.1
+    Fix issue wiith selection of users to which granting report access
+    Remove redundant reordering of reports reordered on the client
+    Fix order of identity access requests by date (reverse)
+    Fix indicators for identities provided after the initial report
+    Fix issue #3592
+
+Changes in version 4.13.0
+    Make it possible for recipients to transfer access to their reports to other recipients (#3511)
+    Make it possible to configure a Privacy Policy for internal users (#3510)
+    Re-add CSS id ReceiptText used by some users for customization purposes (#3579)
+    Export start_time on /api/public API
+    Add initial draft of /api/health API
+    Enforce redirect from IP address to server hostname
+    Launch Tor via TxTorcon implementing Tor by design and by default
+    Export platform start time on public API
+    Fix issue #3577, #3587
+    Bump npm dependencies to latest versions
+    Update translations
+
+Changes in version 4.12.9
+    Add fieldset and legend to radio buttons inputs (#3433)
+    Add label to language selector (#3574)
+    Fix LE renewal compatibility with python3-acme 2.1.0 (#3571)
+
+Changes in version 4.12.8
+    Remove report labels from mail notifications
+    Fix defect #3565
+    Update translations
+
+Changes in version 4.12.7
+    Revise fix for issue #3556
+
+Changes in version 4.12.6
+    Fix issues: #3549, #3556
+
+Changes in version 4.12.5
+    Fix bug loading of Tor onion services introduced in 4.12.0
+
+Changes in version 4.12.4
+    Fix issue #3555
+    Revise migration of receiver files
+    Update translations
+
+Changes in version 4.12.3
+    Avoid to create first questionnaire step that seems to confuse users
+    Simplify whistleblowing interface related to files
+    Fix duplication of questionnaires using field templates
+    Correct validation of questionaires in relation to addition of feature #3426
+    Fix regression #3546
+
+Changes in version 4.12.2
+    Vary the permission policy in relation to feature #3426
+    Correct title of emails for new reports
+    Update translations
+
+Changes in version 4.12.1
+    Fix regression on receipt visualization introduced during packaging of 4.12.0
+
+Changes in version 4.12.0
+    Add packaging for Debian 12 Bookworm (#3485)
+    Perform full application review following AgID advice on accessibility
+    The full whistleblowing process is now accessible with screen readers
+    Implement notification for reports reminders (#3419)
+    Add two factor authentication on file based' configurations
+    Automatically configure a self signed certificate to ensure every
+    connection is always encrypted
+    Implement encryption of identity access requests and replies
+    Implement encryption of reports label
+    Perform db migration in RAM to ensure shorter downtimes on update
+    Enable file viewer by default
+    Make it possible to configure a Privacy Policy link
+    Make it possible to configure a Whistleblowing Policy link
+    Add support for Basque (Euskara) language
+    Update translations
+    Fix issues #3442, #3456, #3466, #3471, 3504
+    Voice question
+    [doc] Update documentation
+    [doc] Update ER schema representation
+
 Changes in version 4.11.5
     Fix regression on ip filter check introduced in 4.11.4
     causing authorized connections to be blocked

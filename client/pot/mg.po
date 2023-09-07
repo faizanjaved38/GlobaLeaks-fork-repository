@@ -33,9 +33,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Midira"
 
-msgid "Theme customization"
-msgstr "Personnalisation du thème"
-
 msgid "Languages"
 msgstr "Langues"
 
@@ -95,9 +92,6 @@ msgstr "Fichiers"
 
 msgid "Comments"
 msgstr "Fanehoan-kevitra"
-
-msgid "Messages"
-msgstr "Messages"
 
 msgid "Details"
 msgstr "Détails"
@@ -463,13 +457,13 @@ msgstr ""
 msgid "Logout"
 msgstr "Déconnexion"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
-
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
+msgstr ""
+
+msgid "Transfer"
 msgstr ""
 
 msgid "Assigned to"
@@ -478,7 +472,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr ""
+
+msgid "Hide"
+msgstr "Cacher"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr ""
+
+msgid "Internal"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -522,6 +567,9 @@ msgstr "Daty namoronana azy"
 
 msgid "Last access"
 msgstr "Dernier accès"
+
+msgid "Messages"
+msgstr "Messages"
 
 msgid "Whistleblower's last access"
 msgstr ""
@@ -598,12 +646,6 @@ msgstr "Activer les commentaires"
 msgid "Allow the whistleblower to write comments"
 msgstr "Permettre au lanceur d’alerte de rédiger des commentaires"
 
-msgid "Enable private messages"
-msgstr "Activer les messages privés"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Permettre au lanceur d’alerte d’envoyer des messages"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Permettre au lanceur d’alerte d’ajouter des fichiers joints à l’envoi"
 
@@ -675,9 +717,6 @@ msgstr "Clé privée"
 
 msgid "Certificate Signing Request"
 msgstr "Demande de signature de certificat"
-
-msgid "Download"
-msgstr "Télécharger"
 
 msgid "Certificate"
 msgstr "Certificat"
@@ -839,6 +878,12 @@ msgstr "Accepter des réponses multiples"
 msgid "Template override"
 msgstr "Remplacement du modèle"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "Numéro de téléphone"
 
@@ -922,6 +967,9 @@ msgstr "Bas de page"
 
 msgid "Upload"
 msgstr "Téléverser"
+
+msgid "Download"
+msgstr "Télécharger"
 
 msgid "Language:"
 msgstr "Langue :"
@@ -1043,14 +1091,17 @@ msgstr ""
 msgid "Sites"
 msgstr "Sites"
 
-msgid "Mode:"
-msgstr "Mode :"
+msgid "Profile"
+msgstr ""
 
 msgid "Configure"
 msgstr "Configurer"
 
 msgid "Subdomain"
 msgstr ""
+
+msgid "Mode:"
+msgstr "Mode :"
 
 msgid "Creation date:"
 msgstr ""
@@ -1121,6 +1172,12 @@ msgstr "Permettre aux destinataires de supprimer des envois"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Autoriser les destinataires à repousser la date d’expiration des envois"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr ""
 
@@ -1160,11 +1217,11 @@ msgstr "Veuillez sélectionner votre compte :"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Saisissez maintenant votre mot de passe, puis cliquez sur « Connexion » :"
 
-msgid "Text shown after the user has selected the option."
-msgstr ""
-
 msgid "Confirm"
 msgstr "Confirmer"
+
+msgid "Text shown after the user has selected the option."
+msgstr ""
 
 msgid "Assign score points"
 msgstr "Attribuer un pointage"
@@ -1224,7 +1281,10 @@ msgstr "Envoyer"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "En confirmant, vous repousserez la date d’expiration au :"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1301,20 +1361,14 @@ msgstr "Raha efa nametraka fitarainana ianao dia ampidiro eto ambany avy hatrany
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Soit le reçu est invalide soit votre envoi a expiré."
 
-msgid "Select a file or drag it here."
-msgstr ""
+msgid "Filename"
+msgstr "Nom de fichier"
 
 msgid "Size:"
 msgstr "Taille :"
 
-msgid "Uploading files…"
-msgstr "Téléversement des fichiers…"
-
-msgid "Upload completed successfully!"
-msgstr "Ny fandefasana ireo rakitra fanavaozana dia tafita soa aman-tsara!"
-
-msgid "Estimated upload time:"
-msgstr "Durée de téléversement estimée :"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Les destinataires ont demandé à ce que vous remplissiez un questionnaire supplémentaire."
@@ -1328,8 +1382,8 @@ msgstr "Avy amin'i:"
 msgid "To:"
 msgstr "Ho an'i:"
 
-msgid "Filename"
-msgstr "Nom de fichier"
+msgid "View"
+msgstr ""
 
 msgid "Upload date"
 msgstr "Date de téléversement"
@@ -1384,6 +1438,9 @@ msgid ""
 "your password."
 msgstr ""
 
+msgid "Select a file or drag it here."
+msgstr ""
+
 msgid "The provided recovery key is invalid."
 msgstr ""
 
@@ -1411,6 +1468,9 @@ msgstr "L’accès à l’identité du lanceur d’alerte a été demandé au ga
 
 msgid "Date of the request"
 msgstr "Date de la demande"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Afficher"
@@ -1495,10 +1555,7 @@ msgstr "Ampiasao ny tarehimarika miisa 16 anananao mba ahafahanao miditra amin'n
 msgid "View your report"
 msgstr "Eto raha hijery ny fitorohana nalefanao"
 
-msgid "Recipient selection"
-msgstr "Sélection du destinataire"
-
-msgid "Select the recipients of your report:"
+msgid "Select the recipients of your report"
 msgstr ""
 
 msgid "Recipients selected:"
@@ -1506,6 +1563,9 @@ msgstr "Destinataires sélectionnés :"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr ""
+
+msgid "You must select at least one recipient."
+msgstr "Vous devez au moins choisir un destinataire."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1517,17 +1577,11 @@ msgid ""
 "invalid:"
 msgstr "Amin'izao dingana izao, ny valin'ny fanontaniana novalianao manaraka ireto dia tsy feno, na ihany koa tsy mifanaraka amin'ny zavatra angatahina : "
 
-msgid "You must select at least one recipient."
-msgstr "Vous devez au moins choisir un destinataire."
+msgid "Recipient selection"
+msgstr "Sélection du destinataire"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "En attente de la fin du téléversement des fichiers."
-
-msgid "The following steps have errors:"
-msgstr "Les étapes suivantes présentent des erreurs :"
-
-msgid "Hide"
-msgstr "Cacher"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1695,6 +1749,9 @@ msgstr "Examiner le problème afin de déterminer s’il est valide ou non."
 
 msgid "The activities with unusual stats are:"
 msgstr "Voici les activités présentant des statistiques inhabituelles :"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1924,6 +1981,9 @@ msgstr ""
 msgid "New report"
 msgstr "Nouvel envoi"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "La prochaine date d’expiration est {EarliestExpirationDate}."
 
@@ -1933,18 +1993,16 @@ msgstr "Souvenez-vous de les vérifier avant qu’elles ne soient supprimées"
 msgid "Some reports will expire soon"
 msgstr "Des envois arriverons bientôt à expiration"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Le but de ce courriel est de vous signaler qu’un lanceur d’alerte vous a sélectionné comme destinataire de choix de son envoi."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Il vous est demandé de prêter une attention particulière aux informations et aux documents ci-inclus. Veuillez vous souvenir que les lanceurs d’alerte prennent souvent des risques dans l’intérêt du public. Par conséquent, les documents qui ont été fournis avec cet envoi doivent être traités avec l’importance qu’ils méritent."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr ""

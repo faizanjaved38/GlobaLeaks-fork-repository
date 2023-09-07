@@ -19,9 +19,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Innlogging"
 
-msgid "Theme customization"
-msgstr "Tilpasning av tema"
-
 msgid "Languages"
 msgstr "Språk"
 
@@ -81,9 +78,6 @@ msgstr "Filer"
 
 msgid "Comments"
 msgstr "Kommentarer"
-
-msgid "Messages"
-msgstr "Meldinger"
 
 msgid "Details"
 msgstr "Detaljer"
@@ -449,14 +443,14 @@ msgstr "Kopier til utklippstavle"
 msgid "Logout"
 msgstr "Logg ut"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "La mottakeren gi brukeren tilgang til rapporter"
-
 msgid "Grant access"
 msgstr "Gi tilgang"
 
 msgid "Revoke access"
 msgstr "Opphev tilgangen"
+
+msgid "Transfer"
+msgstr "Overfør"
 
 msgid "Assigned to"
 msgstr ""
@@ -464,7 +458,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr "Rettigheter"
+
+msgid "Hide"
+msgstr "Skjul"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr "Velg språk"
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "Offentlig"
+
+msgid "Internal"
+msgstr "Intern"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "Personvernspraksis"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -508,6 +553,9 @@ msgstr "Opprettelsesdato"
 
 msgid "Last access"
 msgstr "Siste tilgang"
+
+msgid "Messages"
+msgstr "Meldinger"
 
 msgid "Whistleblower's last access"
 msgstr "Siste tilgang til fløyteblåseren"
@@ -584,12 +632,6 @@ msgstr "Aktiver kommentarer"
 msgid "Allow the whistleblower to write comments"
 msgstr "Tillat fløyteblåseren å skrive kommentarer"
 
-msgid "Enable private messages"
-msgstr "Aktiver privat korrespondanse"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Tillat fløyteblåseren å sende meldinger"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "La fløyteblåseren legge til vedlegg i rapporten"
 
@@ -661,9 +703,6 @@ msgstr "Privat nøkkel"
 
 msgid "Certificate Signing Request"
 msgstr "Forespørsel om sertifikatsignering"
-
-msgid "Download"
-msgstr "Nedlasting"
 
 msgid "Certificate"
 msgstr "Sertifikat"
@@ -825,6 +864,12 @@ msgstr "Tillat flere svar"
 msgid "Template override"
 msgstr "Maloverstyring"
 
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Maks"
+
 msgid "Phone number"
 msgstr "Telefonnummer"
 
@@ -908,6 +953,9 @@ msgstr "Bunntekst"
 
 msgid "Upload"
 msgstr "Innlasting"
+
+msgid "Download"
+msgstr "Nedlasting"
 
 msgid "Language:"
 msgstr "Språk:"
@@ -1029,14 +1077,17 @@ msgstr "Nettverk"
 msgid "Sites"
 msgstr "Sider"
 
-msgid "Mode:"
-msgstr "Modus:"
+msgid "Profile"
+msgstr "Profil"
 
 msgid "Configure"
 msgstr "Konfigurer"
 
 msgid "Subdomain"
 msgstr "Underdomene"
+
+msgid "Mode:"
+msgstr "Modus:"
 
 msgid "Creation date:"
 msgstr "Opprettelsesdato:"
@@ -1107,6 +1158,12 @@ msgstr "Tillat mottakeren å slette rapporter"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Tillat mottakeren å utsette utløpsdatoen for rapporten"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Gi brukeren administrativ tilgang til følgende funksjoner:"
 
@@ -1146,11 +1203,11 @@ msgstr "Velg din konto:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Skriv inn ditt passord, trykk så «logg inn»:"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Tekst som vises etter at alternativet har blitt valgt av brukeren."
-
 msgid "Confirm"
 msgstr "Bekreft"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Tekst som vises etter at alternativet har blitt valgt av brukeren."
 
 msgid "Assign score points"
 msgstr "Tildel poeng"
@@ -1210,7 +1267,10 @@ msgstr "Send"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Ved å bekrefte vil du utsette utløpsdatoen til:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1287,20 +1347,14 @@ msgstr "Har du allerede levert en rapport? Skriv inn din kvittering."
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Kvitteringen er ugyldig eller rapporten er utløpt."
 
-msgid "Select a file or drag it here."
-msgstr "Velg en fil, eller dra den her."
+msgid "Filename"
+msgstr "Filnavn"
 
 msgid "Size:"
 msgstr "Størrelse:"
 
-msgid "Uploading files…"
-msgstr "Laster opp filer…"
-
-msgid "Upload completed successfully!"
-msgstr "Opplasting fullført."
-
-msgid "Estimated upload time:"
-msgstr "Forventet opplastingstid:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Mottakere har bedt deg om å fylle ut et annet spørreskjema."
@@ -1314,8 +1368,8 @@ msgstr "Fra:"
 msgid "To:"
 msgstr "Til:"
 
-msgid "Filename"
-msgstr "Filnavn"
+msgid "View"
+msgstr "Vis"
 
 msgid "Upload date"
 msgstr "Opplastingsdato"
@@ -1370,6 +1424,9 @@ msgid ""
 "your password."
 msgstr "Vi anbefaler deg å gå til avsnittet «Preferanser» og få «Nøkkel til kontogjenoppretting» og lagre den trygt. Nøkkelen vil kreves for gjenoppretting av tilgangen til plattformen og til dine data i tilfelle du glemmer ditt passord."
 
+msgid "Select a file or drag it here."
+msgstr "Velg en fil, eller dra den her."
+
 msgid "The provided recovery key is invalid."
 msgstr "Gjenopprettingsnøkkelen er ikke gyldig."
 
@@ -1397,6 +1454,9 @@ msgstr "Tilgang til fløyteblåserens identitet har blitt forespurt av tillitspe
 
 msgid "Date of the request"
 msgstr "Dato for forespørsel"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Vis"
@@ -1481,17 +1541,17 @@ msgstr "Bruk kvitteringen på 16 sifre for pålogging. Du kan se alle meldingene
 msgid "View your report"
 msgstr "Se rapporten"
 
-msgid "Recipient selection"
-msgstr "Valg av mottaker"
-
-msgid "Select the recipients of your report:"
-msgstr "Velg mottakerne av rapporten din:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "Mottakere valgt:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Du har nådd maksimalt antall mottakere som kan velges."
+
+msgid "You must select at least one recipient."
+msgstr "Du må velge ihvertfall én mottaker."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1503,17 +1563,11 @@ msgid ""
 "invalid:"
 msgstr "Disse spørsmålene har ugyldige eller manglende svar i dette trinnet."
 
-msgid "You must select at least one recipient."
-msgstr "Du må velge ihvertfall én mottaker."
+msgid "Recipient selection"
+msgstr "Valg av mottaker"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Venter på at filen/filen(e) skal lastes opp."
-
-msgid "The following steps have errors:"
-msgstr "Følgende trinn har feil:"
-
-msgid "Hide"
-msgstr "Skjul"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1681,6 +1735,9 @@ msgstr "Undersøk problemet for å bestemme hvorvidt det er legitimt eller skade
 
 msgid "The activities with unusual stats are:"
 msgstr "Hendelsesforløpet med uvanlige attributter er:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1910,6 +1967,9 @@ msgstr "Denne e-posten informerer deg om at en mottaker har gitt deg tilgang til
 msgid "New report"
 msgstr "Ny rapport"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Den tidligste utløpsdatoen er {EarliestExpirationDate}."
 
@@ -1919,18 +1979,16 @@ msgstr "Husk å sjekke dem før de blir slettet."
 msgid "Some reports will expire soon"
 msgstr "Noen rapporter vil utløpe snart"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Denne e-posten informerer deg om at en fløyteblåser har valgt deg som en verdifull mottaker av rapporten."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Du må være spesielt oppmerksom på informasjonen og materialet i den. Husk at fløyteblåsere ofte utsetter seg for høy personlig risiko i allmennhetens interesse. Materialet i denne rapporten må betraktes som å ha stor betydning."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Denne e-posten vil informere deg om at en eksisterende rapport har blitt oppdatert."

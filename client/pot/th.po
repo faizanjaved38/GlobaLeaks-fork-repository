@@ -27,9 +27,6 @@ msgstr ""
 msgid "Log in"
 msgstr "ลงชื่อเข้า"
 
-msgid "Theme customization"
-msgstr "การกำหนดค่ารูปแบบ"
-
 msgid "Languages"
 msgstr "ภาษา"
 
@@ -89,9 +86,6 @@ msgstr "แฟ้ม"
 
 msgid "Comments"
 msgstr "ความคิดเห็น"
-
-msgid "Messages"
-msgstr "ข้อความ"
 
 msgid "Details"
 msgstr "รายละเอียด"
@@ -457,14 +451,14 @@ msgstr "คัดลอกไปยังคลิปบอร์ด"
 msgid "Logout"
 msgstr "ออกจากระบบ"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "ให้ผู้รับรายนี้สามารถมอบสิทธิเข้าถึงรายงานให้กับผู้ใช้ได้"
-
 msgid "Grant access"
 msgstr "มอบสิทธิเข้าถึง"
 
 msgid "Revoke access"
 msgstr "เพิกถอนการเข้าถึง"
+
+msgid "Transfer"
+msgstr "ถ่ายโอน"
 
 msgid "Assigned to"
 msgstr "มอบหมายให้"
@@ -472,7 +466,58 @@ msgstr "มอบหมายให้"
 msgid "Not provided."
 msgstr "ไม่ได้ให้มา"
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr "ตั้งเตือนความจำ"
+
+msgid "Privileges"
+msgstr "สิทธิพิเศษ"
+
+msgid "Hide"
+msgstr "ซ่อน"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "สาธารณะ"
+
+msgid "Internal"
+msgstr ""
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "นโยบายความเป็นส่วนตัว"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -516,6 +561,9 @@ msgstr "วันที่สร้าง"
 
 msgid "Last access"
 msgstr "เข้าถึงล่าสุด"
+
+msgid "Messages"
+msgstr "ข้อความ"
 
 msgid "Whistleblower's last access"
 msgstr "การเข้าถึงของผู้แจ้งเบาะแสล่าสุด"
@@ -592,12 +640,6 @@ msgstr "เปิดใช้งานการแสดงความคิด
 msgid "Allow the whistleblower to write comments"
 msgstr "อนุญาตให้ผู้แจ้งเบาะแสเขียนความคิดเห็น"
 
-msgid "Enable private messages"
-msgstr "เปิดใช้งานข้อความส่วนตัว"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "อนุญาตให้ผู้แจ้งเบาะแสส่งข้อความ"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "อนุญาตให้ผู้แจ้งเบาะแสแนบแฟ้มในรายงาน"
 
@@ -669,9 +711,6 @@ msgstr "กุญแจส่วนตัว"
 
 msgid "Certificate Signing Request"
 msgstr "คำขอให้เซ็นชื่อใบรับรอง"
-
-msgid "Download"
-msgstr "ดาวน์โหลด"
 
 msgid "Certificate"
 msgstr "ใบรับรอง"
@@ -833,6 +872,12 @@ msgstr "ยอมรับคำตอบหลายคำตอบ"
 msgid "Template override"
 msgstr "แทนที่แม่แบบ"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "หมายเลขโทรศัพท์"
 
@@ -916,6 +961,9 @@ msgstr "ส่วนท้าย"
 
 msgid "Upload"
 msgstr "อัปโหลด"
+
+msgid "Download"
+msgstr "ดาวน์โหลด"
 
 msgid "Language:"
 msgstr "ภาษา:"
@@ -1037,14 +1085,17 @@ msgstr "เครือข่าย"
 msgid "Sites"
 msgstr "ไซต์"
 
-msgid "Mode:"
-msgstr "โหมด:"
+msgid "Profile"
+msgstr ""
 
 msgid "Configure"
 msgstr "ปรับค่า"
 
 msgid "Subdomain"
 msgstr "โดเมนย่อย"
+
+msgid "Mode:"
+msgstr "โหมด:"
 
 msgid "Creation date:"
 msgstr "วันที่สร้าง:"
@@ -1115,6 +1166,12 @@ msgstr "อนุญาตให้ผู้รับลบรายงานไ
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "อนุญาตให้ผู้รับเลื่อนวันหมดอายุของรายงานได้"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "ให้ผู้ใช้มีสิทธิ์ผู้ดูแลในการเข้าถึงความสามารถเหล่านี้:"
 
@@ -1154,11 +1211,11 @@ msgstr "กรุณาเลือกบัญชีของคุณ:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "ตอนนี้พิมพ์รหัสผ่านของคุณแล้วคลิก 'เข้าสู่ระบบ':"
 
-msgid "Text shown after the user has selected the option."
-msgstr "ข้อความแสดงหลังจากผู้ใช้ได้เลือกตัวเลือก"
-
 msgid "Confirm"
 msgstr "ยืนยัน"
+
+msgid "Text shown after the user has selected the option."
+msgstr "ข้อความแสดงหลังจากผู้ใช้ได้เลือกตัวเลือก"
 
 msgid "Assign score points"
 msgstr "กำหนดแต้มคะแนน"
@@ -1218,7 +1275,10 @@ msgstr "ส่ง"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "เมื่อยืนยัน คุณจะเลื่อนวันหมดอายุไปที่:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1295,20 +1355,14 @@ msgstr "คุณได้ยื่นรายงานแล้วใช่ไ
 msgid "The receipt is either invalid or the report has expired."
 msgstr "ใบรับนั้นไม่ถูกต้อง หรือรายงานหมดอายุแล้ว"
 
-msgid "Select a file or drag it here."
-msgstr "เลือกแฟ้มหรือลากและวางที่นี่"
+msgid "Filename"
+msgstr "ชื่อแฟ้ม"
 
 msgid "Size:"
 msgstr "ขนาด:"
 
-msgid "Uploading files…"
-msgstr " กำลังอัปโหลดแฟ้ม..."
-
-msgid "Upload completed successfully!"
-msgstr "อัปโหลดเสร็จแล้ว!"
-
-msgid "Estimated upload time:"
-msgstr "เวลาในการอัปโหลดโดยประมาณ:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "ผู้รับได้ร้องขอให้คุณกรอกแบบสอบถามเพิ่มเติม"
@@ -1322,8 +1376,8 @@ msgstr "จาก:"
 msgid "To:"
 msgstr "ถึง:"
 
-msgid "Filename"
-msgstr "ชื่อแฟ้ม"
+msgid "View"
+msgstr "มองดู"
 
 msgid "Upload date"
 msgstr "วันที่อัปโหลด"
@@ -1378,6 +1432,9 @@ msgid ""
 "your password."
 msgstr "เราแนะนำให้คุณไปที่ส่วน \"การปรับแต่ง\" เพื่อเรียกรับ \"กุญแจกู้คืนบัญชี\" ของคุณ และเก็บเอาไว้ในที่ปลอดภัย กุญแจนี้จำเป็นสำหรับการกู้คืนสิทธิ์เข้าถึงแพลตฟอร์มของคุณและสำหรับการกู้คืนข้อมูล ในกรณีที่คุณลืมรหัสผ่าน"
 
+msgid "Select a file or drag it here."
+msgstr "เลือกแฟ้มหรือลากและวางที่นี่"
+
 msgid "The provided recovery key is invalid."
 msgstr "กุญแจกู้คืนที่ให้มานั้นไม่ถูกต้อง"
 
@@ -1405,6 +1462,9 @@ msgstr "คำร้องขอเพื่อเข้าถึงตัวต
 
 msgid "Date of the request"
 msgstr "วันที่ร้องขอ"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "แสดง"
@@ -1489,17 +1549,17 @@ msgstr "ใช้รหัสการรับ 16 หลักเพื่อ�
 msgid "View your report"
 msgstr "ดูรายงานของคุณ"
 
-msgid "Recipient selection"
-msgstr "การเลือกผู้รับ"
-
-msgid "Select the recipients of your report:"
-msgstr "เลือกผู้รับรายงานของคุณ:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "ผู้รับที่ถูกเลือก:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "คุณเลือกผู้รับจนเต็มจำนวนที่เลือกได้แล้ว"
+
+msgid "You must select at least one recipient."
+msgstr "คุณต้องเลือกผู้รับอย่างน้อยหนึ่งราย"
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1511,17 +1571,11 @@ msgid ""
 "invalid:"
 msgstr "ในขั้นตอนนี้ คำตอบต่อคำถามเหล่านี้หายไปหรือไม่ถูกต้องตามรูปแบบ:"
 
-msgid "You must select at least one recipient."
-msgstr "คุณต้องเลือกผู้รับอย่างน้อยหนึ่งราย"
+msgid "Recipient selection"
+msgstr "การเลือกผู้รับ"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "รอให้แฟ้มอัปโหลดเสร็จ"
-
-msgid "The following steps have errors:"
-msgstr "ขั้นตอนดังต่อไปนี้มีข้อผิดพลาด:"
-
-msgid "Hide"
-msgstr "ซ่อน"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1689,6 +1743,9 @@ msgstr "พิจารณาประเด็นเพื่อตัดสิ
 
 msgid "The activities with unusual stats are:"
 msgstr "กิจกรรมที่มีสถิติผิดปกติคือ:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1918,6 +1975,9 @@ msgstr "อีเมลฉบับนี้ส่งมาเพื่อแจ
 msgid "New report"
 msgstr "รายงานใหม่"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "วันหมดอายุที่ใกล้ที่สุดคือ {EarliestExpirationDate}"
 
@@ -1927,18 +1987,16 @@ msgstr "โปรดอย่าลืมตรวจดูก่อนที่
 msgid "Some reports will expire soon"
 msgstr "รายงานบางฉบับกำลังจะหมดอายุเร็วๆ นี้"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "อีเมลฉบับนี้ถูกส่งเพื่อแจ้งคุณว่า ผู้แจ้งเบาะแสได้เลือกคุณเป็นผู้รับรายงานซึ่งมีความสำคัญต่อพวกเขา"
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "คุณถูกร้องขอให้ให้ความสนใจเป็นพิเศษกับข้อมูลและเอกสารที่อยู่ข้างในนี้ กรุณาจำไว้เสมอว่า ผู้แจ้งเบาะแสโดยมากได้เปิดให้ตัวเองตกอยู่ในความเสี่ยงส่วนตัวเพื่อประโยชน์ของส่วนรวม ดังนั้นเอกสารที่ให้ไว้ในรายงานนี้ควรจะถูกพิจารณาให้ความสำคัญอย่างสูง"
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr "เตือนความจำ"
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "นี่เป็นอีเมลเพื่อแจ้งว่ารายงานที่มีอยู่แล้วฉบับหนึ่งได้รับการปรับปรุงข้อมูล"

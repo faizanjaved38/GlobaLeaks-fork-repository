@@ -155,10 +155,9 @@
                   <span data-translate>Expiration date</span> (<span data-translate>days</span>)
                 </label>
                 <div>
-                      <span data-ng-class="{'is-invalid': editContext.timetolive.$invalid}">
-                        <input class="form-control" name="timetolive" data-ng-model="context.tip_timetolive"
-                               type="number" min="0" max="3650"/>
-                      </span>
+                  <span data-ng-class="{'is-invalid': editContext.timetolive.$invalid}">
+                    <input class="form-control" name="timetolive" data-ng-model="context.tip_timetolive" type="number" min="0" max="3650"/>
+                  </span>
                   <div data-translate>Set the value to 0 to disable this feature.</div>
                 </div>
               </div>
@@ -233,18 +232,6 @@
                       <label class="inline-checkbox" data-ng-if="context.enable_comments">
                         <input data-ng-model="context.enable_two_way_comments" type="checkbox"/>
                         <span data-translate>Allow the whistleblower to write comments</span>
-                      </label>
-                    </div>
-                    <div class="form-group">
-                      <label class="inline-checkbox">
-                        <input data-ng-model="context.enable_messages" type="checkbox"/>
-                        <span data-translate>Enable private messages</span>
-                      </label>
-                    </div>
-                    <div class="form-group" data-ng-if="context.enable_messages">
-                      <label class="inline-checkbox">
-                        <input data-ng-model="context.enable_two_way_messages" type="checkbox"/>
-                        <span data-translate>Allow the whistleblower to send messages</span>
                       </label>
                     </div>
                     <div class="form-group">

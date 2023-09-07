@@ -4,7 +4,7 @@
 # Andrea Bras, 2018
 # Andre Julian <andrejulian30@gmail.com>, 2016-2017,2021
 # Arif Budiman <arifbudiman@gmail.com>, 2015
-# Belinda Marcia <belindaa.devpatel@yahoo.com>, 2018
+# 60a7195fef6c024fc4543508ee7b9125_16c098e <65d84944c477a84ea662625b6f5f6919_712353>, 2018
 # Cadas Propopuli Azzam Baribin <cadas.propopuli@gmail.com>, 2018
 # Caroline Dianty <Diantycaroline@gmail.com>, 2018
 # Clara Priscilia <clara.priscilia78@gmail.com>, 2018
@@ -41,9 +41,6 @@ msgstr ""
 
 msgid "Log in"
 msgstr "Masuk"
-
-msgid "Theme customization"
-msgstr "Kustomisasi tema"
 
 msgid "Languages"
 msgstr "Bahasa"
@@ -104,9 +101,6 @@ msgstr "Berkas"
 
 msgid "Comments"
 msgstr "Komentar"
-
-msgid "Messages"
-msgstr "Pesan"
 
 msgid "Details"
 msgstr "Rincian"
@@ -472,14 +466,14 @@ msgstr "Salin ke papan klip"
 msgid "Logout"
 msgstr "Keluar"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Izinkan penerima ini untuk memberikan akses pengguna ke laporan"
-
 msgid "Grant access"
 msgstr "Memberikan akses"
 
 msgid "Revoke access"
 msgstr "Mencabut akses"
+
+msgid "Transfer"
+msgstr "Transfer"
 
 msgid "Assigned to"
 msgstr ""
@@ -487,7 +481,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr "Hak"
+
+msgid "Hide"
+msgstr "Sembunyikan"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr "Pilih sebuah opsi"
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "Publik"
+
+msgid "Internal"
+msgstr "Internal"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "Kebjiakan Privasi"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -531,6 +576,9 @@ msgstr "Tanggal pembuatan"
 
 msgid "Last access"
 msgstr "Akses terakhir"
+
+msgid "Messages"
+msgstr "Pesan"
 
 msgid "Whistleblower's last access"
 msgstr "Akses terakhir informan publik"
@@ -607,12 +655,6 @@ msgstr "Aktifkan komentar"
 msgid "Allow the whistleblower to write comments"
 msgstr "Izinkan informan publik untuk menulis komentar"
 
-msgid "Enable private messages"
-msgstr "Aktifkan pesan pribadi"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Izinkan informan publik untuk mengirim pesan"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Izinkan informan publik untuk menambahkan lampiran ke dalam laporan"
 
@@ -684,9 +726,6 @@ msgstr "Kunci Pribadi "
 
 msgid "Certificate Signing Request"
 msgstr "Permintaan Penandatanganan Sertifikat"
-
-msgid "Download"
-msgstr "Unduh"
 
 msgid "Certificate"
 msgstr "Sertifikat"
@@ -848,6 +887,12 @@ msgstr "Menerima banyak jawaban"
 msgid "Template override"
 msgstr "Penggantian format"
 
+msgid "Min"
+msgstr "Minimal"
+
+msgid "Max"
+msgstr "Maks"
+
 msgid "Phone number"
 msgstr "Nomor telepon"
 
@@ -931,6 +976,9 @@ msgstr "Catatan kaki"
 
 msgid "Upload"
 msgstr "Unggah"
+
+msgid "Download"
+msgstr "Unduh"
 
 msgid "Language:"
 msgstr "Bahasa:"
@@ -1052,14 +1100,17 @@ msgstr "Jaringan"
 msgid "Sites"
 msgstr "Situs"
 
-msgid "Mode:"
-msgstr "Mode:"
+msgid "Profile"
+msgstr "Profil"
 
 msgid "Configure"
 msgstr "Konfigurasikan"
 
 msgid "Subdomain"
 msgstr "Subdomain"
+
+msgid "Mode:"
+msgstr "Mode:"
 
 msgid "Creation date:"
 msgstr "Tanggal dibuat:"
@@ -1130,6 +1181,12 @@ msgstr "Izinkan penerima untuk menghapus laporan"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Izinkan penerima untuk menunda tanggal kedaluwarsa laporan"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Izinkan akses administratif bagi pengguna untuk fitur berikut:"
 
@@ -1169,11 +1226,11 @@ msgstr "Tolong pilih akun Anda"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Sekarang ketik kata sandi Anda, lalu klik 'Masuk'"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Teks yang ditampilkan pada pengguna setelah opsi dipilih."
-
 msgid "Confirm"
 msgstr "Konfirmasi"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Teks yang ditampilkan pada pengguna setelah opsi dipilih."
 
 msgid "Assign score points"
 msgstr "Menentukan poin skor "
@@ -1233,7 +1290,10 @@ msgstr "Kirim"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Dengan mengkonfirmasi, anda akan menunda tanggal kedaluwarsa menjadi: "
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1310,20 +1370,14 @@ msgstr "Apakah Anda telah mengirimkan laporan? Masukkan tanda terima Anda."
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Tanda terima tidak valid atau laporan telah kedaluwarsa."
 
-msgid "Select a file or drag it here."
-msgstr "Pilih berkas atau seret ke sini."
+msgid "Filename"
+msgstr "Nama file"
 
 msgid "Size:"
 msgstr "Ukuran:"
 
-msgid "Uploading files…"
-msgstr "Mengunggah berkas..."
-
-msgid "Upload completed successfully!"
-msgstr "Unggahan selesai dengan sukses!"
-
-msgid "Estimated upload time:"
-msgstr "Perkiraan waktu mengunggah:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Penerima meminta Anda untuk mengisi kuesioner tambahan."
@@ -1337,8 +1391,8 @@ msgstr "Dari:"
 msgid "To:"
 msgstr "Ke:"
 
-msgid "Filename"
-msgstr "Nama file"
+msgid "View"
+msgstr "Lihat"
 
 msgid "Upload date"
 msgstr "Tanggal unggahan"
@@ -1393,6 +1447,9 @@ msgid ""
 "your password."
 msgstr "Kami merekomendasikan Anda mengakses \"Preferensi\" untuk menerima \"Kunci Pemulihan Akun\" dan simpan dengan aman. Kunci ini dibutuhkan untuk memulihkan akses Anda ke platform dan data Anda jika Anda lupa kata sandi."
 
+msgid "Select a file or drag it here."
+msgstr "Pilih berkas atau seret ke sini."
+
 msgid "The provided recovery key is invalid."
 msgstr "Kunci pemulihan yang diberikan tidak valid."
 
@@ -1420,6 +1477,9 @@ msgstr "Akses untuk identitas informan publik telah diminta oleh pihak penjaga"
 
 msgid "Date of the request"
 msgstr "Tanggal permintaan"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Tampilkan"
@@ -1504,17 +1564,17 @@ msgstr "Gunakan 16 angka tanda terima untuk masuk. Anda akan dapat melihat setia
 msgid "View your report"
 msgstr "Lihat laporan Anda"
 
-msgid "Recipient selection"
-msgstr "Seleksi penerima"
-
-msgid "Select the recipients of your report:"
-msgstr "Pilih penerima dari laporan Anda:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "Penerima yang terpilih:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Anda telah mencapai batas maksimal penerima yang dipilih."
+
+msgid "You must select at least one recipient."
+msgstr "Anda harus pilih minimal satu penerima."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1526,17 +1586,11 @@ msgid ""
 "invalid:"
 msgstr "Pada langkah ini, jawaban-jawaban pada pertanyaan berikut tidak lengkap atau tidak valid:"
 
-msgid "You must select at least one recipient."
-msgstr "Anda harus pilih minimal satu penerima."
+msgid "Recipient selection"
+msgstr "Seleksi penerima"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Menunggu berkas untuk selesai diunggah."
-
-msgid "The following steps have errors:"
-msgstr "Ada kesalahan pada langkah berikut:"
-
-msgid "Hide"
-msgstr "Sembunyikan"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1704,6 +1758,9 @@ msgstr "Periksa isu untuk menentukan apakah itu sah atau tidak"
 
 msgid "The activities with unusual stats are:"
 msgstr "Kegiatan dengan statistik yang tidak biasa adalah:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1933,6 +1990,9 @@ msgstr "Surel ini memberi tahu Anda bahwa seorang penerima telah memberikan Anda
 msgid "New report"
 msgstr "Laporan baru"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Tanggal kedaluwarsa paling awal adalah {EarliestExpirationDate}."
 
@@ -1942,18 +2002,16 @@ msgstr "Harap ingat untuk memeriksanya sebelum terhapus."
 msgid "Some reports will expire soon"
 msgstr "Beberapa laporan akan segera kedaluwarsa"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Surel ini memberi tahu Anda bahwa seorang informan publik telah memilih Anda sebagai penerima berharga dari laporan mereka."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Anda diminta untuk memberi perhatian khusus terhadap informasi dan materi yang terkandung di dalamnya. Harap diingat bahwa informan publik sering memaparkan diri mereka dengan risiko pribadi yang tinggi demi kepentingan publik. Oleh karena itu, materi yang diberikan dalam laporan ini harus dianggap sangat penting."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Surel ini memberi tahu bahwa salah satu laporan yang sudah ada telah diperbarui"

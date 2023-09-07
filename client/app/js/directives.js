@@ -168,6 +168,7 @@ directive("subdomainvalidator", function() {
       model.$parsers.unshift(function(viewValue) {
         viewValue = viewValue.toLowerCase();
         viewValue = viewValue.replace(/[^a-z0-9-]/g,"");
+        viewValue = viewValue.substring(0, 60);
         angular.element(elem).val(viewValue);
         return viewValue;
       });
@@ -262,11 +263,11 @@ directive("singleClick", [function() {
     }
   };
 }]).
-directive("wbfile", [function() {
+directive("rfile", [function() {
   return {
     restrict: "A",
     scope: false,
-    templateUrl: "views/partials/wbfile.html"
+    templateUrl: "views/partials/rfile.html"
   };
 }]).
 directive("fileInput", function() {

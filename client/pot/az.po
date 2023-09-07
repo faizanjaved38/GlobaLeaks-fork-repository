@@ -24,9 +24,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Daxil ol"
 
-msgid "Theme customization"
-msgstr "Uyğun üzlüyün hazırlanması"
-
 msgid "Languages"
 msgstr "Dillər"
 
@@ -86,9 +83,6 @@ msgstr "Fayllar"
 
 msgid "Comments"
 msgstr "Şərhlər"
-
-msgid "Messages"
-msgstr "İsmarışlar"
 
 msgid "Details"
 msgstr "Detallar"
@@ -454,14 +448,14 @@ msgstr "Mübadilə Buferinə köçür"
 msgid "Logout"
 msgstr "Çıxış"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Alıcıya hesabatlara giriş imkanı ver."
-
 msgid "Grant access"
 msgstr "Giriş ver"
 
 msgid "Revoke access"
 msgstr "Girişi ləğv et"
+
+msgid "Transfer"
+msgstr "Ötür"
 
 msgid "Assigned to"
 msgstr ""
@@ -469,7 +463,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr "İmkanlar"
+
+msgid "Hide"
+msgstr "Gizlət"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr ""
+
+msgid "Select your language"
+msgstr ""
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "İctimai"
+
+msgid "Internal"
+msgstr "Daxili"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "Təhlükəsizlik qaydaları"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -513,6 +558,9 @@ msgstr "Yaradılma tarixi"
 
 msgid "Last access"
 msgstr "Son giriş "
+
+msgid "Messages"
+msgstr "İsmarışlar"
 
 msgid "Whistleblower's last access"
 msgstr "Məlumatlandıranın son girişi"
@@ -589,12 +637,6 @@ msgstr "Şərhləri aktiv edin"
 msgid "Allow the whistleblower to write comments"
 msgstr "İnformasiya ötürənlərin şərh yazmasına icazə verin"
 
-msgid "Enable private messages"
-msgstr "Şəxsi mesajları aktiv edin"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "İnformasiya ötürənin mesaj göndərməsinə icazə verin"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "İnformasiya ötürənin hesabata əlavələr etməsinə icazə verin"
 
@@ -666,9 +708,6 @@ msgstr "Şəxsi açar"
 
 msgid "Certificate Signing Request"
 msgstr "Sertifikat İmzalama Tələbi"
-
-msgid "Download"
-msgstr "Endir"
 
 msgid "Certificate"
 msgstr "Sertifikat"
@@ -830,6 +869,12 @@ msgstr "Müxtəlif cavabları qəbul et"
 msgid "Template override"
 msgstr "Şablonun ləğvi"
 
+msgid "Min"
+msgstr ""
+
+msgid "Max"
+msgstr ""
+
 msgid "Phone number"
 msgstr "Telefon nömrəsi"
 
@@ -913,6 +958,9 @@ msgstr "Alt məlumat"
 
 msgid "Upload"
 msgstr "Yüklə"
+
+msgid "Download"
+msgstr "Endir"
 
 msgid "Language:"
 msgstr "Dil:"
@@ -1034,14 +1082,17 @@ msgstr "Şəbəkə"
 msgid "Sites"
 msgstr "Saytlar"
 
-msgid "Mode:"
-msgstr "Rejim:"
+msgid "Profile"
+msgstr "Profil"
 
 msgid "Configure"
 msgstr "Quraşdır"
 
 msgid "Subdomain"
 msgstr "Alt-domen"
+
+msgid "Mode:"
+msgstr "Rejim:"
 
 msgid "Creation date:"
 msgstr "Yaradılma tarixi:"
@@ -1112,6 +1163,12 @@ msgstr "Alıcının hesabatları silməsinə icazə verin"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Alıcının hesabatların son tarixini dəyişməsinə icazə verin"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "İstifadəçiyə aşağıdakılar üçün inzibatçı icazəsi ver:"
 
@@ -1151,11 +1208,11 @@ msgstr "Xahiş edirik, hesabınızı seçin. "
 msgid "Now type your password, then click 'Log in':"
 msgstr "Şifrənizi daxil edin, sonra \"Giriş\" düyməsinə basın"
 
-msgid "Text shown after the user has selected the option."
-msgstr "İstifadəçi seçimini etdikdən sonra görünən mətn."
-
 msgid "Confirm"
 msgstr "Təsdiqlə"
+
+msgid "Text shown after the user has selected the option."
+msgstr "İstifadəçi seçimini etdikdən sonra görünən mətn."
 
 msgid "Assign score points"
 msgstr "Xalları təyin edin"
@@ -1215,7 +1272,10 @@ msgstr "Göndər"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Təsdiqləməklə, hesabatın tarixini dəyişəcəksiz:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1292,20 +1352,14 @@ msgstr "Hesabatı artıq göndərmisiz? Açar şifrəni daxil edin"
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Açar şifrə etibarsızdır, ya da hesabat müddəti başa çatıb."
 
-msgid "Select a file or drag it here."
-msgstr "Faylı seçin, yaxud bura sürüşdürün."
+msgid "Filename"
+msgstr "Fayl adı"
 
 msgid "Size:"
 msgstr "Ölçü:"
 
-msgid "Uploading files…"
-msgstr "Fayllar yüklənir..."
-
-msgid "Upload completed successfully!"
-msgstr "Yükləmə uğurla başa çatdı!"
-
-msgid "Estimated upload time:"
-msgstr "Təxmini yükləmə müddəti:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Alıcılar əlavə sorğu anketini doldurmağınızı istəyirlər."
@@ -1319,8 +1373,8 @@ msgstr "Etibarən:"
 msgid "To:"
 msgstr "Qədər:"
 
-msgid "Filename"
-msgstr "Fayl adı"
+msgid "View"
+msgstr "Bax"
 
 msgid "Upload date"
 msgstr "Yüklənmə tarixi"
@@ -1375,6 +1429,9 @@ msgid ""
 "your password."
 msgstr "\"Hesabı Yeniləmə Açarı\"nı əldə etməkçün \"Seçimlər\" bölməsinə keçməyi və açarı təhlükəsiz yerdə saxlamağı məsləhət görürük. Bu açar parolunuzu unutduğunuzda platformaya və məlumatlarınıza çıxış əldə etməkçün lazım olacaq."
 
+msgid "Select a file or drag it here."
+msgstr "Faylı seçin, yaxud bura sürüşdürün."
+
 msgid "The provided recovery key is invalid."
 msgstr "Verilən qaytarma açarı etibarsızdır."
 
@@ -1402,6 +1459,9 @@ msgstr "Mühafizəçidən informasiya ötürənin kimliyinə giriş tələb olun
 
 msgid "Date of the request"
 msgstr "Sorğunun tarixi"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Göstər"
@@ -1486,17 +1546,17 @@ msgstr "Daxil olmaq üçün 16 rəqəmli şifrədən istifadə edin. Bu, sizə g
 msgid "View your report"
 msgstr "Təqdimatınızı nəzərdən keçirin"
 
-msgid "Recipient selection"
-msgstr "Alıcı seçimi"
-
-msgid "Select the recipients of your report:"
-msgstr "Hesabatınızın alıcılarını seçin:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "Seçilmiş alıcılar:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Seçilə bilən alıcıların sayının maksimumuna çatdınız."
+
+msgid "You must select at least one recipient."
+msgstr "Ən azı bir alıcı seçməlisiz."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1508,17 +1568,11 @@ msgid ""
 "invalid:"
 msgstr "Bu mərhələdə aşağıdakı suallara cavablar ya verilməyib, ya da etibarsızdır:"
 
-msgid "You must select at least one recipient."
-msgstr "Ən azı bir alıcı seçməlisiz."
+msgid "Recipient selection"
+msgstr "Alıcı seçimi"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Faylın (faylların) yüklənməsinin bitməsini gözləyir."
-
-msgid "The following steps have errors:"
-msgstr "Aşağıdakı mərhələlərdə səhvlər var:"
-
-msgid "Hide"
-msgstr "Gizlət"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1686,6 +1740,9 @@ msgstr "Bu məsələnin qanuni olub-olmadığını yoxlayın."
 
 msgid "The activities with unusual stats are:"
 msgstr "Qeyri-adi statistikası olan fəaliyyətlər:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1915,6 +1972,9 @@ msgstr "Bu məktub sizə, alıcının bir və ya daha çox hesabata giriş verdi
 msgid "New report"
 msgstr "Yeni hesabat"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Ən son istifadə tarixi {EarliestExpirationDate}"
 
@@ -1924,18 +1984,16 @@ msgstr "Silinmədən öncə onları yoxlamağı unutmayın"
 msgid "Some reports will expire soon"
 msgstr "Bəzi hesabatların müddəti tezliklə başa çatacaq"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Bu məktub sizə, informasiya ötürənin sizi dəyərli alıcı kimi seçdiyini bildirməkçün göndərilib."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Burdakı məlumat və materiallara xüsusi diqqət yetirməyiniz xahiş olunur. Unutmayın ki, informasiya ötürənlər ictimai maraqlar naminə böyük risklərə məruz qalırlar. Onların təqdim etdiyi materiallar böyük əhəmiyyətə malikdir."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Bu məktub sizə, mövcud hesabatın yeniləndiyini bildirməkçün göndərilib."

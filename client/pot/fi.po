@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GlobaLeaks\n"
 "PO-Revision-Date: 2013-05-29 17:59+0000\n"
-"Last-Translator: Max Moiseev <max.moiseev@chamber.fi>, 2020-2023\n"
+"Last-Translator: Eva Simonsson, 2020-2021,2023\n"
 "Language-Team: Finnish (http://app.transifex.com/otf/globaleaks/language/fi/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,9 +26,6 @@ msgstr ""
 
 msgid "Log in"
 msgstr "Kirjaudu sisään"
-
-msgid "Theme customization"
-msgstr "Teeman mukauttaminen"
 
 msgid "Languages"
 msgstr "Kielet"
@@ -89,9 +86,6 @@ msgstr "Tiedostot"
 
 msgid "Comments"
 msgstr "Kommentit"
-
-msgid "Messages"
-msgstr "Viestit"
 
 msgid "Details"
 msgstr "Lisätiedot"
@@ -457,14 +451,14 @@ msgstr "Kopioi leikepöydälle"
 msgid "Logout"
 msgstr "Kirjaudu ulos"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Anna tämän vastaanottajan myöntää käyttöoikeuksia ilmoituksiin"
-
 msgid "Grant access"
 msgstr "Käyttöoikeuden myöntäminen"
 
 msgid "Revoke access"
 msgstr "Peruuta pääsy"
+
+msgid "Transfer"
+msgstr "Siirrä"
 
 msgid "Assigned to"
 msgstr "Määritetty"
@@ -472,8 +466,59 @@ msgstr "Määritetty"
 msgid "Not provided."
 msgstr "Ei toimitettu."
 
-msgid "Set a reminder date"
-msgstr "Aseta muistutuksen päivämäärä"
+msgid "Set a reminder"
+msgstr "Aseta muistutus"
+
+msgid "Privileges"
+msgstr ""
+
+msgid "Hide"
+msgstr "Piilota"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr "Valitse"
+
+msgid "Select your language"
+msgstr "Valitse kielesi"
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "Julkinen"
+
+msgid "Internal"
+msgstr "Sisäinen"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "Yksityisyyskäytäntö"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr "Saavutettavuusseloste"
+
+msgid "Voice"
+msgstr ""
 
 msgid "File a report"
 msgstr "Jätä vihje"
@@ -516,6 +561,9 @@ msgstr "Luontipäivämäärä"
 
 msgid "Last access"
 msgstr "Viimeisin käyttö"
+
+msgid "Messages"
+msgstr "Viestit"
 
 msgid "Whistleblower's last access"
 msgstr "Vihjeenantajan viimeisin kirjautumisajankohta"
@@ -592,12 +640,6 @@ msgstr "Salli kommentit"
 msgid "Allow the whistleblower to write comments"
 msgstr "Anna ilmoittajan kirjoittaa kommentteja"
 
-msgid "Enable private messages"
-msgstr "Ota käyttöön yksityisviestit"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Anna ilmoittajan lähettää viestejä"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Anna ilmoittajan lisätä liitteitä"
 
@@ -669,9 +711,6 @@ msgstr "Yksityinen avain"
 
 msgid "Certificate Signing Request"
 msgstr "Varmenteen allekirjoituspyyntö (CSR)"
-
-msgid "Download"
-msgstr "Lataa"
 
 msgid "Certificate"
 msgstr "Varmenne"
@@ -833,6 +872,12 @@ msgstr "Salli useita vastauksia"
 msgid "Template override"
 msgstr "Mallin ohitus"
 
+msgid "Min"
+msgstr "Vähintään"
+
+msgid "Max"
+msgstr "Enintään"
+
 msgid "Phone number"
 msgstr "Puhelinnumero"
 
@@ -915,6 +960,9 @@ msgid "Footer"
 msgstr "Alatunniste"
 
 msgid "Upload"
+msgstr "Lataa"
+
+msgid "Download"
 msgstr "Lataa"
 
 msgid "Language:"
@@ -1037,14 +1085,17 @@ msgstr "Verkko"
 msgid "Sites"
 msgstr "Sivustot"
 
-msgid "Mode:"
-msgstr "Tila:"
+msgid "Profile"
+msgstr "Profiili"
 
 msgid "Configure"
 msgstr "Määritä"
 
 msgid "Subdomain"
 msgstr "Alidomain"
+
+msgid "Mode:"
+msgstr "Tila:"
 
 msgid "Creation date:"
 msgstr "Luontipäivämäärä:"
@@ -1115,6 +1166,12 @@ msgstr "Salli vastaanottajan poistaa raportteja"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Salli vastaanottajan lykätä raportin vanhentumispäivää"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Anna käyttäjälle ylläpito-oikeudet seuraaviin toimintoihin:"
 
@@ -1154,11 +1211,11 @@ msgstr "Valitse tilisi:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Kirjoita nyt salasanasi, napsauta sitten ’Kirjaudu’:"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Näytettävä teksti kun käyttäjä on tehnyt valinnan."
-
 msgid "Confirm"
 msgstr "Vahvista"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Näytettävä teksti kun käyttäjä on tehnyt valinnan."
 
 msgid "Assign score points"
 msgstr "Määritä pistemäärät"
@@ -1218,8 +1275,11 @@ msgstr "Lähetä"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Vahvistamalla lykkäät vanhentumispäivän ajankohtaan:"
 
-msgid "By confirming, you will set a remainder on date:"
-msgstr "Vahvistamalla asetat muistutuksen päivämäärälle:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr "Vahvistamalla asetat muistutuksen päivämäärään:"
+
+msgid "Transfer access"
+msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
 msgstr "Tämä on demoalusta, älä käytä sitä todellisiin lähetyksiin."
@@ -1295,20 +1355,14 @@ msgstr "Oletko jo lähettänyt ilmoituksen? Syötä sen koodi."
 msgid "The receipt is either invalid or the report has expired."
 msgstr "Koodi on virheellinen tai ilmoitus on vanhentunut."
 
-msgid "Select a file or drag it here."
-msgstr "Valitse tiedosto tai raahaa se tähän."
+msgid "Filename"
+msgstr "Tiedostonimi"
 
 msgid "Size:"
 msgstr "Koko:"
 
-msgid "Uploading files…"
-msgstr "Ladataaan tiedostoja…"
-
-msgid "Upload completed successfully!"
-msgstr "Tiedostojen kopiointi palvelimelle onnistui!"
-
-msgid "Estimated upload time:"
-msgstr "Arvioitu latausaika:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Vastaanottajat ovat pyytäneet sinua täyttämään lisäkyselylomakkeen."
@@ -1322,8 +1376,8 @@ msgstr "Lähettäjä:"
 msgid "To:"
 msgstr "Vastaanottaja:"
 
-msgid "Filename"
-msgstr "Tiedostonimi"
+msgid "View"
+msgstr "Näytä"
 
 msgid "Upload date"
 msgstr "Latauspäivä"
@@ -1378,6 +1432,9 @@ msgid ""
 "your password."
 msgstr "Suosittelemme, että käytät \"Asetukset\" -osiota, jotta voit hakea \"Tilin palautusavaimen\" ja tallentaa sen turvallisesti. Tämä avain on välttämätön, jotta voit palauttaa pääsysi alustalle ja tietoihisi, jos unohdat salasanasi."
 
+msgid "Select a file or drag it here."
+msgstr "Valitse tiedosto tai raahaa se tähän."
+
 msgid "The provided recovery key is invalid."
 msgstr "Annettu palautusavain on virheellinen."
 
@@ -1405,6 +1462,9 @@ msgstr "Valvojalle on lähetetty pyyntö ilmoittajan henkilötietoihin pääsemi
 
 msgid "Date of the request"
 msgstr "Pyynnön päivämäärä"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Näytä"
@@ -1489,17 +1549,17 @@ msgstr "Kirjaudu sisään 16-numeroisen koodin avulla. Se mahdollistaa viestimis
 msgid "View your report"
 msgstr "Tarkastele omaa vihjettä"
 
-msgid "Recipient selection"
-msgstr "Vastaanottajan valinta"
-
-msgid "Select the recipients of your report:"
-msgstr "Valitse ilmoituksesi vastaanottajat:"
+msgid "Select the recipients of your report"
+msgstr "Valitse ilmoituksesi vastaanottajat"
 
 msgid "Recipients selected:"
 msgstr "Valitut vastaanottajat:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Olet saavuttanut valittavissa olevien vastaanottajien enimmäismäärän."
+
+msgid "You must select at least one recipient."
+msgstr "Sinun täytyy valita vähintään yksi vastaanottaja."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1511,17 +1571,11 @@ msgid ""
 "invalid:"
 msgstr "Tämän vaiheen vastaukset seuraaviin kysymyksiin joko puuttuvat tai ovat virheellisiä:"
 
-msgid "You must select at least one recipient."
-msgstr "Sinun täytyy valita vähintään yksi vastaanottaja."
+msgid "Recipient selection"
+msgstr "Vastaanottajan valinta"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Odotetaan tiedosto(je)n latauksen valmistumista."
-
-msgid "The following steps have errors:"
-msgstr "Seuraavissa vaiheissa on virheitä:"
-
-msgid "Hide"
-msgstr "Piilota"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1689,6 +1743,9 @@ msgstr "Tutki asiaa selvittääksesi, onko se laillinen vai ei."
 
 msgid "The activities with unusual stats are:"
 msgstr "Epätavallisia tietoja sisältävät toiminnot ovat:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1918,6 +1975,9 @@ msgstr "Tämä sähköpostiviesti ilmoittaa, että vastaanottaja on myöntänyt 
 msgid "New report"
 msgstr "Uusi ilmoitus"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr "Yksi tai useampi ilmoitus on vanhentumassa ja poistetaan pian."
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "Varhaisin mahdollinen vanhentumispäivämäärä on {EarliestExpirationDate}."
 
@@ -1927,18 +1987,16 @@ msgstr "Muista käydä ne läpi ennen kuin ne poistetaan järjestelmästä."
 msgid "Some reports will expire soon"
 msgstr "Osa ilmoituksista vanhenee pian"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Tässä sähköpostiviestissä kerrotaan, että ilmoittaja on valinnut sinut ilmoituksensa luotettavaksi vastaanottajaksi."
+msgid "This is an email to notify you the reception of a new report."
+msgstr "Tämä sähköposti viestii sinulle uuden ilmoituksen vastaanottamisesta."
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Muista noudattaa erityistä varovaisuutta käsitellessäsi näitä tietoja, koska usein vihjeiden antajat altistavat itsensä suurelle henkilökohtaiselle riskille julkisen kiinnostuksen vuoksi. Tästä johtuen vihjettä materiaaleineen täytyy käsitellä erityisen huolellisesti."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr "Tämä sähköposti viestii sinulle, että yhden tai useamman ilmoituksen muistutuspäivämäärä on saavutettu."
+
+msgid "Reminder"
+msgstr "Muistutus"
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Tämä sähköpostiviesti ilmoittaa, että aiemmin luotua ilmoitusta on päivitetty."

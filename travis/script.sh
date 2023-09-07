@@ -22,10 +22,7 @@ trap atexit EXIT
 setupClientDependencies() {
   cd $TRAVIS_BUILD_DIR/client  # to install frontend dependencies
   npm install
-  grunt copy:sources
-  if [ "$1" = 1 ]; then
-    grunt build
-  fi
+  grunt instrument-client
 }
 
 setupBackendDependencies() {
@@ -34,38 +31,33 @@ setupBackendDependencies() {
 }
 
 setupDependencies() {
-  setupClientDependencies $1
+  setupClientDependencies
   setupBackendDependencies
 }
 
 sudo apt-get update
 sudo apt-get install -y tor
-sudo usermod -aG debian-tor $USER
-sudo iptables -t nat -A OUTPUT -o lo -p tcp --dport 9000 -j REDIRECT --to-port 8082
 npm install -g grunt grunt-cli
 
 if [ "$GLTEST" = "test" ]; then
   pip install coverage
-  npm install -g istanbul
 
   echo "Running backend unit tests"
   setupDependencies
   cd $TRAVIS_BUILD_DIR/backend && coverage run setup.py test
 
-  echo "Running BrowserTesting locally collecting code coverage"
-  cd $TRAVIS_BUILD_DIR/client && ./node_modules/nyc/bin/nyc.js  instrument --complete-copy app build --source-map=false
-
   $TRAVIS_BUILD_DIR/backend/bin/globaleaks -z -d
-  sleep 3
+  sleep 5
 
-  ./node_modules/protractor/bin/webdriver-manager update
+  echo "Running BrowserTesting locally collecting code coverage"
+  cd $TRAVIS_BUILD_DIR/client && npm test
 
-  ./node_modules/protractor/bin/protractor tests/protractor-coverage.config.js
 
   if [ -n "CODACY" ]; then
     cd $TRAVIS_BUILD_DIR/backend && coverage xml
-    cd $TRAVIS_BUILD_DIR/client && ./node_modules/nyc/bin/nyc.js report --reporter=lcov
-    bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r $TRAVIS_BUILD_DIR/backend/coverage.xml -r $TRAVIS_BUILD_DIR/client/coverage/lcov.info
+    bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Python -r $TRAVIS_BUILD_DIR/backend/coverage.xml
+    bash <(curl -Ls https://coverage.codacy.com/get.sh) report -l Javascript -r $TRAVIS_BUILD_DIR/client/cypress/coverage/lcov.info
+    bash <(curl -Ls https://coverage.codacy.com/get.sh) final
   fi
 elif [ "$GLTEST" = "build_and_install" ]; then
   LOGFILE="/var/globaleaks/log/globaleaks.log"
@@ -79,10 +71,10 @@ elif [ "$GLTEST" = "build_and_install" ]; then
   export LC_ALL=en_US.utf8
   export DEBIAN_FRONTEND=noninteractive
 
-  if [ $DISTRIBUTION = "bullseye" ]; then
-    sudo -E debootstrap --arch=amd64 bullseye "$chroot" http://deb.debian.org/debian/
-    sudo -E su -c 'echo "deb http://deb.debian.org/debian bullseye main contrib" > /tmp/globaleaks_chroot/etc/apt/sources.list'
-    sudo -E su -c 'echo "deb http://deb.debian.org/debian bullseye main contrib" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
+  if [ $DISTRIBUTION = "bookworm" ]; then
+    sudo -E debootstrap --arch=amd64 bookworm "$chroot" http://deb.debian.org/debian/
+    sudo -E su -c 'echo "deb http://deb.debian.org/debian bookworm main contrib" > /tmp/globaleaks_chroot/etc/apt/sources.list'
+    sudo -E su -c 'echo "deb http://deb.debian.org/debian bookworm main contrib" >> /tmp/globaleaks_chroot/etc/apt/sources.list'
   elif [ $DISTRIBUTION = "jammy" ]; then
     sudo -E debootstrap --arch=amd64 jammy "$chroot" http://archive.ubuntu.com/ubuntu/
     sudo -E su -c 'echo "deb http://archive.ubuntu.com/ubuntu jammy main universe" > /tmp/globaleaks_chroot/etc/apt/sources.list'

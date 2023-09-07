@@ -61,9 +61,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Inloggen"
 
-msgid "Theme customization"
-msgstr "Thema aanpassen"
-
 msgid "Languages"
 msgstr "Talen"
 
@@ -123,9 +120,6 @@ msgstr "Bestanden"
 
 msgid "Comments"
 msgstr "Reacties"
-
-msgid "Messages"
-msgstr "Berichten"
 
 msgid "Details"
 msgstr "Details"
@@ -491,14 +485,14 @@ msgstr "Kopieer naar klembord"
 msgid "Logout"
 msgstr "Log uit"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Geef deze ontvanger de mogelijkheid om gebruikers toegang te verlenen tot de meldingen"
-
 msgid "Grant access"
 msgstr "Toegang verlenen"
 
 msgid "Revoke access"
 msgstr "Toegang herroepen"
+
+msgid "Transfer"
+msgstr "Verplaatsen"
 
 msgid "Assigned to"
 msgstr ""
@@ -506,7 +500,58 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
+msgstr ""
+
+msgid "Privileges"
+msgstr "Bevoegdheden"
+
+msgid "Hide"
+msgstr "Verberg"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Select an option"
+msgstr "Selecteer een optie"
+
+msgid "Select your language"
+msgstr "Selecteer uw taal"
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "Publiek"
+
+msgid "Internal"
+msgstr "Intern"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "Privacybeleid"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
 msgstr ""
 
 msgid "File a report"
@@ -550,6 +595,9 @@ msgstr "Datum van aanmaken"
 
 msgid "Last access"
 msgstr "Laatste toegang"
+
+msgid "Messages"
+msgstr "Berichten"
 
 msgid "Whistleblower's last access"
 msgstr "Laatste toegang van de klokkenluider"
@@ -626,12 +674,6 @@ msgstr "Reacties inschakelen"
 msgid "Allow the whistleblower to write comments"
 msgstr "De klokkenluider toestaan reacties achter te laten"
 
-msgid "Enable private messages"
-msgstr "Privé-berichten inschakelen"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "De klokkenluider toestaan berichten te versturen"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "De klokkenluider toestaan bestanden toe te voegen aan een inzending"
 
@@ -703,9 +745,6 @@ msgstr "Privésleutel"
 
 msgid "Certificate Signing Request"
 msgstr "Certificaatondertekeningsverzoek"
-
-msgid "Download"
-msgstr "Downloaden"
 
 msgid "Certificate"
 msgstr "Certificaat"
@@ -867,6 +906,12 @@ msgstr "Aanvaard meerdere antwoorden"
 msgid "Template override"
 msgstr "Sjabloon overschrijven"
 
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Max"
+
 msgid "Phone number"
 msgstr "Telefoonnummer"
 
@@ -950,6 +995,9 @@ msgstr "Voettekst"
 
 msgid "Upload"
 msgstr "Uploaden"
+
+msgid "Download"
+msgstr "Downloaden"
 
 msgid "Language:"
 msgstr "Taal:"
@@ -1071,14 +1119,17 @@ msgstr "Netwerk"
 msgid "Sites"
 msgstr "Weblocaties"
 
-msgid "Mode:"
-msgstr "Modus:"
+msgid "Profile"
+msgstr "Profiel"
 
 msgid "Configure"
 msgstr "Configureer"
 
 msgid "Subdomain"
 msgstr "Subdomein"
+
+msgid "Mode:"
+msgstr "Modus:"
 
 msgid "Creation date:"
 msgstr "Datum van aanmaak:"
@@ -1149,6 +1200,12 @@ msgstr "Sta ontvangers toe tips te verwijderen"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "De ontvanger mag de einddatum van de inzending uitstellen"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Geef de gebruiker beheerderstoegang tot de volgende functies:"
 
@@ -1188,11 +1245,11 @@ msgstr "Selecteer je account:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Typ nu je wachtwoord, klik dan op 'Log in':"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Tekst welke wordt getoond nadat de gebruiker de optie heeft gekozen"
-
 msgid "Confirm"
 msgstr "Bevestig extentie"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Tekst welke wordt getoond nadat de gebruiker de optie heeft gekozen"
 
 msgid "Assign score points"
 msgstr "Scorepunten toekennen"
@@ -1252,7 +1309,10 @@ msgstr "Verzend"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "Door te bevestigen, verander je de vervaldatum van de tip in:"
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1329,20 +1389,14 @@ msgstr "Hebt u al een inzending ingediend? Voer uw 16 cijferige code in."
 msgid "The receipt is either invalid or the report has expired."
 msgstr "De code is of ongeldig ofwel verlopen."
 
-msgid "Select a file or drag it here."
-msgstr "Selecteer een bestand of sleep het hierheen."
+msgid "Filename"
+msgstr "Bestandsnaam"
 
 msgid "Size:"
 msgstr "Grootte:"
 
-msgid "Uploading files…"
-msgstr "Uploaden bestanden..."
-
-msgid "Upload completed successfully!"
-msgstr "Upload voltooien is gelukt!"
-
-msgid "Estimated upload time:"
-msgstr "Geschatte tijd voor uploaden:"
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Ontvangers hebben je verzocht dat je een additionele vragenlijst invult."
@@ -1356,8 +1410,8 @@ msgstr "Van:"
 msgid "To:"
 msgstr "Aan:"
 
-msgid "Filename"
-msgstr "Bestandsnaam"
+msgid "View"
+msgstr "Bekijk"
 
 msgid "Upload date"
 msgstr "Upload datum"
@@ -1412,6 +1466,9 @@ msgid ""
 "your password."
 msgstr "We raden u aan de sectie \"Voorkeuren\" te openen om uw \"Accountherstel-sleutel\" op te halen en deze veilig op te slaan. Deze sleutel is nodig om uw toegang tot het platform en uw gegevens te herstellen in het geval u uw wachtwoord vergeet."
 
+msgid "Select a file or drag it here."
+msgstr "Selecteer een bestand of sleep het hierheen."
+
 msgid "The provided recovery key is invalid."
 msgstr "De ingediende herstelcode is ongeldig."
 
@@ -1439,6 +1496,9 @@ msgstr "De toezichthouder heeft een aanvraag ingediend om toegang te krijgen tot
 
 msgid "Date of the request"
 msgstr "Datum aanvraag"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "Tonen"
@@ -1523,17 +1583,17 @@ msgstr "Gebruik deze 16-cijferige code om in te loggen. Hiermee heeft u de mogel
 msgid "View your report"
 msgstr "Bekijk je inzending"
 
-msgid "Recipient selection"
-msgstr "Ontvangerselectie"
-
-msgid "Select the recipients of your report:"
-msgstr "Selecteer de ontvangers van uw inzending:"
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "Ontvangers geselecteerd:"
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "Het maximum aantal selecteerbare ontvangers is bereikt."
+
+msgid "You must select at least one recipient."
+msgstr "Je moet ten minste één ontvanger selecteren."
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1545,17 +1605,11 @@ msgid ""
 "invalid:"
 msgstr "In deze stap ontbreken antwoorden of zijn ongeldig op de volgende vragen:"
 
-msgid "You must select at least one recipient."
-msgstr "Je moet ten minste één ontvanger selecteren."
+msgid "Recipient selection"
+msgstr "Ontvangerselectie"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Wacht totdat de bestanden volledig zijn verzonden."
-
-msgid "The following steps have errors:"
-msgstr "De volgende stappen bevatten fouter:"
-
-msgid "Hide"
-msgstr "Verberg"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1723,6 +1777,9 @@ msgstr "Bekijk het probleem om vast te stellen of het legitiem is of niet."
 
 msgid "The activities with unusual stats are:"
 msgstr "De gebeurtenissen met ongebruikelijke statistieken zijn:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1952,6 +2009,9 @@ msgstr "Dit is een e-mail om u te informeren dat een ontvanger u toegang heeft v
 msgid "New report"
 msgstr "Nieuwe inzending"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "De vroegste vervaldatum is {EarliestExpirationDate}."
 
@@ -1961,18 +2021,16 @@ msgstr "AUB checken voordat deze worden verwijderd."
 msgid "Some reports will expire soon"
 msgstr "Sommige inzendingen zullen binnenkort vervallen"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "Dit is een e-mail om je te informeren dat een klokkenluider jou heeft geselecteerd als een gewaardeerde ontvanger van hun inzending."
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "Je wordt verzocht om extra aandacht te besteden aan de informatie en materialen daarin. Houd er rekening mee dat klokkenluiders vaak voor het maatschappelijk belang zelf grote persoonlijke risico's nemen. Daarom moet het materiaal dat deze inzending bevat als van groot belang worden beschouwd."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "Dit is een e-mail om te melden dat een bestaande inzending is bijgewerkt."

@@ -52,6 +52,8 @@ module.exports = function(grunt) {
           { dest: "app/lib/js/", cwd: "./node_modules/", src: ["angular-translate/dist/angular-translate.js"], expand: true, flatten: true },
           { dest: "app/lib/js/", cwd: "./node_modules/", src: ["angular-translate-loader-static-files/angular-translate-loader-static-files.js"], expand: true, flatten: true },
           { dest: "app/lib/js/", cwd: "./node_modules/", src: ["ng-csv/build/ng-csv.js"], expand: true, flatten: true },
+          { dest: "app/lib/js/", cwd: "./node_modules/", src: ["chart.js/dist/chart.min.js"], expand: true, flatten: true },
+          { dest: "app/lib/js/", cwd: "./node_modules/", src: ["chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.min.js"], expand: true, flatten: true },
           { dest: "app/viewer/", cwd: "./node_modules/", src: ["pdfjs-dist/build/pdf.min.js"], expand: true, flatten: true },
           { dest: "app/viewer/", cwd: "./node_modules/", src: ["pdfjs-dist/build/pdf.worker.min.js"], expand: true, flatten: true },
           { dest: "app/lib/js/", cwd: "./node_modules/", src: ["ng-idle/angular-idle.min.js"], expand: true, flatten: true },
@@ -117,7 +119,6 @@ module.exports = function(grunt) {
           cwd: "app/",
           src: [
             "**",
-            "!js/**/*.js", // Don't copy scripts that will be instrumented,
             "lib/js/*.js", // and copy scripts that should not be instrumented.
             "lib/js/locale/*.js"
           ],
@@ -374,7 +375,7 @@ module.exports = function(grunt) {
         options: {
           // Static text.
           question: "WARNING:\n"+
-                    "this task may cause translations loss and should be executed only on master branch.\n\n" +
+                    "this task may cause translations loss and should be executed only on main branch.\n\n" +
                     "Are you sure you want to proceed (Y/N)?",
           input: "_key:y"
         }
@@ -426,6 +427,11 @@ module.exports = function(grunt) {
           "build/js/scripts.min.js": ["build/js/scripts.js"]
         }
       }
+    },
+    shell: {
+      babel: {
+        command: "npx babel build/js --out-dir build/js"
+      }
     }
   });
 
@@ -441,6 +447,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-terser");
   grunt.loadNpmTasks("grunt-usemin");
   grunt.loadNpmTasks("gruntify-eslint");
+  grunt.loadNpmTasks("grunt-shell");
 
   var readNoTranslateStrings = function() {
     return JSON.parse(grunt.file.read("app/data_src/notranslate_strings.json"));
@@ -493,7 +500,7 @@ module.exports = function(grunt) {
         "relationships": {
           "resource": {
             "data": {
-              "id": "o:otf:p:globaleaks:r:master",
+              "id": "o:otf:p:globaleaks:r:main",
               "type": "resources"
             }
           }
@@ -558,7 +565,7 @@ module.exports = function(grunt) {
                     },
                     "resource": {
                       "data": {
-                        "id": "o:otf:p:globaleaks:r:master",
+                        "id": "o:otf:p:globaleaks:r:main",
                         "type": "resources"
                       }
                     }
@@ -605,7 +612,7 @@ module.exports = function(grunt) {
   }
 
   function fetchTxTranslationsForLanguage(langCode, cb) {
-    var url = baseurl + "/resource_language_stats/o:otf:p:globaleaks:r:master:l:" + langCode;
+    var url = baseurl + "/resource_language_stats/o:otf:p:globaleaks:r:main:l:" + langCode;
 
     agent.get(url)
       .set({"Authorization": "Bearer " + transifexApiKey})
@@ -747,7 +754,7 @@ module.exports = function(grunt) {
 
       for (var i=0; i<lines.length; i++){
         // we skip adding empty strings and variable only strings
-        if (lines[i] !== "" && !lines[i].match(/^{[a-zA-Z0-9]+}/g)) {
+        if (lines[i] !== "" && !lines[i].match(/^{[a-zA-Z0-9]+}$/g)) {
           addString(lines[i]);
         }
       }
@@ -1052,6 +1059,6 @@ module.exports = function(grunt) {
     "clean",
     "copy:sources",
     "copy:coverage",
-    "instrument"
+    "shell:babel"
   ]);
 };

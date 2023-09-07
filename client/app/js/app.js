@@ -23,6 +23,9 @@ var GL = angular.module("GL", [
     "ngSanitize",
     "ng-showdown"
 ]).
+  config(["$ariaProvider", function($ariaProvider) {
+    $ariaProvider.config({ariaInvalid: false});
+}]).
   config(["$compileProvider", function($compileProvider) {
     $compileProvider.debugInfoEnabled(false);
 }]).
@@ -67,7 +70,7 @@ var GL = angular.module("GL", [
     }
 
     function fetchResources(role, lst) {
-      return ["$location", "$q", "$rootScope", "Access", "GLTranslate", "AdminAuditLogResource", "AdminContextResource", "AdminQuestionnaireResource", "AdminStepResource", "AdminFieldResource", "AdminFieldTemplateResource", "AdminUserResource", "AdminNodeResource", "AdminNetworkResource", "AdminNotificationResource", "AdminRedirectResource", "AdminTenantResource", "TipsCollection", "JobsAuditLog", "AdminSubmissionStatusResource", "ReceiverTips", "UserPreferences", function($location, $q, $rootScope, Access, GLTranslate, AdminAuditLogResource, AdminContextResource, AdminQuestionnaireResource, AdminStepResource, AdminFieldResource, AdminFieldTemplateResource, AdminUserResource, AdminNodeResource, AdminNetworkResource, AdminNotificationResource, AdminRedirectResource, AdminTenantResource, TipsCollection, JobsAuditLog, AdminSubmissionStatusResource, ReceiverTips, UserPreferences) {
+      return ["$location", "$q", "$rootScope", "Access", "GLTranslate", "AdminAuditLogResource", "AdminContextResource", "AdminQuestionnaireResource", "AdminStepResource", "AdminFieldResource", "AdminFieldTemplateResource", "AdminUserResource", "AdminNodeResource", "AdminNetworkResource", "AdminNotificationResource", "AdminRedirectResource", "AdminTenantResource", "TipsCollection", "JobsAuditLog", "AdminSubmissionStatusResource", "ReceiverTips", "IdentityAccessRequests", "UserPreferences", function($location, $q, $rootScope, Access, GLTranslate, AdminAuditLogResource, AdminContextResource, AdminQuestionnaireResource, AdminStepResource, AdminFieldResource, AdminFieldTemplateResource, AdminUserResource, AdminNodeResource, AdminNetworkResource, AdminNotificationResource, AdminRedirectResource, AdminTenantResource, TipsCollection, JobsAuditLog, AdminSubmissionStatusResource, ReceiverTips, IdentityAccessRequests, UserPreferences) {
         var resourcesPromises = {
           auditlog: function() { return AdminAuditLogResource.query().$promise; },
           node: function() { return AdminNodeResource.get().$promise; },
@@ -82,7 +85,8 @@ var GL = angular.module("GL", [
           jobs: function() { return JobsAuditLog.query().$promise; },
           questionnaires: function() { return AdminQuestionnaireResource.query().$promise; },
           submission_statuses: function() { return AdminSubmissionStatusResource.query().$promise; },
-          rtips: function() { return ReceiverTips.get().$promise; },
+          rtips: function() { return ReceiverTips.query().$promise; },
+          iars: function() { return IdentityAccessRequests.query().$promise; },
           preferences: function() { return UserPreferences.get().$promise; }
         };
 
@@ -161,6 +165,7 @@ var GL = angular.module("GL", [
       }).
       when("/recipient/home", {
         templateUrl: "views/recipient/home.html",
+        controller: "HomeCtrl",
         header_title: "Home",
         sidebar: "views/recipient/sidebar.html",
         resolve: {
@@ -209,7 +214,7 @@ var GL = angular.module("GL", [
       }).
       when("/admin/home", {
         templateUrl: "views/admin/home.html",
-        controller: "AdminCtrl",
+        controller: "HomeCtrl",
         header_title: "Home",
         sidebar: "views/admin/sidebar.html",
         resolve: {
@@ -240,7 +245,7 @@ var GL = angular.module("GL", [
       when("/admin/contexts", {
         templateUrl: "views/admin/contexts.html",
         controller: "AdminCtrl",
-        header_title: "Contexts",
+        header_title: "Channels",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -270,7 +275,7 @@ var GL = angular.module("GL", [
       when("/admin/notifications", {
         templateUrl: "views/admin/notifications.html",
         controller: "AdminCtrl",
-        header_title: "Notification settings",
+        header_title: "Notifications",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -280,7 +285,7 @@ var GL = angular.module("GL", [
       when("/admin/network", {
         templateUrl: "views/admin/network.html",
         controller: "AdminCtrl",
-        header_title: "Network settings",
+        header_title: "Network",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -300,7 +305,7 @@ var GL = angular.module("GL", [
       when("/admin/sites", {
         templateUrl: "views/admin/sites.html",
         controller: "AdminCtrl",
-        header_title: "Sites management",
+        header_title: "Sites",
         sidebar: "views/admin/sidebar.html",
         resolve: {
           access: requireAuth("admin"),
@@ -319,6 +324,7 @@ var GL = angular.module("GL", [
       }).
       when("/custodian/home", {
         templateUrl: "views/custodian/home.html",
+        controller: "HomeCtrl",
         header_title: "Home",
         sidebar: "views/custodian/sidebar.html",
         resolve: {
@@ -339,7 +345,7 @@ var GL = angular.module("GL", [
       when("/custodian/settings", {
         templateUrl: "views/custodian/settings.html",
         controller: "AdminCtrl",
-        header_title: "Site settings",
+        header_title: "Sites",
         sidebar: "views/custodian/sidebar.html",
         resolve: {
           access: requireAuth("custodian"),
@@ -351,7 +357,7 @@ var GL = angular.module("GL", [
         header_title: "Requests",
         resolve: {
           access: requireAuth("custodian"),
-          resources: fetchResources("custodian", ["preferences"])
+          resources: fetchResources("custodian", ["iars", "preferences"])
         }
       }).
       when("/login", {
@@ -564,12 +570,14 @@ var GL = angular.module("GL", [
             }
           }
 
-          elem = document.getElementById("load-custom-script");
-          if (elem === null) {
-            elem = document.createElement("script");
-            elem.setAttribute("id", "load-custom-script");
-            elem.setAttribute("src", "script");
-            document.getElementsByTagName("body")[0].appendChild(elem);
+          if ($rootScope.public.node.script) {
+            elem = document.getElementById("load-custom-script");
+            if (elem === null) {
+              elem = document.createElement("script");
+              elem.setAttribute("id", "load-custom-script");
+              elem.setAttribute("src", "s/script");
+              document.getElementsByTagName("body")[0].appendChild(elem);
+            }
           }
 
           if ($rootScope.public.node.favicon) {
@@ -734,7 +742,7 @@ var GL = angular.module("GL", [
 
        angular.extend(config.headers, $rootScope.Authentication.get_headers());
 
-       if (!$rootScope.Authentication.session && (config.url.substr(config.url.length - 9, config.url.length) !== "api/token") && (["DELETE", "POST", "PUT"].indexOf(config.method) !== -1)) {
+       if (!$rootScope.Authentication.session && (config.url.substring(config.url.length - 14, config.url.length) !== "api/auth/token") && (["DELETE", "POST", "PUT"].indexOf(config.method) !== -1)) {
          return new TokenResource().$get().then(function(token) {
            angular.extend(config.headers, {"x-token": token.id + ":" + token.answer});
            return config;

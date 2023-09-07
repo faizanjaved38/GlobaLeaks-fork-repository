@@ -6,7 +6,7 @@
 # ff98sha, 2020
 # Giovanni Pellerano <giovanni.pellerano@evilaliv3.org>, 2015,2017-2018,2020-2022
 # khi, 2021
-# khi, 2021
+# 8a5e71503812b0b75199ab553071c59a_3c86123, 2021
 # Kishin Sagume, 2022
 # 91ca17e215222af3ff24b8eeb76640c7_f9deb57, 2013-2014
 # lin, 2014
@@ -37,9 +37,6 @@ msgstr ""
 
 msgid "Log in"
 msgstr "登录"
-
-msgid "Theme customization"
-msgstr "自定义主题"
 
 msgid "Languages"
 msgstr "语言"
@@ -100,9 +97,6 @@ msgstr "文件"
 
 msgid "Comments"
 msgstr "备注"
-
-msgid "Messages"
-msgstr "消息"
 
 msgid "Details"
 msgstr "详细信息"
@@ -468,14 +462,14 @@ msgstr "复制到剪贴板"
 msgid "Logout"
 msgstr "注销"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr ""
-
 msgid "Grant access"
 msgstr ""
 
 msgid "Revoke access"
 msgstr "撤销访问权限"
+
+msgid "Transfer"
+msgstr "传输"
 
 msgid "Assigned to"
 msgstr ""
@@ -483,8 +477,59 @@ msgstr ""
 msgid "Not provided."
 msgstr ""
 
-msgid "Set a reminder date"
+msgid "Set a reminder"
 msgstr ""
+
+msgid "Privileges"
+msgstr "特权"
+
+msgid "Hide"
+msgstr "隐藏"
+
+msgid "Unhide"
+msgstr ""
+
+msgid "Redact"
+msgstr "标记"
+
+msgid "Select an option"
+msgstr "选择一个选项"
+
+msgid "Select your language"
+msgstr "选择您的语言"
+
+msgid "Give this user ability to mask information"
+msgstr ""
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr ""
+
+msgid "Public"
+msgstr "公共"
+
+msgid "Internal"
+msgstr "内部"
+
+msgid "Personal"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr "隐私政策"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr ""
+
+msgid "Download copy of the Privacy Policy"
+msgstr ""
+
+msgid "Whistleblowing Policy"
+msgstr ""
+
+msgid "Accessibility Declaration"
+msgstr ""
+
+msgid "Voice"
+msgstr "聲音"
 
 msgid "File a report"
 msgstr "提交报告"
@@ -527,6 +572,9 @@ msgstr "创建日期"
 
 msgid "Last access"
 msgstr "上次访问"
+
+msgid "Messages"
+msgstr "消息"
 
 msgid "Whistleblower's last access"
 msgstr "揭发者上次访问"
@@ -603,12 +651,6 @@ msgstr "启用评论"
 msgid "Allow the whistleblower to write comments"
 msgstr "允许揭发者评论"
 
-msgid "Enable private messages"
-msgstr "启用私人消息"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "允许揭发者发送消息"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "允许揭发者向报告添加附件"
 
@@ -680,9 +722,6 @@ msgstr "私钥"
 
 msgid "Certificate Signing Request"
 msgstr "证书签名请求"
-
-msgid "Download"
-msgstr "下载"
 
 msgid "Certificate"
 msgstr "证书"
@@ -844,6 +883,12 @@ msgstr "接受多个答案"
 msgid "Template override"
 msgstr "模板覆盖"
 
+msgid "Min"
+msgstr "最小"
+
+msgid "Max"
+msgstr "最大"
+
 msgid "Phone number"
 msgstr "电话号码"
 
@@ -927,6 +972,9 @@ msgstr "页脚"
 
 msgid "Upload"
 msgstr "上传"
+
+msgid "Download"
+msgstr "下载"
 
 msgid "Language:"
 msgstr "语言："
@@ -1048,14 +1096,17 @@ msgstr "网络"
 msgid "Sites"
 msgstr "网站"
 
-msgid "Mode:"
-msgstr "模式："
+msgid "Profile"
+msgstr "配置"
 
 msgid "Configure"
 msgstr "配置"
 
 msgid "Subdomain"
 msgstr "子域名"
+
+msgid "Mode:"
+msgstr "模式："
 
 msgid "Creation date:"
 msgstr "创建日期："
@@ -1126,6 +1177,12 @@ msgstr "允许接收人删除报告"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "允许接收人推迟报告过期日期"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr ""
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr ""
+
 msgid "Give the user administrative access to the following features:"
 msgstr "对于以下功能，授予用户管理员权限："
 
@@ -1165,11 +1222,11 @@ msgstr "请选择您的帐户："
 msgid "Now type your password, then click 'Log in':"
 msgstr "现在输入密码，然后点击“登录”："
 
-msgid "Text shown after the user has selected the option."
-msgstr "用户选择该选项之后显示的文本。"
-
 msgid "Confirm"
 msgstr "确认"
+
+msgid "Text shown after the user has selected the option."
+msgstr "用户选择该选项之后显示的文本。"
 
 msgid "Assign score points"
 msgstr "分配分数"
@@ -1229,7 +1286,10 @@ msgstr "发送"
 msgid "By confirming, you will postpone the expiration date to:"
 msgstr "确认之后，过期日期将推迟至："
 
-msgid "By confirming, you will set a remainder on date:"
+msgid "By confirming, you will set a reminder on date:"
+msgstr ""
+
+msgid "Transfer access"
 msgstr ""
 
 msgid "This is a demo platform, please do not use it for real submissions."
@@ -1306,20 +1366,14 @@ msgstr "已提交报告？请输入回执。"
 msgid "The receipt is either invalid or the report has expired."
 msgstr "该回执无效或是报告已过期。"
 
-msgid "Select a file or drag it here."
-msgstr "选择文件或将其拖放至此。"
+msgid "Filename"
+msgstr "文件名"
 
 msgid "Size:"
 msgstr "大小："
 
-msgid "Uploading files…"
-msgstr "正在上传文件…"
-
-msgid "Upload completed successfully!"
-msgstr "成功完成上传！"
-
-msgid "Estimated upload time:"
-msgstr "预计上传时间："
+msgid "Access date"
+msgstr ""
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "接收人已请求您填写附加问卷。"
@@ -1333,8 +1387,8 @@ msgstr "来自："
 msgid "To:"
 msgstr "至："
 
-msgid "Filename"
-msgstr "文件名"
+msgid "View"
+msgstr "查看"
 
 msgid "Upload date"
 msgstr "上传日期"
@@ -1389,6 +1443,9 @@ msgid ""
 "your password."
 msgstr "我们建议，访问“首选项”获取“帐户恢复密钥”并将其妥善保存。如果忘记密码，为了访问该平台和您的数据，该密钥必不可少。"
 
+msgid "Select a file or drag it here."
+msgstr "选择文件或将其拖放至此。"
+
 msgid "The provided recovery key is invalid."
 msgstr "提供的恢复密钥无效。"
 
@@ -1416,6 +1473,9 @@ msgstr "访问揭发者身份的请求已发送至保管人。"
 
 msgid "Date of the request"
 msgstr "请求日期"
+
+msgid "Subscription date"
+msgstr ""
 
 msgid "Show"
 msgstr "显示"
@@ -1500,17 +1560,17 @@ msgstr "请使用该 16 位回执登录。这样您可查看我们向您发送�
 msgid "View your report"
 msgstr "查看您的报告"
 
-msgid "Recipient selection"
-msgstr "接收人选择"
-
-msgid "Select the recipients of your report:"
-msgstr "选择报告接收人："
+msgid "Select the recipients of your report"
+msgstr ""
 
 msgid "Recipients selected:"
 msgstr "已选接收人："
 
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "可选接收人数量已达上限。"
+
+msgid "You must select at least one recipient."
+msgstr "必须至少选择一位接收人。"
 
 msgid ""
 "The following recipients will receive your report and could not be "
@@ -1522,17 +1582,11 @@ msgid ""
 "invalid:"
 msgstr "在该步骤中，以下问题的回答缺失或无效："
 
-msgid "You must select at least one recipient."
-msgstr "必须至少选择一位接收人。"
+msgid "Recipient selection"
+msgstr "接收人选择"
 
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "正在等待文件完成上传。"
-
-msgid "The following steps have errors:"
-msgstr "以下步骤出现错误："
-
-msgid "Hide"
-msgstr "隐藏"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1700,6 +1754,9 @@ msgstr "请检查该问题，以确定是否正当。"
 
 msgid "The activities with unusual stats are:"
 msgstr "异常状态的活动是："
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr ""
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -1929,6 +1986,9 @@ msgstr ""
 msgid "New report"
 msgstr "新报告"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr ""
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "最早过期日期为 {EarliestExpirationDate}。"
 
@@ -1938,18 +1998,16 @@ msgstr "请在删除之前对其进行检查。"
 msgid "Some reports will expire soon"
 msgstr "某些报告将很快过期"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr "该邮件通知您，揭发者已选择您作为报告的重要接收人。"
+msgid "This is an email to notify you the reception of a new report."
+msgstr ""
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
-msgstr "他们请求您给予其中的信息与材料特别的关注。请记住，揭发者常常为了公众利益将其自身暴露于高度风险之中，因此报告所提供的材料应视为极其重要。"
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+msgstr ""
+
+msgid "Reminder"
+msgstr ""
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "该邮件通知您，现有报告已更新。"

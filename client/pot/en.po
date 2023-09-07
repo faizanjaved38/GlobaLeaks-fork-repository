@@ -12,9 +12,6 @@ msgstr ""
 msgid "Log in"
 msgstr "Log in"
 
-msgid "Theme customization"
-msgstr "Theme customization"
-
 msgid "Languages"
 msgstr "Languages"
 
@@ -74,9 +71,6 @@ msgstr "Files"
 
 msgid "Comments"
 msgstr "Comments"
-
-msgid "Messages"
-msgstr "Messages"
 
 msgid "Details"
 msgstr "Details"
@@ -446,14 +440,14 @@ msgstr "Copy to clipboard"
 msgid "Logout"
 msgstr "Logout"
 
-msgid "Give this recipient ability to grant user access to reports"
-msgstr "Give this recipient ability to grant user access to reports"
-
 msgid "Grant access"
 msgstr "Grant access"
 
 msgid "Revoke access"
 msgstr "Revoke access"
+
+msgid "Transfer"
+msgstr "Transfer"
 
 msgid "Assigned to"
 msgstr "Assigned to"
@@ -463,6 +457,57 @@ msgstr "Not provided."
 
 msgid "Set a reminder"
 msgstr "Set a reminder"
+
+msgid "Privileges"
+msgstr "Privileges"
+
+msgid "Hide"
+msgstr "Hide"
+
+msgid "Unhide"
+msgstr "Unhide"
+
+msgid "Redact"
+msgstr "Redact"
+
+msgid "Select an option"
+msgstr "Select an option"
+
+msgid "Select your language"
+msgstr "Select your language"
+
+msgid "Give this user ability to mask information"
+msgstr "Give this user ability to mask information"
+
+msgid "Give this user ability to permanently redact masked information"
+msgstr "Give this user ability to permanently redact masked information"
+
+msgid "Public"
+msgstr "Public"
+
+msgid "Internal"
+msgstr "Internal"
+
+msgid "Personal"
+msgstr "Personal"
+
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+msgid "I've read and accept the Privacy Policy"
+msgstr "I've read and accept the Privacy Policy"
+
+msgid "Download copy of the Privacy Policy"
+msgstr "Download copy of the Privacy Policy"
+
+msgid "Whistleblowing Policy"
+msgstr "Whistleblowing Policy"
+
+msgid "Accessibility Declaration"
+msgstr "Accessibility Declaration"
+
+msgid "Voice"
+msgstr "Voice"
 
 msgid "File a report"
 msgstr "File a report"
@@ -505,6 +550,9 @@ msgstr "Creation date"
 
 msgid "Last access"
 msgstr "Last access"
+
+msgid "Messages"
+msgstr "Messages"
 
 msgid "Whistleblower's last access"
 msgstr "Whistleblower's last access"
@@ -581,12 +629,6 @@ msgstr "Enable comments"
 msgid "Allow the whistleblower to write comments"
 msgstr "Allow the whistleblower to write comments"
 
-msgid "Enable private messages"
-msgstr "Enable private messages"
-
-msgid "Allow the whistleblower to send messages"
-msgstr "Allow the whistleblower to send messages"
-
 msgid "Allow the whistleblower to add attachments"
 msgstr "Allow the whistleblower to add attachments"
 
@@ -658,9 +700,6 @@ msgstr "Private Key"
 
 msgid "Certificate Signing Request"
 msgstr "Certificate Signing Request"
-
-msgid "Download"
-msgstr "Download"
 
 msgid "Certificate"
 msgstr "Certificate"
@@ -830,6 +869,12 @@ msgstr "Accept multiple answers"
 msgid "Template override"
 msgstr "Template override"
 
+msgid "Min"
+msgstr "Min"
+
+msgid "Max"
+msgstr "Max"
+
 msgid "Phone number"
 msgstr "Phone number"
 
@@ -913,6 +958,9 @@ msgstr "Footer"
 
 msgid "Upload"
 msgstr "Upload"
+
+msgid "Download"
+msgstr "Download"
 
 msgid "Language:"
 msgstr "Language:"
@@ -1035,14 +1083,17 @@ msgstr "Network"
 msgid "Sites"
 msgstr "Sites"
 
-msgid "Mode:"
-msgstr "Mode:"
+msgid "Profile"
+msgstr "Profile"
 
 msgid "Configure"
 msgstr "Configure"
 
 msgid "Subdomain"
 msgstr "Subdomain"
+
+msgid "Mode:"
+msgstr "Mode:"
 
 msgid "Creation date:"
 msgstr "Creation date:"
@@ -1116,6 +1167,12 @@ msgstr "Allow the recipient to delete reports"
 msgid "Allow the recipient to postpone the report expiration date"
 msgstr "Allow the recipient to postpone the report expiration date"
 
+msgid "Give this user ability to grant user access to reports"
+msgstr "Give this user ability to grant user access to reports"
+
+msgid "Give this user ability to transfer reports to other users"
+msgstr "Give this user ability to transfer reports to other users"
+
 msgid "Give the user administrative access to the following features:"
 msgstr "Give the user administrative access to the following features:"
 
@@ -1155,11 +1212,11 @@ msgstr "Please select your account:"
 msgid "Now type your password, then click 'Log in':"
 msgstr "Now type your password, then click 'Log in':"
 
-msgid "Text shown after the user has selected the option."
-msgstr "Text shown after the user has selected the option."
-
 msgid "Confirm"
 msgstr "Confirm"
+
+msgid "Text shown after the user has selected the option."
+msgstr "Text shown after the user has selected the option."
 
 msgid "Assign score points"
 msgstr "Assign score points"
@@ -1225,6 +1282,9 @@ msgstr "By confirming, you will postpone the expiration date to:"
 
 msgid "By confirming, you will set a reminder on date:"
 msgstr "By confirming, you will set a reminder on date:"
+
+msgid "Transfer access"
+msgstr "Transfer access"
 
 msgid "This is a demo platform, please do not use it for real submissions."
 msgstr "This is a demo platform, please do not use it for real submissions."
@@ -1302,20 +1362,14 @@ msgstr "Have you already filed a report? Enter your receipt."
 msgid "The receipt is either invalid or the report has expired."
 msgstr "The receipt is either invalid or the report has expired."
 
-msgid "Select a file or drag it here."
-msgstr "Select a file or drag it here."
+msgid "Filename"
+msgstr "Filename"
 
 msgid "Size:"
 msgstr "Size:"
 
-msgid "Uploading files…"
-msgstr "Uploading files…"
-
-msgid "Upload completed successfully!"
-msgstr "Upload completed successfully!"
-
-msgid "Estimated upload time:"
-msgstr "Estimated upload time:"
+msgid "Access date"
+msgstr "Access date"
 
 msgid "Recipients have requested you to fill an additional questionnaire."
 msgstr "Recipients have requested you to fill an additional questionnaire."
@@ -1329,8 +1383,8 @@ msgstr "From:"
 msgid "To:"
 msgstr "To:"
 
-msgid "Filename"
-msgstr "Filename"
+msgid "View"
+msgstr "View"
 
 msgid "Upload date"
 msgstr "Upload date"
@@ -1393,6 +1447,9 @@ msgstr ""
 "to recover your access to the platform and to your data in case you forget "
 "your password."
 
+msgid "Select a file or drag it here."
+msgstr "Select a file or drag it here."
+
 msgid "The provided recovery key is invalid."
 msgstr "The provided recovery key is invalid."
 
@@ -1420,6 +1477,9 @@ msgstr "Access to the whistleblower's identity has been requested to the custodi
 
 msgid "Date of the request"
 msgstr "Date of the request"
+
+msgid "Subscription date"
+msgstr "Subscription date"
 
 msgid "Show"
 msgstr "Show"
@@ -1507,11 +1567,8 @@ msgstr ""
 msgid "View your report"
 msgstr "View your report"
 
-msgid "Recipient selection"
-msgstr "Recipient selection"
-
-msgid "Select the recipients of your report:"
-msgstr "Select the recipients of your report:"
+msgid "Select the recipients of your report"
+msgstr "Select the recipients of your report"
 
 msgid "Recipients selected:"
 msgstr "Recipients selected:"
@@ -1519,31 +1576,28 @@ msgstr "Recipients selected:"
 msgid "You have reached the maximum number of selectable recipients."
 msgstr "You have reached the maximum number of selectable recipients."
 
-msgid ""
-"The following recipients will receive your report and could not be "
-"deselected:"
-msgstr ""
-"The following recipients will receive your report and could not be "
-"deselected:"
-
-msgid ""
-"In this step the answers to the following questions are either missing or "
-"invalid:"
-msgstr ""
-"In this step the answers to the following questions are either missing or "
-"invalid:"
-
 msgid "You must select at least one recipient."
 msgstr "You must select at least one recipient."
 
+msgid ""
+"The following recipients will receive your report and could not be "
+"deselected:"
+msgstr ""
+"The following recipients will receive your report and could not be "
+"deselected:"
+
+msgid ""
+"In this step the answers to the following questions are either missing or "
+"invalid:"
+msgstr ""
+"In this step the answers to the following questions are either missing or "
+"invalid:"
+
+msgid "Recipient selection"
+msgstr "Recipient selection"
+
 msgid "Waiting for the file(s) to finish uploading."
 msgstr "Waiting for the file(s) to finish uploading."
-
-msgid "The following steps have errors:"
-msgstr "The following steps have errors:"
-
-msgid "Hide"
-msgstr "Hide"
 
 msgid ""
 "The following step-by-step procedure will guide you through creating your "
@@ -1732,6 +1786,9 @@ msgstr "Examine the issue to determine whether it is legitimate or not."
 
 msgid "The activities with unusual stats are:"
 msgstr "The activities with unusual stats are:"
+
+msgid "Available disk space: {FreeMemory}/{TotalMemory}"
+msgstr "Available disk space: {FreeMemory}/{TotalMemory}"
 
 msgid ""
 "The server cannot guarantee that a new report can be stored, so submissions "
@@ -2005,6 +2062,9 @@ msgstr ""
 msgid "New report"
 msgstr "New report"
 
+msgid "One or more reports are expiring and will be soon deleted."
+msgstr "One or more reports are expiring and will be soon deleted."
+
 msgid "The earliest expiration date is {EarliestExpirationDate}."
 msgstr "The earliest expiration date is {EarliestExpirationDate}."
 
@@ -2014,25 +2074,18 @@ msgstr "Please remember to check them before they are deleted."
 msgid "Some reports will expire soon"
 msgstr "Some reports will expire soon"
 
-msgid ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
-msgstr ""
-"This is an email to notify you that a whistleblower has selected you as a "
-"valuable recipient of their report."
+msgid "This is an email to notify you the reception of a new report."
+msgstr "This is an email to notify you the reception of a new report."
 
 msgid ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
 msgstr ""
-"You are asked to pay special attention to the information and material "
-"contained therein. Please keep in mind that whistleblowers often expose "
-"themselves to high personal risks in the interest of the public. Therefore "
-"the material provided within this report should be considered to be of high "
-"importance."
+"This is an email to notify you that the reminder date for one or more "
+"reports has been met."
+
+msgid "Reminder"
+msgstr "Reminder"
 
 msgid "This is an email to notify that an existing report has been updated."
 msgstr "This is an email to notify that an existing report has been updated."
