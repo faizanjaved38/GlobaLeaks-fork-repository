@@ -11,7 +11,7 @@ GL.controller("AdminFieldEditorCtrl", ["$scope", "$http",
     if ($scope.children) {
       $scope.fields = $scope.children;
     }
-    
+
     $scope.children = $scope.field.children;
 
     $scope.toggleEditing = function () {
