@@ -632,6 +632,8 @@ class _InternalTip(Model):
     enable_two_way_comments = Column(Boolean, default=True, nullable=False)
     enable_attachments = Column(Boolean, default=True, nullable=False)
     enable_whistleblower_identity = Column(Boolean, default=False, nullable=False)
+    enable_whistleblower_notification = Column(Boolean, default=False, nullable=False)
+    whistleblower_email = Column(UnicodeText(84), default='', nullable=False)
     important = Column(Boolean, default=False, nullable=False)
     label = Column(UnicodeText, default='', nullable=False)
     last_access = Column(DateTime, default=datetime_now, nullable=False)

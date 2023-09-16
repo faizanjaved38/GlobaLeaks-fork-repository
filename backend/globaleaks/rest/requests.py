@@ -532,6 +532,12 @@ SupportDesc = {
     'text': str
 }
 
+ContactDesc = {
+    'tid': str,
+    'whistleblower_email': str,
+    'enable_whistleblower_notification': bool
+}
+
 PasswordReset1Desc = {
     'username': str
 }

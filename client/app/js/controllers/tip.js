@@ -246,6 +246,7 @@ GL.controller("TipCtrl",
 
       $scope.tip = new WBTip(function(tip) {
         $scope.tip = tip;
+        console.log($scope.tip)
         $scope.tip.context = $scope.contexts_by_id[$scope.tip.context_id];
         $scope.tip.receivers_by_id = $scope.Utils.array_to_map($scope.tip.receivers);
         $scope.score = $scope.tip.score;
@@ -363,6 +364,20 @@ GL.controller("TipCtrl",
     $scope.tip_notify = function(enable) {
       return $scope.tip.operation("set", {"key": "enable_notifications", "value": enable}).then(function() {
         $scope.tip.enable_notifications = enable;
+      });
+    };
+
+    $scope.open_notification_modal = function () {
+      $uibModal.open({
+        templateUrl: "views/modals/whistleblower_notification.html",
+        controller: "TipContactCtrl",
+        resolve: {
+          args: function () {
+            return {
+              tip: $scope.tip
+            };
+          }
+        }
       });
     };
 
@@ -516,6 +531,28 @@ controller("TipOperationsCtrl",
         });
     }
   };
+}]).
+controller("TipContactCtrl",
+  ["$scope", "$http", "$location", "$uibModalInstance", "args",
+   function ($scope, $http, $location, $uibModalInstance, args) {
+  $scope.args = args;
+  $scope.status = args.tip.enable_whistleblower_notification;
+  $scope.email = args.tip.whistleblower_email;
+
+  $scope.confirm = function() {
+    $http.post("/api/whistleblower/wbtip/contact", {"tid": args.tip.id, "whistleblower_email": $scope.email, "enable_whistleblower_notification": $scope.status});
+    $scope.reload()
+    $uibModalInstance.close();
+  };
+
+  $scope.updateNotification = function () {
+    $scope.status = !$scope.status
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.close();
+  };
+
 }]).
 controller("RTipRFileUploadCtrl", ["$scope", "Authentication", "RTipDownloadRFile", "RTipRFileResource", function($scope, Authentication, RTipDownloadRFile, RTipRFileResource) {
   var reloadUI = function (){ $scope.reload(); };

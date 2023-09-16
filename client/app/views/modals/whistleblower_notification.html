@@ -1,0 +1,18 @@
+<form name="email_notification_form">
+  <div class="modal-header">
+    <div>Receive notification on your email address</div>
+    <button type="button" class="close" data-ng-click="cancel()" aria-label="{{'Close' | translate}}">
+      <i class="fa-solid fa-times"></i>
+    </button>
+  </div>
+  <div class="modal-body">
+    <br>
+    <input data-ng-disabled="!status" name="email" placeholder="Enter email address" class="form-control" data-ng-model="email" type="email" data-ng-pattern="CONSTANTS.email_regexp" required />
+    <span class="text-danger"  data-ng-show="email_notification_form.email.$error.pattern">Invalid email address</span>
+  </div>
+  <div class="modal-footer">
+    <button data-ng-if="!status" data-ng-click="updateNotification()" class="btn btn-primary" data-translate>Enable</button>
+    <button data-ng-if="status" data-ng-click="updateNotification()" class="btn btn-danger" data-translate>Disable</button>
+    <button data-ng-click="confirm()" class="btn btn-primary" data-translate>Save</button>
+  </div>
+</form>

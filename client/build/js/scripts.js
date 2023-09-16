@@ -75648,6 +75648,28 @@ angular.module('GL').run(['$templateCache', function($templateCache) {
   );
 
 
+  $templateCache.put('views/modals/whistleblower_notification.html',
+    '<form name="email_notification_form">\n' +
+    '  <div class="modal-header">\n' +
+    '    <div>Receive notification on your email address</div>\n' +
+    '    <button type="button" class="close" data-ng-click="cancel()" aria-label="{{\'Close\' | translate}}">\n' +
+    '      <i class="fa-solid fa-times"></i>\n' +
+    '    </button>\n' +
+    '  </div>\n' +
+    '  <div class="modal-body">\n' +
+    '    <br>\n' +
+    '    <input data-ng-disabled="!status" name="email" placeholder="Enter email address" class="form-control" data-ng-model="email" type="email" data-ng-pattern="CONSTANTS.email_regexp" required />\n' +
+    '    <span class="text-danger"  data-ng-show="email_notification_form.email.$error.pattern">Invalid email address</span>\n' +
+    '  </div>\n' +
+    '  <div class="modal-footer">\n' +
+    '    <button data-ng-if="!status" data-ng-click="updateNotification()" class="btn btn-primary" data-translate>Enable</button>\n' +
+    '    <button data-ng-if="status" data-ng-click="updateNotification()" class="btn btn-danger" data-translate>Disable</button>\n' +
+    '    <button data-ng-click="confirm()" class="btn btn-primary" data-translate>Save</button>\n' +
+    '  </div>\n' +
+    '</form>\n'
+  );
+
+
   $templateCache.put('views/partials/admin_file.html',
     '<label>{{admin_file.title}}</label>\n' +
     '<div class="card.card-body uploadfile file-{{admin_file.varname}}"\n' +
@@ -76296,9 +76318,7 @@ angular.module('GL').run(['$templateCache', function($templateCache) {
     '\n' +
     '  <span data-ng-if="entry[\'value\']" data-ng-switch-when="date">{{entry[\'value\'] | date:\'dd-MM-yyyy\'}}</span>\n' +
     '\n' +
-    '  <span data-ng-if="entry[\'value\']" data-ng-switch-when="daterange"><span data-translate>From:</span> {{entry[\'value\'] |\n' +
-    '    split:\':\':0 | date:\'dd-MM-yyyy\'}} <span data-translate>To:</span> {{entry[\'value\'] | split:\':\':1 |\n' +
-    '    date:\'dd-MM-yyyy\'}}</span>\n' +
+    '  <span data-ng-if="entry[\'value\']" data-ng-switch-when="daterange"><span data-translate>From:</span> {{entry[\'value\'] | split:\':\':0 | date:\'dd-MM-yyyy\'}} <span data-translate>To:</span> {{entry[\'value\'] | split:\':\':1 | date:\'dd-MM-yyyy\'}}</span>\n' +
     '\n' +
     '  <span data-ng-if="entry[\'value\']" data-ng-switch-when="tos">\n' +
     '    <i data-ng-if="entry[\'value\'] === true" class="fa-solid fa-check-square"></i>\n' +
@@ -76311,21 +76331,8 @@ angular.module('GL').run(['$templateCache', function($templateCache) {
     '    </div>\n' +
     '  </span>\n' +
     '\n' +
-    '  <span data-ng-switch-when="audioUpload" data-ng-init="loadRFile(audiolist[field.id][\'key\'][\'id\'], field.id, this)">\n' +
-    '    <div class="audio-player-wrapper" data-ng-disabled="!audiolist[field.id][\'value\']">\n' +
-    '      <audio data-ng-src="{{audiolist[field.id][\'value\']}}" controls class="audio-player"></audio>\n' +
-    '    </div>\n' +
-    '  </span>\n' +
-    '\n' +
-    '  <span data-ng-if="entry[\'value\']" class="entry-text preformatted"\n' +
-    '    data-ng-switch-default><i data-ng-if="edited(field.id)" class="fa-solid fa-pencil edited"></i>  {{maskingContent(entry[\'value\'],field.id)}}</span>\n' +
-    '  <span class="float-right edit" id="edit-question" data-ng-switch-default\n' +
-    '    data-ng-click="editReport(entry[\'value\'],field.id,\'answer\')" data-ng-if="mode"\n' +
-    '    data-uib-tooltip="{{\'Edit\' | translate}}">\n' +
-    '    <i class="fa-solid fa-eraser"></i>\n' +
-    '    <span data-ng-if="entry[\'value\']" class="entry-text preformatted" data-ng-switch-default>{{entry[\'value\']}}</span>\n' +
-    '  </span>\n' +
-    '</div>'
+    '  <span data-ng-if="entry[\'value\']" class="entry-text preformatted" data-ng-switch-default>{{entry[\'value\']}}</span>\n' +
+    '</div>\n'
   );
 
 
@@ -76814,7 +76821,7 @@ angular.module('GL').run(['$templateCache', function($templateCache) {
     '       class="drag-drop">\n' +
     '    <div data-ng-if="field === undefined || field.multi_entry">\n' +
     '      <div class="custom-file">\n' +
-    '        <input data-ng-attr-id="customFile-{{fileinput}}" data-ng-model="_fakemodel[fileinput]" class="custom-file-input inputelem" type="file" data-ng-required="field && field.required && !uploads[fileinput].files.length" data-flow-btn data-ng-attr-accept="{{ generateAcceptAttribute(field.attrs.upload_type.value) }}" />\n' +
+    '        <input data-ng-attr-id="customFile-{{fileinput}}" data-ng-model="_fakemodel[fileinput]" class="custom-file-input inputelem" type="file" data-ng-required="field && field.required && !uploads[fileinput].files.length" data-flow-btn />\n' +
     '        <label class="btn btn-sm btn-outline-secondary" data-ng-attr-for="customFile-{{fileinput}}">\n' +
     '          <i class="fa-solid fa-upload"></i>\n' +
     '          <span data-translate>Upload</span>\n' +
@@ -78335,6 +78342,19 @@ angular.module('GL').run(['$templateCache', function($templateCache) {
     '          class="btn btn-outline-secondary">\n' +
     '      <i class="fa-solid fa-sync"></i>\n' +
     '    </span>\n' +
+    '    <span id="tip-action-notify" data-ng-if="!tip.enable_whistleblower_notification"\n' +
+    '          data-ng-click="open_notification_modal()"\n' +
+    '          data-uib-tooltip="{{\'Turn on email notifications\' | translate}}"\n' +
+    '          class="btn btn-outline-secondary active">\n' +
+    '      <i class="fa-solid fa-volume-mute"></i>\n' +
+    '    </span>\n' +
+    '\n' +
+    '    <span id="tip-action-silence" data-ng-if="tip.enable_whistleblower_notification"\n' +
+    '          data-ng-click="open_notification_modal()"\n' +
+    '          data-uib-tooltip="{{\'Silence email notifications\' | translate}}"\n' +
+    '          class="btn btn-outline-secondary">\n' +
+    '      <i class="fa-solid fa-volume-down"></i>\n' +
+    '    </span>\n' +
     '  </div>\n' +
     '</div>\n' +
     '<div class="row" data-ng-if="tip.status !== \'closed\' && tip.context.additional_questionnaire_id && tip.questionnaires.length === 1">\n' +
@@ -79517,84 +79537,7 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
   };
 }])
 .controller("StatisticsCtrl", ["$scope", "$location", "$filter", "$http", "$interval", "$routeParams", "$uibModal", "Authentication", "RTip", "WBTip", "RTipExport", "RTipDownloadRFile", "WBTipDownloadFile", "fieldUtilities", "RTipViewRFile",
-  function ($scope, $location, $filter, $http, $interval, $routeParams, $uibModal, Authentication, RTip, WBTip, RTipExport, RTipDownloadRFile, WBTipDownloadFile, fieldUtilities, RTipViewRFile) {
-  function generateBarGraph(documentID, context, type, graphLabels, graphTitle, graphData, xlabel, ylabel, update) {
-
-    var canvas = document.getElementById(documentID);
-    var ctx = document.getElementById(documentID).getContext(context);
-    var chart = new Chart(ctx, {
-      type: type,
-      data: {
-        labels: graphLabels,
-        datasets: [{
-          backgroundColor: 'rgba(55, 122, 188, 0.6)',
-          label: graphTitle,
-          data: graphData,
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        responsive: true,
-        barPercentage: 0.6,
-        categoryPercentage: 0.6,
-
-        scales: {
-          x: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: xlabel
-            }
-          },
-          y: {
-            beginAtZero: true,
-            title: {
-              display: true,
-              text: ylabel
-            }
-          }
-        }
-      },
-    });
-    return chart;
-  }
-  function generateLineGraph(documentID, context, type, graphLabels, graphTitle, graphData, xlabel, ylabel) {
-    var ctx = document.getElementById(documentID).getContext(context);
-    var graph = new Chart(ctx, {
-      type: type,
-      data: {
-        labels: graphLabels,
-        datasets: [{
-          label: graphTitle,
-          data: graphData,
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
-      },
-      options: {
-        // indexAxis: 'y',
-        responsive: true,
-        scales: {
-          x: {
-            display: true,
-            title: {
-              display: true,
-              text: xlabel
-            }
-          },
-          y: {
-            display: true,
-            title: {
-              display: true,
-              text: ylabel
-            }
-          }
-        }
-      },
-    });
-    return graph;
-  }
+function ($scope, $location, $filter, $http, $interval, $routeParams, $uibModal, Authentication, RTip, WBTip, RTipExport, RTipDownloadRFile, WBTipDownloadFile, fieldUtilities, RTipViewRFile) {
   $scope.channel = undefined
   $scope.startDate = null;
   $scope.endDate = null;
@@ -79972,6 +79915,83 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
 
   /* =============================================== Helper Methods =============================================== */
 
+  function generateBarGraph(documentID, context, type, graphLabels, graphTitle, graphData, xlabel, ylabel, update) {
+
+    var canvas = document.getElementById(documentID);
+    var ctx = document.getElementById(documentID).getContext(context);
+    var chart = new Chart(ctx, {
+      type: type,
+      data: {
+        labels: graphLabels,
+        datasets: [{
+          backgroundColor: 'rgba(55, 122, 188, 0.6)',
+          label: graphTitle,
+          data: graphData,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        barPercentage: 0.6,
+        categoryPercentage: 0.6,
+
+        scales: {
+          x: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: xlabel
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: ylabel
+            }
+          }
+        }
+      },
+    });
+    return chart;
+  }
+  function generateLineGraph(documentID, context, type, graphLabels, graphTitle, graphData, xlabel, ylabel) {
+    var ctx = document.getElementById(documentID).getContext(context);
+    var graph = new Chart(ctx, {
+      type: type,
+      data: {
+        labels: graphLabels,
+        datasets: [{
+          label: graphTitle,
+          data: graphData,
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          x: {
+            display: true,
+            title: {
+              display: true,
+              text: xlabel
+            }
+          },
+          y: {
+            display: true,
+            title: {
+              display: true,
+              text: ylabel
+            }
+          }
+        }
+      },
+    });
+    return graph;
+  }
+
   $scope.export = function (value, totalvalue) {
     var modifiedlabelCountsChart = labelCountsChart.data.labels.map(function (value) {
       return "#" + value;
@@ -79991,7 +80011,6 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
 
     var csvContent = '';
 
-    // Function to properly escape a value for CSV
     function escapeCSVValue(value) {
       value = String(value);
       if (value.includes(',') || value.includes('"') || value.includes('\n')) {
@@ -80000,26 +80019,19 @@ GL.controller("ReceiverTipsCtrl", ["$scope",  "$filter", "$http", "$location", "
       return value;
     }
 
-    // Add header row with labels
     csvContent += labels.map(escapeCSVValue).join(',') + '\n';
 
-    // Add data rows
     var dataRow = datasets.map(escapeCSVValue).join(',');
 
     csvContent += dataRow + '\n';
 
-    // Create a Blob object
     var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-
-    // Create a download link
     var link = document.createElement('a');
     link.setAttribute('href', URL.createObjectURL(blob));
     link.setAttribute('download', 'data.csv');
     document.body.appendChild(link);
 
-    // Trigger download
     link.click();
-//
   }
 
 }]);
@@ -80271,6 +80283,7 @@ GL.controller("TipCtrl",
 
       $scope.tip = new WBTip(function(tip) {
         $scope.tip = tip;
+        console.log($scope.tip)
         $scope.tip.context = $scope.contexts_by_id[$scope.tip.context_id];
         $scope.tip.receivers_by_id = $scope.Utils.array_to_map($scope.tip.receivers);
         $scope.score = $scope.tip.score;
@@ -80388,6 +80401,20 @@ GL.controller("TipCtrl",
     $scope.tip_notify = function(enable) {
       return $scope.tip.operation("set", {"key": "enable_notifications", "value": enable}).then(function() {
         $scope.tip.enable_notifications = enable;
+      });
+    };
+
+    $scope.open_notification_modal = function () {
+      $uibModal.open({
+        templateUrl: "views/modals/whistleblower_notification.html",
+        controller: "TipContactCtrl",
+        resolve: {
+          args: function () {
+            return {
+              tip: $scope.tip
+            };
+          }
+        }
       });
     };
 
@@ -80541,6 +80568,28 @@ controller("TipOperationsCtrl",
         });
     }
   };
+}]).
+controller("TipContactCtrl",
+  ["$scope", "$http", "$location", "$uibModalInstance", "args",
+   function ($scope, $http, $location, $uibModalInstance, args) {
+  $scope.args = args;
+  $scope.status = args.tip.enable_whistleblower_notification;
+  $scope.email = args.tip.whistleblower_email;
+
+  $scope.confirm = function() {
+    $http.post("/api/whistleblower/wbtip/contact", {"tid": args.tip.id, "whistleblower_email": $scope.email, "enable_whistleblower_notification": $scope.status});
+    $scope.reload()
+    $uibModalInstance.close();
+  };
+
+  $scope.updateNotification = function () {
+    $scope.status = !$scope.status
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.close();
+  };
+
 }]).
 controller("RTipRFileUploadCtrl", ["$scope", "Authentication", "RTipDownloadRFile", "RTipRFileResource", function($scope, Authentication, RTipDownloadRFile, RTipRFileResource) {
   var reloadUI = function (){ $scope.reload(); };

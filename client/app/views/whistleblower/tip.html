@@ -6,6 +6,19 @@
           class="btn btn-outline-secondary">
       <i class="fa-solid fa-sync"></i>
     </span>
+    <span id="tip-action-notify" data-ng-if="!tip.enable_whistleblower_notification"
+          data-ng-click="open_notification_modal()"
+          data-uib-tooltip="{{'Turn on email notifications' | translate}}"
+          class="btn btn-outline-secondary active">
+      <i class="fa-solid fa-volume-mute"></i>
+    </span>
+
+    <span id="tip-action-silence" data-ng-if="tip.enable_whistleblower_notification"
+          data-ng-click="open_notification_modal()"
+          data-uib-tooltip="{{'Silence email notifications' | translate}}"
+          class="btn btn-outline-secondary">
+      <i class="fa-solid fa-volume-down"></i>
+    </span>
   </div>
 </div>
 <div class="row" data-ng-if="tip.status !== 'closed' && tip.context.additional_questionnaire_id && tip.questionnaires.length === 1">

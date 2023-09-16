@@ -11,7 +11,7 @@
        class="drag-drop">
     <div data-ng-if="field === undefined || field.multi_entry">
       <div class="custom-file">
-        <input data-ng-attr-id="customFile-{{fileinput}}" data-ng-model="_fakemodel[fileinput]" class="custom-file-input inputelem" type="file" data-ng-required="field && field.required && !uploads[fileinput].files.length" data-flow-btn data-ng-attr-accept="{{ generateAcceptAttribute(field.attrs.upload_type.value) }}" />
+        <input data-ng-attr-id="customFile-{{fileinput}}" data-ng-model="_fakemodel[fileinput]" class="custom-file-input inputelem" type="file" data-ng-required="field && field.required && !uploads[fileinput].files.length" data-flow-btn />
         <label class="btn btn-sm btn-outline-secondary" data-ng-attr-for="customFile-{{fileinput}}">
           <i class="fa-solid fa-upload"></i>
           <span data-translate>Upload</span>

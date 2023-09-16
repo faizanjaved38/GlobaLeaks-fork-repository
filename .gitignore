@@ -1,0 +1,11 @@
+client/build
+client/app/lib
+backend/env
+client/build
+client/build/js/scripts.js
+client/build/js/scripts.min.js
+client/build/js/scripts.min.js.map
+backend/workingdir/log/globaleaks.log
+backend/workingdir/log/access.log
+backend/workingdir/globaleaks.pid
+backend/workingdir/globaleaks.db
