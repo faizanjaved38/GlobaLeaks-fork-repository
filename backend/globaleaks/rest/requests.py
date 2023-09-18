@@ -124,6 +124,12 @@ SubmissionDesc = {
     'score': int
 }
 
+ContactDesc = {
+    'tid': str,
+    'whistleblower_email': str,
+    'enable_whistleblower_notification': bool
+}
+
 AdminUserDesc = {
     'username': str,
     'name': str,
@@ -367,6 +373,7 @@ AdminContextDesc = {
     'select_all_receivers': bool,
     'show_recipients_details': bool,
     'allow_recipients_selection': bool,
+    'allowed_file_type': str,
     'enable_two_way_comments': bool,
     'enable_attachments': bool,
     'score_threshold_medium': int,
@@ -470,6 +477,7 @@ ContextDesc = {
     'tip_reminder': int,
     'show_recipients_details': bool,
     'allow_recipients_selection': bool,
+    'allowed_file_type': str,
     'maximum_selectable_receivers': int,
     'enable_attachments': bool,
     'show_receivers_in_alphabetical_order': bool,

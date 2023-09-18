@@ -229,6 +229,10 @@
                       </label>
                     </div>
                     <div class="form-group">
+                      <label data-translate>Allowed types</label>
+                      <textarea data-ng-model="context.allowed_file_type" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
                       <label class="inline-checkbox" data-ng-if="context.enable_comments">
                         <input data-ng-model="context.enable_two_way_comments" type="checkbox"/>
                         <span data-translate>Allow the whistleblower to write comments</span>

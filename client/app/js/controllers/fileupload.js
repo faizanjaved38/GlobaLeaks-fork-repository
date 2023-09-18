@@ -12,15 +12,24 @@ GL.factory("uploadUtils", ["$filter", function($filter) {
   };
 }]).
 controller("WBFileUploadCtrl", ["$scope", function($scope) {
-  $scope.disabled = false;
-
   $scope.generateAcceptedFileTypes = function() {
-    allowedFileTypes = $scope.field.allowed_file_type;
-    var acceptedTypes = allowedFileTypes.split(' ').map(function(type) {
-      return '.' + type;
-    }).join(',');
+    if($scope.field && $scope.field.allowed_file_type.length>0){
+      allowedFileTypes = $scope.field.allowed_file_type;
+      var acceptedTypes = allowedFileTypes.split(' ').map(function(type) {
+        return '.' + type;
+      }).join(',');
 
-    return acceptedTypes;
+      return acceptedTypes;
+    }else if($scope.tip && $scope.tip.context.allowed_file_type.length>0){
+      allowedFileTypes = $scope.tip.context.allowed_file_type;
+      var acceptedTypes = allowedFileTypes.split(' ').map(function(type) {
+        return '.' + type;
+      }).join(',');
+
+      return acceptedTypes;
+    }else{
+      return '*/*';
+    }
   };
 
   $scope.$on("flow::fileAdded", function (event, $flow, flowFile) {
@@ -36,11 +45,24 @@ controller("WBFileUploadCtrl", ["$scope", function($scope) {
 controller("RFileUploadCtrl", ["$scope", function($scope) {
   $scope.file_upload_description = "";
 
+  $scope.generateAcceptedFileTypes = function(allowed_file_type) {
+    if(allowed_file_type && allowed_file_type.length>0){
+      var acceptedTypes = allowed_file_type.split(' ').map(function(type) {
+        return '.' + type;
+      }).join(',');
+
+      return acceptedTypes;
+    }else{
+      return '*/*';
+    }
+  };
+
   $scope.beginUpload = function ($files, $event, $flow, visibility) {
     $scope.file_error_msgs = [];
     $flow.opts.query = { "description": $scope.file_upload_description, "visibility": visibility };
     $flow.upload();
   };
+
 }]).
 controller("AudioUploadCtrl", ["$scope", "flowFactory", "Utils", "mediaProcessor", function ($scope, flowFactory, Utils, mediaProcessor) {
   let mediaRecorder = null;

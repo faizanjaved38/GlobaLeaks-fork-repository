@@ -93,6 +93,18 @@ def create_comment(session, tid, user_id, content):
 
     return ret
 
+@transact
+def create_contact(session, tid, user_id, enable_whistleblower_notification, whistleblower_email):
+    itip = db_get(session,
+                  models.InternalTip,
+                  (models.InternalTip.id == user_id,
+                   models.InternalTip.enable_two_way_comments.is_(True),
+                   models.InternalTip.status != 'closed',
+                   models.InternalTip.tid == tid))
+
+    itip.update_date = itip.last_access = datetime_now()
+    itip.enable_whistleblower_notification = enable_whistleblower_notification
+    itip.whistleblower_email = whistleblower_email
 
 @transact
 def update_identity_information(session, tid, user_id, identity_field_id, wbi, language):
@@ -217,6 +229,15 @@ class WBTipIdentityHandler(BaseHandler):
                                            request['identity_field_answers'],
                                            self.request.language)
 
+class WBTipContact(BaseHandler):
+    """
+    This is the interface that securely allows the whistleblower allow contact notification
+    """
+    check_roles = 'whistleblower'
+
+    def post(self):
+        request = self.validate_request(self.request.content.read(), requests.ContactDesc)
+        create_contact(self.request.tid, self.session.user_id, request['enable_whistleblower_notification'], request['whistleblower_email'])
 
 class WBTipAdditionalQuestionnaire(BaseHandler):
     """

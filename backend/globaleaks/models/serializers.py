@@ -172,6 +172,8 @@ def serialize_itip(session, internaltip, language):
         'enable_two_way_comments': internaltip.enable_two_way_comments,
         'enable_attachments': internaltip.enable_attachments,
         'enable_whistleblower_identity': internaltip.enable_whistleblower_identity,
+        'enable_whistleblower_notification': internaltip.enable_whistleblower_notification,
+        'whistleblower_email': internaltip.whistleblower_email,
         'last_access': internaltip.last_access,
         'score': internaltip.score,
         'status': internaltip.status,

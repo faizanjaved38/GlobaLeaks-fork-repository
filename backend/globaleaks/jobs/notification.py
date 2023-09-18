@@ -17,7 +17,7 @@ from globaleaks.orm import db_del, transact, tw
 from globaleaks.utils.log import log
 from globaleaks.utils.templating import Templating
 from globaleaks.utils.utility import datetime_now, deferred_sleep
-
+import re
 
 def gen_cache_key(*args):
     return '-'.join(['{}'.format(arg) for arg in args])
@@ -42,7 +42,7 @@ class MailGenerator(object):
 
         return self.cache[cache_key]
 
-    def process_mail_creation(self, session, tid, data):
+    def process_mail_creation(self, session, tid, data, whistleblower_email, enable_whistleblower_notification):
         user_id = data['user']['id']
         language = data['user']['language']
 
@@ -66,6 +66,17 @@ class MailGenerator(object):
             'body': body,
             'tid': tid,
         }))
+
+        if enable_whistleblower_notification:
+            pattern = r'(https?://[^\s]+?)/#/status/[\w-]+'
+            whistleblower_body = re.sub(pattern, r'\1/#/', body)
+
+            session.add(models.Mail({
+                'address': whistleblower_email,
+                'subject': subject,
+                'body': whistleblower_body,
+                'tid': tid,
+            }))
 
     @transact
     def generate(self, session):
@@ -105,11 +116,11 @@ class MailGenerator(object):
         for user, rtip, itip, obj in itertools.chain(results1, results2, results3):
             tid = user.tid
 
-            if (rtips_ids.get(rtip.id, False) or tid in silent_tids) or \
-               (isinstance(obj, models.Comment) and obj.author_id == user.id) or \
-               (rtip.last_notification > rtip.last_access):
-                obj.new = False
-                continue
+            # if (rtips_ids.get(rtip.id, False) or tid in silent_tids) or \
+            #    (isinstance(obj, models.Comment) and obj.author_id == user.id) or \
+            #    (rtip.last_notification > rtip.last_access):
+            #     obj.new = False
+            #     continue
 
             obj.new = False
             rtip.last_notification = now
@@ -125,8 +136,8 @@ class MailGenerator(object):
                 data['user'] = user_serialize_user(session, user, user.language)
                 data['tip'] = serializers.serialize_rtip(session, itip, rtip, user.language)
 
-                self.process_mail_creation(session, tid, data)
-            except:
+                self.process_mail_creation(session, tid, data, itip.whistleblower_email, itip.enable_whistleblower_notification)
+            except Exception as ex:
                 pass
 
         for user in session.query(models.User).filter(models.User.reminder_date < now - timedelta(reminder_time),
@@ -144,7 +155,8 @@ class MailGenerator(object):
 
             try:
                 data['user'] = user_serialize_user(session, user, user.language)
-                self.process_mail_creation(session, tid, data)
+
+                self.process_mail_creation(session, tid, itip.whistleblower_email, itip.enable_whistleblower_notification)
             except:
                 pass
 
@@ -165,7 +177,8 @@ class MailGenerator(object):
 
             try:
                 data['user'] = user_serialize_user(session, user, user.language)
-                self.process_mail_creation(session, tid, data)
+
+                self.process_mail_creation(session, tid, itip.whistleblower_email, itip.enable_whistleblower_notification)
             except:
                 pass
 

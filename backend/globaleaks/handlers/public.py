@@ -312,6 +312,7 @@ def serialize_context(session, context, language, data=None):
         'maximum_selectable_receivers': context.maximum_selectable_receivers,
         'show_recipients_details': context.show_recipients_details,
         'allow_recipients_selection': context.allow_recipients_selection,
+        'allowed_file_type': context.allowed_file_type,
         'enable_two_way_comments': context.enable_two_way_comments,
         'enable_attachments': context.enable_attachments,
         'score_threshold_medium': context.score_threshold_medium,

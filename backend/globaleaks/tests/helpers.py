@@ -196,7 +196,6 @@ def get_dummy_field():
         'multi_entry': False,
         'required': False,
         'statistics': False,
-        'allowed_file_type': '',
         'attrs': {},
         'options': get_dummy_fieldoption_list(),
         'children': [],

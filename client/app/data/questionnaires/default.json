@@ -22,7 +22,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "6f452932-952a-4808-9e1f-9c03cd591ec4",
@@ -159,7 +158,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "f3982fab-30aa-49f4-8c93-9420ff577972",
@@ -284,7 +282,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "55586b65-91b3-4f51-84ea-1ba3005c56dc",
@@ -409,7 +406,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "f1b68a6f-a7ee-4fdf-9e14-85efc4a452fe",
@@ -546,7 +542,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "display_alphabetically": {
               "id": "5ed78303-dd7e-4a06-8c45-7203f4587b40",
@@ -1141,7 +1136,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "display_alphabetically": {
               "id": "61cedc00-b5ad-4823-a625-5fc7dd938b42",
@@ -1451,10 +1445,7 @@
           "multi_entry": true,
           "required": false,
           "preview": false,
-          "statistics": false,
-          "attrs": {
-
-          },
+          "attrs": {},
           "x": 0,
           "y": 5,
           "width": 0,
@@ -1571,7 +1562,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "3baed73c-75c3-4cc6-b2dc-74d8a6fd7597",
@@ -1780,7 +1770,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "display_alphabetically": {
               "id": "0cce7de2-20f3-4875-869c-b8888eac7a3a",
@@ -2090,7 +2079,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "99f2391d-1f88-4aa4-9c9d-312b0ef3fd26",
@@ -2221,7 +2209,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "f24eb5eb-32ca-4018-aede-ea2bb0177b8c",
@@ -2352,7 +2339,6 @@
           "multi_entry": false,
           "required": true,
           "preview": false,
-          "statistics": false,
           "attrs": {
             "min_len": {
               "id": "93b26179-bb85-4a51-9358-11b3f9e67b5b",

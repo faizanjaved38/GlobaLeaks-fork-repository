@@ -337,13 +337,15 @@ class _Context(Model):
     score_threshold_high = Column(Integer, default=0, nullable=False)
     score_threshold_medium = Column(Integer, default=0, nullable=False)
     questionnaire_id = Column(UnicodeText(36), default='default', nullable=False, index=True)
+    allowed_file_type = Column(UnicodeText(100), default='TXT PDF HTM and HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX', nullable=False, index=True)
     additional_questionnaire_id = Column(UnicodeText(36), index=True)
     hidden = Column(Boolean, default=False, nullable=False)
     order = Column(Integer, default=0, nullable=False)
 
     unicode_keys = [
         'questionnaire_id',
-        'additional_questionnaire_id'
+        'additional_questionnaire_id',
+        'allowed_file_type'
     ]
 
     localized_keys = [
@@ -425,7 +427,7 @@ class _Field(Model):
     placeholder = Column(JSON, default=dict, nullable=False)
     required = Column(Boolean, default=False, nullable=False)
     statistics = Column(Boolean, default=False, nullable=False)
-    allowed_file_type = Column(UnicodeText(100), default='TXT PDF HTM and HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX', nullable=False)
+    allowed_file_type = Column(UnicodeText(100), default='TXT PDF HTM HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX', nullable=False)
     multi_entry = Column(Boolean, default=False, nullable=False)
     triggered_by_score = Column(Integer, default=0, nullable=False)
     step_id = Column(UnicodeText(36), index=True)
@@ -634,6 +636,8 @@ class _InternalTip(Model):
     enable_two_way_comments = Column(Boolean, default=True, nullable=False)
     enable_attachments = Column(Boolean, default=True, nullable=False)
     enable_whistleblower_identity = Column(Boolean, default=False, nullable=False)
+    enable_whistleblower_notification = Column(Boolean, default=False, nullable=False)
+    whistleblower_email = Column(UnicodeText(84), default='', nullable=False)
     important = Column(Boolean, default=False, nullable=False)
     label = Column(UnicodeText, default='', nullable=False)
     last_access = Column(DateTime, default=datetime_now, nullable=False)

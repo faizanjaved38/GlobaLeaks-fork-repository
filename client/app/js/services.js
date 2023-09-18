@@ -524,6 +524,7 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
       context.description = "";
       context.order = 0;
       context.tip_timetolive = 90;
+      context.allowed_file_type = "TXT PDF HTM and HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX"
       context.tip_reminder_hard = 80;
       context.tip_reminder_soft = 5;
       context.show_recipients_details = false;
@@ -576,13 +577,12 @@ factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "Ad
       field.description = "";
       field.hint = "";
       field.placeholder = "";
-      field.allowed_file_type = "TXT PDF HTM and HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX";
       field.multi_entry = false;
       field.required = false;
       field.preview = false;
-      field.statistics = false;
       field.attrs = {};
       field.options = [];
+      field.allowed_file_type = "TXT PDF HTM and HTML PPT PPTX MP3 WMA AVI MOV MP4 JPG and JPEG PNG GIF PSD SVG AI ZIP RAR 7Z XLSX";
       field.x = 0;
       field.y = 0;
       field.width = 0;

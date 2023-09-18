@@ -342,6 +342,20 @@ GL.controller("TipCtrl",
       });
     };
 
+    $scope.open_notification_modal = function () {
+      $uibModal.open({
+        templateUrl: "views/modals/whistleblower_notification.html",
+        controller: "TipContactCtrl",
+        resolve: {
+          args: function () {
+            return {
+              tip: $scope.tip
+            };
+          }
+        }
+      });
+    };
+
     $scope.tip_notify = function(enable) {
       return $scope.tip.operation("set", {"key": "enable_notifications", "value": enable}).then(function() {
         $scope.tip.enable_notifications = enable;
@@ -496,6 +510,28 @@ controller("TipOperationsCtrl",
         });
     }
   };
+}]).
+controller("TipContactCtrl",
+  ["$scope", "$http", "$location", "$uibModalInstance", "args",
+   function ($scope, $http, $location, $uibModalInstance, args) {
+  $scope.args = args;
+  $scope.status = args.tip.enable_whistleblower_notification;
+  $scope.email = args.tip.whistleblower_email;
+
+  $scope.confirm = function() {
+    $http.post("/api/whistleblower/wbtip/contact", {"tid": args.tip.id, "whistleblower_email": $scope.email, "enable_whistleblower_notification": $scope.status});
+    $scope.reload()
+    $uibModalInstance.close();
+  };
+
+  $scope.updateNotification = function () {
+    $scope.status = !$scope.status
+  };
+
+  $scope.cancel = function () {
+    $uibModalInstance.close();
+  };
+
 }]).
 controller("RTipRFileUploadCtrl", ["$scope", "Authentication", "RTipDownloadRFile", "RTipRFileResource", function($scope, Authentication, RTipDownloadRFile, RTipRFileResource) {
   var reloadUI = function (){ $scope.reload(); };
