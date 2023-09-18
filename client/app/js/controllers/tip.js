@@ -840,33 +840,35 @@ GL.controller("TipCtrl",
         if (length) {
           elem.value = text.substring(0, start) + blank.repeat(length) + text.substring(finish, text.length);
         }
-        var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-          return (start >= range.start && start <= range.end) || (finish-1 >= range.start && finish-1 <= range.end);
-        });
-
-        if (overlapsTemporaryMasking) {
-          var isOverlapRanges = isRangeInTemporaryRanges(start, finish - 1, $scope.temporaryRanges)
-          if (isOverlapRanges) {
-            var range = {
-              start: start,
-              end: finish - 1
-            };
-            $scope.overlapRanges[i++] = range;
-            $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
-            if ($scope.overlapRemoveRanges.length > 0) {
-              $scope.overlapRemoveRanges = $scope.overlapRemoveRanges.filter(function (range) {
-                return range !== null && range !== undefined && Object.keys(range).length > 0;
-              });
-              const ranges = updateRanges($scope.overlapRemoveRanges, start, finish - 1);
-              $scope.overlapRemoveRanges = []
-              for (const key in ranges) {
-                if (ranges.hasOwnProperty(key)) {
-                  $scope.overlapRemoveRanges.push(ranges[key]);
+        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].temporary_masking.length > 0) {
+          var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
+            return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
+          });
+          if (overlapsTemporaryMasking) {
+            var isOverlapRanges = isRangeInTemporaryRanges(start, finish - 1, $scope.temporaryRanges)
+            if (isOverlapRanges) {
+              var range = {
+                start: start,
+                end: finish - 1
+              };
+              $scope.overlapRanges[i++] = range;
+              $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
+              if ($scope.overlapRemoveRanges.length > 0) {
+                $scope.overlapRemoveRanges = $scope.overlapRemoveRanges.filter(function (range) {
+                  return range !== null && range !== undefined && Object.keys(range).length > 0;
+                });
+                const ranges = updateRanges($scope.overlapRemoveRanges, start, finish - 1);
+                $scope.overlapRemoveRanges = []
+                for (const key in ranges) {
+                  if (ranges.hasOwnProperty(key)) {
+                    $scope.overlapRemoveRanges.push(ranges[key]);
+                  }
                 }
               }
             }
           }
         }
+
         var rangeExists = Object.values($scope.ranges).some(function (range) {
           return range.start === start && range.end === finish;
         });
@@ -881,7 +883,7 @@ GL.controller("TipCtrl",
       }
       function permamentSelect(start, finish, blank, text, elem) {
         var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-          return (start >= range.start && start <= range.end) || (finish-1 >= range.start && finish-1 <= range.end);
+          return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
         });
 
         if (overlapsTemporaryMasking) {
@@ -928,7 +930,7 @@ GL.controller("TipCtrl",
       function temperaryUnselect(start, finish, text, elem) {
         if (!angular.equals({}, $scope.ranges) && ($scope.maskingObjects.length > 0) && ($scope.maskingObjects[0].temporary_masking.length > 0)) {
           var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-            return (start >= range.start && start <= range.end) || (finish-1 >= range.start && finish-1 <= range.end);
+            return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
           });
 
           if (!overlapsTemporaryMasking) {
@@ -974,7 +976,7 @@ GL.controller("TipCtrl",
       }
       function permamentUnselect(start, finish, text, elem) {
         var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-          return (start >= range.start && start <= range.end) || (finish-1 >= range.start && finish-1 <= range.end);
+          return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
         });
         if (overlapsTemporaryMasking) {
           var length = finish - start;
@@ -1049,7 +1051,7 @@ GL.controller("TipCtrl",
         }
       }
       function permamentSave() {
-        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].permanent_masking.length === 0 && $scope.maskingObjects[0].temporary_masking.length === 0) {
+        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].permanent_masking.length === 0 && $scope.temporaryRanges === 0) {
           var reloadUI = function () { $scope.reload(); };
           return $http({
             method: "DELETE",

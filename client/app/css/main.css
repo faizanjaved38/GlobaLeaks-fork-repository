@@ -1066,7 +1066,7 @@ hr {
 .custom-switch-left {
   display: flex;
   align-items: center;
-  margin-right: auto; 
+  margin-right: auto !important; 
 }
 
 .custom-switch-left .custom-control-label {
