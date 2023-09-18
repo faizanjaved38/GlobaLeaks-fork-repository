@@ -1051,7 +1051,7 @@ GL.controller("TipCtrl",
         }
       }
       function permamentSave() {
-        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].permanent_masking.length === 0 && $scope.temporaryRanges === 0) {
+        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].permanent_masking.length == 0 && $scope.temporaryRanges == 0) {
           var reloadUI = function () { $scope.reload(); };
           return $http({
             method: "DELETE",
