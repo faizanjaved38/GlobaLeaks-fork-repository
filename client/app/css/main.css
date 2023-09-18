@@ -1063,3 +1063,17 @@ hr {
   opacity: 0.5;
   pointer-events: none;
 }
+.custom-switch-left {
+  display: flex;
+  align-items: center;
+  margin-right: auto; 
+}
+
+.custom-switch-left .custom-control-label {
+  margin-left: 8px; 
+}
+
+#toggleSwitch:not(:checked) + .custom-control-label::before {
+  background-color: #dc3545 
+}
+
