@@ -1,7 +1,7 @@
 backend/env
 client/node_modules
-client/app/lib
 client/build
+client/app/lib
 backend/workingdir
 client/app/license.txt
 client/app/viewer/pdf.min.js
