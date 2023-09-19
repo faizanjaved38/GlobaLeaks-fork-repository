@@ -899,9 +899,9 @@ def create_masking(session, tid, user_id, rtip_id, content):
     _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
 
     itip.update_date = rtip.last_access = datetime_now()
-    model = session.query(models.User).get(user_id)
+    user_data = session.query(models.User).get(user_id)
     
-    if model and model.can_privilege_mask_information:
+    if user_data and user_data.can_privilege_mask_information:
         masking_content = {}
         if itip.crypto_tip_pub_key:
             if isinstance(content, dict):
