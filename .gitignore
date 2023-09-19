@@ -7,3 +7,4 @@ client/app/license.txt
 client/app/viewer/pdf.min.js
 client/app/viewer/pdf.worker.min.js
 client/npm-shrinkwrap.json
+scripts/build
