@@ -942,8 +942,8 @@ def update_tip_masking(session, tid, user_id, rtip_id, id, data, tip_data):
     :param id: The ID of the masking to be updated
     :param data: The updated masking data
     """
-  model = session.query(models.User).get(user_id)
-  if model and model.can_privilege_delete_mask_information:
+  user_data = session.query(models.User).get(user_id)
+  if user_data and user_data.can_privilege_delete_mask_information:
     _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
   
     masking_data = data.get('data', {})
@@ -961,8 +961,8 @@ def update_tip_masking(session, tid, user_id, rtip_id, id, data, tip_data):
         db_mask_answer(session, tid, user_id, itip, id, masking_data, tip_data)
       else:
         print("No valid content type found")
-        
-  if model and model.can_privilege_mask_information:
+
+  if user_data and user_data.can_privilege_mask_information:
       print("Content type not provided")
       db_update_masking(session, tid, user_id, itip, id, masking_data)
 
