@@ -5,26 +5,37 @@
   </button>
 </div>
 <div class="modal-body">
+  <span data-ng-show="maskingObjects.length !==0">
+    <label for="orignalContect">Original Text</label>
+    <textarea name="orignalContect" id="orignalContect" cols="30" rows="2" class="form-control"
+      data-ng-bind-html="permanentMaskingContent" data-ng-disabled="true"></textarea>
+    <hr>
+  </span>
+  <label data-ng-show="maskingObjects.length !==0" for="redact">Masked Text</label>
   <textarea name="redact" id="redact" cols="30" rows="10" class="form-control" data-ng-bind-html="content"
     data-ng-model="content" data-ng-disabled=true></textarea>
 </div>
 <div class="modal-footer">
+  <div
+    data-ng-if="(resources.preferences.can_privilege_mask_information) && (resources.preferences.can_privilege_delete_mask_information) && (maskingObjects[0].temporary_masking.length > 0)"
+    class="custom-control custom-switch custom-switch-left">
+    <input id="toggleSwitch" class="custom-control-input" type="checkbox"
+      data-ng-model="maskingSwitch" data-ng-change="toggleMasking(maskingSwitch,'redact')">
+    <label class="custom-control-label" for="toggleSwitch">{{maskingSwitch ? 'Masking' : 'Redact'}}</label>
+  </div>
   <button
-    data-ng-show="(resources.preferences.can_privilege_mask_information) || (resources.preferences.can_privilege_mask_information && resources.preferences.can_privilege_delete_mask_information)"
+    data-ng-show="resources.preferences.can_privilege_mask_information || resources.preferences.can_privilege_delete_mask_information"
     class="btn btn-primary" data-ng-click="mask('redact')">
-    <span data-translate>Mask</span>
+    <span data-translate>Select</span>
   </button>
   <button
-    data-ng-show="(resources.preferences.can_privilege_delete_mask_information) && (maskingObjects.length !==0 ) && (maskingObjects[0].temporary_masking.length !==0)"
-    class="btn btn-outline-secondary" data-ng-click="unMask()">
-    <span data-translate>Unmask</span>
+    data-ng-show="resources.preferences.can_privilege_mask_information || resources.preferences.can_privilege_delete_mask_information"
+    class="btn btn-primary" data-ng-click="UnSelect('redact')">
+    <span data-translate>Unselect</span>
   </button>
-  <button data-ng-show="(resources.preferences.can_privilege_mask_information) && (reductCondition !== false)"
-    class="btn btn-primary" data-ng-click="temporaryMask()">
-    <span data-translate>Redact</span>
-  </button>
-  <button data-ng-show="(resources.preferences.can_privilege_delete_mask_information) && (maskingObjects.length !==0) && (maskingObjects[0].temporary_masking.length !==0)"
-    class="btn btn-primary" data-ng-click="permanentMask()">
-    <span data-translate>Permanent Redact</span>
+  <button
+    data-ng-show="resources.preferences.can_privilege_mask_information || resources.preferences.can_privilege_delete_mask_information"
+    class="btn btn-primary" data-ng-click="saveMasking()">
+    <span data-translate>Save</span>
   </button>
 </div>

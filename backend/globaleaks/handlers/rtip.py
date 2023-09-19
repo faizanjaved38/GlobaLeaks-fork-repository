@@ -290,6 +290,49 @@ def merge_dicts(permanent_ranges, temporary_ranges):
       i += 1
   return merged_list
 
+def find_ranges_exit_in_temporary_ranges(ranges, temporary_ranges):
+    result = []
+
+    for temp_range in temporary_ranges:
+        for range_ in ranges:
+            if temp_range['end'] < range_['start'] or temp_range['start'] > range_['end']:
+                # No overlap, add the temporary range as-is
+                result.append(temp_range)
+            elif temp_range['start'] <= range_['start'] and temp_range['end'] >= range_['end']:
+                # Entire range is covered by temporary range, skip it
+                continue
+            else:
+                # Calculate the missing ranges
+                if temp_range['start'] < range_['start']:
+                    result.append({'start': temp_range['start'], 'end': range_['start'] - 1})
+                if temp_range['end'] > range_['end']:
+                    temp_range['start'] = range_['end'] + 1
+
+    return result
+def find_missing_ranges(old_ranges, new_ranges):
+    missing_ranges = []
+
+    for old_range in old_ranges:
+        for i in range(old_range['start'], old_range['end'] + 1):
+            found = False
+
+            for new_range in new_ranges:
+                if i >= new_range['start'] and i <= new_range['end']:
+                    found = True
+                    break
+
+            if not found:
+                if missing_ranges:
+                    last_missing_range = missing_ranges[-1]
+                    if i == last_missing_range['end'] + 1:
+                        last_missing_range['end'] = i
+                    else:
+                        missing_ranges.append({'start': i, 'end': i})
+                else:
+                    missing_ranges.append({'start': i, 'end': i})
+
+    return missing_ranges
+
 def db_mask_data(session, masked_marker, temporary_ranges, permanent_ranges, masking_data, content, tid, user_id, id):
   """
     Transaction for updating masked data
@@ -328,42 +371,51 @@ def db_mask_data(session, masked_marker, temporary_ranges, permanent_ranges, mas
 
 
 def db_mask_comment_messages(session, tid, user_id, itip_id, id, masking_data, tip_data, content_type, itip = None):
-  masked_content = next((masked_content for masked_content in tip_data.get(content_type, []) if masked_content['id'] == masking_data['content_id']), None)
-
-  if masked_content:
-    masked_marker = session.query(models.Masking).get(id)
-
-    if masked_marker:
-      content = redact_content(masked_content.get('content'), masked_marker.permanent_masking, masked_marker.temporary_masking)
-      itip.content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, content)).decode()
-      db_mask_data(session, masked_marker, masked_marker.temporary_masking, masked_marker.permanent_masking, masking_data, content, tid, user_id, id)
+  _masking_data = masking_data
+  masked_marker = session.query(models.Masking).get(id)
+  _missing_ranges =find_missing_ranges(masked_marker.temporary_masking,_masking_data['temporary_masking'])
+  if _missing_ranges == _masking_data['missing_ranges']:
+    print("Before and after ranges are identical.")
+    masked_content = next((masked_content for masked_content in tip_data.get(content_type, []) if masked_content['id'] == masking_data['content_id']), None)
+    if masked_content is not None and masked_marker is not None:
+        content = redact_content(masked_content.get('content'), masked_marker.permanent_masking,_masking_data['temporary_masking'])
+        itip.content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, content)).decode()
+        db_mask_data(session, masked_marker,_masking_data['temporary_masking'], masked_marker.permanent_masking, masking_data, content, tid, user_id, id)
 
 def db_mask_answer(session, tid, user_id, itip_id, id, masking_data, tip_data):
+  _masking_data = masking_data
   masking_data = next((masked_content for masked_content in tip_data['masking'] if masked_content['content_id'] == masking_data['content_id']), None)
-  tip_data = tip_data['questionnaires'][0]
-
-  for key, value in tip_data['answers'].items():
-    if key == masking_data['content_id']:
-      content_data = value[0]
-
-      content = redact_content(content_data['value'], masking_data['permanent_masking'], masking_data['temporary_masking'])
-      tip_data['answers'][key][0]['value'] = copy.deepcopy(content)
-      masked_marker = session.query(models.Masking).get(id)
-      db_mask_data(session, masked_marker, masking_data['temporary_masking'], masking_data['permanent_masking'], masking_data,content, tid, user_id, id)
-      break
-
-  _content = tip_data['answers']
-  if itip_id.crypto_tip_pub_key:
-    _content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, json.dumps(_content, cls=JSONEncoder).encode())).decode()
-  itip = session.query(models.InternalTipAnswers).filter_by(internaltip_id=masking_data['internaltip_id']).first()
-
-  if itip:
-    itip.content = _content
-    itip.answers = _content
-
-    session.commit()
+  _missing_ranges =find_missing_ranges(masking_data['temporary_masking'],_masking_data['temporary_masking'])
+  if _missing_ranges == _masking_data['missing_ranges']:
+    print("Before and after ranges are identical.")
+    tip_data = tip_data['questionnaires'][0]
+    for key, value in tip_data['answers'].items():
+      if key == masking_data['content_id']:
+        content_data = value[0]
+  
+        content = redact_content(content_data['value'], masking_data['permanent_masking'], _masking_data['temporary_masking'])
+        tip_data['answers'][key][0]['value'] = copy.deepcopy(content)
+        masked_marker = session.query(models.Masking).get(id)
+        db_mask_data(session, masked_marker, _masking_data['temporary_masking'], masking_data['permanent_masking'], masking_data,content, tid, user_id, id)
+        break
+      
+    _content = tip_data['answers']
+    if itip_id.crypto_tip_pub_key:
+      _content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, json.dumps(_content, cls=JSONEncoder).encode())).decode()
+    itip = session.query(models.InternalTipAnswers).filter_by(internaltip_id=masking_data['internaltip_id']).first()
+  
+    if itip:
+      itip.content = _content
+      itip.answers = _content
+  
+      session.commit()
+    else:
+     raise ValueError(f"Tip with content ID '{masking_data['internaltip_id']}' not found.")
   else:
-   raise ValueError(f"Tip with content ID '{masking_data['internaltip_id']}' not found.")
+    print("Before and after ranges are different.")   
+
+
+
 
 
 def db_access_rtip(session, tid, user_id, rtip_id):
@@ -799,19 +851,21 @@ def delete_masking(session, tid, user_id, rtip_id, id):
     :param rtip_id: The rtip_id performing the operation
     :param id: The ID of the masking to be deleted
     """
-  itips_ids = [x[0] for x in session.query(models.InternalTip.id)
-  .filter(models.InternalTip.id == models.ReceiverTip.internaltip_id,
-          models.ReceiverTip.receiver_id == user_id,
-          models.InternalTip.tid == tid)]
-
-  masking = (
-    session.query(models.Masking)
-    .filter(models.Masking.id == id, models.ReceiverTip.internaltip_id.in_(itips_ids), models.InternalTip.tid == tid)
-    .first()
-  )
-
-  if masking:
-    session.delete(masking)
+  model = session.query(models.User).get(user_id)
+  if model and model.can_privilege_delete_mask_information:
+    itips_ids = [x[0] for x in session.query(models.InternalTip.id)
+    .filter(models.InternalTip.id == models.ReceiverTip.internaltip_id,
+            models.ReceiverTip.receiver_id == user_id,
+            models.InternalTip.tid == tid)]
+  
+    masking = (
+      session.query(models.Masking)
+      .filter(models.Masking.id == id, models.ReceiverTip.internaltip_id.in_(itips_ids), models.InternalTip.tid == tid)
+      .first()
+    )
+  
+    if masking:
+      session.delete(masking)
 
 @transact
 def delete_File_masking(session, tid, user_id, rtip_id, id):
@@ -823,63 +877,58 @@ def delete_File_masking(session, tid, user_id, rtip_id, id):
     :param rtip_id: The rtip_id performing the operation
     :param id: The ID of the masking to be deleted
     """
-  itips_ids = [x[0] for x in session.query(models.InternalTip.id)
-  .filter(models.InternalTip.id == models.ReceiverTip.internaltip_id,
-          models.ReceiverTip.receiver_id == user_id,
-          models.InternalTip.tid == tid)]
-
-  masking = (
-    session.query(models.Masking)
-    .filter(models.Masking.id == id, models.ReceiverTip.internaltip_id.in_(itips_ids), models.InternalTip.tid == tid)
-    .first()
-  )
-
-  if masking:
-    delete_wbfile(tid, user_id, masking.content_id)
-    session.delete(masking)
+  model = session.query(models.User).get(user_id)
+  if model and model.can_privilege_delete_mask_information:
+    itips_ids = [x[0] for x in session.query(models.InternalTip.id)
+    .filter(models.InternalTip.id == models.ReceiverTip.internaltip_id,
+            models.ReceiverTip.receiver_id == user_id,
+            models.InternalTip.tid == tid)]
+  
+    masking = (
+      session.query(models.Masking)
+      .filter(models.Masking.id == id, models.ReceiverTip.internaltip_id.in_(itips_ids), models.InternalTip.tid == tid)
+      .first()
+    )
+  
+    if masking:
+      delete_wbfile(tid, user_id, masking.content_id)
+      session.delete(masking)
 
 @transact
 def create_masking(session, tid, user_id, rtip_id, content):
-  """
-    Transaction for registering a new masking
-    :param session: An ORM session
-    :param tid: A tenant ID
-    :param user_id: The user id of the user creating the masking
-    :param rtip_id: The rtip associated with the masking to be created
-    :param content: The content of the masking
-    :return: A serialized descriptor of the masking
-    """
-  _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
+    _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
 
-  itip.update_date = rtip.last_access = datetime_now()
+    itip.update_date = rtip.last_access = datetime_now()
+    model = session.query(models.User).get(user_id)
+    
+    if model and model.can_privilege_mask_information:
+        masking_content = {}
+        if itip.crypto_tip_pub_key:
+            if isinstance(content, dict):
+                masking_content = content
+            else:
+                content_str = content.get('content', str(content))
+                content_bytes = content_str.encode()
+                masking_content = base64.b64encode(GCE.asymmetric_encrypt(itip.crypto_tip_pub_key, content_bytes)).decode()
 
-  masking_content = {}
-  if itip.crypto_tip_pub_key:
-    if isinstance(content, dict):
-      masking_content = content
-    else:
-      content_str = content.get('content', str(content))
-      content_bytes = content_str.encode()
-      masking_content = base64.b64encode(GCE.asymmetric_encrypt(itip.crypto_tip_pub_key, content_bytes)).decode()
+        # tempMasking = [value for value in masking_content.get('temporary_masking', {}).values()]
+        tempMasking = masking_content.get('temporary_masking')
+        permanentMasking = masking_content.get('permanent_masking', None)
+        if not permanentMasking:
+            permanentMasking = []
 
-  tempMasking = [value for value in masking_content.get('temporary_masking', {}).values()]
-  permanentMasking = masking_content.get('permanent_masking', None)
-  if not permanentMasking:
-    permanentMasking = []
+        masking = models.Masking()
+        masking.internaltip_id = itip.id
+        masking.temporary_masking = tempMasking
+        masking.mask_date = datetime_now()
+        masking.content_id = masking_content.get('content_id', None)
+        masking.permanent_masking = permanentMasking
+        session.add(masking)
+        session.flush()
 
-  masking = models.Masking()
-  masking.internaltip_id = itip.id
-  masking.temporary_masking = tempMasking
-  masking.mask_date = datetime_now()
-  masking.content_id = masking_content.get('content_id', None)
-  masking.permanent_masking = permanentMasking
-  session.add(masking)
-  session.flush()
-
-  ret = serializers.serialize_masking(session, masking)
-  ret['masking'] = content
-  return ret
-
+        ret = serializers.serialize_masking(session, masking)
+        ret['masking'] = content
+        return ret
 
 @transact
 def update_tip_masking(session, tid, user_id, rtip_id, id, data, tip_data):
@@ -893,26 +942,29 @@ def update_tip_masking(session, tid, user_id, rtip_id, id, data, tip_data):
     :param id: The ID of the masking to be updated
     :param data: The updated masking data
     """
-  _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
-
-  masking_data = data.get('data', {})
-
-  if 'content_type' in masking_data:
-    content_type = masking_data['content_type']
-
-    if content_type == "comment":
-      model = session.query(models.Comment).get(masking_data['content_id'])
-      db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data,"comments", model)
-    elif content_type == "message":
-      model = session.query(models.Message).get(masking_data['content_id'])
-      db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data, "messages", model)
-    elif content_type == "answer":
-      db_mask_answer(session, tid, user_id, itip, id, masking_data, tip_data)
-    else:
-      print("No valid content type found")
-  else:
-    print("Content type not provided")
-    db_update_masking(session, tid, user_id, itip, id, masking_data)
+  model = session.query(models.User).get(user_id)
+  if model and model.can_privilege_delete_mask_information:
+    _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
+  
+    masking_data = data.get('data', {})
+  
+    if 'content_type' in masking_data:
+      content_type = masking_data['content_type']
+  
+      if content_type == "comment":
+        model = session.query(models.Comment).get(masking_data['content_id'])
+        db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data,"comments", model)
+      elif content_type == "message":
+        model = session.query(models.Message).get(masking_data['content_id'])
+        db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data, "messages", model)
+      elif content_type == "answer":
+        db_mask_answer(session, tid, user_id, itip, id, masking_data, tip_data)
+      else:
+        print("No valid content type found")
+        
+  if model and model.can_privilege_mask_information:
+      print("Content type not provided")
+      db_update_masking(session, tid, user_id, itip, id, masking_data)
 
 
 class RTipInstance(OperationHandler):
@@ -985,6 +1037,48 @@ class RTipCommentCollection(BaseHandler):
     return create_comment(self.request.tid, self.session.user_id, rtip_id, request['content'])
 
 
+# class RTipMaskingCollection(BaseHandler):
+#   """
+#     Interface used to handle rtip masking
+#     """
+#   check_roles = 'receiver'
+
+#   @inlineCallbacks
+#   def get(self, tip_id):
+#     tip, crypto_tip_prv_key = yield get_rtip(self.request.tid, self.session.user_id, tip_id, self.request.language)
+
+#     if State.tenants[self.request.tid].cache.encryption and crypto_tip_prv_key:
+#       tip = yield deferToThread(decrypt_tip, self.session.cc, crypto_tip_prv_key, tip)
+
+#     returnValue(tip)
+
+#   def operation_descriptors(self):
+#     return {
+#       'update_masking': RTipMaskingCollection.update_masking
+#     }
+
+#   def post(self, rtip_id):
+#     self.request.content.seek(0)
+#     payload = self.request.content.read().decode('utf-8')
+#     data = json.loads(payload)
+#     return create_masking(self.request.tid, self.session.user_id, rtip_id, data)
+
+#   def put(self, rtip_id, id):
+#     self.request.content.seek(0)
+#     payload = self.request.content.read().decode('utf-8')
+#     data = json.loads(payload)
+#     return self.update_masking(rtip_id, id, data, self.session.cc)
+
+#   def update_masking(self, rtip_id, id, data, *args, **kwargs):
+#     tip_data_deferred = self.get(rtip_id)
+
+#     def handle_tip_data(tip_data):
+#       return update_tip_masking(self.request.tid, self.session.user_id, rtip_id, id, data, tip_data)
+
+#     tip_data_deferred.addCallback(handle_tip_data)
+
+#   def delete(self, rtip_id, id):
+#     return delete_masking(self.request.tid, self.session.user_id, rtip_id, id)
 class RTipMaskingCollection(BaseHandler):
   """
     Interface used to handle rtip masking
