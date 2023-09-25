@@ -36,11 +36,6 @@
       data-ng-repeat="comment in tip.comments | orderBy:'creation_date':true| limitTo:itemsPerPage:((currentCommentsPage - 1) * itemsPerPage)">
       <div id="comment-{{$index}}" data-ng-switch="comment.type" class="mt-2">
         <div data-ng-switch-when="whistleblower" class="messageWB">
-          <span class="float-right edit" id="edit-question"
-            data-ng-click="editReport(comment.content,comment.id,'comment')" data-ng-if="mode"
-            data-uib-tooltip="{{'Edit' | translate}}">
-            <i class="fa-solid fa-eraser"></i>
-          </span>
           <div class="row">
             <div class="col-md-6" data-translate>Whistleblower</div>
             <div class="col-md-6 text-right">{{comment.creation_date | date:'dd-MM-yyyy HH:mm'}}</div>
@@ -55,6 +50,11 @@
           <div data-ng-if="comment.content" class="preformatted">{{comment.content}}</div>
         </div>
       </div>
+        <span class="float-right edit" id="edit-question"
+          data-ng-click="editReport(comment.content,comment.id,'comment')" data-ng-if="mode"
+          data-uib-tooltip="{{'Edit' | translate}}">
+          <i class="fa-solid fa-eraser"></i>
+        </span><br>
     </div>
     <div class="mt-2 text-center" data-ng-show="tip.comments.length > itemsPerPage">
       <ul uib-pagination total-items="tip.comments.length" first-text="<< {{'First' | translate}}"

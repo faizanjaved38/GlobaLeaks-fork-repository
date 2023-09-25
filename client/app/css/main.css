@@ -1023,6 +1023,34 @@ hr {
   border-color: #007bff;
 }
 
+#redact {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  resize: vertical;
+  border-radius: 5px;
+}
+
+#redact:focus {
+  outline: 1px solid #fcfcfc;
+}
+
+#redact::selection {
+  background-color: yellow;
+}
+
+.highlighted-text {
+  background-color: #007bff;
+  color: white;
+}
+
+
 .audio-btn-group .btn-primary:hover {
   background-color: #0069d9;
   border-color: #0062cc;
@@ -1073,7 +1101,14 @@ hr {
   margin-left: 8px; 
 }
 
-#toggleSwitch:not(:checked) + .custom-control-label::before {
-  background-color: #dc3545 
+.toggleSwitch:not(:checked) + .custom-control-label::before {
+  background-color: #dd3c4c
 }
 
+.toggleSwitch:not(:checked):disabled + .custom-control-label::before {
+  background-color: #f4bec3;
+}
+
+.custom-switch .custom-control-label::after {
+  background-color: #fff !important;
+}

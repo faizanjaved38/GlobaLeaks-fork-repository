@@ -577,6 +577,179 @@ factory("AdminAcmeResource", ["GLResource", function(GLResource) {
 factory("AdminTLSCfgFileResource", ["GLResource", function(GLResource) {
   return new GLResource("api/admin/config/tls/files/:name", {name: "@name"});
 }]).
+factory("masking", ["$rootScope", "$sce", function($rootScope, $sce) {
+  return {
+    getSelectedRanges: function(select, temporary_ranges) {
+      const selection = window.getSelection();
+      if (selection.rangeCount === 0) {
+        return null;
+      }
+
+      const range = selection.getRangeAt(0);
+      const originalText = document.getElementById('redact');
+      const fullRange = document.createRange();
+      fullRange.selectNodeContents(originalText);
+
+      const startRange = document.createRange();
+      startRange.setStart(fullRange.startContainer, 0);
+      startRange.setEnd(range.startContainer, range.startOffset);
+
+      const endRange = document.createRange();
+      endRange.setStart(fullRange.startContainer, 0);
+      endRange.setEnd(range.endContainer, range.endOffset);
+
+      const start = startRange.toString().length;
+      const end = endRange.toString().length;
+
+      let ranges = {
+        start: start,
+        end: end - 1
+      }
+
+      if(end == 0){
+        return temporary_ranges
+      }
+      else if(select){
+        return this.mergeRanges([ranges], temporary_ranges);
+      }else{
+        return this.removeAndSplitRanges([ranges], temporary_ranges);
+      }
+
+    },
+    removeAndSplitRanges: function (newRanges, temporary_ranges) {
+
+      let updatedRanges = [...temporary_ranges];
+
+      for (let j = 0; j < newRanges.length; j++) {
+        const currentNewRange = newRanges[j];
+
+        for (let i = 0; i < updatedRanges.length; i++) {
+          const currentRange = updatedRanges[i];
+
+          if (currentNewRange.start > currentRange.end || currentNewRange.end < currentRange.start) {
+            continue;
+          }
+
+          if (currentNewRange.start > currentRange.start) {
+            updatedRanges.splice(i, 1, { start: currentRange.start, end: currentNewRange.start });
+            i++;
+          }
+
+          if (currentNewRange.end < currentRange.end) {
+            updatedRanges.splice(i + 1, 0, { start: currentNewRange.end, end: currentRange.end });
+            i++;
+          }
+        }
+      }
+
+      for (let i = 0; i < updatedRanges.length; i++) {
+        const currentRange = updatedRanges[i];
+
+        for (let j = 0; j < newRanges.length; j++) {
+          const currentNewRange = newRanges[j];
+
+          if (
+            currentRange.start >= currentNewRange.start &&
+            currentRange.end <= currentNewRange.end
+          ) {
+            updatedRanges.splice(i, 1);
+            i--;
+            break;
+          }
+        }
+      }
+
+      return updatedRanges;
+    },
+    mergeRanges:function (newRanges, temporaryRanges) {
+      const allRanges = newRanges.concat(temporaryRanges);
+      allRanges.sort((a, b) => a.start - b.start);
+
+      const mergedRanges = [];
+      let currentRange = allRanges[0];
+
+      for (let i = 1; i < allRanges.length; i++) {
+        const nextRange = allRanges[i];
+
+        if (currentRange.end >= nextRange.start) {
+          currentRange.end = Math.max(currentRange.end, nextRange.end);
+        } else {
+          mergedRanges.push(currentRange);
+          currentRange = nextRange;
+        }
+      }
+
+      mergedRanges.push(currentRange);
+      return mergedRanges;
+    },
+    intersectRanges:function (rangeList1, rangeList2) {
+      rangeList1.sort((a, b) => a.start - b.start);
+      rangeList2.sort((a, b) => a.start - b.start);
+
+      const intersectedRanges = [];
+
+      let i = 0;
+      let j = 0;
+
+      while (i < rangeList1.length && j < rangeList2.length) {
+        const range1 = rangeList1[i];
+        const range2 = rangeList2[j];
+
+        const start = Math.max(range1.start, range2.start);
+        const end = Math.min(range1.end, range2.end);
+
+        if (start <= end) {
+          intersectedRanges.push({ start, end });
+        }
+
+        if (range1.end < range2.end) {
+          i++;
+        } else {
+          j++;
+        }
+      }
+
+      return intersectedRanges;
+    },
+    maskContent: function (content, ranges) {
+
+      var maskedText = content.split('');
+      ranges.forEach(function (range) {
+        if (range.start >= 0 && range.start <= maskedText.length && range.end >= 0 && range.end <= maskedText.length) {
+          for (var i = range.start; i <= range.end; i++) {
+            maskedText[i] = String.fromCharCode(0x2591);
+          }
+        }
+      });
+
+      return maskedText.join('');
+    },
+    maskPermanentContent: function (content, ranges) {
+      var maskedText = content.split('');
+
+      ranges.forEach(function (range) {
+        if (range.start >= 0 && range.start <= maskedText.length && range.end >= 0) {
+          for (var i = range.start; i <= range.end; i++) {
+            maskedText.splice(i, 0, String.fromCharCode(0x2588));
+          }
+        }
+      });
+
+      return maskedText.join('');
+    },
+    onHighlight:function (background_color, text_color) {
+      document.getElementById('redact').focus()
+      var selection = window.getSelection();
+      var range = selection.getRangeAt(0);
+      var span = document.createElement('span');
+      span.style.backgroundColor = background_color;
+      span.style.color = text_color;
+      range.surroundContents(span);
+
+      window.getSelection().removeAllRanges();
+    }
+  };
+}]).
 factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "AdminStepResource", "AdminFieldResource", "AdminFieldTemplateResource", "AdminUserResource", "AdminNodeResource", "AdminNotificationResource", "AdminRedirectResource", "AdminTenantResource",
     function(AdminContextResource, AdminQuestionnaireResource, AdminStepResource, AdminFieldResource, AdminFieldTemplateResource, AdminUserResource, AdminNodeResource, AdminNotificationResource, AdminRedirectResource, AdminTenantResource) {
   return {

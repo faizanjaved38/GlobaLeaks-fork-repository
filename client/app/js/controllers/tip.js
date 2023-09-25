@@ -1,6 +1,6 @@
 GL.controller("TipCtrl",
   ["$scope", "$location", "$filter", "$http", "$interval", "$routeParams", "$uibModal", "Authentication", "RTip", "WBTip", "RTipExport", "RTipDownloadRFile", "RTipFileSourceGet", "WBTipFileSourceGet", "WBTipDownloadFile", "fieldUtilities", "RTipViewRFile", "RTipWBFileResource",
-    function ($scope, $location, $filter, $http, $interval, $routeParams, $uibModal, Authentication, RTip, WBTip, RTipExport, RTipDownloadRFile, RTipFileSourceGet, WBTipFileSourceGet, WBTipDownloadFile, fieldUtilities, RTipViewRFile, RTipWBFileResource) {
+    function($scope, $location, $filter, $http, $interval, $routeParams, $uibModal, Authentication, RTip, WBTip, RTipExport, RTipDownloadRFile, RTipFileSourceGet, WBTipFileSourceGet, WBTipDownloadFile, fieldUtilities, RTipViewRFile, RTipWBFileResource) {
       $scope.fieldUtilities = fieldUtilities;
       $scope.tip_id = $routeParams.tip_id;
 
@@ -17,13 +17,15 @@ GL.controller("TipCtrl",
 
       $scope.mode = false;
       $scope.status = false
-      $scope.openGrantTipAccessModal = function () {
+      $scope.openGrantTipAccessModal = function() {
         $http({
-          method: "PUT", url: "api/user/operations", data: {
+          method: "PUT",
+          url: "api/user/operations",
+          data: {
             "operation": "get_users_names",
             "args": {}
           }
-        }).then(function (response) {
+        }).then(function(response) {
           $uibModal.open({
             templateUrl: "views/modals/grant_access.html",
             controller: "ConfirmableModalCtrl",
@@ -31,15 +33,19 @@ GL.controller("TipCtrl",
               arg: {
                 users_names: response.data
               },
-              confirmFun: function () {
-                return function (receiver_id) {
+              confirmFun: function() {
+                return function(receiver_id) {
                   var req = {
                     operation: "grant",
                     args: {
                       receiver: receiver_id
                     },
                   };
-                  return $http({ method: "PUT", url: "api/rtips/" + $scope.tip.id, data: req }).then(function () {
+                  return $http({
+                    method: "PUT",
+                    url: "api/rtips/" + $scope.tip.id,
+                    data: req
+                  }).then(function() {
                     $scope.reload();
                   });
                 };
@@ -50,13 +56,15 @@ GL.controller("TipCtrl",
         });
       };
 
-      $scope.openRevokeTipAccessModal = function () {
+      $scope.openRevokeTipAccessModal = function() {
         $http({
-          method: "PUT", url: "api/user/operations", data: {
+          method: "PUT",
+          url: "api/user/operations",
+          data: {
             "operation": "get_users_names",
             "args": {}
           }
-        }).then(function (response) {
+        }).then(function(response) {
           $uibModal.open({
             templateUrl: "views/modals/revoke_access.html",
             controller: "ConfirmableModalCtrl",
@@ -64,8 +72,8 @@ GL.controller("TipCtrl",
               arg: {
                 users_names: response.data
               },
-              confirmFun: function () {
-                return function (receiver_id) {
+              confirmFun: function() {
+                return function(receiver_id) {
                   var req = {
                     operation: "revoke",
                     args: {
@@ -73,7 +81,11 @@ GL.controller("TipCtrl",
                     }
                   };
 
-                  return $http({ method: "PUT", url: "api/rtips/" + $scope.tip.id, data: req }).then(function () {
+                  return $http({
+                    method: "PUT",
+                    url: "api/rtips/" + $scope.tip.id,
+                    data: req
+                  }).then(function() {
                     $scope.reload();
                   });
                 };
@@ -84,7 +96,7 @@ GL.controller("TipCtrl",
         });
       };
 
-      $scope.getAnswersEntries = function (entry) {
+      $scope.getAnswersEntries = function(entry) {
         if (typeof entry === "undefined") {
           return $scope.answers[$scope.field.id];
         }
@@ -94,7 +106,7 @@ GL.controller("TipCtrl",
 
 
 
-      var filterNotTriggeredField = function (parent, field, answers) {
+      var filterNotTriggeredField = function(parent, field, answers) {
         var i;
         if (fieldUtilities.isFieldTriggered(parent, field, answers, $scope.tip.score)) {
           for (i = 0; i < field.children.length; i++) {
@@ -103,7 +115,7 @@ GL.controller("TipCtrl",
         }
       };
 
-      $scope.preprocessTipAnswers = function (tip) {
+      $scope.preprocessTipAnswers = function(tip) {
         var x, i, j, k, questionnaire, step;
 
         for (x = 0; x < tip.questionnaires.length; x++) {
@@ -145,18 +157,18 @@ GL.controller("TipCtrl",
         }
       };
 
-      $scope.hasMultipleEntries = function (field_answer) {
+      $scope.hasMultipleEntries = function(field_answer) {
         return (typeof field_answer !== "undefined") && field_answer.length > 1;
       };
 
-      $scope.filterFields = function (field) {
+      $scope.filterFields = function(field) {
         return field.type !== "fileupload";
       };
 
       if ($scope.Authentication.session.role === "whistleblower") {
         $scope.fileupload_url = "api/wbtip/rfile";
 
-        $scope.tip = new WBTip(function (tip) {
+        $scope.tip = new WBTip(function(tip) {
           $scope.tip = tip;
           $scope.tip.context = $scope.contexts_by_id[$scope.tip.context_id];
           $scope.tip.receivers_by_id = $scope.Utils.array_to_map($scope.tip.receivers);
@@ -170,7 +182,7 @@ GL.controller("TipCtrl",
 
           $scope.tip.submissionStatusStr = $scope.Utils.getSubmissionStatusText($scope.tip.status, $scope.tip.substatus, $scope.submission_statuses);
 
-          $scope.downloadWBFile = function (file) {
+          $scope.downloadWBFile = function(file) {
             WBTipDownloadFile(file);
           };
 
@@ -178,14 +190,14 @@ GL.controller("TipCtrl",
           $scope.submission = {};
           $scope.submission._submission = tip;
 
-          $scope.provideIdentityInformation = function (identity_field_id, identity_field_answers) {
+          $scope.provideIdentityInformation = function(identity_field_id, identity_field_answers) {
             for (var key in $scope.uploads) {
               if ($scope.uploads[key]) {
                 $scope.uploads[key].resume();
               }
             }
 
-            $scope.interval = $interval(function () {
+            $scope.interval = $interval(function() {
               for (var key in $scope.uploads) {
                 if ($scope.uploads[key] &&
                   $scope.uploads[key].isUploading() &&
@@ -196,11 +208,13 @@ GL.controller("TipCtrl",
 
               $interval.cancel($scope.interval);
 
-              return $http.post("api/wbtip/" + $scope.tip.id + "/provideidentityinformation",
-                { "identity_field_id": identity_field_id, "identity_field_answers": identity_field_answers }).
-                then(function () {
-                  $scope.reload();
-                });
+              return $http.post("api/wbtip/" + $scope.tip.id + "/provideidentityinformation", {
+                "identity_field_id": identity_field_id,
+                "identity_field_answers": identity_field_answers
+              }).
+              then(function() {
+                $scope.reload();
+              });
 
             }, 1000);
           };
@@ -211,7 +225,9 @@ GL.controller("TipCtrl",
         });
 
       } else if ($scope.Authentication.session.role === "receiver") {
-        $scope.tip = new RTip({ id: $scope.tip_id }, function (tip) {
+        $scope.tip = new RTip({
+          id: $scope.tip_id
+        }, function(tip) {
           $scope.tip = tip;
           $scope.fetchAudioFiles()
           $scope.tip.context = $scope.contexts_by_id[$scope.tip.context_id];
@@ -223,12 +239,14 @@ GL.controller("TipCtrl",
           $scope.downloadRFile = RTipDownloadRFile;
           $scope.loadRFile = RTipFileSourceGet;
           $scope.viewRFile = RTipViewRFile;
-          $scope.show = function (id) {
+          $scope.show = function(id) {
             return !!$scope.tip.masking.find(mask => mask.content_id === id);
           }
-          var reloadUI = function () { $scope.reload(); };
-          $scope.deleteWBFile = function (f) {
-            let maskingObjects = $scope.tip.masking.filter(function (masking) {
+          var reloadUI = function() {
+            $scope.reload();
+          };
+          $scope.deleteWBFile = function(f) {
+            let maskingObjects = $scope.tip.masking.filter(function(masking) {
               return masking.content_id === f.id;
             });
             if (maskingObjects.length !== 0) {
@@ -238,8 +256,8 @@ GL.controller("TipCtrl",
               }).then(reloadUI);
             }
           };
-          $scope.unmaskFile = function (f) {
-            let maskingObjects = $scope.tip.masking.filter(function (masking) {
+          $scope.unmaskFile = function(f) {
+            let maskingObjects = $scope.tip.masking.filter(function(masking) {
               return masking.content_id === f.id;
             });
             if (maskingObjects.length !== 0) {
@@ -249,12 +267,14 @@ GL.controller("TipCtrl",
               }).then(reloadUI);
             }
           };
-          $scope.masking = function (id) {
+          $scope.masking = function(id) {
             $scope.status = true
             var maskingdata = {
               content_id: id,
               permanent_masking: [],
-              temporary_masking: { fileMaskingStatus: $scope.status }
+              temporary_masking: {
+                fileMaskingStatus: $scope.status
+              }
             }
             $scope.tip.newMasking(maskingdata);
           }
@@ -265,20 +285,21 @@ GL.controller("TipCtrl",
         });
       }
 
-      $scope.editLabel = function () {
+      $scope.editLabel = function() {
         $scope.showEditLabelInput = true;
       };
 
-      $scope.markReportStatus = function (date) {
+      $scope.markReportStatus = function(date) {
         var report_date = new Date(date);
         var current_date = new Date();
         return current_date > report_date;
       };
       $scope.permanentMaskingObjects = []
       $scope.maskingObjects = []
+
       function permanentRefineContent(content, permanentMaskingObjects) {
         var refinedContent = content;
-        permanentMaskingObjects.forEach(function (obj) {
+        permanentMaskingObjects.forEach(function(obj) {
           var start = obj.start;
           var end = obj.end;
           var stars = String.fromCharCode(0x2588).repeat(end - start + 1);
@@ -287,8 +308,8 @@ GL.controller("TipCtrl",
         });
         return refinedContent;
       }
-      $scope.edited = function (id) {
-        $scope.maskingObjects = $scope.tip.masking.filter(function (masking) {
+      $scope.edited = function(id) {
+        $scope.maskingObjects = $scope.tip.masking.filter(function(masking) {
           return masking.content_id === id;
         });
         if ($scope.maskingObjects.length !== 0 && $scope.maskingObjects[0].permanent_masking.length > 0) {
@@ -297,13 +318,13 @@ GL.controller("TipCtrl",
           return false
         }
       }
-      $scope.maskingContent = function (content, id) {
-        $scope.permanentMaskingObjects = $scope.tip.masking.filter(function (masking) {
+      $scope.maskingContent = function(content, id) {
+        $scope.permanentMaskingObjects = $scope.tip.masking.filter(function(masking) {
           return masking.content_id === id;
         });
         if ($scope.permanentMaskingObjects.length !== 0 && $scope.permanentMaskingObjects[0].permanent_masking.length > 0) {
           var permanentMaskingArray = Object.values($scope.permanentMaskingObjects[0].permanent_masking);
-          permanentMaskingArray.sort(function (a, b) {
+          permanentMaskingArray.sort(function(a, b) {
             return a.start - b.start;
           });
           var contentData = permanentRefineContent(content, permanentMaskingArray);
@@ -312,19 +333,22 @@ GL.controller("TipCtrl",
           return content
         }
       }
-      $scope.updateLabel = function (label) {
-        $scope.tip.operation("set", { "key": "label", "value": label }).then(function () {
+      $scope.updateLabel = function(label) {
+        $scope.tip.operation("set", {
+          "key": "label",
+          "value": label
+        }).then(function() {
           $scope.showEditLabelInput = false;
         });
       };
 
-      $scope.updateSubmissionStatus = function () {
-        $scope.tip.updateSubmissionStatus().then(function () {
+      $scope.updateSubmissionStatus = function() {
+        $scope.tip.updateSubmissionStatus().then(function() {
           $scope.tip.submissionStatusStr = $scope.Utils.getSubmissionStatusText($scope.tip.status, $scope.tip.substatus, $scope.submission_statuses);
         });
       };
 
-      $scope.fetchAudioFiles = function () {
+      $scope.fetchAudioFiles = function() {
         for (let dictionary of $scope.tip.rfiles) {
           $scope.audiolist[dictionary['reference']] = {}
           $scope.audiolist[dictionary['reference']]['key'] = dictionary;
@@ -332,34 +356,40 @@ GL.controller("TipCtrl",
         }
       };
 
-      $scope.newComment = function () {
+      $scope.newComment = function() {
         $scope.tip.newComment($scope.tip.newCommentContent);
         $scope.tip.newCommentContent = "";
       };
 
-      $scope.newMessage = function () {
+      $scope.newMessage = function() {
         $scope.tip.newMessage($scope.tip.newMessageContent);
         $scope.tip.newMessageContent = "";
       };
 
-      $scope.tip_toggle_star = function () {
-        return $scope.tip.operation("set", { "key": "important", "value": !$scope.tip.important }).then(function () {
+      $scope.tip_toggle_star = function() {
+        return $scope.tip.operation("set", {
+          "key": "important",
+          "value": !$scope.tip.important
+        }).then(function() {
           $scope.tip.important = !$scope.tip.important;
         });
       };
 
-      $scope.tip_notify = function (enable) {
-        return $scope.tip.operation("set", { "key": "enable_notifications", "value": enable }).then(function () {
+      $scope.tip_notify = function(enable) {
+        return $scope.tip.operation("set", {
+          "key": "enable_notifications",
+          "value": enable
+        }).then(function() {
           $scope.tip.enable_notifications = enable;
         });
       };
 
-      $scope.tip_delete = function () {
+      $scope.tip_delete = function() {
         $uibModal.open({
           templateUrl: "views/modals/delete_confirmation.html",
           controller: "TipOperationsCtrl",
           resolve: {
-            args: function () {
+            args: function() {
               return {
                 tip: $scope.tip,
                 operation: "delete"
@@ -369,12 +399,12 @@ GL.controller("TipCtrl",
         });
       };
 
-      $scope.tip_postpone = function () {
+      $scope.tip_postpone = function() {
         $uibModal.open({
           templateUrl: "views/modals/tip_operation_postpone.html",
           controller: "TipOperationsCtrl",
           resolve: {
-            args: function () {
+            args: function() {
               return {
                 tip: $scope.tip,
                 operation: "postpone",
@@ -392,12 +422,12 @@ GL.controller("TipCtrl",
         });
       };
 
-      $scope.set_reminder = function () {
+      $scope.set_reminder = function() {
         $uibModal.open({
           templateUrl: "views/modals/tip_operation_set_reminder.html",
           controller: "TipOperationsCtrl",
           resolve: {
-            args: function () {
+            args: function() {
               return {
                 tip: $scope.tip,
                 operation: "set_reminder",
@@ -413,12 +443,12 @@ GL.controller("TipCtrl",
           }
         });
       };
-      $scope.editReport = function (content, id, type) {
+      $scope.editReport = function(content, id, type) {
         $uibModal.open({
           templateUrl: "views/modals/report_reduct.html",
           controller: "TipEditReportCtrl",
           resolve: {
-            args: function () {
+            args: function() {
               return {
                 tip: $scope.tip,
                 operation: "editReport",
@@ -429,16 +459,20 @@ GL.controller("TipCtrl",
                 },
                 opened: false,
                 Utils: $scope.Utils,
-                data: { content, id, type }
+                data: {
+                  content,
+                  id,
+                  type
+                }
               };
             }
           }
         });
       };
-      $scope.tip_mode = function (value) {
+      $scope.tip_mode = function(value) {
         $scope.mode = value;
       }
-      $scope.tip_open_additional_questionnaire = function () {
+      $scope.tip_open_additional_questionnaire = function() {
         $scope.answers = {};
         $scope.uploads = {};
         $uibModal.open({
@@ -447,17 +481,19 @@ GL.controller("TipCtrl",
           scope: $scope
         });
       };
-      $scope.access_identity = function () {
-        return $http.post("api/rtips/" + $scope.tip.id + "/iars", { "request_motivation": "" }).then(function () {
+      $scope.access_identity = function() {
+        return $http.post("api/rtips/" + $scope.tip.id + "/iars", {
+          "request_motivation": ""
+        }).then(function() {
           $scope.reload();
         });
       };
-      $scope.file_identity_access_request = function () {
+      $scope.file_identity_access_request = function() {
         $uibModal.open({
           templateUrl: "views/modals/tip_operation_file_identity_access_request.html",
           controller: "IdentityAccessRequestCtrl",
           resolve: {
-            tip: function () {
+            tip: function() {
               return $scope.tip;
             }
           }
@@ -466,669 +502,249 @@ GL.controller("TipCtrl",
 
       $scope.score = 0;
 
-      $scope.$watch("answers", function () {
+      $scope.$watch("answers", function() {
         fieldUtilities.onAnswersUpdate($scope);
       }, true);
 
-      $scope.$on("GL::uploadsUpdated", function () {
+      $scope.$on("GL::uploadsUpdated", function() {
         fieldUtilities.onAnswersUpdate($scope);
       });
 
 
 
-    }]).
-  controller("TipOperationsCtrl",
-    ["$scope", "$http", "$location", "$uibModalInstance", "args",
-      function ($scope, $http, $location, $uibModalInstance, args) {
-        $scope.args = args;
+    }
+  ]).
+controller("TipOperationsCtrl",
+  ["$scope", "$http", "$location", "$uibModalInstance", "args",
+    function($scope, $http, $location, $uibModalInstance, args) {
+      $scope.args = args;
 
-        $scope.cancel = function () {
-          $uibModalInstance.close();
-        };
-
-        $scope.disable_reminder = function () {
-          $uibModalInstance.close();
-          var req = {
-            "operation": "set_reminder",
-            "args": {
-              "value": 32503680000000
-            }
-          };
-
-          return $http({ method: "PUT", url: "api/rtips/" + args.tip.id, data: req }).then(function () {
-            $scope.reload();
-          });
-        };
-
-        $scope.confirm = function () {
-          $uibModalInstance.close();
-
-          if ($scope.args.operation === "postpone" || $scope.args.operation === "set_reminder") {
-            var date;
-            if ($scope.args.operation === "postpone")
-              date = $scope.args.expiration_date.getTime();
-            else
-              date = $scope.args.reminder_date.getTime();
-
-            var req = {
-              "operation": $scope.args.operation,
-              "args": {
-                "value": date
-              }
-            };
-
-            return $http({ method: "PUT", url: "api/rtips/" + args.tip.id, data: req }).then(function () {
-              $scope.reload();
-            });
-          } else if (args.operation === "delete") {
-            return $http({ method: "DELETE", url: "api/rtips/" + args.tip.id, data: {} }).
-              then(function () {
-                $location.url("/recipient/reports");
-                $scope.reload();
-              });
-          }
-        };
-      }]).
-  controller("RTipWBFileUploadCtrl", ["$scope", "Authentication", "RTipDownloadWBFile", "RTipWBFileResource", function ($scope, Authentication, RTipDownloadWBFile, RTipWBFileResource) {
-    var reloadUI = function () { $scope.reload(); };
-
-    $scope.downloadWBFile = function (f) {
-      RTipDownloadWBFile(f);
-    };
-
-    $scope.deleteWBFile = function (f) {
-      RTipWBFileResource.remove({ "id": f.id }).$promise.finally(reloadUI);
-    };
-  }]).
-  controller("WBTipFileDownloadCtrl", ["$scope", "$uibModalInstance", "WBTipDownloadFile", "file", "tip", function ($scope, $uibModalInstance, WBTipDownloadFile, file, tip) {
-    $scope.ctx = "download";
-    $scope.file = file;
-    $scope.tip = tip;
-    $scope.confirm = function () {
-      $uibModalInstance.close();
-      WBTipDownloadFile(file);
-    };
-
-    $scope.cancel = function () {
-      $uibModalInstance.close();
-    };
-  }]).
-  controller("IdentityAccessRequestCtrl",
-    ["$scope", "$http", "$uibModalInstance", "tip",
-      function ($scope, $http, $uibModalInstance, tip) {
-        $scope.tip = tip;
-
-        $scope.cancel = function () {
-          $uibModalInstance.close();
-        };
-
-        $scope.confirm = function () {
-          $uibModalInstance.close();
-
-          return $http.post("api/rtips/" + tip.id + "/iars", { "request_motivation": $scope.request_motivation }).
-            then(function () {
-              $scope.reload();
-            });
-        };
-      }]).
-  controller("WhistleblowerFilesCtrl", ["$scope", function ($scope) {
-    $scope.uploads = {};
-  }]).
-  controller("WhistleblowerIdentityFormCtrl", ["$scope", function ($scope) {
-    $scope.uploads = {};
-  }]).controller("TipEditReportCtrl", ["$scope", "$uibModalInstance", "args", "Authentication", "$routeParams", "$http",
-    function ($scope, $uibModalInstance, args, Authentication, $routeParams, $http) {
-      $scope.cancel = function () {
+      $scope.cancel = function() {
         $uibModalInstance.close();
       };
-      $scope.args = args;
-      $scope.content = $scope.args.data.content;
-      $scope.contentId = $scope.args.data.id
-      $scope.contentType = $scope.args.data.type
-      var i = 0;
-      $scope.ranges = {};
-      $scope.overlapRanges = {};
-      $scope.id = $routeParams.tip_id;
-      $scope.reductCondition = false;
-      $scope.maskingObjects = []
-      $scope.permanentMaskingObjects = []
-      $scope.temporaryRanges = []
-      $scope.overlapRemoveRanges = []
-      $scope.temperaryMaskingContent = ''
-      $scope.permanentMaskingContent = ''
-      $scope.maskingSwitch = true;
-      $scope.toggle = true
 
+      $scope.disable_reminder = function() {
+        $uibModalInstance.close();
+        var req = {
+          "operation": "set_reminder",
+          "args": {
+            "value": 32503680000000
+          }
+        };
 
-
-      $scope.maskingObjects = $scope.args.tip.masking.filter(function (masking) {
-        return masking.content_id === $scope.contentId;
-      });
-      if ($scope.maskingObjects.length !== 0 && $scope.maskingObjects[0].permanent_masking.length > 0) {
-        var permanentMaskingArray = Object.values($scope.maskingObjects[0].permanent_masking);
-        permanentMaskingArray.sort(function (a, b) {
-          return a.start - b.start;
+        return $http({
+          method: "PUT",
+          url: "api/rtips/" + args.tip.id,
+          data: req
+        }).then(function() {
+          $scope.reload();
         });
-        $scope.content = permanentRefineContent($scope.content, permanentMaskingArray);
-        $scope.permanentMaskingContent = $scope.content;
-      } else {
-        $scope.permanentMaskingContent = $scope.args.data.content;
-      }
-      $scope.maskingObjects.forEach(function (maskingObject) {
-        $scope.content = applyTemporaryMasking($scope.content, maskingObject.temporary_masking);
-        $scope.temperaryMaskingContent = $scope.content;
-      });
-      if ($scope.maskingObjects.length !== 0 && $scope.maskingObjects[0].temporary_masking.length > 0) {
-        $scope.temporaryRanges = [...$scope.maskingObjects[0].temporary_masking];
-        $scope.overlapRemoveRanges = [...$scope.maskingObjects[0].temporary_masking];
-      }
-      function permanentRefineContent(content, permanentMaskingObjects) {
-        var refinedContent = content;
-        permanentMaskingObjects.forEach(function (obj) {
-          var start = obj.start;
-          var end = obj.end;
-          var stars = String.fromCharCode(0x2588).repeat(end - start + 1);
-          var insertPosition = start;
-          refinedContent = refinedContent.substring(0, insertPosition) + stars + refinedContent.substring(insertPosition);
-        });
-        return refinedContent;
-      }
-      function applyTemporaryMasking(content, temporaryMasking) {
-        let modifiedContent = content;
-        for (let range in temporaryMasking) {
-          if (temporaryMasking.hasOwnProperty(range)) {
-            let start = temporaryMasking[range].start;
-            let end = temporaryMasking[range].end;
-            modifiedContent =
-              modifiedContent.substring(0, start) +
-              String.fromCharCode(0x2591).repeat(end - start + 1) +
-              modifiedContent.substring(end + 1);
-          }
-        }
-        return modifiedContent;
-      }
-      function isRangeInTemporaryRanges(start, end, temporary_ranges) {
-        for (let i = 0; i < temporary_ranges.length; i++) {
-          const range = temporary_ranges[i];
-          if (start >= range.start && end <= range.end) {
-            return true;
-          }
-        }
-        return false;
-      }
-      $scope.mask = function (id) {
-        var blank = String.fromCharCode(42);
-        var elem = document.getElementById(id);
-        var text = elem.value;
-        var start = elem.selectionStart;
-        var finish = elem.selectionEnd;
-        // temperary function
-        if ((!$scope.resources.preferences.can_privilege_delete_mask_information) && ($scope.resources.preferences.can_privilege_mask_information)) {
-          temperarySelect(start, finish, blank, text, elem)
-        }
-        // permananet function
-        if ((!$scope.resources.preferences.can_privilege_mask_information) && ($scope.resources.preferences.can_privilege_delete_mask_information)) {
-          if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].temporary_masking.length > 0) {
-            permamentSelect(start, finish, blank, text, elem)
-          }
-        }
-        // both function
-        if (($scope.resources.preferences.can_privilege_mask_information) && ($scope.resources.preferences.can_privilege_delete_mask_information)) {
-          if ($scope.toggle) {
-            temperarySelect(start, finish, blank, text, elem)
-          }
-          if (!$scope.toggle) {
-            if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].temporary_masking.length > 0) {
-              permamentSelect(start, finish, blank, text, elem)
-            }
-          }
-
-        }
-
-      }
-      $scope.UnSelect = function (id) {
-        var elem = document.getElementById(id);
-        var text = elem.value;
-        var start = elem.selectionStart;
-        var finish = elem.selectionEnd;
-        // temperay 
-        if ((!$scope.resources.preferences.can_privilege_delete_mask_information) && ($scope.resources.preferences.can_privilege_mask_information)) {
-          temperaryUnselect(start, finish, text, elem)
-        }
-        // permanent
-        if ((!$scope.resources.preferences.can_privilege_mask_information) && ($scope.resources.preferences.can_privilege_delete_mask_information)) {
-          if (($scope.maskingObjects.length > 0) && ($scope.maskingObjects[0].temporary_masking.length > 0)) {
-            permamentUnselect(start, finish, text, elem)
-          }
-        }
-        // both 
-        if (($scope.resources.preferences.can_privilege_mask_information) && ($scope.resources.preferences.can_privilege_delete_mask_information)) {
-          if ($scope.toggle) {
-            temperaryUnselect(start, finish, text, elem)
-          }
-          if (!$scope.toggle) {
-            if (($scope.maskingObjects.length > 0) && ($scope.maskingObjects[0].temporary_masking.length > 0)) {
-              permamentUnselect(start, finish, text, elem)
-            }
-          }
-        }
-
-
       };
-      function updateRanges(ranges, start, end) {
-        const updatedRanges = {};
-        let newKey = 0;
 
-        Object.keys(ranges).forEach((key) => {
-          const range = ranges[key];
+      $scope.confirm = function() {
+        $uibModalInstance.close();
 
-          if (range.end < start || range.start > end) {
-            updatedRanges[newKey.toString()] = range;
-            newKey++;
-          } else {
-            if (range.start < start) {
-              updatedRanges[newKey.toString()] = {
-                start: range.start,
-                end: start - 1,
-              };
-              newKey++;
+        if ($scope.args.operation === "postpone" || $scope.args.operation === "set_reminder") {
+          var date;
+          if ($scope.args.operation === "postpone")
+            date = $scope.args.expiration_date.getTime();
+          else
+            date = $scope.args.reminder_date.getTime();
+
+          var req = {
+            "operation": $scope.args.operation,
+            "args": {
+              "value": date
             }
-            if (range.end > end) {
-              updatedRanges[newKey.toString()] = {
-                start: end + 1,
-                end: range.end,
-              };
-              newKey++;
-            }
-          }
-        });
-        const filteredRanges = {};
-        for (const key in updatedRanges) {
-          if (updatedRanges.hasOwnProperty(key) && updatedRanges[key] !== null && updatedRanges[key] !== undefined && Object.keys(updatedRanges[key]).length > 0) {
-            filteredRanges[key] = updatedRanges[key];
-          }
-        }
-
-        return filteredRanges;
-      }
-      function mergeRanges(ranges) {
-        var mergedRanges = [];
-        var keys = Object.keys(ranges);
-        keys.sort(function (a, b) {
-          return ranges[a].start - ranges[b].start;
-        });
-        var currentRange = ranges[keys[0]];
-        for (var i = 1; i < keys.length; i++) {
-          var nextRange = ranges[keys[i]];
-          if (nextRange.start <= currentRange.end + 1) {
-            currentRange.end = Math.max(currentRange.end, nextRange.end);
-          } else {
-            mergedRanges.push(currentRange);
-            currentRange = nextRange;
-          }
-        }
-        mergedRanges.push(currentRange);
-        return mergedRanges;
-      }
-      $scope.saveMasking = function () {
-        // For Temperary
-        if ((!$scope.resources.preferences.can_privilege_delete_mask_information) && ($scope.resources.preferences.can_privilege_mask_information)) {
-          temperarySave()
-        }
-        // For permament
-        if ((!$scope.resources.preferences.can_privilege_mask_information) && ($scope.resources.preferences.can_privilege_delete_mask_information) && ($scope.maskingObjects.length !== 0) && ($scope.maskingObjects[0].temporary_masking.length > 0)) {
-          permamentSave()
-        }
-        // both
-        if (($scope.resources.preferences.can_privilege_mask_information) && ($scope.resources.preferences.can_privilege_delete_mask_information)) {
-          if ($scope.toggle) {
-            temperarySave()
-          }
-          if (!$scope.toggle) {
-            permamentSave()
-          }
-        }
-      }
-      function findMissingRanges(oldRanges, newRanges) {
-        const missingRanges = [];
-
-        for (const oldRange of oldRanges) {
-          for (let i = oldRange.start; i <= oldRange.end; i++) {
-            let found = false;
-
-            for (const newRange of newRanges) {
-              if (i >= newRange.start && i <= newRange.end) {
-                found = true;
-                break;
-              }
-            }
-
-            if (!found) {
-              if (missingRanges.length > 0) {
-                const lastMissingRange = missingRanges[missingRanges.length - 1];
-                if (i === lastMissingRange.end + 1) {
-                  lastMissingRange.end = i;
-                } else {
-                  missingRanges.push({ start: i, end: i });
-                }
-              } else {
-                missingRanges.push({ start: i, end: i });
-              }
-            }
-          }
-        }
-
-        return missingRanges;
-      }
-      $scope.toggleMasking = function (maskingSwitch, id) {
-        $scope.toggle = maskingSwitch;
-        document.getElementById(id).value = $scope.content
-        $scope.ranges = {}
-        $scope.overlapRanges = {};
-        $scope.temporaryRanges = []
-        $scope.temporaryRanges = [...$scope.maskingObjects[0].temporary_masking]
-        $scope.overlapRemoveRanges = []
-        $scope.overlapRemoveRanges = [...$scope.maskingObjects[0].temporary_masking];
-      };
-      function filterRanges(ranges) {
-        return ranges.filter((range) => {
-          return range !== null && range !== undefined && Object.keys(range).length > 0;
-        });
-      }
-      function temperarySelect(start, finish, blank, text, elem) {
-        var length = finish - start;
-        if (length) {
-          elem.value = text.substring(0, start) + blank.repeat(length) + text.substring(finish, text.length);
-        }
-        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].temporary_masking.length > 0) {
-          var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-            return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-          });
-          if (overlapsTemporaryMasking) {
-            var isOverlapRanges = isRangeInTemporaryRanges(start, finish - 1, $scope.temporaryRanges)
-            if (isOverlapRanges) {
-              var range = {
-                start: start,
-                end: finish - 1
-              };
-              $scope.overlapRanges[i++] = range;
-              $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
-              if ($scope.overlapRemoveRanges.length > 0) {
-                $scope.overlapRemoveRanges = $scope.overlapRemoveRanges.filter(function (range) {
-                  return range !== null && range !== undefined && Object.keys(range).length > 0;
-                });
-                const ranges = updateRanges($scope.overlapRemoveRanges, start, finish - 1);
-                $scope.overlapRemoveRanges = []
-                for (const key in ranges) {
-                  if (ranges.hasOwnProperty(key)) {
-                    $scope.overlapRemoveRanges.push(ranges[key]);
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        var rangeExists = Object.values($scope.ranges).some(function (range) {
-          return range.start === start && range.end === finish;
-        });
-        var indicesEqual = start === finish;
-        if (!rangeExists && !indicesEqual) {
-          var range = {
-            start: start,
-            end: finish - 1
           };
-          $scope.ranges[i++] = range;
-        }
-      }
-      function permamentSelect(start, finish, blank, text, elem) {
-        var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-          return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-        });
 
-        if (overlapsTemporaryMasking) {
-          var length = finish - start;
-          if (length) {
-            elem.value = text.substring(0, start) + blank.repeat(length) + text.substring(finish, text.length);
-          }
-          var isOverlapRanges = isRangeInTemporaryRanges(start, finish - 1, $scope.temporaryRanges)
-          if (isOverlapRanges) {
-            var range = {
-              start: start,
-              end: finish - 1
-            };
-            $scope.overlapRanges[i++] = range;
-            $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
-            if ($scope.overlapRemoveRanges.length > 0) {
-              $scope.overlapRemoveRanges = $scope.overlapRemoveRanges.filter(function (range) {
-                return range !== null && range !== undefined && Object.keys(range).length > 0;
-              });
-              const ranges = updateRanges($scope.overlapRemoveRanges, start, finish - 1);
-              $scope.overlapRemoveRanges = []
-              for (const key in ranges) {
-                if (ranges.hasOwnProperty(key)) {
-                  $scope.overlapRemoveRanges.push(ranges[key]);
-                }
-              }
-            }
-          }
-          else {
-            var rangeExists = Object.values($scope.temporaryRanges).some(function (range) {
-              return range.start === start && range.end === finish;
-            });
-            var indicesEqual = start === finish;
-            if (!rangeExists && !indicesEqual) {
-              var range = {
-                start: start,
-                end: finish - 1
-              };
-              $scope.temporaryRanges[i++] = range;
-            }
-          }
-        }
-      }
-      function temperaryUnselect(start, finish, text, elem) {
-        if (!angular.equals({}, $scope.ranges) && ($scope.maskingObjects.length > 0) && ($scope.maskingObjects[0].temporary_masking.length > 0)) {
-          var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-            return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
+          return $http({
+            method: "PUT",
+            url: "api/rtips/" + args.tip.id,
+            data: req
+          }).then(function() {
+            $scope.reload();
           });
-
-          if (!overlapsTemporaryMasking) {
-            var length = finish - start;
-            if (length) {
-              elem.value = text.substring(0, start) + $scope.content.substring(start, finish) + text.substring(finish, text.length);
-              $scope.ranges = mergeRanges($scope.ranges);
-              $scope.ranges = updateRanges($scope.ranges, start, finish - 1)
-            }
-          } else {
-            var isOverlapRanges = Object.keys($scope.overlapRanges).some(function (key) {
-              var range = $scope.overlapRanges[key];
-              return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-            });
-            var isOverlapRemoveRanges = Object.keys($scope.overlapRemoveRanges).some(function (key) {
-              var range = $scope.overlapRemoveRanges[key];
-              return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-            });
-            if (isOverlapRanges && !isOverlapRemoveRanges) {
-              elem.value = text.substring(0, start) + $scope.temperaryMaskingContent.substring(start, finish) + text.substring(finish, text.length);
-              $scope.overlapRanges = mergeRanges($scope.overlapRanges);
-              $scope.overlapRanges = updateRanges($scope.overlapRanges, start, finish - 1);
-              var range = {
-                start: start,
-                end: finish - 1
-              };
-              $scope.overlapRemoveRanges[i++] = range;
-              $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
-            }
-          }
-        }
-        else {
-
-          if (!angular.equals({}, $scope.ranges)) {
-            var length = finish - start;
-            if (length) {
-              elem.value = text.substring(0, start) + $scope.content.substring(start, finish) + text.substring(finish, text.length);
-              $scope.ranges = mergeRanges($scope.ranges);
-              $scope.ranges = updateRanges($scope.ranges, start, finish - 1)
-            }
-          }
-        }
-      }
-      function permamentUnselect(start, finish, text, elem) {
-        var overlapsTemporaryMasking = $scope.maskingObjects[0].temporary_masking.some(function (range) {
-          return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-        });
-        if (overlapsTemporaryMasking) {
-          var length = finish - start;
-          if (length) {
-            var isOverlapRanges = Object.keys($scope.overlapRanges).some(function (key) {
-              var range = $scope.overlapRanges[key];
-              return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-            });
-            var isTemporaryRanges = Object.keys($scope.temporaryRanges).some(function (key) {
-              var range = $scope.temporaryRanges[key];
-              return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-            });
-            var isOverlapRemoveRanges = Object.keys($scope.overlapRemoveRanges).some(function (key) {
-              var range = $scope.overlapRemoveRanges[key];
-              return (start >= range.start && start <= range.end) || (finish - 1 >= range.start && finish - 1 <= range.end);
-            });
-            if (isOverlapRanges && !isOverlapRemoveRanges) {
-              elem.value = text.substring(0, start) + $scope.temperaryMaskingContent.substring(start, finish) + text.substring(finish, text.length);
-              $scope.overlapRanges = mergeRanges($scope.overlapRanges);
-              $scope.overlapRanges = updateRanges($scope.overlapRanges, start, finish - 1);
-              var range = {
-                start: start,
-                end: finish - 1
-              };
-              $scope.overlapRemoveRanges[i++] = range;
-              $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
-            }
-            if (!isOverlapRanges && isTemporaryRanges) {
-              elem.value = text.substring(0, start) + $scope.permanentMaskingContent.substring(start, finish) + text.substring(finish, text.length);
-              $scope.temporaryRanges = mergeRanges($scope.temporaryRanges);
-              if ($scope.temporaryRanges.length > 0) {
-                $scope.temporaryRanges = $scope.temporaryRanges.filter(function (range) {
-                  return range !== null && range !== undefined && Object.keys(range).length > 0;
-                });
-                const ranges = updateRanges($scope.temporaryRanges, start, finish - 1);
-                $scope.temporaryRanges = []
-                for (const key in ranges) {
-                  if (ranges.hasOwnProperty(key)) {
-                    $scope.temporaryRanges.push(ranges[key]);
-                  }
-                }
-              }
-            }
-            if (isOverlapRanges && isTemporaryRanges) {
-              elem.value = text.substring(0, start) + $scope.permanentMaskingContent.substring(start, finish) + text.substring(finish, text.length);
-              elem.value = applyTemporaryMasking(elem.value, $scope.overlapRanges)
-              $scope.temporaryRanges = mergeRanges($scope.temporaryRanges);
-              if ($scope.temporaryRanges.length > 0) {
-                $scope.temporaryRanges = $scope.temporaryRanges.filter(function (range) {
-                  return range !== null && range !== undefined && Object.keys(range).length > 0;
-                });
-                const ranges = updateRanges($scope.temporaryRanges, start, finish - 1);
-                $scope.temporaryRanges = []
-                for (const key in ranges) {
-                  if (ranges.hasOwnProperty(key)) {
-                    $scope.temporaryRanges.push(ranges[key]);
-                  }
-                }
-              }
-              $scope.temporaryRanges = filterRanges($scope.temporaryRanges)
-              $scope.temporaryRanges = [...Object.values($scope.overlapRanges)]
-              $scope.overlapRanges = mergeRanges($scope.overlapRanges);
-              $scope.overlapRanges = updateRanges($scope.overlapRanges, start, finish - 1);
-              var range = {
-                start: start,
-                end: finish - 1
-              };
-              $scope.overlapRemoveRanges[i++] = range;
-              $scope.overlapRemoveRanges = mergeRanges($scope.overlapRemoveRanges);
-            }
-          }
-        }
-      }
-      function permamentSave() {
-        if ($scope.maskingObjects.length > 0 && $scope.maskingObjects[0].permanent_masking.length == 0 && $scope.temporaryRanges == 0) {
-          var reloadUI = function () { $scope.reload(); };
+        } else if (args.operation === "delete") {
           return $http({
             method: "DELETE",
-            url: "api/rtips/" + $scope.args.tip.id + "/masking/" + $scope.maskingObjects[0].id
-          }).then(reloadUI, $uibModalInstance.close());
-        } else {
-          $scope.temporaryRanges = mergeRanges($scope.temporaryRanges)
-          $scope.temporaryRanges = filterRanges($scope.temporaryRanges)
-          if ($scope.temporaryRanges.length > 0) {
-            var missingRanges = findMissingRanges($scope.maskingObjects[0].temporary_masking, $scope.temporaryRanges);
-            let maskingdata = {
-              content_id: $scope.contentId,
-              content_type: $scope.contentType,
-              missing_ranges: missingRanges,
-              temporary_masking: $scope.temporaryRanges
-            };
-            console.log(maskingdata, "permanent maskingdata");
-            $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-            $uibModalInstance.close();
-          }
-          else {
-            var missingRanges = $scope.maskingObjects[0].temporary_masking;
-            let maskingdata = {
-              content_id: $scope.contentId,
-              content_type: $scope.contentType,
-              missing_ranges: missingRanges,
-              temporary_masking: []
-            };
-            console.log(maskingdata, "permanent maskingdata");
-            $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-            $uibModalInstance.close();
-          }
+            url: "api/rtips/" + args.tip.id,
+            data: {}
+          }).
+          then(function() {
+            $location.url("/recipient/reports");
+            $scope.reload();
+          });
         }
+      };
+    }
+  ]).
+controller("RTipWBFileUploadCtrl", ["$scope", "Authentication", "RTipDownloadWBFile", "RTipWBFileResource", function($scope, Authentication, RTipDownloadWBFile, RTipWBFileResource) {
+  var reloadUI = function() {
+    $scope.reload();
+  };
+
+  $scope.downloadWBFile = function(f) {
+    RTipDownloadWBFile(f);
+  };
+
+  $scope.deleteWBFile = function(f) {
+    RTipWBFileResource.remove({
+      "id": f.id
+    }).$promise.finally(reloadUI);
+  };
+}]).
+controller("WBTipFileDownloadCtrl", ["$scope", "$uibModalInstance", "WBTipDownloadFile", "file", "tip", function($scope, $uibModalInstance, WBTipDownloadFile, file, tip) {
+  $scope.ctx = "download";
+  $scope.file = file;
+  $scope.tip = tip;
+  $scope.confirm = function() {
+    $uibModalInstance.close();
+    WBTipDownloadFile(file);
+  };
+
+  $scope.cancel = function() {
+    $uibModalInstance.close();
+  };
+}]).
+controller("IdentityAccessRequestCtrl",
+  ["$scope", "$http", "$uibModalInstance", "tip",
+    function($scope, $http, $uibModalInstance, tip) {
+      $scope.tip = tip;
+
+      $scope.cancel = function() {
+        $uibModalInstance.close();
+      };
+
+      $scope.confirm = function() {
+        $uibModalInstance.close();
+
+        return $http.post("api/rtips/" + tip.id + "/iars", {
+          "request_motivation": $scope.request_motivation
+        }).
+        then(function() {
+          $scope.reload();
+        });
+      };
+    }
+  ]).
+controller("WhistleblowerFilesCtrl", ["$scope", function($scope) {
+  $scope.uploads = {};
+}]).
+controller("WhistleblowerIdentityFormCtrl", ["$scope", function($scope) {
+  $scope.uploads = {};
+}]).controller("TipEditReportCtrl", ["$scope", "masking", "$sce", "$uibModalInstance", "args", "Authentication", "$routeParams", "$http", function($scope, masking, $sce, $uibModalInstance, args, Authentication, $routeParams, $http) {
+
+  $scope.args = args;
+  $scope.forced_visible = false
+  $scope.maskingSwitch = $scope.resources.preferences.can_privilege_mask_information ? true : false;
+  $scope.temporaryMaskingSwitch = $scope.resources.preferences.can_privilege_mask_information
+
+  $scope.cancel = function() {
+    $uibModalInstance.close();
+  };
+
+  $scope.toggleForcedView = function() {
+    $scope.forced_visible = !$scope.forced_visible
+    window.getSelection().removeAllRanges();
+  }
+
+  $scope.toggleTempMaskingSwitch = function() {
+    $scope.temporaryMaskingSwitch = !$scope.temporaryMaskingSwitch
+  }
+
+  $scope.initializeMasking = function() {
+
+    $scope.maskingObjects = $scope.args.tip.masking.filter(function(masking) {
+      return masking.content_id === $scope.args.data.id;
+    })[0];
+
+    $scope.permanent_ranges_selected = []
+    $scope.temporary_ranges_unselected = []
+
+    if ($scope.maskingObjects) {
+      $scope.temporary_masking = $scope.maskingObjects.temporary_masking
+      $scope.permanent_masking = $scope.maskingObjects.permanent_masking
+    } else {
+      $scope.temporary_masking = []
+      $scope.permanent_masking = []
+    }
+
+    $scope.temporary_ranges_selected = $scope.temporary_masking
+    $scope.content = masking.maskPermanentContent($scope.args.data.content, $scope.permanent_masking);
+    $scope.content = masking.maskContent($scope.content, $scope.temporary_masking);
+  };
+
+  $scope.selectContent = function() {
+    if ($scope.maskingSwitch) {
+      if($scope.temporaryMaskingSwitch){
+        $scope.temporary_ranges_selected = masking.getSelectedRanges(true, $scope.temporary_ranges_selected, $scope.args.data.content)
+        $scope.temporary_ranges_selected = masking.removeAndSplitRanges($scope.permanent_masking, $scope.temporary_ranges_selected)
+        $scope.temporary_ranges_unselected = masking.getSelectedRanges(false, $scope.temporary_ranges_unselected, $scope.args.data.content)
+        masking.onHighlight('#007bff', 'white')
+        //alert(JSON.stringify($scope.temporary_ranges_selected))
+      }else{
+        $scope.temporary_ranges_unselected = masking.getSelectedRanges(true, $scope.temporary_ranges_unselected, $scope.args.data.content)
+        $scope.temporary_ranges_selected = masking.getSelectedRanges(false, $scope.temporary_ranges_selected, $scope.args.data.content)
+        masking.onHighlight('#FF0000', 'white')
       }
-      function temperarySave() {
-        if ($scope.maskingObjects.length > 0) {
-          if (Object.keys($scope.ranges).length > 0 || $scope.maskingObjects[0].temporary_masking.length > 0) {
-            var index = Object.keys($scope.ranges).length;
-            for (var key in $scope.maskingObjects[0].temporary_masking) {
-              if ($scope.maskingObjects[0].temporary_masking.hasOwnProperty(key)) {
-                var range = $scope.maskingObjects[0].temporary_masking[key];
-                var isRangeRepeated = Object.values($scope.ranges).some(function (obj) {
-                  return obj.start === range.start && obj.end === range.end;
-                });
-                if (!isRangeRepeated) {
-                  var isRangeRepeatedInNew = Object.values($scope.ranges).some(function (obj) {
-                    return obj.start === range.start && obj.end === range.end;
-                  });
-                  if (!isRangeRepeatedInNew) {
-                    $scope.ranges[index] = range;
-                    index++;
-                  }
-                }
-              }
-            }
-            $scope.mergedRanges = mergeRanges($scope.ranges);
-            let maskingdata = {
-              content_id: $scope.contentId,
-              permanent_masking: $scope.maskingObjects[0].permanent_masking.length > 0 ? $scope.maskingObjects[0].permanent_masking : [],
-              temporary_masking: $scope.mergedRanges
-            };
-            console.log(maskingdata, "temporary_maskingdata");
-            $scope.args.tip.updateMasking($scope.maskingObjects[0].id, maskingdata);
-            $uibModalInstance.close();
-          }
-        } else {
-          if (Object.keys($scope.ranges).length > 0) {
-            $scope.mergedRanges = mergeRanges($scope.ranges);
-            let maskingdata = {
-              content_id: $scope.contentId,
-              permanent_masking: [],
-              temporary_masking: $scope.mergedRanges
-            };
-            console.log(maskingdata, "temporary_maskingdata");
-            $scope.args.tip.newMasking(maskingdata);
-            $uibModalInstance.close();
-          }
-        }
-      }
-    }]);
+    } else {
+      $scope.permanent_ranges_selected = masking.getSelectedRanges(true, $scope.permanent_ranges_selected, $scope.args.data.content)
+      masking.onHighlight('#007bff', 'white')
+    }
+  };
+
+  $scope.erase = function() {
+    if ($scope.maskingSwitch) {
+      $scope.temporary_ranges_selected = masking.getSelectedRanges(false, $scope.temporary_ranges_selected, $scope.args.data.content)
+      $scope.temporary_ranges_unselected = masking.getSelectedRanges(false, $scope.temporary_ranges_unselected, $scope.args.data.content)
+    } else {
+      $scope.permanent_ranges_selected = masking.getSelectedRanges(false, $scope.permanent_ranges_selected, $scope.args.data.content)
+    }
+    masking.onHighlight('white', 'black')
+  };
+
+  $scope.saveMasking = function() {
+    let maskingData = {
+      content_id: $scope.args.data.id,
+      permanent_masking: [],
+      temporary_masking: []
+    };
+
+    if($scope.maskingSwitch){
+      maskingData['temporary_masking'] = $scope.temporary_ranges_selected
+    }else{
+      maskingData['content_type'] = $scope.args.data.type
+      maskingData['permanent_masking'] = masking.intersectRanges($scope.temporary_masking, $scope.permanent_ranges_selected)
+    }
+
+    if($scope.maskingObjects){
+      //alert(JSON.stringify(maskingData))
+      $scope.args.tip.updateMasking($scope.maskingObjects.id, maskingData);
+    }else{
+      //alert(JSON.stringify(maskingData))
+      $scope.args.tip.newMasking(maskingData);
+    }
+    $scope.cancel()
+  }
+
+  $scope.getContent = function() {
+    if ($scope.forced_visible) {
+      return masking.maskPermanentContent($scope.args.data.content, $scope.permanent_masking);
+    } else {
+      return $scope.content;
+    }
+  }
+
+  $scope.toggleMasking = function(maskingSwitch) {
+    $scope.initializeMasking()
+    const container = document.getElementById('redact');
+    const range = document.createRange();
+    range.selectNodeContents(container);
+    window.getSelection().addRange(range);
+    masking.onHighlight('white', 'black')
+  };
+
+  $scope.initializeMasking()
+
+}]);

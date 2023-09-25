@@ -69,7 +69,21 @@ GL
     }
   };
 })
-
+.directive("unfocusOnKeydown", function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+      element.on('keydown', function(event) {
+        if (document.activeElement === element[0]) {
+          event.preventDefault();
+        }
+      });
+      element.on('paste', function(event) {
+        event.preventDefault();
+      });
+    }
+  };
+})
 .directive("dynamicTextarea", function() {
   return {
     restrict: "A",

@@ -193,7 +193,7 @@ def update_tip_submission_status(session, tid, user_id, rtip_id, status_id, subs
   db_update_submission_status(session, tid, user_id, itip, status_id, substatus_id)
 
 
-def db_update_masking(session, tid, user_id, itip_id, id, masking_data):
+def db_update_masking(session, tid, user_id, masking, id, masking_data):
   """
     Update the masking data of a tip
 
@@ -205,22 +205,15 @@ def db_update_masking(session, tid, user_id, itip_id, id, masking_data):
     :param masking_data: The updated masking data
     """
 
-  itip = session.query(models.Masking).get(id)
-  if itip:
-    itip.content_id = masking_data['content_id']
-    itip.temporary_masking = masking_data['temporary_masking']
-    itip.permanent_masking = masking_data['permanent_masking']
-    itip.mask_date = datetime.now()
-    log_data = {
+  masking.content_id = masking_data['content_id']
+  masking.temporary_masking = masking_data['temporary_masking']
+  masking.mask_date = datetime.now()
+  log_data = {
       'content_id': masking_data['content_id'],
-      'mask_date': itip.mask_date.isoformat(),
-      'temporary_masking': masking_data['temporary_masking'],
-      'permanent_masking': masking_data['permanent_masking']
-    }
-
-    db_log(session, tid=tid, type='update_masking', user_id=user_id, object_id=id, data=log_data)
-  else:
-    raise ValueError(f"Tip with ID '{itip_id}' not found.")
+      'mask_date': masking.mask_date.isoformat(),
+      'temporary_masking': masking_data['temporary_masking']
+  }
+  db_log(session, tid=tid, type='update_masking', user_id=user_id, object_id=id, data=log_data)
 
 
 def db_update_message(session, tid, user_id, itip_id, masking_data):
@@ -250,65 +243,36 @@ def db_update_message(session, tid, user_id, itip_id, masking_data):
   else:
     raise ValueError(f"Tip with ID '{itip_id}' not found.")
 
-def redact_content(content, temporary_ranges, permanent_ranges):
-  """
-    permanently redact the textual content
 
-    :param content: textual content to be updated
-    :param temporary_ranges: new permanent ranges that to be marked
-    :param permanent_ranges: existing temporary ranges that are marked
-    """
+def redact_content(content, old_permanent_ranges, new_permanent_ranges):
+    # Sort the ranges in descending order of 'end' values
+    old_permanent_ranges.sort(key=lambda x: x['end'], reverse=True)
 
-  for r in temporary_ranges:
-    content = content[:r["start"]] + "*" * (r["end"] - r["start"] + 1) + content[r["start"]:]
+    # Initialize the result string with the original content
+    result = content
 
-  modified_content = list(content)
-  for r in permanent_ranges:
-    start, end = r.get('start', 0), r.get('end', 0) + 1
-    end = min(end, len(modified_content))
-    if start < end:
-      modified_content[start:end] = '*' * (end - start)
+    # Iterate through the old permanent ranges and insert asterisks
+    old_permanent_ranges = sorted(old_permanent_ranges, key=lambda x: x['start'])
+    new_permanent_ranges = sorted(new_permanent_ranges, key=lambda x: x['start'])
+    for range in old_permanent_ranges:
+        start = range['start']
+        end = range['end']+1
+        redaction = '*' * (end - start)
 
-  return ''.join(modified_content).replace('*', '') or ' '
+        result = result[:start] + redaction + result[end - len(redaction):]
 
-def merge_dicts(permanent_ranges, temporary_ranges):
-  """
-    merge existing ranges after permanent reduction
+    # Convert the modified string to a list for efficient updates
+    modified_content = list(result)
 
-    :param temporary_ranges: new permanent ranges that to be marked
-    :param permanent_ranges: existing temporary ranges that are marked
-    """
+    for r in new_permanent_ranges:
+        start, end = r.get('start', 0), r.get('end', 0)+1
 
-  merged_list = permanent_ranges + temporary_ranges
-  merged_list.sort(key=lambda x: x['start'])  # Sort by 'start' key
-  i = 1
-  while i < len(merged_list):
-    if merged_list[i]['start'] <= merged_list[i - 1]['end']:
-      merged_list[i - 1]['end'] = max(merged_list[i - 1]['end'], merged_list[i]['end'])
-      del merged_list[i]
-    else:
-      i += 1
-  return merged_list
+        if start < end:
+            modified_content[start:end] = '*' * (end - start)
 
-def find_ranges_exit_in_temporary_ranges(ranges, temporary_ranges):
-    result = []
+    # Join the list back to a string and remove asterisks or return a space if empty
+    return ''.join(modified_content).replace('*', '') or ' '
 
-    for temp_range in temporary_ranges:
-        for range_ in ranges:
-            if temp_range['end'] < range_['start'] or temp_range['start'] > range_['end']:
-                # No overlap, add the temporary range as-is
-                result.append(temp_range)
-            elif temp_range['start'] <= range_['start'] and temp_range['end'] >= range_['end']:
-                # Entire range is covered by temporary range, skip it
-                continue
-            else:
-                # Calculate the missing ranges
-                if temp_range['start'] < range_['start']:
-                    result.append({'start': temp_range['start'], 'end': range_['start'] - 1})
-                if temp_range['end'] > range_['end']:
-                    temp_range['start'] = range_['end'] + 1
-
-    return result
 def find_missing_ranges(old_ranges, new_ranges):
     missing_ranges = []
 
@@ -348,18 +312,11 @@ def db_mask_data(session, masked_marker, temporary_ranges, permanent_ranges, mas
     :param id: The ID of the masking to be deleted
     """
 
-  tempMasking = temporary_ranges
-  if permanent_ranges:
-    permanentMasking = permanent_ranges
-    permanentMasking = merge_dicts(permanentMasking, tempMasking)
-  else:
-    permanentMasking = tempMasking
-
   masked_marker.content_id = masking_data['content_id']
-  masked_marker.temporary_masking = []
+  masked_marker.temporary_masking = temporary_ranges
   masked_marker.mask_date = datetime.now()
   session.commit()
-  masked_marker.permanent_masking = permanentMasking
+  masked_marker.permanent_masking = permanent_ranges
   session.commit()
 
   log_data = {'content': content}
@@ -369,53 +326,130 @@ def db_mask_data(session, masked_marker, temporary_ranges, permanent_ranges, mas
 
   db_log(session, tid=tid, type='update_masking', user_id=user_id, object_id=id, data=masking_log_data)
 
+def validate_ranges(current_masking, new_masking):
+    for new_range in new_masking:
+        new_start, new_end = new_range['start'], new_range['end']
+        is_within = False
+
+        for current_range in current_masking:
+            current_start, current_end = current_range['start'], current_range['end']
+            if current_start <= new_start <= new_end <= current_end:
+                is_within = True
+                break
+
+        if not is_within:
+            return False
+
+    return True
+
+def get_new_temporary_ranges(current_masking, new_masking):
+    merged_new_masking = []
+    for new_range in new_masking:
+        if not merged_new_masking or new_range['start'] > merged_new_masking[-1]['end']:
+            merged_new_masking.append(new_range)
+        else:
+            merged_new_masking[-1]['end'] = max(merged_new_masking[-1]['end'], new_range['end'])
+
+    result = []
+
+    current_index = 0
+    new_index = 0
+
+    while current_index < len(current_masking) and new_index < len(merged_new_masking):
+        current_range = current_masking[current_index]
+        new_range = merged_new_masking[new_index]
+
+        if new_range['end'] < current_range['start']:
+            result.append({'start': new_range['end'] + 1, 'end': current_range['end']})
+            new_index += 1
+        elif new_range['start'] > current_range['end']:
+            result.append(current_range)
+            current_index += 1
+        else:
+            if new_range['start'] > current_range['start']:
+                result.append({'start': current_range['start'], 'end': new_range['start'] - 1})
+            if new_range['end'] < current_range['end']:
+                current_range['start'] = new_range['end'] + 1
+                new_index += 1
+            else:
+                current_index += 1
+
+    # Add remaining current ranges if any
+    while current_index < len(current_masking):
+        result.append(current_masking[current_index])
+        current_index += 1
+
+    return result
+
+def merge_and_sort_ranges(list1, list2):
+    # Combine the two lists of ranges
+    combined_ranges = list1 + list2
+
+    # Sort the combined ranges by 'start' value
+    combined_ranges.sort(key=lambda x: x['start'])
+
+    # Merge overlapping ranges
+    merged_ranges = []
+    current_range = combined_ranges[0]
+
+    for range_item in combined_ranges[1:]:
+        if range_item['start'] <= current_range['end']:
+            current_range['end'] = max(current_range['end'], range_item['end'])
+        else:
+            merged_ranges.append(current_range)
+            current_range = range_item
+
+    merged_ranges.append(current_range)
+
+    return merged_ranges
 
 def db_mask_comment_messages(session, tid, user_id, itip_id, id, masking_data, tip_data, content_type, itip = None):
-  _masking_data = masking_data
-  masked_marker = session.query(models.Masking).get(id)
-  _missing_ranges =find_missing_ranges(masked_marker.temporary_masking,_masking_data['temporary_masking'])
-  if _missing_ranges == _masking_data['missing_ranges']:
-    print("Before and after ranges are identical.")
-    masked_content = next((masked_content for masked_content in tip_data.get(content_type, []) if masked_content['id'] == masking_data['content_id']), None)
-    if masked_content is not None and masked_marker is not None:
-        content = redact_content(masked_content.get('content'), masked_marker.permanent_masking,_masking_data['temporary_masking'])
+    masked_marker = session.query(models.Masking).get(id)
+    currentMaskedContent = next((masked_content for masked_content in tip_data.get(content_type, []) if masked_content['id'] == masking_data['content_id']), None)
+    currentMaskedData = next((masked_content for masked_content in tip_data['masking'] if masked_content['content_id'] == masking_data['content_id']), None)
+
+    if currentMaskedData is not None and masked_marker is not None:
+
+        content = redact_content(currentMaskedContent.get('content'), currentMaskedData['permanent_masking'], masking_data['permanent_masking'])
         itip.content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, content)).decode()
-        db_mask_data(session, masked_marker,_masking_data['temporary_masking'], masked_marker.permanent_masking, masking_data, content, tid, user_id, id)
+        new_temporary_ranges = get_new_temporary_ranges(currentMaskedData['temporary_masking'], copy.deepcopy(masking_data['permanent_masking']))
+        new_permanent_ranges = merge_and_sort_ranges(currentMaskedData['permanent_masking'], masking_data['permanent_masking'])
+        db_mask_data(session, masked_marker, new_temporary_ranges, new_permanent_ranges, masking_data, content, tid, user_id, id)
 
 def db_mask_answer(session, tid, user_id, itip_id, id, masking_data, tip_data):
-  _masking_data = masking_data
-  masking_data = next((masked_content for masked_content in tip_data['masking'] if masked_content['content_id'] == masking_data['content_id']), None)
-  _missing_ranges =find_missing_ranges(masking_data['temporary_masking'],_masking_data['temporary_masking'])
-  if _missing_ranges == _masking_data['missing_ranges']:
-    print("Before and after ranges are identical.")
-    tip_data = tip_data['questionnaires'][0]
-    for key, value in tip_data['answers'].items():
-      if key == masking_data['content_id']:
-        content_data = value[0]
-  
-        content = redact_content(content_data['value'], masking_data['permanent_masking'], _masking_data['temporary_masking'])
-        tip_data['answers'][key][0]['value'] = copy.deepcopy(content)
-        masked_marker = session.query(models.Masking).get(id)
-        db_mask_data(session, masked_marker, _masking_data['temporary_masking'], masking_data['permanent_masking'], masking_data,content, tid, user_id, id)
-        break
-      
-    _content = tip_data['answers']
-    if itip_id.crypto_tip_pub_key:
-      _content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, json.dumps(_content, cls=JSONEncoder).encode())).decode()
-    itip = session.query(models.InternalTipAnswers).filter_by(internaltip_id=masking_data['internaltip_id']).first()
-  
-    if itip:
-      itip.content = _content
-      itip.answers = _content
-  
-      session.commit()
-    else:
-     raise ValueError(f"Tip with content ID '{masking_data['internaltip_id']}' not found.")
-  else:
-    print("Before and after ranges are different.")   
 
+  currentMaskedData = next((masked_content for masked_content in tip_data['masking'] if masked_content['content_id'] == masking_data['content_id']), None)
 
+  tip_data = tip_data['questionnaires'][0]
+  for key, value in tip_data['answers'].items():
+    if key == masking_data['content_id']:
+      content_data = value[0]
 
+      content = redact_content(content_data['value'], currentMaskedData['permanent_masking'], masking_data['permanent_masking'])
+      tip_data['answers'][key][0]['value'] = content
+      masked_marker = session.query(models.Masking).get(id)
+
+      range_valid = validate_ranges(currentMaskedData['temporary_masking'], masking_data['permanent_masking'])
+      new_temporary_ranges = get_new_temporary_ranges(currentMaskedData['temporary_masking'], copy.deepcopy(masking_data['permanent_masking']))
+      new_permanent_ranges = merge_and_sort_ranges(currentMaskedData['permanent_masking'], masking_data['permanent_masking'])
+
+      if not range_valid:
+        return
+
+      db_mask_data(session, masked_marker, new_temporary_ranges, new_permanent_ranges, masking_data, content, tid, user_id, id)
+      break
+
+  _content = tip_data['answers']
+
+  if itip_id.crypto_tip_pub_key:
+    _content = base64.b64encode(GCE.asymmetric_encrypt(itip_id.crypto_tip_pub_key, json.dumps(_content, cls=JSONEncoder).encode())).decode()
+
+  itip = session.query(models.InternalTipAnswers).filter_by(internaltip_id=currentMaskedData['internaltip_id']).first()
+
+  if itip:
+    itip.content = _content
+    itip.answers = _content
+    session.commit()
 
 
 def db_access_rtip(session, tid, user_id, rtip_id):
@@ -911,11 +945,8 @@ def create_masking(session, tid, user_id, rtip_id, content):
                 content_bytes = content_str.encode()
                 masking_content = base64.b64encode(GCE.asymmetric_encrypt(itip.crypto_tip_pub_key, content_bytes)).decode()
 
-        # tempMasking = [value for value in masking_content.get('temporary_masking', {}).values()]
         tempMasking = masking_content.get('temporary_masking')
-        permanentMasking = masking_content.get('permanent_masking', None)
-        if not permanentMasking:
-            permanentMasking = []
+        permanentMasking = []
 
         masking = models.Masking()
         masking.internaltip_id = itip.id
@@ -943,28 +974,28 @@ def update_tip_masking(session, tid, user_id, rtip_id, id, data, tip_data):
     :param data: The updated masking data
     """
   user_data = session.query(models.User).get(user_id)
-  if user_data and user_data.can_privilege_delete_mask_information:
-    _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
-  
-    masking_data = data.get('data', {})
-  
-    if 'content_type' in masking_data:
-      content_type = masking_data['content_type']
-  
-      if content_type == "comment":
-        model = session.query(models.Comment).get(masking_data['content_id'])
-        db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data,"comments", model)
-      elif content_type == "message":
-        model = session.query(models.Message).get(masking_data['content_id'])
-        db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data, "messages", model)
-      elif content_type == "answer":
-        db_mask_answer(session, tid, user_id, itip, id, masking_data, tip_data)
-      else:
-        print("No valid content type found")
+  masking_data = data.get('data', {})
 
-  if user_data and user_data.can_privilege_mask_information:
-      print("Content type not provided")
-      db_update_masking(session, tid, user_id, itip, id, masking_data)
+  masking = session.query(models.Masking).get(id)
+  _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
+
+  if masking and masking.internaltip_id == itip.id:
+      if user_data and user_data.can_privilege_delete_mask_information:
+          _, rtip, itip = db_access_rtip(session, tid, user_id, rtip_id)
+
+          if 'content_type' in masking_data:
+              content_type = masking_data['content_type']
+              if content_type == "comment":
+                  model = session.query(models.Comment).get(masking_data['content_id'])
+                  db_mask_comment_messages(session, tid, user_id, itip, id, masking_data, tip_data, "comments", model)
+              elif content_type == "answer":
+                  db_mask_answer(session, tid, user_id, itip, id, masking_data, tip_data)
+              else:
+                  print("No valid content type found")
+
+
+      if user_data and user_data.can_privilege_mask_information:
+          db_update_masking(session, tid, user_id, masking, id, masking_data)
 
 
 class RTipInstance(OperationHandler):
