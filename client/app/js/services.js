@@ -739,15 +739,11 @@ factory("masking", ["$rootScope", "$sce", function($rootScope, $sce) {
     },
     onHighlight:function (background_color, text_color) {
       document.getElementById('redact').focus()
-      var selection = window.getSelection();
-      var range = selection.getRangeAt(0);
-      var span = document.createElement('span');
-      span.style.backgroundColor = background_color;
-      span.style.color = text_color;
-      range.surroundContents(span);
-
+      document.execCommand('hiliteColor', false, background_color);
+      document.execCommand('foreColor', false, text_color);
       window.getSelection().removeAllRanges();
-    }
+    },
+
   };
 }]).
 factory("AdminUtils", ["AdminContextResource", "AdminQuestionnaireResource", "AdminStepResource", "AdminFieldResource", "AdminFieldTemplateResource", "AdminUserResource", "AdminNodeResource", "AdminNotificationResource", "AdminRedirectResource", "AdminTenantResource",
