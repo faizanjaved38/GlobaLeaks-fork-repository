@@ -297,16 +297,29 @@ GL.controller("TipCtrl",
       $scope.permanentMaskingObjects = []
       $scope.maskingObjects = []
 
-      function permanentRefineContent(content, permanentMaskingObjects) {
-        var refinedContent = content;
-        permanentMaskingObjects.forEach(function(obj) {
-          var start = obj.start;
-          var end = obj.end;
-          var stars = String.fromCharCode(0x2588).repeat(end - start + 1);
-          var insertPosition = start;
-          refinedContent = refinedContent.substring(0, insertPosition) + stars + refinedContent.substring(insertPosition);
+      // function permanentRefineContent(content, permanentMaskingObjects) {
+      //   var refinedContent = content;
+      //   permanentMaskingObjects.forEach(function(obj) {
+      //     var start = obj.start;
+      //     var end = obj.end;
+      //     var stars = String.fromCharCode(0x2588).repeat(end - start + 1);
+      //     var insertPosition = start;
+      //     refinedContent = refinedContent.substring(0, insertPosition) + stars + refinedContent.substring(insertPosition);
+      //   });
+      //   return refinedContent;
+      // }
+      function permanentRefineContent(content, ranges) {
+        var maskedText = content.split('');
+  
+        ranges.forEach(function (range) {
+          if (range.start >= 0 && range.start <= maskedText.length && range.end >= 0) {
+            for (var i = range.start; i <= range.end; i++) {
+              maskedText.splice(i, 0, String.fromCharCode(0x2588));
+            }
+          }
         });
-        return refinedContent;
+  
+        return maskedText.join('');
       }
       $scope.edited = function(id) {
         $scope.maskingObjects = $scope.tip.masking.filter(function(masking) {
